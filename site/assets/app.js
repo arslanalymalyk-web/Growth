@@ -1,6 +1,9 @@
 /* Growth Blueprint: progressive enhancement. The site is fully readable without JavaScript. */
 (function () {
   'use strict';
+  /* Listeners on document/window are registered through onDoc so a re-run of this script (single-file build) replaces them instead of stacking */
+  var off = window.__gbaOff = window.__gbaOff || []; while (off.length) off.pop()();
+  var onDoc = function (t, ev, fn, o) { t.addEventListener(ev, fn, o); off.push(function () { t.removeEventListener(ev, fn, o); }); };
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   /* Shared helpers. API calls fall back to "demo mode" when no server is reachable (static hosting, file://). */
@@ -24,7 +27,7 @@
     setBasket: function (b) { try { window.localStorage.setItem('gba.basket', JSON.stringify(b)); } catch (e) { /* unavailable */ } GBA.badge(); },
     badge: function () { var n = GBA.basket().length; document.querySelectorAll('[data-basket-count]').forEach(function (el) { el.textContent = n; el.hidden = n === 0; }); }
   };
-  document.addEventListener('submit', function (e) { GBA._form = e.target; }, true);
+  onDoc(document, 'submit', function (e) { GBA._form = e.target; }, true);
   var store = {
     get: function (k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } },
     set: function (k, v) { try { window.localStorage.setItem(k, v); } catch (e) { /* storage unavailable */ } }
@@ -38,8 +41,8 @@
       var open = toggle.getAttribute('aria-expanded') !== 'true';
       toggle.setAttribute('aria-expanded', String(open)); nav.classList.toggle('is-open', open);
     });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
-    window.matchMedia('(min-width: 1221px)').addEventListener('change', close);
+    onDoc(document, 'keydown', function (e) { if (e.key === 'Escape') close(); });
+    onDoc(window.matchMedia('(min-width: 1221px)'), 'change', close);
   }
 
   /* Scroll reveal */
@@ -114,7 +117,7 @@
       wow.addEventListener('pointermove', function (e) { var r = wow.getBoundingClientRect(); tx = (e.clientX - r.left) / r.width - 0.5; ty = (e.clientY - r.top) / r.height - 0.5; if (!raf) raf = requestAnimationFrame(apply); });
     }
     var sy = 0, onScroll = function () { sy = Math.min(window.scrollY, 900); wow.style.setProperty('--sy', String(sy)); };
-    window.addEventListener('scroll', function () { requestAnimationFrame(onScroll); }, { passive: true });
+    onDoc(window, 'scroll', function () { requestAnimationFrame(onScroll); }, { passive: true });
   }
   $$('[data-count]').forEach(function (el) {
     var to = Number(el.getAttribute('data-count')) || 0;

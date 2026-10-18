@@ -14,6 +14,7 @@
     "retention": "node scripts/retention.mjs",
     "e2e": "node scripts/e2e.mjs",
     "briefs": "node scripts/make-briefs.mjs",
-    "content": "node build.mjs && node scripts/export-content.mjs"
+    "content": "node build.mjs && node scripts/export-content.mjs",
+    "single": "node build.mjs && node scripts/make-single.mjs"
   }
 }

@@ -104,6 +104,7 @@ The end-to-end suite drives the scorecard (English and Arabic), basket to checko
 ```bash
 node scripts/make-briefs.mjs        # rebuilds private/briefs/*.pdf from src/briefs.mjs (needs Playwright + Chromium)
 node scripts/export-content.mjs     # rewrites CONTENT-EN.md / CONTENT-AR.md from the built pages
+node scripts/make-single.mjs      # growth-blueprint-single.html: the whole bilingual site in ONE file (forms and shop run in demo mode)
 python3 scripts/make-logo.py FONTDIR   # rebuilds brand/*.svg (needs fontTools, uharfbuzz and the font files)
 python3 scripts/make-fonts.py FONTDIR  # rebuilds assets/fonts/*.woff2
 ```
