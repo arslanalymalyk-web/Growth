@@ -4,8 +4,8 @@ import { routes } from "@/i18n/routes";
 import Link from "next/link";
 import { ButtonLink } from "../ui/Button";
 import { ApproachSteps } from "./ApproachSteps";
-import { Icon } from "../ui/Icons";
-import { industryPhotoId } from "@/content/photos";
+import { ArrowIcon, Icon } from "../ui/Icons";
+import { industryPhotoId, insightPhotoId } from "@/content/photos";
 import { ImagePlaceholder } from "../ui/ImagePlaceholder";
 import { SitePhoto } from "../ui/SitePhoto";
 import { Container, Section, SectionHeading } from "../ui/Section";
@@ -84,15 +84,17 @@ export function Industries({ content, ui, locale }: P) {
       <SectionHeading id="industries-title" tone="dark" eyebrow={industries.eyebrow} title={industries.title} intro={industries.intro} />
       <ul className="mt-12 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
         {industries.items.map((item) => (
-          <li key={item.id} className="relative">
+          <li key={item.id} className="group relative aspect-[4/3] overflow-hidden border border-ivory-50/10 bg-navy-800 sm:aspect-[3/4] lg:aspect-[4/5]">
             {industryPhotoId(item.id) ? (
-              <div className="relative aspect-[4/3] overflow-hidden border border-ivory-50/10">
-                <SitePhoto id={industryPhotoId(item.id)!} locale={locale} fill sizes="(min-width: 1024px) 18rem, 50vw" />
-              </div>
+              <SitePhoto id={industryPhotoId(item.id)!} locale={locale} fill sizes="(min-width: 1024px) 18rem, 50vw" className="transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none" />
             ) : (
-              <ImagePlaceholder tone="dark" label={ui.imagePending} className="aspect-[4/3] border border-ivory-50/10" />
+              <ImagePlaceholder tone="dark" label={ui.imagePending} className="absolute inset-0" />
             )}
-            <h3 className="mt-3 text-xl text-ivory-50 sm:text-2xl"><Link href={routes.industry(locale, item.id)} className="after:absolute after:inset-0 hover:text-gold-300">{item.title}</Link></h3>
+            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/20 to-transparent" />
+            <h3 className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 p-4 text-xl text-ivory-50 sm:text-2xl">
+              <Link href={routes.industry(locale, item.id)} className="after:absolute after:inset-0 hover:text-gold-300">{item.title}</Link>
+              <span aria-hidden="true" className="text-gold-300"><ArrowIcon /></span>
+            </h3>
           </li>
         ))}
       </ul>
@@ -117,7 +119,9 @@ export function Founder({ content, ui, locale }: P) {
   return (
     <Section id="about" labelledBy="about-title" tone="ivory-deep">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-        <ImagePlaceholder label={ui.imagePending} className="aspect-[4/3] w-full sm:aspect-[16/10] lg:aspect-[4/3]" />
+        <div className="relative aspect-[4/3] w-full overflow-hidden sm:aspect-[16/10] lg:aspect-[4/3]">
+          <SitePhoto id="founderPortrait" locale={locale} fill sizes="(min-width: 1024px) 36rem, 100vw" position="30% 30%" />
+        </div>
         <div>
           <SectionHeading id="about-title" eyebrow={founder.eyebrow} title={founder.title} intro={founder.body} />
           <p className="mt-8"><ButtonLink href={routes.about(locale)} variant="outline">{ui.ourStory}</ButtonLink></p>
@@ -135,7 +139,11 @@ export function Insights({ content, ui, locale }: P) {
       <ul className="mt-12 grid gap-8 md:grid-cols-3">
         {insights.items.map((item) => (
           <li key={item.id}>
-            <ImagePlaceholder label={ui.imagePending} className="aspect-[16/10]" />
+            {insightPhotoId(item.id) ? (
+              <div className="relative aspect-[16/10] overflow-hidden"><SitePhoto id={insightPhotoId(item.id)!} locale={locale} fill sizes="(min-width: 768px) 22rem, 100vw" /></div>
+            ) : (
+              <ImagePlaceholder label={ui.imagePending} className="aspect-[16/10]" />
+            )}
             <div className="mt-4 flex items-start gap-3">
               <h3 className="text-xl text-navy-900">{item.title}</h3>
               {item.isSample && <span className="mt-1 shrink-0 border border-gold-700 px-1.5 text-[0.65rem] font-semibold uppercase tracking-wider text-gold-700">{ui.sampleBadge}</span>}
@@ -152,7 +160,11 @@ export function Insights({ content, ui, locale }: P) {
 export function ScorecardBand({ content, locale }: P) {
   const { scorecard } = content;
   return (
-    <section aria-labelledby="scorecard-title" className="bg-navy-800 text-ivory-50">
+    <section aria-labelledby="scorecard-title" className="relative isolate overflow-hidden bg-navy-800 text-ivory-50">
+      <div aria-hidden="true" className="absolute inset-y-0 start-0 -z-10 hidden w-1/3 lg:block">
+        <SitePhoto id="desertRocks" fill decorative sizes="33vw" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-navy-800 rtl:bg-gradient-to-l" />
+      </div>
       <Container className="grid items-center gap-8 py-14 md:grid-cols-[auto_1fr] md:gap-12 lg:py-16">
         <span className="hidden size-20 items-center justify-center border border-gold-400 text-gold-400 md:flex"><Icon name="check" className="size-10" /></span>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">

@@ -3,7 +3,7 @@ import type { Locale } from "@/i18n/config";
 import { routes } from "@/i18n/routes";
 import { ConsultationBand } from "../home/HomeSections";
 import { Icon } from "../ui/Icons";
-import { ImagePlaceholder } from "../ui/ImagePlaceholder";
+import { SitePhoto } from "../ui/SitePhoto";
 import { PageHero } from "../ui/PageHero";
 import { Section, SectionHeading } from "../ui/Section";
 
@@ -22,8 +22,7 @@ export function AboutPage({ ui, locale, about, home }: { ui: UiStrings; locale: 
 
       <Section labelledBy="founder-title" tone="ivory">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          {/* Approved founder photography has not been supplied: placeholder only. */}
-          <ImagePlaceholder label={ui.imagePending} className="aspect-[4/5] w-full max-w-md lg:max-w-none" />
+          <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden lg:max-w-none"><SitePhoto id="founderPortrait" locale={locale} fill sizes="(min-width: 1024px) 36rem, 100vw" position="30% 30%" /></div>
           <div>
             <p className="eyebrow text-gold-700">{about.founder.eyebrow}</p>
             <h2 id="founder-title" className="mt-3 text-3xl text-navy-900 sm:text-4xl">{about.founder.title}</h2>
@@ -56,7 +55,7 @@ export function AboutPage({ ui, locale, about, home }: { ui: UiStrings; locale: 
               {about.specialists.paragraphs.map((t) => <p key={t}>{t}</p>)}
             </div>
           </div>
-          <ImagePlaceholder label={ui.imagePending} className="aspect-[16/10] w-full" />
+          <div className="relative aspect-[16/10] w-full overflow-hidden"><SitePhoto id="professionalMeeting" locale={locale} fill sizes="(min-width: 1024px) 36rem, 100vw" /></div>
         </div>
       </Section>
 
