@@ -6,7 +6,7 @@ import { SHOP, PRODUCTS, productBySlug, VAT_RATE, CURRENCY } from './shop.mjs';
 import { BRIEFS, BRIEF_CHAPTERS } from './briefs.mjs';
 import { NEWS, CONSENT, PRIVACY, TERMS, COOKIES } from './legal.mjs';
 import { SC_PAGE } from './scorecard.mjs';
-import { esc, shell, hero, ctaBand, btn, arrow, eyebrow, newsletter } from './render.mjs';
+import { tsWidget, esc, shell, hero, ctaBand, btn, arrow, eyebrow, newsletter } from './render.mjs';
 
 const T = (ctx, v) => esc(ctx.t(v));
 const crumbs = (ctx, ...items) => [{ label: UI.breadcrumbHome, href: ctx.href('') }, ...items];
@@ -21,7 +21,7 @@ const shopData = (ctx) => {
     urls: { shop: ctx.href('shop/'), basket: ctx.href('shop/basket/'), checkout: ctx.href('shop/checkout/') },
     t: { add: t(S.add), inBasket: t(S.inBasket), pages: t(S.pages), empty: t(S.basketPage.empty), emptyCta: t(S.basketPage.emptyCta), remove: t(S.basketPage.remove), subtotal: t(S.basketPage.subtotal), vat: t(S.basketPage.vat), total: t(S.basketPage.total), continue: t(S.basketPage.continue), checkout: t(S.basketPage.checkout),
       err: { name: t(S.checkout.err.name), email: t(S.checkout.err.email), licence: t(S.checkout.err.licence), privacy: t(S.checkout.err.privacy), server: t(S.checkout.err.server) }, noServer: t(S.checkout.noServer), paying: t(S.checkout.paying),
-      ref: t(S.order.ref), download: t(S.order.download), preparing: t(S.order.preparing), left: t(S.order.left), none: t(S.order.none), expired: t(S.order.expired), tips: t(S.order.tips), invoice: t(S.order.invoice), notFound: t(S.order.notFound), vatIncl: t(L('incl. 15% VAT', 'شاملة ضريبة القيمة المضافة ١٥٪')) }
+      ref: t(S.order.ref), download: t(S.order.download), preparing: t(S.order.preparing), left: t(S.order.left), none: t(S.order.none), expired: t(S.order.expired), tips: t(S.order.tips), invoice: t(S.order.invoice), notFound: t(S.order.notFound), vatIncl: t(L('incl. 15% VAT', 'شاملة ضريبة القيمة المضافة 15٪')) }
   };
 };
 const shopScript = (ctx) => `<script type="application/json" id="shop-data">${JSON.stringify(shopData(ctx))}</script>`;
@@ -53,9 +53,9 @@ export function shopProduct(ctx, p) {
   const inside = [
     ['doc', `How the sector works, in plain words`], ['chart', `Five forces driving demand`], ['route', `Ways in: ${b.routes.map((r) => r[0].toLowerCase()).slice(0, 3).join(', ')}`], ['scale', `${b.rules.length} rules and approvals to check early`], ['handshake', `Who you will meet: ${b.partners.map((x) => x[0].toLowerCase()).slice(0, 3).join(', ')}`], ['warning', `${b.pitfalls.length} common mistakes, and how to avoid them`], ['calendar', 'A 90-day plan, in three phases'], ['clipboard', `${b.questions.length} questions to ask before you commit`]
   ];
-  const insideAr = ['كيف يعمل القطاع بكلمات بسيطة', 'خمسة عوامل تحرك الطلب', 'طرق الدخول وأنواعها', `${b.rules.length} أنظمة وموافقات تتحقق منها مبكرًا`, 'الشركاء الذين ستقابلهم', `${b.pitfalls.length} أخطاء شائعة وكيف تتجنبها`, 'خطة لـ٩٠ يومًا على ثلاث مراحل', `${b.questions.length} أسئلة تطرحها قبل أن تلتزم`];
+  const insideAr = ['كيف يعمل القطاع بكلمات بسيطة', 'خمسة عوامل تحرك الطلب', 'طرق الدخول وأنواعها', `${b.rules.length} أنظمة وموافقات تتحقق منها مبكرًا`, 'الشركاء الذين ستقابلهم', `${b.pitfalls.length} أخطاء شائعة وكيف تتجنبها`, 'خطة لـ90 يومًا على ثلاث مراحل', `${b.questions.length} أسئلة تطرحها قبل أن تلتزم`];
   const list = inside.map((x, i) => `<li><span>${icon(x[0])}</span>${esc(ctx.lang === 'ar' ? insideAr[i] : x[1])}</li>`).join('');
-  const tocAr = ['القطاع بكلمات بسيطة', 'ما الذي يحرك الطلب', 'كيف يتنظم السوق', 'طرق الدخول', 'أنظمة تتحقق منها مبكرًا', 'الشركاء: من ستقابل', 'أين يخطئ الناس', 'أول ٩٠ يومًا لك', 'أسئلة تطرحها قبل الالتزام'];
+  const tocAr = ['القطاع بكلمات بسيطة', 'ما الذي يحرك الطلب', 'كيف يتنظم السوق', 'طرق الدخول', 'أنظمة تتحقق منها مبكرًا', 'الشركاء: من ستقابل', 'أين يخطئ الناس', 'أول 90 يومًا لك', 'أسئلة تطرحها قبل الالتزام'];
   const toc = BRIEF_CHAPTERS.map((c, i) => `<li><span>${String(i + 1).padStart(2, '0')}</span>${esc(ctx.lang === 'ar' ? tocAr[i] : c)}</li>`).join('');
   const forWho = ctx.lang === 'ar'
     ? ['فرق القيادة والتطوير التجاري التي تدرس دخول السوق السعودي', 'المستثمرون الذين يريدون فهم القطاع قبل أن يقابلوا الشركاء', 'من دخل السوق حديثًا ويريد التأكد من أنه لم يفته شيء']
@@ -73,7 +73,7 @@ ${hero(ctx, { crumbs: crumbs(ctx, { label: SHOP.hero.eyebrow, href: ctx.href('sh
     <h2 class="h3 h3--lg">${T(ctx, D.sample)}</h2><blockquote class="sample"${ctx.lang === 'ar' ? '' : ' lang="en" dir="ltr"'}><p>${esc(sample)}</p></blockquote>
   </div>
   <aside class="pdp__buy" aria-label="${esc(ctx.t(D.details))}"><div class="buybox">
-    <p class="buybox__price"><b>${sar(ctx, p.price)}</b><small>${T(ctx, L('+ 15% VAT', '+ ضريبة القيمة المضافة ١٥٪'))}</small></p>
+    <p class="buybox__price"><b>${sar(ctx, p.price)}</b><small>${T(ctx, L('+ 15% VAT', '+ ضريبة القيمة المضافة 15٪'))}</small></p>
     <a class="btn btn--gold" href="${ctx.href('shop/checkout/')}" data-buy="${p.slug}"><span>${T(ctx, S.buyNow)}</span>${arrow}</a>
     <button class="btn btn--outline-dark" type="button" data-add="${p.slug}" aria-pressed="false"><span>${T(ctx, S.add)}</span></button>
     <dl class="buybox__dl"><div><dt>${T(ctx, D.format)}</dt><dd>PDF · ${p.pages} ${T(ctx, S.pages)}</dd></div><div><dt>${T(ctx, D.language)}</dt><dd>${T(ctx, D.lang)}</dd></div><div><dt>${T(ctx, D.edition)}</dt><dd>${T(ctx, D.updated)}</dd></div><div><dt>${T(ctx, L('Licence', 'الترخيص'))}</dt><dd>${T(ctx, D.licence)}</dd></div><div><dt>${T(ctx, L('Delivery', 'التسليم'))}</dt><dd>${T(ctx, D.delivery)}</dd></div></dl>
@@ -97,7 +97,7 @@ export function shopCheckout(ctx) {
 <section class="sec sec--ivory shop-page"><div class="container container--wide co">
   <div class="co__form"><p class="eyebrow eyebrow--rule">${T(ctx, C.eyebrow)}</p><h1 class="h2">${T(ctx, C.title)}</h1><p class="lead">${T(ctx, C.lead)}</p>
   <form id="checkout" class="form enq__card" novalidate>
-    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">${tsWidget()}
     <div class="fgrid">
       <div class="field"><label for="co-name">${T(ctx, f.name)}</label><input id="co-name" name="name" type="text" autocomplete="name" required><small class="err" hidden></small></div>
       <div class="field"><label for="co-email">${T(ctx, f.email)}</label><input id="co-email" name="email" type="email" autocomplete="email" dir="ltr" required><small class="hint">${T(ctx, f.emailHint)}</small><small class="err" hidden></small></div>
@@ -148,7 +148,7 @@ export function privacy(ctx) {
   <p class="legal__upd">${T(ctx, P.versionLine)}</p>
   <h2 class="h3" id="rights">${T(ctx, F.title)}</h2><p>${T(ctx, F.lead)}</p>
   <form class="form enq__card" data-privacy-form novalidate data-ok="${esc(ctx.t(F.ok))}" data-demo="${esc(ctx.t(F.demo))}" data-err-email="${esc(ctx.t(F.errEmail))}" data-err-server="${esc(ctx.t(F.errServer))}">
-    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">${tsWidget()}
     <div class="field"><label for="pr-email">${T(ctx, F.email)}</label><input id="pr-email" name="email" type="email" dir="ltr" autocomplete="email" required></div>
     <div class="field"><label for="pr-type">${T(ctx, F.type)}</label><select id="pr-type" name="type">${F.types.map(([v, l]) => `<option value="${v}">${T(ctx, l)}</option>`).join('')}</select></div>
     <div class="field"><label for="pr-d">${T(ctx, F.details)}</label><textarea id="pr-d" name="details" rows="4"></textarea></div>

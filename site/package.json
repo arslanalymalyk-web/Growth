@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Growth Blueprint Advisory: bilingual website, readiness scorecard, briefs shop and form-to-CRM server. No runtime dependencies.",
+  "description": "Growth Blueprint: bilingual website, readiness scorecard, briefs shop and form-to-CRM server. No runtime dependencies.",
   "engines": { "node": ">=20" },
   "scripts": {
     "build": "node build.mjs",
     "start": "node server.mjs",
     "test": "node --test scripts/server.test.mjs",
+    "check": "node scripts/check-links.mjs",
+    "visual": "node scripts/visual.mjs",
+    "retention": "node scripts/retention.mjs",
     "e2e": "node scripts/e2e.mjs",
     "briefs": "node scripts/make-briefs.mjs",
     "content": "node build.mjs && node scripts/export-content.mjs"

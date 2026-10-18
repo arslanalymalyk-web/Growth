@@ -104,7 +104,7 @@ for (const lang of ['en', 'ar']) {
   ok(/ref=GBA-/.test(p.url()), 'enquiry confirmation carries a real reference');
   ok(/GBA-\d{6}-[0-9A-F]{6}/.test(await p.textContent('[data-ref]')), 'confirmation page shows the reference');
   ok(/Thank you/.test(await p.textContent('h1')), 'confirmation uses the live wording, not the demo wording');
-  const l = lines('leads').filter((x) => x.type === 'enquiry').at(-1); ok(l && l.contact.company === 'Al Noor Foods' && l.consents.processing.version === 'privacy-2026-1', 'enquiry stored with consent version');
+  const l = lines('leads').filter((x) => x.type === 'enquiry').at(-1); ok(l && l.contact.company === 'Al Noor Foods' && l.consents.processing.version === 'privacy-2026-2', 'enquiry stored with consent version');
   ok(lines('crm-outbox').some((c) => c.evt && c.evt.event === 'lead.enquiry'), 'enquiry queued for the CRM webhook');
   await p.goto(`${base}/en/book-a-meeting/index.html`);
   await p.fill('#b-name', 'Lina'); await p.fill('#b-co', 'Lina Co'); await p.fill('#b-em', 'lina@example.com'); await p.selectOption('#b-help', { index: 1 });

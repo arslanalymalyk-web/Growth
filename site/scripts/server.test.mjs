@@ -78,7 +78,7 @@ test('lead: validates, records consent versions, queues for CRM when no webhook 
   const r = await s.call('/api/lead', { method: 'POST', json: { ...base, consent: { processing: true, marketing: true } } });
   const j = await r.json(); assert.equal(r.status, 200); assert.match(j.ref, /^GBA-\d{6}-[0-9A-F]{6}$/);
   const types = s.lines('consents').map((c) => c.type); assert.deepEqual(types, ['lead-processing', 'lead-marketing']);
-  assert.equal(s.lines('consents')[0].version, 'privacy-2026-1');
+  assert.equal(s.lines('consents')[0].version, 'privacy-2026-2');
   assert.equal(s.lines('leads')[0].contact.email, 'sara@example.com');
   await s.app.idle(); assert.equal(s.lines('crm-outbox')[0].status, 'unconfigured');
 });
@@ -153,4 +153,52 @@ test('privacy request is logged with a 30-day due date; rate limiting kicks in',
   await s.call('/api/privacy/request', { method: 'POST', json: { email: 'a@b.co', type: 'access' } });
   await s.call('/api/privacy/request', { method: 'POST', json: { email: 'a@b.co', type: 'access' } });
   assert.equal((await s.call('/api/privacy/request', { method: 'POST', json: { email: 'a@b.co', type: 'access' } })).status, 429);
+});
+
+test('invoice: sequential number and a ZATCA phase-1 QR that decodes to seller, VAT no., time, total and VAT', async (t) => {
+  const s = await start(); t.after(s.close);
+  const place = async () => (await (await s.call('/api/shop/checkout', { method: 'POST', json: { items: ['fmcg-market-entry-brief'], buyer, consent: okConsent, lang: 'en' } })).json());
+  const a = await place(), b = await place();
+  const inv = await (await s.call(`/api/shop/invoice?o=${a.orderId}&k=${a.key}`)).text();
+  assert.match(inv, /INV-000001/); assert.match(inv, /<svg/); assert.match(inv, /simulated/i);
+  const inv2 = await (await s.call(`/api/shop/invoice?o=${b.orderId}&k=${b.key}`)).text(); assert.match(inv2, /INV-000002/);
+  const { orders } = s.app; const o = orders.get(a.orderId);
+  assert.equal(o.total, 862.5); assert.equal(o.vat, 112.5);
+  const buf = Buffer.from(s.app.zatcaQr(o), 'base64'), f = {}; for (let i = 0; i < buf.length;) { f[buf[i]] = buf.subarray(i + 2, i + 2 + buf[i + 1]).toString(); i += 2 + buf[i + 1]; }
+  assert.deepEqual([f[1], f[4], f[5]], ['Growth Blueprint', '862.50', '112.50']); assert.match(f[3], /^\d{4}-\d\d-\d\dT[\d:]+Z$/); assert.ok(f[2]);
+});
+
+test('admin console is off by default, needs the token, exports CSV (formula-safe) and updates privacy requests', async (t) => {
+  const off = await start(); t.after(off.close);
+  assert.equal((await off.call('/admin')).status, 404);
+  const s = await start({ adminToken: 'letmein-123' }); t.after(s.close);
+  assert.equal((await s.call('/admin')).status, 200);
+  assert.equal((await s.call('/api/admin/data?kind=leads')).status, 401);
+  assert.equal((await s.call('/api/admin/data?kind=leads', { headers: { Authorization: 'Bearer wrong' } })).status, 401);
+  await s.call('/api/lead', { method: 'POST', json: { type: 'enquiry', lang: 'en', source: '=cmd|calc', contact: { name: 'A', email: 'a@example.com' }, consent: { processing: true } } });
+  const H = { Authorization: 'Bearer letmein-123' };
+  const d = await (await s.call('/api/admin/data?kind=leads', { headers: H })).json(); assert.equal(d.count, 1);
+  const csv = await (await s.call('/api/admin/data?kind=leads&format=csv', { headers: H })).text(); assert.ok(csv.includes('"\'=cmd|calc"'), 'formula prefix neutralised');
+  const pr = await (await s.call('/api/privacy/request', { method: 'POST', json: { email: 'p@example.com', type: 'access', lang: 'en' } })).json();
+  assert.equal((await s.call('/api/admin/privacy-status', { method: 'POST', headers: H, json: { ref: pr.ref, status: 'done' } })).status, 200);
+  const list = await (await s.call('/api/admin/data?kind=privacy', { headers: H })).json(); assert.equal(list.rows.find((r) => r.ref === pr.ref).status, 'done');
+});
+
+test('mail provider: with a webhook configured, messages are handed over and logged; without one they stay in the outbox', async (t) => {
+  const got = [];
+  const hook = http.createServer((req, res) => { let b = ''; req.on('data', (c) => (b += c)); req.on('end', () => { got.push(JSON.parse(b)); res.end('ok'); }); });
+  await new Promise((r) => hook.listen(0, '127.0.0.1', r)); t.after(() => hook.close());
+  process.env.MAIL_WEBHOOK_URL = `http://127.0.0.1:${hook.address().port}/`; process.env.MAIL_FROM = 'hello@example.com';
+  const s = await start({ mailProvider: 'webhook' }); t.after(s.close);
+  const r = await (await s.call('/api/lead', { method: 'POST', json: { type: 'enquiry', lang: 'en', contact: { name: 'Sara', email: 'sara@example.com' }, consent: { processing: true } } })).json();
+  assert.equal(r.delivered, true); await s.app.idle();
+  assert.equal(got.length, 1); assert.equal(got[0].to, 'sara@example.com');
+  assert.equal(s.lines('mail-log')[0].status, 'sent'); assert.ok(s.lines('mail-outbox').length === 1);
+  delete process.env.MAIL_WEBHOOK_URL; delete process.env.MAIL_FROM;
+});
+
+test('captcha: when Turnstile is configured, forms without a valid token are refused', async (t) => {
+  const s = await start({ turnstileSecret: 'x' }); t.after(s.close);
+  const r = await s.call('/api/newsletter', { method: 'POST', json: { email: 'a@example.com', consent: true, lang: 'en' } });
+  assert.equal(r.status, 400); assert.equal((await r.json()).error, 'captcha');
 });

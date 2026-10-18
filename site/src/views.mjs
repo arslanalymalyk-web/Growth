@@ -5,7 +5,7 @@ import { INDUSTRIES, industryBySlug } from './industries.mjs';
 import * as P from './pages.mjs';
 import { CONSENT } from './legal.mjs';
 import { proofStrip, vision, team, clients, hoursBlock, FIRM } from './firm.mjs';
-import { newsletter, heroWow, imgAr, esc, shell, hero, ctaBand, btn, arrow, eyebrow, sectionHead, serviceCard, faq } from './render.mjs';
+import { tsWidget, newsletter, heroWow, imgAr, esc, shell, hero, ctaBand, btn, arrow, eyebrow, sectionHead, serviceCard, faq } from './render.mjs';
 
 const T = (ctx, v) => esc(ctx.t(v));
 const crumbs = (ctx, ...items) => [{ label: UI.breadcrumbHome, href: ctx.href('') }, ...items];
@@ -285,7 +285,7 @@ ${hero(ctx, { eyebrow: Lb.eyebrow, title: a.title, lead: a.lead, img: a.hero, cr
   </aside>
 </div></section>
 ${ctaBand(ctx, { eyebrow: Lb.bandEyebrow, title: UI.book, body: Lb.bandBody, img: 'cta-rocks-dark' })}`;
-  return shell(ctx, { title: L(`${a.title.en} | Growth Blueprint`, `${a.title.ar} | غروث بلوبرينت`), description: a.excerpt, active: 'insights', body });
+  return shell(ctx, { jsonld: [{ '@context': 'https://schema.org', '@type': 'Article', headline: ctx.t(a.title), description: ctx.t(a.excerpt), inLanguage: ctx.lang, author: { '@type': 'Organization', name: 'Growth Blueprint' }, publisher: { '@type': 'Organization', name: 'Growth Blueprint' } }], title: L(`${a.title.en} | Growth Blueprint`, `${a.title.ar} | غروث بلوبرينت`), description: a.excerpt, active: 'insights', body });
 }
 
 /* ===================== CHECKLIST ===================== */
@@ -334,7 +334,7 @@ ${hero(ctx, { eyebrow: B.hero.eyebrow, title: B.hero.title, lead: B.hero.lead, i
     </div>
     <div class="field"><label for="b-help">${T(ctx, F.help)}</label><select id="b-help" name="help" required><option value="">${T(ctx, F.select)}</option>${opts}</select><small class="err" hidden></small></div>
     <div class="field"><label for="b-more">${T(ctx, F.more)}</label><textarea id="b-more" name="more" rows="4" placeholder="${esc(ctx.t(F.moreHint))}"></textarea></div>
-    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">${tsWidget()}
     <div class="field"><label class="check"><input type="checkbox" name="consent"><span class="check__b" aria-hidden="true">${icon('check')}</span><span>${T(ctx, CONSENT.processing)} <a href="${ctx.href('privacy/')}">${T(ctx, CONSENT.privacy)}</a></span></label><small class="err" data-consent-err hidden>${T(ctx, CONSENT.err)}</small></div>
     <label class="check"><input type="checkbox" name="marketing"><span class="check__b" aria-hidden="true">${icon('check')}</span><span>${T(ctx, CONSENT.marketing)}</span></label>
     <p class="err" role="alert" hidden data-form-err>${T(ctx, CONSENT.formErr)}</p>
@@ -342,7 +342,7 @@ ${hero(ctx, { eyebrow: B.hero.eyebrow, title: B.hero.title, lead: B.hero.lead, i
   </form></div></div>
   <figure class="req__img" style="background-image:url('${ctx.img(B.location.img)}')"><figcaption><p class="eyebrow">${T(ctx, B.location.eyebrow)}</p><h2 class="h2">${T(ctx, B.location.title)}</h2><span class="rule" aria-hidden="true"></span><p>${T(ctx, B.location.body)}</p></figcaption></figure>
 </section>
-<section class="split-band split-band--ivory split-band--rev split-band--short"><div class="split-band__copy"><h2 class="h2">${T(ctx, B.office.title)}</h2><span class="rule" aria-hidden="true"></span><p>${T(ctx, B.office.body)}</p><p class="locn"><span>${icon('pin')}</span><span><b>${T(ctx, SITE.address)}</b><small>${T(ctx, B.office.note)}</small></span></p></div><figure class="split-band__img"><img src="${ctx.img(B.office.img)}" alt="" loading="lazy"></figure></section>`;
+<section class="split-band split-band--ivory split-band--rev split-band--short"><div class="split-band__copy"><h2 class="h2">${T(ctx, B.office.title)}</h2><span class="rule" aria-hidden="true"></span><p>${T(ctx, B.office.body)}</p><p class="locn"><span>${icon('pin')}</span><span><b>${T(ctx, SITE.address)}</b><small>${T(ctx, B.office.note)}</small></span></p>${hoursBlock(ctx)}<p class="locn"><span>${icon('phone')}</span><span><b dir="ltr"><a href="tel:${SITE.phoneHref}">${SITE.phone}</a></b><small><a href="mailto:${SITE.email}">${SITE.email}</a></small></span></p></div><figure class="split-band__img"><img src="${ctx.img(B.office.img)}" alt="" loading="lazy"></figure></section>`;
   return shell(ctx, { title: B.meta.title, description: B.meta.description, active: null, body });
 }
 
@@ -381,7 +381,7 @@ ${hero(ctx, { title: E.hero.title, lead: E.hero.lead, img: E.hero.img, pos: 'rig
     </div>
     <div class="enq__step" data-step="5" hidden>
       <h3 class="h4">${T(ctx, f.review)}</h3><dl class="review" id="review"></dl>
-      <input class="hp" type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input class="hp" type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">${tsWidget()}
       <label class="check check--consent"><input type="checkbox" id="consent" name="consent"><span class="check__b" aria-hidden="true">${icon('check')}</span><span>${T(ctx, CONSENT.processing)} <a href="${ctx.href('privacy/')}">${T(ctx, CONSENT.privacy)}</a></span></label><small class="err" id="consentErr" hidden>${T(ctx, CONSENT.err)}</small>
       <label class="check"><input type="checkbox" id="marketing" name="marketing"><span class="check__b" aria-hidden="true">${icon('check')}</span><span>${T(ctx, CONSENT.marketing)}</span></label>
       <p class="err" role="alert" hidden data-form-err>${T(ctx, CONSENT.formErr)}</p>
@@ -453,7 +453,7 @@ const scData = (ctx) => {
 export function scorecardAssessment(ctx) {
   const body = `
 <section class="sc-app-wrap"><div class="container container--md">
-  <div id="sc-app" data-results="${ctx.href('readiness-scorecard/results/')}" aria-live="polite"><noscript><p class="sc-nojs">${T(ctx, SC_UI.noJs)}</p></noscript></div>
+  <div id="sc-app" data-results="${ctx.href('readiness-scorecard/results/')}" aria-live="polite"><noscript><h1 class="h2">${T(ctx, SC_PAGE.meta.title)}</h1><p class="sc-nojs">${T(ctx, SC_UI.noJs)}</p></noscript></div>
 </div></section>
 <script type="application/json" id="sc-data">${JSON.stringify(scData(ctx))}</script>`;
   return shell(ctx, { title: SC_PAGE.meta.title, description: SC_PAGE.meta.description, active: null, body, bodyClass: 'page-sc', scripts: ['scorecard.js'], extraHead: '<meta name="robots" content="noindex">' });
@@ -474,7 +474,7 @@ export function scorecardResults(ctx) {
     urls: { assess: ctx.href('readiness-scorecard/assessment/'), book: ctx.href('book-a-meeting/'), privacy: ctx.href('privacy/'), results: ctx.href('readiness-scorecard/results/') }
   };
   const body = `
-<section class="sc-report-wrap"><div class="container container--wide"><div id="sc-report" aria-live="polite"></div></div></section>
+<section class="sc-report-wrap"><div class="container container--wide"><div id="sc-report" aria-live="polite"><noscript><h1 class="h2">${T(ctx, R.meta.title)}</h1><p>${T(ctx, SC_UI.noJs)}</p></noscript></div></div></section>
 <script type="application/json" id="sc-data">${JSON.stringify(data)}</script>`;
   return shell(ctx, { title: R.meta.title, description: R.meta.description, active: null, body, bodyClass: 'page-sc page-report', scripts: ['scorecard.js'], extraHead: '<meta name="robots" content="noindex">' });
 }

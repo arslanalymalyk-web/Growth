@@ -64,7 +64,7 @@ export const vision = (ctx) => `<section class="sec sec--ivory" aria-labelledby=
 
 export const team = (ctx, tone = 'sec--deep') => `<section class="sec ${tone}" aria-labelledby="tm-t"><div class="container container--wide">
   ${sectionHead(ctx, { eyebrow: lab.teamE, title: lab.teamT, body: lab.teamB, id: 'tm-t', tone: tone === 'sec--ivory' ? 'light' : 'dark' })}
-  <ul class="team">${FIRM.team.map((m) => `<li class="member"><span class="member__av" aria-hidden="true">${m.i}</span><h3 class="h4">${T(ctx, m.n)}</h3><p class="member__r">${T(ctx, m.r)}</p><p class="member__b">${T(ctx, m.b)}</p><p class="member__tags">${m.tags.map((t) => `<span>${T(ctx, t)}</span>`).join('')}</p></li>`).join('')}</ul>
+  <ul class="team">${FIRM.team.map((m) => `<li class="member">${m.photo ? `<img class="member__ph" src="${ctx.asset('team/' + m.photo)}" alt="" width="72" height="72" loading="lazy">` : `<span class="member__av" aria-hidden="true">${m.i}</span>`}<h3 class="h4">${T(ctx, m.n)}</h3><p class="member__r">${T(ctx, m.r)}</p><p class="member__b">${T(ctx, m.b)}</p><p class="member__tags">${m.tags.map((t) => `<span>${T(ctx, t)}</span>`).join('')}</p></li>`).join('')}</ul>
   <p class="proof__note proof__note--c">${T(ctx, lab.licBody)} · <span dir="ltr">#${FIRM.licence}</span></p>
 </div></section>`;
 

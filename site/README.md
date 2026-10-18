@@ -63,27 +63,39 @@ Every consent or withdrawal is appended to `data/consents.jsonl` with the consen
 | `DATA_DIR` | `./data` | Append-only JSONL files. Back this up; it holds personal data. Git-ignored. |
 | `DOWNLOAD_SIGNING_SECRET` | random, kept in `data/.secret` | Set explicitly in production. |
 | `DOWNLOAD_TTL_SECONDS`, `DOWNLOAD_MAX` | `600`, `5` | |
-| `CRM_WEBHOOK_URL`, `CRM_WEBHOOK_SECRET` | unset | See above. |
+| `CRM_WEBHOOK_URL`, `CRM_WEBHOOK_SECRET` | unset | Any CRM that accepts a webhook (HubSpot/Zoho/Odoo workflows, Zapier, Make, n8n). Payload shape and HMAC header are described above. |
+| `MAIL_PROVIDER` | unset (outbox only) | `resend` (needs `RESEND_API_KEY`, `MAIL_FROM`) or `webhook` (needs `MAIL_WEBHOOK_URL`, `MAIL_FROM`; receives `{from,to,subject,text,kind}`). Every message is also kept in `mail-outbox.jsonl`; results go to `mail-log.jsonl`. |
+| `TURNSTILE_SECRET_KEY` + `TURNSTILE_SITE_KEY` | unset | Cloudflare Turnstile. Set the **site** key when running `node build.mjs` (it adds the widget to every form) and the **secret** on the server (forms without a valid token are refused). |
+| `ADMIN_TOKEN` | unset (console off) | Enables `/admin`: read-only tables of leads, newsletter, orders, consents, CRM and mail logs, CSV export, and privacy-request status. Use a long random value; serve only over HTTPS. |
+| `ANALYTICS_DOMAIN` | unset | Build-time. Adds Plausible (cookieless) and loads it **only after the visitor accepts** the cookie notice. Also set it on the server so the CSP allows it. |
+| `SITE_URL` | unset | Build-time. Enables canonical, hreflang, Open Graph URL, JSON-LD, `sitemap.xml` and a crawl-friendly `robots.txt`. Without it the site tells crawlers to stay away. |
+| `SELLER_NAME`, `SELLER_VAT_NO`, `SELLER_CR_NO`, `SELLER_ADDRESS` | placeholders | Printed on invoices (and, at build time, `SELLER_CR_NO` fills the privacy notice). |
 | `DEMO_PAYMENTS` | `1` unless `NODE_ENV=production` | **Simulated** payments. In production with `DEMO_PAYMENTS=0` the checkout returns 501 until a real provider is added. |
-| `SELLER_VAT_NO` | placeholder | Printed on the simulated invoice. |
+
+See `.env.example`.
 
 ## What is simulated, and what to plug in
 
 | Area | Today | To go live |
 |---|---|---|
-| **Payment** | Simulated, no card is charged. | Add a gateway adapter (for example a Saudi provider supporting mada, Apple Pay and cards), verify payment **server-side** (webhook or status call) before marking an order paid, then keep the rest unchanged. |
-| **Email** | Written to `data/mail-outbox.jsonl`. Nothing is sent. The UI says so. | Implement `sendMail()` in `server.mjs` with an SMTP or email-API provider; add bilingual templates. |
-| **Invoices** | A simple simulated page. | Compliant e-invoicing with the tax authority's system. |
-| **Booking** | A request form; "online booking is coming". | Connect a scheduling tool. |
+| **Payment** | Simulated, no card is charged. | Add a gateway adapter (a Saudi provider that supports mada, Apple Pay and cards), confirm payment **server-side** (webhook or status call) before marking an order paid. This needs your merchant account, so it is not built. |
+| **Email** | Outbox by default. With `MAIL_PROVIDER` set, mail is handed to Resend or your webhook. | Verify your sending domain (SPF/DKIM) and add bilingual templates. |
+| **Invoices** | Sequential numbers (`INV-000001`) and a **ZATCA phase-1 QR** (seller, VAT no., time, total, VAT), verified by an independent decoder. | **Phase 2** (UBL XML, cryptographic stamp, clearance/reporting through the ZATCA platform) is **not** implemented. Needs your onboarding and a certified solution. |
+| **CRM** | Signed webhook with retry and outbox. | Point it at your CRM and map fields. |
+| **Booking** | A request form. | Connect a scheduling tool. |
+| **Spam protection** | Honeypot, rate limits, Origin check; Turnstile optional. | Turn Turnstile on before launch. |
+| **Data lifecycle** | `scripts/retention.mjs` (dry run by default) removes old leads, unsubscribed records and logs, and erases one person on request. | Schedule it (cron) and agree retention periods with counsel. Orders and invoices are never touched. |
 | **CMS** | Content is in `src/*.mjs`. | Move to a CMS if non-developers will edit. |
-| **Photography** | Cropped from the design mock-ups (low resolution; AI-looking). | Replace with licensed images in `assets/img/` (same file names). |
+| **Photography** | Cropped from the design mock-ups (low resolution). Team cards show initials. | Replace images in `assets/img/` (same file names). For headshots, add `photo: 'name.webp'` to a person in `src/firm.mjs` and put the file in `assets/team/`. |
 
 ## Tests
 
 ```bash
-node --test scripts/server.test.mjs      # 9 server tests: consent, tokens, limits, CRM signing and retry, path traversal, rate limiting
+node --test scripts/server.test.mjs      # 13 server tests: consent, tokens, limits, CRM signing, invoice QR, admin, mail provider, captcha
+node scripts/check-links.mjs             # every internal link and anchor, plus title/description/h1 on every page
 PORT=3300 DATA_DIR=/tmp/gba node server.mjs &
 DATA_DIR=/tmp/gba node scripts/e2e.mjs http://127.0.0.1:3300     # browser journeys; needs Playwright + Chromium
+node scripts/visual.mjs                  # screenshot comparison against tests/visual (use --update after intended changes)
 ```
 The end-to-end suite drives the scorecard (English and Arabic), basket to checkout to download (verifying the PDF), newsletter double opt-in, enquiry and booking to the CRM queue, and the privacy request, and fails on any console error or Content-Security-Policy violation.
 
@@ -92,18 +104,14 @@ The end-to-end suite drives the scorecard (English and Arabic), basket to checko
 ```bash
 node scripts/make-briefs.mjs        # rebuilds private/briefs/*.pdf from src/briefs.mjs (needs Playwright + Chromium)
 node scripts/export-content.mjs     # rewrites CONTENT-EN.md / CONTENT-AR.md from the built pages
+python3 scripts/make-logo.py FONTDIR   # rebuilds brand/*.svg (needs fontTools, uharfbuzz and the font files)
+python3 scripts/make-fonts.py FONTDIR  # rebuilds assets/fonts/*.woff2
 ```
 
 ## Structure
 
-`src/` content and templates (`pages`, `services`, `industries`, `scorecard`, `shop`, `briefs`, `legal`, `views`, `views2`, `render`) · `assets/` CSS, JS, images · `server.mjs` · `build.mjs` · `dist/` generated site · `private/briefs/` the PDFs sold in the shop (never public) · `scripts/` tests and generators · `CONTENT_REVIEW.md`.
+`src/` content and templates (`pages`, `services`, `industries`, `scorecard`, `shop`, `briefs`, `legal`, `firm`, `extra`, `articles2`, `views`, `views2`, `render`) · `assets/` CSS, JS, self-hosted fonts, images · `brand/` logo suite · `server.mjs` · `build.mjs` · `dist/` generated site · `private/briefs/` the PDFs sold in the shop (never public) · `scripts/` tests and generators · `vendor/` one MIT-licensed QR library · `REVIEW_STATUS.md` · `AR_GLOSSARY.md`.
 
 ## Before this goes public
 
-1. Replace placeholders: commercial registration and VAT numbers, address, phone, privacy contact, data-protection contact (`[square brackets]` in `src/legal.mjs`, and `src/ui.mjs`).
-2. Have Saudi counsel review the Privacy Notice, Terms, Cookie Policy and the brief licence.
-3. Have a native Arabic copywriter review the Arabic.
-4. Replace the photography.
-5. Connect payments, email, CRM and calendar. Remove the demonstration notes.
-6. Change `dist/robots.txt` (currently blocks all crawlers) and add `sitemap.xml`.
-7. Run an accessibility audit and a performance check on mid-range phones.
+See `REVIEW_STATUS.md` for the full list. In short: confirm the facts only the firm can confirm (licence scope, memberships, client permission and named signatories, CR and VAT numbers, service scope, fee approach, shop products and prices), have counsel review the legal pages, have a native Arabic editor review the Arabic (`AR_GLOSSARY.md` helps), replace the photography, connect real payment/email/CRM, then build with `SITE_URL` set.

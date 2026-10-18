@@ -7,10 +7,12 @@ import { createHash, createHmac, randomBytes, timingSafeEqual } from 'node:crypt
 import { createReadStream, existsSync, mkdirSync, readFileSync, readdirSync, statSync, appendFileSync, writeFileSync } from 'node:fs';
 import { dirname, extname, join, normalize, resolve, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { createRequire } from 'node:module';
 import { PRODUCTS, productBySlug, VAT_RATE } from './src/shop.mjs';
+const qrcode = createRequire(import.meta.url)('./vendor/qrcode-generator.cjs');
 
 const here = dirname(fileURLToPath(import.meta.url));
-export const VERSIONS = { privacy: 'privacy-2026-1', marketing: 'marketing-2026-1', licence: 'licence-2026-1' };
+export const VERSIONS = { privacy: 'privacy-2026-2', marketing: 'marketing-2026-1', licence: 'licence-2026-1' };
 const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.ico': 'image/x-icon', '.txt': 'text/plain; charset=utf-8', '.pdf': 'application/pdf', '.xml': 'application/xml' };
 
 const b64u = (b) => Buffer.from(b).toString('base64url');
@@ -31,6 +33,16 @@ export function createApp(opts = {}) {
     dlTtl: Number(opts.dlTtl ?? process.env.DOWNLOAD_TTL_SECONDS ?? 600),
     dlMax: Number(opts.dlMax ?? process.env.DOWNLOAD_MAX ?? 5),
     sellerVat: process.env.SELLER_VAT_NO || '[VAT number to be added]',
+    sellerName: process.env.SELLER_NAME || 'Growth Blueprint',
+    sellerCr: process.env.SELLER_CR_NO || '',
+    sellerAddress: process.env.SELLER_ADDRESS || 'Office #303, Optima Tower, Al-Shatie District, Jeddah, Saudi Arabia',
+    mailProvider: opts.mailProvider ?? process.env.MAIL_PROVIDER ?? '',       // 'resend' | 'webhook' | '' (outbox only)
+    mailFrom: process.env.MAIL_FROM || '',
+    mailKey: process.env.RESEND_API_KEY || '',
+    mailWebhook: process.env.MAIL_WEBHOOK_URL || '',
+    turnstileSecret: opts.turnstileSecret ?? process.env.TURNSTILE_SECRET_KEY ?? '',
+    adminToken: opts.adminToken ?? process.env.ADMIN_TOKEN ?? '',
+    analyticsDomain: process.env.ANALYTICS_DOMAIN || '',
     trustProxy: opts.trustProxy ?? process.env.TRUST_PROXY === '1',
     rate: opts.rate ?? { form: [12, 3600e3], shop: [30, 3600e3], dl: [60, 3600e3], read: [240, 600e3] },
     crmRetryMs: opts.crmRetryMs ?? [1000, 3000, 9000]
@@ -60,7 +72,23 @@ export function createApp(opts = {}) {
   const hashEmail = (e) => sha256(e.toLowerCase());
 
   /* ---- outbound mail: written to an outbox. Plug SMTP or an email API into sendMail() to deliver. ---- */
-  const sendMail = (m) => { append('mail-outbox', { ts: iso(), ...m }); return false; /* false = queued, not delivered */ };
+  const pendingMail = new Set();
+  const mailLog = (m, status, error) => append('mail-log', { ts: iso(), to: m.to ? sha256(String(m.to).toLowerCase()).slice(0, 16) : '', kind: m.kind, status, error });
+  async function deliverMail(m) {
+    try {
+      let r;
+      if (cfg.mailProvider === 'resend') r = await fetch('https://api.resend.com/emails', { method: 'POST', headers: { Authorization: 'Bearer ' + cfg.mailKey, 'Content-Type': 'application/json' }, body: JSON.stringify({ from: cfg.mailFrom, to: [m.to], subject: m.subject, text: m.text }), signal: AbortSignal.timeout(8000) });
+      else if (cfg.mailProvider === 'webhook') r = await fetch(cfg.mailWebhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ from: cfg.mailFrom, to: m.to, subject: m.subject, text: m.text, kind: m.kind }), signal: AbortSignal.timeout(8000) });
+      mailLog(m, r && r.ok ? 'sent' : 'failed', r && r.ok ? '' : 'HTTP ' + (r && r.status));
+    } catch (e) { mailLog(m, 'failed', String(e.message || e).slice(0, 100)); }
+  }
+  const mailReady = () => (cfg.mailProvider === 'resend' && cfg.mailKey && cfg.mailFrom) || (cfg.mailProvider === 'webhook' && cfg.mailWebhook);
+  /** Always keeps a copy in the outbox. With a provider configured, also hands the message over; returns true when it was handed over (queued for delivery). */
+  const sendMail = (m) => {
+    append('mail-outbox', { ts: iso(), ...m });
+    if (!mailReady()) return false;
+    const p = deliverMail(m).finally(() => pendingMail.delete(p)); pendingMail.add(p); return true;
+  };
 
   /* ---- CRM webhook with HMAC signature, retry and a durable outbox ---- */
   const crmOutbox = (evt, status, error) => append('crm-outbox', { ts: iso(), status, error, evt });
@@ -91,6 +119,16 @@ export function createApp(opts = {}) {
   };
   setInterval(() => { const t = now(); for (const [k, v] of hits) if (!v.some((x) => t - x < 3600e3)) hits.delete(k); }, 600e3).unref();
 
+  /* ---- optional Cloudflare Turnstile (set TURNSTILE_SECRET_KEY here and TURNSTILE_SITE_KEY at build time) ---- */
+  async function turnstileOk(token, req) {
+    if (!cfg.turnstileSecret) return true;
+    if (!token || typeof token !== 'string') return false;
+    try {
+      const r = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: new URLSearchParams({ secret: cfg.turnstileSecret, response: token, remoteip: clientIp(req) }), signal: AbortSignal.timeout(6000) });
+      return (await r.json()).success === true;
+    } catch { return false; }
+  }
+
   /* ---- CSP hashes for the small inline scripts the static pages use ---- */
   const inlineHashes = new Set();
   (function scan(dir) {
@@ -101,7 +139,8 @@ export function createApp(opts = {}) {
       else if (f.endsWith('.html')) for (const m of readFileSync(p, 'utf8').matchAll(/<script(?![^>]*\bsrc=)(?![^>]*type="application\/json")[^>]*>([\s\S]*?)<\/script>/g)) inlineHashes.add(`'sha256-${createHash('sha256').update(m[1]).digest('base64')}'`);
     }
   })(cfg.siteDir);
-  const csp = [`default-src 'self'`, `script-src 'self' ${[...inlineHashes].join(' ')}`, `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`, `font-src https://fonts.gstatic.com`, `img-src 'self' data:`, `connect-src 'self'`, `object-src 'none'`, `base-uri 'self'`, `form-action 'self'`, `frame-ancestors 'none'`].join('; ');
+  const extScript = [cfg.turnstileSecret || process.env.TURNSTILE_SITE_KEY ? 'https://challenges.cloudflare.com' : '', cfg.analyticsDomain ? 'https://plausible.io' : ''].filter(Boolean);
+  const csp = [`default-src 'self'`, `script-src 'self' ${[...inlineHashes].join(' ')} ${extScript.join(' ')}`.trim(), `style-src 'self' 'unsafe-inline'`, `font-src 'self'`, `img-src 'self' data:`, `connect-src 'self'${cfg.analyticsDomain ? ' https://plausible.io' : ''}`, `frame-src ${cfg.turnstileSecret || process.env.TURNSTILE_SITE_KEY ? 'https://challenges.cloudflare.com' : "'none'"}`, `object-src 'none'`, `base-uri 'self'`, `form-action 'self'`, `frame-ancestors 'none'`].join('; ');
 
   /* ---- helpers ---- */
   const secHeaders = (req, extra = {}) => ({
@@ -224,7 +263,8 @@ export function createApp(opts = {}) {
     const items = slugs.map((s) => { const p = productBySlug(s); return { slug: s, title: p.title.en, file: p.file, price: p.price, downloads: 0 }; }); // price comes from the server catalogue, never from the client
     const subtotal = money(items.reduce((a, i) => a + i.price, 0)), vat = money(subtotal * VAT_RATE), total = money(subtotal + vat);
     const id = ref('ORD'), key = randomBytes(24).toString('base64url'), L = lang(body.lang);
-    const order = { id, keyHash: sha256(key), status: 'paid', paymentMode: 'simulated', createdAt: iso(), lang: L, buyer: { name, email, company: clip(b.company, 120), vatNo: clip(b.vatNo, 40), country: clip(b.country, 60) }, items, subtotal, vat, total, emailHash: hashEmail(email) };
+    const invoiceNo = 'INV-' + String(Math.max(0, ...[...orders.values()].map((x) => Number(String(x.invoiceNo || '').slice(4)) || 0)) + 1).padStart(6, '0');
+    const order = { id, invoiceNo, keyHash: sha256(key), status: 'paid', paymentMode: 'simulated', createdAt: iso(), lang: L, buyer: { name, email, company: clip(b.company, 120), vatNo: clip(b.vatNo, 40), country: clip(b.country, 60) }, items, subtotal, vat, total, emailHash: hashEmail(email) };
     orders.set(id, order); append('orders', order);
     append('consents', consentRecord('order-licence', true, VERSIONS.licence, body, req, { order: id, emailHash: order.emailHash }));
     append('consents', consentRecord('order-privacy', true, VERSIONS.privacy, body, req, { order: id, emailHash: order.emailHash }));
@@ -250,15 +290,66 @@ export function createApp(opts = {}) {
     return json(req, res, 200, { ok: true, url: `/download/${tok}`, expiresIn: cfg.dlTtl, left: cfg.dlMax - (item.downloads || 0) });
   };
 
+  /** ZATCA phase-1 QR payload: TLV (tag, length, value) of seller, VAT no., timestamp, total, VAT; base64. Phase-2 (XML, cryptographic stamp, clearance/reporting) is NOT implemented. */
+  const zatcaQr = (o) => {
+    const tlv = (t, v) => { const b = Buffer.from(String(v), 'utf8'); return Buffer.concat([Buffer.from([t, b.length]), b]); };
+    const ts = o.createdAt.replace(/\.\d+Z$/, 'Z');
+    return Buffer.concat([tlv(1, cfg.sellerName), tlv(2, cfg.sellerVat), tlv(3, ts), tlv(4, o.total.toFixed(2)), tlv(5, o.vat.toFixed(2))]).toString('base64');
+  };
   H['GET /api/shop/invoice'] = (req, res, _b, q) => {
     const o = authOrder(req, q.get('o'), q.get('k') || req.headers['x-order-key']); if (!o) return send(req, res, 404, 'Not found', { 'Content-Type': 'text/plain; charset=utf-8' });
     const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+    const sim = o.paymentMode === 'simulated';
+    const qr = qrcode(0, 'M'); qr.addData(zatcaQr(o), 'Byte'); qr.make();
     const rows = o.items.map((i) => `<tr><td>${esc(i.title)}</td><td style="text-align:right">${i.price.toFixed(2)}</td></tr>`).join('');
-    const htmlDoc = `<!doctype html><meta charset="utf-8"><title>Invoice ${esc(o.id)}</title><body style="font:14px/1.5 system-ui;max-width:640px;margin:40px auto;padding:0 20px"><h1 style="font-weight:500">Tax invoice (simulated)</h1><p>Seller: Growth Blueprint · VAT no. ${esc(cfg.sellerVat)}<br>Invoice ref: ${esc(o.id)} · ${esc(o.createdAt.slice(0, 10))}<br>Buyer: ${esc(o.buyer.name)}${o.buyer.company ? ', ' + esc(o.buyer.company) : ''}${o.buyer.vatNo ? ' · VAT ' + esc(o.buyer.vatNo) : ''}</p><table style="width:100%;border-collapse:collapse" border="0"><tr><th style="text-align:left">Item</th><th style="text-align:right">SAR</th></tr>${rows}<tr><td>Subtotal</td><td style="text-align:right">${o.subtotal.toFixed(2)}</td></tr><tr><td>VAT 15%</td><td style="text-align:right">${o.vat.toFixed(2)}</td></tr><tr><th style="text-align:left">Total</th><th style="text-align:right">${o.total.toFixed(2)}</th></tr></table><p style="color:#666;font-size:12px">This is a demonstration invoice. It is not a ZATCA-compliant e-invoice.</p>`;
+    const htmlDoc = `<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><title>${esc(o.invoiceNo || o.id)}</title><body style="font:14px/1.5 system-ui;max-width:680px;margin:40px auto;padding:0 20px;color:#1a2433">
+<h1 style="font-weight:500;margin:0 0 4px">Simplified tax invoice | فاتورة ضريبية مبسطة${sim ? ' (simulated: no real payment)' : ''}</h1>
+<p style="margin:0 0 18px;color:#5c6778">Invoice no. ${esc(o.invoiceNo || o.id)} · Order ${esc(o.id)} · ${esc(o.createdAt.replace('T', ' ').slice(0, 16))} UTC</p>
+<p><b>${esc(cfg.sellerName)}</b><br>${esc(cfg.sellerAddress)}<br>VAT registration no. ${esc(cfg.sellerVat)}${cfg.sellerCr ? `<br>Commercial registration no. ${esc(cfg.sellerCr)}` : ''}</p>
+<p>Buyer: ${esc(o.buyer.name)}${o.buyer.company ? ', ' + esc(o.buyer.company) : ''}${o.buyer.vatNo ? ' · VAT ' + esc(o.buyer.vatNo) : ''}</p>
+<table style="width:100%;border-collapse:collapse"><tr><th style="text-align:left;border-bottom:1px solid #ccc">Item</th><th style="text-align:right;border-bottom:1px solid #ccc">SAR</th></tr>${rows}<tr><td>Subtotal (excl. VAT)</td><td style="text-align:right">${o.subtotal.toFixed(2)}</td></tr><tr><td>VAT 15%</td><td style="text-align:right">${o.vat.toFixed(2)}</td></tr><tr><th style="text-align:left;border-top:1px solid #ccc">Total (incl. VAT)</th><th style="text-align:right;border-top:1px solid #ccc">${o.total.toFixed(2)}</th></tr></table>
+<div style="margin-top:22px;display:flex;gap:18px;align-items:center"><div style="width:120px">${qr.createSvgTag(3, 0)}</div><p style="font-size:12px;color:#5c6778;margin:0">QR code with the seller, VAT number, time, total and VAT (ZATCA phase 1 format). E-invoicing phase 2 (integration with the ZATCA platform) is not included in this version.${sim ? ' This invoice belongs to a simulated order and is not a valid tax document.' : ''}</p></div>
+<p style="margin-top:22px"><button onclick="print()" style="padding:8px 16px">Print</button></p></body>`;
     return send(req, res, 200, htmlDoc, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
   };
 
-  H['GET /api/health'] = (req, res) => json(req, res, 200, { ok: true, shop: cfg.demoPayments ? 'simulated-payments' : 'payments-not-configured', crm: cfg.crmUrl ? 'configured' : 'not-configured', mail: 'outbox' });
+  /* ================= Admin console (read-only data + privacy-request status), enabled by ADMIN_TOKEN ================= */
+  const adminAuth = (req) => {
+    if (!cfg.adminToken) return false;
+    const a = String(req.headers.authorization || '');
+    const tok = a.startsWith('Bearer ') ? a.slice(7) : a.startsWith('Basic ') ? Buffer.from(a.slice(6), 'base64').toString().split(':').slice(1).join(':') : '';
+    return !!tok && safeEq(sha256(tok), sha256(cfg.adminToken));
+  };
+  const latest = (rows, key) => { const m = new Map(); for (const r of rows) m.set(r[key], { ...m.get(r[key]), ...r }); return [...m.values()]; };
+  const ADMIN_KINDS = {
+    leads: () => readAll('leads'), newsletter: () => latest(readAll('newsletter'), 'emailHash').map(({ emailHash, ...r }) => r),
+    privacy: () => latest(readAll('privacy-requests'), 'ref'), orders: () => [...orders.values()].map((o) => ({ id: o.id, invoiceNo: o.invoiceNo, status: o.status, createdAt: o.createdAt, total: o.total, buyer: o.buyer.email, items: o.items.map((i) => i.slug).join(' ') })),
+    consents: () => readAll('consents'), crm: () => readAll('crm-outbox'), mail: () => readAll('mail-log')
+  };
+  const csvOf = (rows) => { const cols = [...new Set(rows.flatMap((r) => Object.keys(r)))]; const cell = (v) => { let t = v == null ? '' : typeof v === 'object' ? JSON.stringify(v) : String(v); if (/^[=+\-@]/.test(t)) t = "'" + t; return '"' + t.replace(/"/g, '""') + '"'; }; return [cols.join(','), ...rows.map((r) => cols.map((c) => cell(r[c])).join(','))].join('\n'); };
+  H['GET /api/admin/data'] = (req, res, _b, q) => {
+    if (!adminAuth(req)) return json(req, res, 401, { ok: false, error: 'unauthorised' });
+    const k = q.get('kind'); if (!ADMIN_KINDS[k]) return json(req, res, 400, { ok: false, error: 'kind' });
+    const rows = ADMIN_KINDS[k]();
+    if (q.get('format') === 'csv') return send(req, res, 200, csvOf(rows), { 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': `attachment; filename="gba-${k}.csv"`, 'Cache-Control': 'no-store' });
+    return json(req, res, 200, { ok: true, kind: k, count: rows.length, rows });
+  };
+  H['POST /api/admin/privacy-status'] = (req, res, body) => {
+    if (!adminAuth(req)) return json(req, res, 401, { ok: false, error: 'unauthorised' });
+    const r = readAll('privacy-requests').find((x) => x.ref === body.ref); if (!r || !['received', 'in-progress', 'done', 'refused'].includes(body.status)) return json(req, res, 400, { ok: false, error: 'invalid' });
+    append('privacy-requests', { ref: r.ref, status: body.status, note: clip(body.note, 300), updatedAt: iso() });
+    return json(req, res, 200, { ok: true });
+  };
+  const ADMIN_HTML = `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin | Growth Blueprint</title><link rel="stylesheet" href="/admin/admin.css"><body><header><b>Growth Blueprint admin</b><form id="login"><input id="tok" type="password" placeholder="Admin token" autocomplete="off" aria-label="Admin token"><button>Open</button></form></header><nav id="tabs" hidden></nav><main><p id="msg">Enter the admin token. Data stays on this server; nothing here is sent anywhere else.</p><div id="out" role="region" aria-label="Records" tabindex="0"></div></main><script src="/admin/admin.js"></script></body></html>`;
+  const ADMIN_CSS = `body{font:14px/1.5 system-ui;margin:0;color:#1a2433;background:#f6f1e6}header{display:flex;gap:16px;align-items:center;justify-content:space-between;background:#0d1f38;color:#fff;padding:12px 20px;flex-wrap:wrap}input,button,select{font:inherit;padding:6px 10px}button{cursor:pointer}nav{display:flex;gap:6px;padding:10px 20px;flex-wrap:wrap}nav button.on{background:#0d1f38;color:#fff}main{padding:0 20px 40px}#out{overflow:auto;max-height:70vh;background:#fff;border:1px solid #ddd}table{border-collapse:collapse;width:100%}td,th{padding:6px 10px;border-bottom:1px solid #eee;text-align:left;vertical-align:top;font-size:13px;max-width:360px;overflow-wrap:anywhere}th{position:sticky;top:0;background:#eee}`;
+  const ADMIN_JS = `(function(){var T='',K='leads',KINDS=['leads','newsletter','privacy','orders','consents','crm','mail'];var $=function(i){return document.getElementById(i)};
+function h(v){return String(v==null?'':typeof v==='object'?JSON.stringify(v):v).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function api(p,o){o=o||{};o.headers=Object.assign({Authorization:'Bearer '+T},o.headers||{});return fetch(p,o).then(function(r){return r.json()})}
+function tabs(){var n=$('tabs');n.hidden=false;n.innerHTML=KINDS.map(function(k){return '<button data-k="'+k+'" class="'+(k===K?'on':'')+'">'+k+'</button>'}).join('')+'<a href="/api/admin/data?kind='+K+'&format=csv" id="csv" style="margin-inline-start:auto">CSV needs the token header: use the button</a><button id="dl">Download CSV</button>';n.querySelectorAll('button[data-k]').forEach(function(b){b.onclick=function(){K=b.dataset.k;load()}});$('csv').remove();$('dl').onclick=function(){fetch('/api/admin/data?kind='+K+'&format=csv',{headers:{Authorization:'Bearer '+T}}).then(function(r){return r.blob()}).then(function(b){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='gba-'+K+'.csv';a.click()})}}
+function load(){api('/api/admin/data?kind='+K).then(function(d){if(!d.ok){$('msg').textContent='Not authorised.';return}$('msg').textContent=d.count+' records in '+K;tabs();var cols=[];d.rows.forEach(function(r){Object.keys(r).forEach(function(c){if(cols.indexOf(c)<0)cols.push(c)})});$('out').innerHTML='<table><tr>'+cols.map(function(c){return '<th>'+h(c)+'</th>'}).join('')+(K==='privacy'?'<th>action</th>':'')+'</tr>'+d.rows.slice().reverse().map(function(r){return '<tr>'+cols.map(function(c){return '<td>'+h(r[c])+'</td>'}).join('')+(K==='privacy'?'<td><select data-ref="'+h(r.ref)+'">'+['received','in-progress','done','refused'].map(function(s){return '<option'+(s===r.status?' selected':'')+'>'+s+'</option>'}).join('')+'</select></td>':'')+'</tr>'}).join('')+'</table>';$('out').querySelectorAll('select[data-ref]').forEach(function(s){s.onchange=function(){api('/api/admin/privacy-status',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ref:s.dataset.ref,status:s.value})}).then(load)}})})}
+$('login').onsubmit=function(e){e.preventDefault();T=$('tok').value;load()}})();`;
+
+  H['GET /api/health'] = (req, res) => json(req, res, 200, { ok: true, shop: cfg.demoPayments ? 'simulated-payments' : 'payments-not-configured', crm: cfg.crmUrl ? 'configured' : 'not-configured', mail: mailReady() ? cfg.mailProvider : 'outbox', captcha: cfg.turnstileSecret ? 'turnstile' : 'honeypot-only', admin: cfg.adminToken ? 'enabled' : 'disabled' });
 
   function download(req, res, tok) {
     const t = readToken(tok);
@@ -306,10 +397,14 @@ export function createApp(opts = {}) {
         if (req.method === 'POST') {
           if (!sameOrigin(req)) return json(req, res, 403, { ok: false, error: 'origin' });
           let body; try { body = await readBody(req); } catch (e) { return json(req, res, e.status || 400, { ok: false, error: e.code || 'bad_request' }); }
+          if (cfg.turnstileSecret && /^POST \/api\/(newsletter|lead|privacy\/request|shop\/checkout)$/.test(key) && !(await turnstileOk(body.turnstile, req))) return json(req, res, 400, { ok: false, error: 'captcha' });
           return await h(req, res, body, u.searchParams);
         }
         return await h(req, res, null, u.searchParams);
       }
+      if (cfg.adminToken && (u.pathname === '/admin' || u.pathname === '/admin/')) return send(req, res, 200, ADMIN_HTML, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
+      if (cfg.adminToken && u.pathname === '/admin/admin.js') return send(req, res, 200, ADMIN_JS, { 'Content-Type': 'text/javascript; charset=utf-8', 'Cache-Control': 'no-store' });
+      if (cfg.adminToken && u.pathname === '/admin/admin.css') return send(req, res, 200, ADMIN_CSS, { 'Content-Type': 'text/css; charset=utf-8', 'Cache-Control': 'no-store' });
       if (req.method !== 'GET' && req.method !== 'HEAD') return send(req, res, 405, 'Method not allowed', { Allow: 'GET, HEAD' });
       if (u.pathname === '/') { res.writeHead(302, secHeaders(req, { Location: `/${(req.headers['accept-language'] || '').toLowerCase().startsWith('ar') ? 'ar' : 'en'}/index.html` })); return res.end(); }
       return serveStatic(req, res, u.pathname);
@@ -318,8 +413,8 @@ export function createApp(opts = {}) {
       if (!res.headersSent) json(req, res, 500, { ok: false, error: 'server_error' });
     }
   });
-  server.idle = () => Promise.allSettled([...pendingCrm]);
-  server.cfg = cfg; server.orders = orders; server.subs = subs;
+  server.idle = () => Promise.allSettled([...pendingCrm, ...pendingMail]);
+  server.cfg = cfg; server.orders = orders; server.subs = subs; server.zatcaQr = zatcaQr;
   return server;
 }
 

@@ -27,7 +27,7 @@ export function makeCtx(lang, path) {
   const depth = path.split('/').filter(Boolean).length;
   const up = '../'.repeat(depth);
   const t = (v) => (v && typeof v === 'object' && 'en' in v ? v[lang] : v);
-  const href = (target = '') => `${up}${target}index.html`.replace(/index\.html$/, (m) => m);
+  const href = (target = '') => { const [p, h] = String(target).split('#'); return `${up}${p}index.html${h ? '#' + h : ''}`; };
   const asset = (name) => `${up}../assets/${name}`;
   const img = (name, ext = 'webp') => `${up}../assets/img/${name}.${ext}`;
   const other = lang === 'en' ? 'ar' : 'en';
@@ -38,6 +38,8 @@ export function makeCtx(lang, path) {
 const arrow = '<svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>';
 export { arrow };
 
+/** Cloudflare Turnstile widget, only when TURNSTILE_SITE_KEY is set at build time. */
+export const tsWidget = () => (process.env.TURNSTILE_SITE_KEY ? `<div class="cf-turnstile" data-sitekey="${process.env.TURNSTILE_SITE_KEY}" data-theme="light"></div>` : '');
 export const btn = (ctx, label, target, variant = 'gold', extra = '') =>
   `<a class="btn btn--${variant} ${extra}" href="${ctx.href(target)}"><span>${esc(ctx.t(label))}</span>${arrow}</a>`;
 
@@ -57,7 +59,7 @@ export function newsletter(ctx, { variant = 'band', id = 'nl', source = 'site' }
   return `
 <form class="nl nl--${variant}" ${data} novalidate aria-label="${esc(ctx.t(NEWS.eyebrow))}">
   ${compact ? `<h2 class="ftr-h">${esc(ctx.t(NEWS.eyebrow))}</h2><p class="nl__body">${esc(ctx.t(L('One useful email a month about doing business in Saudi Arabia.', 'رسالة واحدة مفيدة كل شهر عن ممارسة الأعمال في السعودية.')))}</p>` : `<p class="eyebrow">${esc(ctx.t(NEWS.eyebrow))}</p><h2 class="h2">${esc(ctx.t(NEWS.title))}</h2><p class="nl__body">${esc(ctx.t(NEWS.body))}</p>`}
-  <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">${tsWidget()}
   <div class="nl__row">
     ${compact ? '' : `<div class="field"><label for="${id}-name">${esc(ctx.t(NEWS.name))}</label><input id="${id}-name" name="name" type="text" autocomplete="name"></div>`}
     <div class="field"><label ${compact ? 'class="sr-only"' : ''} for="${id}-email">${esc(ctx.t(NEWS.email))}</label><input id="${id}-email" name="email" type="email" autocomplete="email" dir="ltr" placeholder="${compact ? esc(ctx.t(NEWS.email)) : ''}" required></div>
@@ -105,7 +107,7 @@ const skyline = `<svg class="skyline" viewBox="0 0 420 110" fill="none" stroke="
 
 export function footer(ctx) {
   const svc = SERVICES.map((s) => `<li><a href="${ctx.href(`services/${s.slug}/`)}">${esc(ctx.t(s.title))}</a></li>`).join('');
-  const q = NAV.concat([{ id: 'book', path: 'book-a-meeting/', label: UI.book }]).map((n) => `<li><a href="${ctx.href(n.path)}">${esc(ctx.t(n.label))}</a></li>`).join('');
+  const q = NAV.concat([{ id: 'how', path: 'how-we-work/', label: L('How we work', 'كيف نعمل') }, { id: 'team', path: 'team/', label: L('Team', 'الفريق') }, { id: 'faq', path: 'faq/', label: L('Investor FAQ', 'أسئلة المستثمرين') }, { id: 'book', path: 'book-a-meeting/', label: UI.book }]).map((n) => `<li><a href="${ctx.href(n.path)}">${esc(ctx.t(n.label))}</a></li>`).join('');
   return `
 <footer class="site-footer">
   <div class="container container--wide">
@@ -143,11 +145,31 @@ export function footer(ctx) {
 }
 
 /* ---------- Page shell ---------- */
-export function shell(ctx, { title, description, active, body, extraHead = '', bodyClass = '', scripts = [] }) {
+const NOINDEX = new Set(['shop/basket/', 'shop/checkout/', 'shop/order/', 'readiness-scorecard/assessment/', 'readiness-scorecard/results/', 'enquiry/confirmation/', 'newsletter/confirmed/', 'newsletter/unsubscribed/']);
+export const SITE_URL = (process.env.SITE_URL || '').replace(/\/$/, '');
+
+/** Site-wide organisation data (home page). Facts come from the firm's published website. */
+const orgLd = (ctx) => ({
+  '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'Growth Blueprint', alternateName: 'غروث بلوبرينت', url: `${SITE_URL}/${ctx.lang}/`,
+  logo: `${SITE_URL}/assets/logo-primary.png`, image: `${SITE_URL}/assets/og-image.png`, email: SITE.email, telephone: SITE.phone,
+  description: 'Saudi advisory firm helping international investors understand and access the Saudi market, aligned with Vision 2030.',
+  address: { '@type': 'PostalAddress', streetAddress: 'Office #303, Optima Tower, Al-Shatie District', addressLocality: 'Jeddah', addressCountry: 'SA' },
+  areaServed: { '@type': 'Country', name: 'Saudi Arabia' }, foundingDate: '2024', sameAs: [SITE.linkedin],
+  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'], opens: '09:30', closes: '17:30' }]
+});
+
+/** Page shell. SEO tags that need absolute URLs (canonical, hreflang, Open Graph URL, JSON-LD, sitemap) switch on when SITE_URL is set at build time. */
+export function shell(ctx, { title, description, active, body, extraHead = '', bodyClass = '', scripts = [], jsonld = [] }) {
   const t = ctx.t;
-  const alt = ctx.path;
-  const base = `${ctx.href('').replace(/index\.html$/, '')}`;
-  const ogImg = ctx.img('hero-skyline-dusk');
+  const abs = (lang) => `${SITE_URL}/${lang}/${ctx.path}`;
+  const og = SITE_URL ? `${SITE_URL}/assets/og-image.png` : ctx.asset('og-image.png');
+  const seo = SITE_URL ? `
+<link rel="canonical" href="${abs(ctx.lang)}">
+<link rel="alternate" hreflang="en" href="${abs('en')}">
+<link rel="alternate" hreflang="ar" href="${abs('ar')}">
+<link rel="alternate" hreflang="x-default" href="${abs('en')}">
+<meta property="og:url" content="${abs(ctx.lang)}">` : '';
+  const ld = (ctx.path === '' ? [orgLd(ctx)] : []).concat(jsonld).filter(() => SITE_URL).map((o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`).join('\n');
   return `<!doctype html>
 <html lang="${ctx.lang}" dir="${ctx.dir}" class="no-js">
 <head>
@@ -156,18 +178,22 @@ export function shell(ctx, { title, description, active, body, extraHead = '', b
 <title>${esc(t(title))}</title>
 <meta name="description" content="${esc(t(description || ''))}">
 <meta name="theme-color" content="#0d1f38">
+${NOINDEX.has(ctx.path) ? '<meta name="robots" content="noindex, follow">' : ''}
+<meta property="og:site_name" content="Growth Blueprint | غروث بلوبرينت">
 <meta property="og:title" content="${esc(t(title))}">
 <meta property="og:description" content="${esc(t(description || ''))}">
 <meta property="og:type" content="website">
-<meta property="og:image" content="${ogImg}">
+<meta property="og:image" content="${og}">
 <meta property="og:locale" content="${ctx.lang === 'ar' ? 'ar_SA' : 'en_GB'}">
-<link rel="alternate" hreflang="en" href="${ctx.lang === 'en' ? '' : ctx.switchHref}">
-<link rel="alternate" hreflang="ar" href="${ctx.lang === 'ar' ? '' : ctx.switchHref}">
+<meta property="og:locale:alternate" content="${ctx.lang === 'ar' ? 'en_GB' : 'ar_SA'}">
+<meta name="twitter:card" content="summary_large_image">${seo}
+${process.env.ANALYTICS_DOMAIN ? `<meta name="gba-analytics" content="${process.env.ANALYTICS_DOMAIN}">` : ''}
+${process.env.TURNSTILE_SITE_KEY ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>' : ''}
 <link rel="icon" href="${ctx.asset('favicon.svg')}" type="image/svg+xml">
 <link rel="apple-touch-icon" href="${ctx.asset('apple-touch-icon.png')}">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Naskh+Arabic:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<link rel="preload" href="${ctx.asset(ctx.lang === 'ar' ? 'fonts/noto-naskh-arabic.woff2' : 'fonts/newsreader-latin.woff2')}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${ctx.asset('styles.css')}">
+${ld}
 <script>document.documentElement.className='js'</script>
 ${extraHead}
 </head>
@@ -276,7 +302,7 @@ export function heroWow(ctx, { eyebrow: e, title, lead, img, card, ctas }) {
       <span class="wow__rule" aria-hidden="true"></span>
       <p class="wow__lead">${esc(ctx.t(lead))}</p>
       <div class="wow__ctas">${ctas.join('')}</div>
-      <ul class="wow__pills" aria-hidden="true"><li>${esc(ctx.t(L('Enter', 'ادخل')))}</li><li>${esc(ctx.t(L('Operate', 'شغّل')))}</li><li>${esc(ctx.t(L('Grow', 'انمُ')))}</li></ul>
+      <ul class="wow__pills" aria-hidden="true"><li>${esc(ctx.t(L('Clarity', 'وضوح')))}</li><li>${esc(ctx.t(L('Confidence', 'ثقة')))}</li><li>${esc(ctx.t(L('Connections', 'علاقات')))}</li></ul>
     </div>
     <aside class="wow__card" aria-label="${esc(ctx.t(card.label))}">
       <p class="wow__card-k">${esc(ctx.t(card.kicker))}</p>

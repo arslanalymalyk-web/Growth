@@ -2,10 +2,11 @@
 import { mkdirSync, writeFileSync, cpSync, rmSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { makeCtx } from './src/render.mjs';
+import { makeCtx, SITE_URL } from './src/render.mjs';
 import * as V from './src/views.mjs';
 import * as P from './src/pages.mjs';
 import * as V2 from './src/views2.mjs';
+import * as X from './src/extra.mjs';
 import { PRODUCTS } from './src/shop.mjs';
 import { SERVICES } from './src/services.mjs';
 import { INDUSTRIES } from './src/industries.mjs';
@@ -22,6 +23,10 @@ const routes = [
   ['industries/', V.industriesOverview],
   ...INDUSTRIES.map((i) => [`industries/${i.slug}/`, (c) => V.industryDetail(c, i)]),
   ['our-approach/', V.approach],
+  ['how-we-work/', X.howWeWork],
+  ['team/', X.teamPage],
+  ['faq/', X.faqPage],
+  ['work-with-us/', X.workWithUs],
   ['about/', V.about],
   ['entering-saudi-arabia/', (c) => V.journey(c, P.ENTERING, 'enter')],
   ['growing-in-saudi-arabia/', (c) => V.journey(c, P.GROWING, 'grow')],
@@ -68,6 +73,18 @@ writeFileSync(join(dist, 'index.html'), `<!doctype html><html lang="en"><head><m
 
 // Static assets
 cpSync(join(root, 'assets'), join(dist, 'assets'), { recursive: true });
-writeFileSync(join(dist, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
+// robots + sitemap: search engines are blocked unless SITE_URL is set at build time (e.g. SITE_URL=https://www.example.com node build.mjs)
+const NO_INDEX = ['shop/basket/', 'shop/checkout/', 'shop/order/', 'readiness-scorecard/assessment/', 'readiness-scorecard/results/', 'enquiry/confirmation/', 'newsletter/confirmed/', 'newsletter/unsubscribed/'];
+if (SITE_URL) {
+  writeFileSync(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /download/\nDisallow: /admin\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+  const day = new Date().toISOString().slice(0, 10);
+  const urls = routes.map(([p]) => p).filter((p) => !NO_INDEX.includes(p)).map((p) => {
+    const loc = (l) => `${SITE_URL}/${l}/${p}`;
+    return ['en', 'ar'].map((l) => `<url><loc>${loc(l)}</loc><lastmod>${day}</lastmod><xhtml:link rel="alternate" hreflang="en" href="${loc('en')}"/><xhtml:link rel="alternate" hreflang="ar" href="${loc('ar')}"/><xhtml:link rel="alternate" hreflang="x-default" href="${loc('en')}"/></url>`).join('');
+  }).join('\n');
+  writeFileSync(join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`);
+} else {
+  writeFileSync(join(dist, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
+}
 
 console.log(`built ${count} pages, ${readdirSync(join(dist, 'assets', 'img')).length} images -> ${dist}`);

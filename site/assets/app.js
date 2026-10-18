@@ -5,11 +5,15 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   /* Shared helpers. API calls fall back to "demo mode" when no server is reachable (static hosting, file://). */
   var GBA = window.GBA = {
-    versions: { privacy: 'privacy-2026-1', marketing: 'marketing-2026-1', licence: 'licence-2026-1' },
+    versions: { privacy: 'privacy-2026-2', marketing: 'marketing-2026-1', licence: 'licence-2026-1' },
     lang: document.documentElement.lang === 'ar' ? 'ar' : 'en',
+    /* Cloudflare Turnstile token of the form being submitted (empty when Turnstile is not enabled) */
+    ts: function () { var f = GBA._form, i = f && f.querySelector('[name=cf-turnstile-response]'); return i ? i.value : ''; },
+    tsReset: function () { try { if (window.turnstile && GBA._form) { var w = GBA._form.querySelector('.cf-turnstile'); if (w) window.turnstile.reset(w); } } catch (e) { /* ignore */ } },
     post: function (path, body, headers) {
+      var tk = GBA.ts(); if (tk && body && !body.turnstile) body.turnstile = tk;
       var h = { 'Content-Type': 'application/json' }; if (headers) for (var k in headers) h[k] = headers[k];
-      return fetch(path, { method: 'POST', headers: h, body: JSON.stringify(body) }).then(function (r) {
+      return fetch(path, { method: 'POST', headers: h, body: JSON.stringify(body) }).then(function (r) { GBA.tsReset();
         return r.json().then(function (j) { return { ok: r.ok && j.ok !== false, status: r.status, data: j, demo: false }; }, function () { return { ok: false, status: r.status, data: null, demo: r.status === 404 || r.status === 405 || r.status === 501 }; });
       }).catch(function () { return { ok: false, status: 0, data: null, demo: true }; });
     },
@@ -20,6 +24,7 @@
     setBasket: function (b) { try { window.localStorage.setItem('gba.basket', JSON.stringify(b)); } catch (e) { /* unavailable */ } GBA.badge(); },
     badge: function () { var n = GBA.basket().length; document.querySelectorAll('[data-basket-count]').forEach(function (el) { el.textContent = n; el.hidden = n === 0; }); }
   };
+  document.addEventListener('submit', function (e) { GBA._form = e.target; }, true);
   var store = {
     get: function (k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } },
     set: function (k, v) { try { window.localStorage.setItem(k, v); } catch (e) { /* storage unavailable */ } }
@@ -49,10 +54,16 @@
 
   /* Cookie notice (choice stored locally; nothing is loaded either way in this demo) */
   var cookie = $('#cookie');
+  /* Analytics (Plausible, cookieless) loads only after the visitor accepts, and only when a domain was set at build time */
+  var loadAnalytics = function () {
+    var m = $('meta[name=gba-analytics]'); if (!m || $('script[data-gba-an]')) return;
+    var sc = document.createElement('script'); sc.defer = true; sc.src = 'https://plausible.io/js/script.js'; sc.setAttribute('data-domain', m.content); sc.setAttribute('data-gba-an', '1'); document.head.appendChild(sc);
+  };
+  if (store.get('gba.cookie') === 'accept') loadAnalytics();
   if (cookie && !store.get('gba.cookie')) {
     cookie.hidden = false;
     $$('[data-cookie]', cookie).forEach(function (b) {
-      b.addEventListener('click', function () { store.set('gba.cookie', b.getAttribute('data-cookie')); cookie.hidden = true; });
+      b.addEventListener('click', function () { store.set('gba.cookie', b.getAttribute('data-cookie')); cookie.hidden = true; if (b.getAttribute('data-cookie') === 'accept') loadAnalytics(); });
     });
   }
 

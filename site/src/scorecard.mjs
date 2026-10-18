@@ -5,8 +5,8 @@ import { L } from './ui.mjs';
 export const SC_VERSION = 'sc-2026-1';
 
 export const SC_PAGE = {
-  meta: { title: L('Saudi Readiness Scorecard | Growth Blueprint', 'مقياس الجاهزية للسوق السعودي | غروث بلوبرينت'), description: L('A free 10-minute diagnostic. Answer 24 questions and get a personal readiness report with your strengths, your gaps and what to do first.', 'تشخيص مجاني في ١٠ دقائق. أجب عن ٢٤ سؤالًا واحصل على تقرير جاهزية شخصي بنقاط قوتك وفجواتك وما تبدأ به أولًا.') },
-  hero: { eyebrow: L('Free diagnostic · about 10 minutes', 'تشخيص مجاني · نحو ١٠ دقائق'), title: L('How ready are you for Saudi Arabia?', 'ما مدى جاهزيتك للسوق السعودي؟'),
+  meta: { title: L('Saudi Readiness Scorecard | Growth Blueprint', 'مقياس الجاهزية للسوق السعودي | غروث بلوبرينت'), description: L('A free 10-minute diagnostic. Answer 24 questions and get a personal readiness report with your strengths, your gaps and what to do first.', 'تشخيص مجاني في 10 دقائق. أجب عن 24 سؤالًا واحصل على تقرير جاهزية شخصي بنقاط قوتك وفجواتك وما تبدأ به أولًا.') },
+  hero: { eyebrow: L('Free diagnostic · about 10 minutes', 'تشخيص مجاني · نحو 10 دقائق'), title: L('How ready are you for Saudi Arabia?', 'ما مدى جاهزيتك للسوق السعودي؟'),
     lead: L('Most businesses find out what they missed after they have started. This scorecard helps you find out before. Twenty-four honest questions, a score you can trust, and a report written for your situation.', 'تكتشف أغلب الشركات ما فاتها بعد أن تبدأ. هذا المقياس يساعدك على اكتشافه قبل ذلك. أربعة وعشرون سؤالًا بصدق، ونتيجة يمكنك الوثوق بها، وتقرير مكتوب لحالتك أنت.'), img: 'ck-hero-night' },
   start: L('Start the scorecard', 'ابدأ المقياس'), resume: L('Pick up where you left off', 'أكمل من حيث توقفت'),
   get: { eyebrow: L('What you get', 'ما الذي تحصل عليه'), title: L('A report you can actually use on Monday morning', 'تقرير يمكنك استخدامه فعلًا صباح الأحد'),
@@ -18,7 +18,7 @@ export const SC_PAGE = {
   how: { eyebrow: L('How it works', 'كيف يعمل'), title: L('Three steps, no sign-up', 'ثلاث خطوات دون تسجيل'),
     steps: [
       { n: '1', t: L('Tell us a little about you', 'عرّفنا بنفسك قليلًا'), d: L('Your sector, your stage and the size of your business. Nothing else, and none of it is required.', 'قطاعك ومرحلتك وحجم أعمالك. لا شيء غير ذلك، ولا شيء منه إلزامي.') },
-      { n: '2', t: L('Answer 24 short statements', 'أجب عن ٢٤ عبارة قصيرة'), d: L('Six areas, four statements each. Say how true each one is for you today. “Not sure” is a perfectly good answer.', 'ستة مجالات وأربع عبارات لكل منها. قل مدى انطباق كل عبارة عليك اليوم. “لست متأكدًا” إجابة مقبولة تمامًا.') },
+      { n: '2', t: L('Answer 24 short statements', 'أجب عن 24 عبارة قصيرة'), d: L('Six areas, four statements each. Say how true each one is for you today. “Not sure” is a perfectly good answer.', 'ستة مجالات وأربع عبارات لكل منها. قل مدى انطباق كل عبارة عليك اليوم. “لست متأكدًا” إجابة مقبولة تمامًا.') },
       { n: '3', t: L('Read your report', 'اقرأ تقريرك'), d: L('See it on screen straight away, print it or save it as a PDF. If you want it emailed to you, we will ask, and only then.', 'اطلع عليه على الشاشة فورًا، واطبعه أو احفظه بصيغة PDF. وإن أردته على بريدك فسنسألك، وعندها فقط.') }
     ] },
   privacy: { title: L('Your answers stay with you', 'إجاباتك تبقى معك'), body: L('The scorecard runs in your browser. Your answers are saved on your own device so you can pause and come back, and they are not sent to us unless you choose to receive your report by email or ask us to get in touch. If you do, we use your details only for that, as explained in our Privacy Notice.', 'يعمل المقياس داخل متصفحك. تُحفظ إجاباتك على جهازك أنت لتتمكن من التوقف والعودة، ولا تُرسل إلينا إلا إذا اخترت استلام التقرير بالبريد أو طلبت أن نتواصل معك. وفي هذه الحالة نستخدم بياناتك لهذا الغرض فقط، كما يوضح إشعار الخصوصية لدينا.'), link: L('Read the Privacy Notice', 'اقرأ إشعار الخصوصية') },
@@ -29,7 +29,7 @@ export const SC_UI = {
   ctx: { title: L('First, a little about you', 'أولًا، نبذة عنك'), body: L('This helps us tailor your report. You can skip any of it.', 'هذا يساعدنا على تفصيل تقريرك لك. ويمكنك تخطي أي سؤال.'),
     sector: L('Your sector', 'قطاعك'), stage: L('Where are you today?', 'أين أنت اليوم؟'), size: L('How big is your business?', 'ما حجم أعمالك؟'), choose: L('Choose one', 'اختر'), other: L('Another sector', 'قطاع آخر'),
     stages: [L('Exploring the idea', 'أستكشف الفكرة'), L('Decided, planning the entry', 'قررت وأخطط للدخول'), L('Setting up right now', 'أؤسس الآن'), L('Already operating, planning to grow', 'أعمل بالفعل وأخطط للنمو')],
-    sizes: [L('1 to 10 people', 'من ١ إلى ١٠ أفراد'), L('11 to 50 people', 'من ١١ إلى ٥٠ فردًا'), L('51 to 250 people', 'من ٥١ إلى ٢٥٠ فردًا'), L('More than 250 people', 'أكثر من ٢٥٠ فردًا')] },
+    sizes: [L('1 to 10 people', 'من 1 إلى 10 أفراد'), L('11 to 50 people', 'من 11 إلى 50 فردًا'), L('51 to 250 people', 'من 51 إلى 250 فردًا'), L('More than 250 people', 'أكثر من 250 فردًا')] },
   scale: [L('Not yet', 'ليس بعد'), L('Partly', 'جزئيًا'), L('Mostly', 'في الغالب'), L('Fully', 'بالكامل')],
   unsure: L('Not sure', 'لست متأكدًا'),
   q: L('How true is this for you today?', 'ما مدى انطباق هذا عليك اليوم؟'),
@@ -41,39 +41,39 @@ export const SC_UI = {
 };
 
 export const SC_DIMS = [
-  { id: 'strategy', icon: 'chess', t: L('Strategy & ambition', 'الاستراتيجية والطموح'), d: L('Why Saudi Arabia, why now, and what you are really signing up for.', 'لماذا السعودية، ولماذا الآن، وما الذي تلتزم به فعلًا.'), svc: ['market-strategy-entry'],
+  { id: 'strategy', icon: 'chess', t: L('Strategy & ambition', 'الاستراتيجية والطموح'), d: L('Why Saudi Arabia, why now, and what you are really signing up for.', 'لماذا السعودية، ولماذا الآن، وما الذي تلتزم به فعلًا.'), svc: ['market-intelligence'],
     q: [
       L('We can explain, in a couple of sentences, why we want to be in Saudi Arabia and what success looks like in three years.', 'نستطيع أن نشرح في جملتين لماذا نريد التواجد في السعودية وكيف يبدو النجاح بعد ثلاث سنوات.'),
       L('We have studied the Saudi market for our product or service, including who is already serving it.', 'درسنا السوق السعودي لمنتجنا أو خدمتنا، بما في ذلك من يخدمه بالفعل.'),
       L('Our offer has been adapted for Saudi customers rather than copied across from another market.', 'كيّفنا عرضنا للعميل السعودي ولم ننقله كما هو من سوق آخر.'),
       L('Our leadership is committed to Saudi Arabia for the long haul, not just a quick test.', 'قيادتنا ملتزمة بالسوق السعودي على المدى الطويل، وليس مجرد تجربة سريعة.')] },
-  { id: 'customers', icon: 'users', t: L('Customers & demand', 'العملاء والطلب'), d: L('Who will buy, why they will choose you, and how you will reach them.', 'من سيشتري، ولماذا سيختارك، وكيف ستصل إليهم.'), svc: ['brand-marketing-digital-growth', 'market-strategy-entry'],
+  { id: 'customers', icon: 'users', t: L('Customers & demand', 'العملاء والطلب'), d: L('Who will buy, why they will choose you, and how you will reach them.', 'من سيشتري، ولماذا سيختارك، وكيف ستصل إليهم.'), svc: ['cultural-business-advisory', 'market-intelligence'],
     q: [
       L('We know which type of customer we want to win first, and which ones we are not chasing yet.', 'نعرف نوع العميل الذي نريد كسبه أولًا، ومن لا نلاحقهم بعد.'),
       L('We have spoken to real potential Saudi customers, and what they told us shaped our plans.', 'تحدثنا مع عملاء سعوديين محتملين حقيقيين، وما قالوه أثّر في خططنا.'),
       L('We understand how customers in our sector actually buy here: who decides, how long it takes, how they pay.', 'نفهم كيف يشتري العملاء في قطاعنا هنا فعلًا: من يقرر، وكم يستغرق الأمر، وكيف يدفعون.'),
       L('We have a first-year plan for finding customers, with channels, partners and a realistic sales cycle.', 'لدينا خطة للسنة الأولى لإيجاد العملاء، بقنواتها وشركائها ودورة مبيعات واقعية.')] },
-  { id: 'setup', icon: 'building', t: L('Setup & compliance', 'التأسيس والامتثال'), d: L('The legal entity, the licences and the practical business of opening your doors.', 'الكيان القانوني والتراخيص والجانب العملي لافتتاح أعمالك.'), svc: ['formation-establishment', 'governance-finance-compliance'],
+  { id: 'setup', icon: 'building', t: L('Setup & compliance', 'التأسيس والامتثال'), d: L('The legal entity, the licences and the practical business of opening your doors.', 'الكيان القانوني والتراخيص والجانب العملي لافتتاح أعمالك.'), svc: ['market-entry-guidance'],
     q: [
       L('We know which legal structure suits us (for example a branch, a subsidiary or a joint venture) and why.', 'نعرف الهيكل القانوني الأنسب لنا (فرع أو شركة تابعة أو مشروع مشترك مثلًا) ولماذا.'),
       L('We know which licences and approvals apply to our activity, and roughly how long they take.', 'نعرف التراخيص والموافقات التي ينطبق علينا، وكم تستغرق تقريبًا.'),
       L('We have thought about where we will work (office, site, warehouse, shared space) and what it costs.', 'فكرنا في مكان عملنا (مكتب أو موقع أو مستودع أو مساحة مشتركة) وكلفته.'),
       L('Our setup timeline is realistic, with some room built in for delays.', 'جدولنا الزمني للتأسيس واقعي، وفيه هامش للتأخير.')] },
-  { id: 'people', icon: 'person', t: L('People & leadership', 'الكفاءات والقيادة'), d: L('Who runs it, who joins them, and how Saudisation fits in.', 'من يديرها، ومن ينضم إليه، وأين يندرج التوطين.'), svc: ['hr-talent-executive-mobility'],
+  { id: 'people', icon: 'person', t: L('People & leadership', 'الكفاءات والقيادة'), d: L('Who runs it, who joins them, and how Saudisation fits in.', 'من يديرها، ومن ينضم إليه، وأين يندرج التوطين.'), svc: ['cultural-business-advisory'],
     q: [
       L('We know who will lead our Saudi operation, and they have the authority to decide quickly.', 'نعرف من سيقود عملياتنا في السعودية، ولديه الصلاحية ليقرر بسرعة.'),
       L('We understand Saudisation (Nitaqat) expectations for a business like ours and have a plan for them.', 'نفهم متطلبات التوطين (نطاقات) لأعمال مثل أعمالنا ولدينا خطة لها.'),
       L('We know which roles we need to hire first and how we will find the right people.', 'نعرف الأدوار التي نحتاج توظيفها أولًا وكيف سنجد الأشخاص المناسبين.'),
       L('We have a plan for relocating or hosting people from our team, including visas and family needs.', 'لدينا خطة لانتقال أفراد من فريقنا أو استضافتهم، بما فيها التأشيرات واحتياجات الأسرة.')] },
-  { id: 'partners', icon: 'handshake', t: L('Partners & ecosystem', 'الشركاء والمنظومة'), d: L('Who can open doors, who you can rely on, and who you should be careful with.', 'من يفتح لك الأبواب، ومن تعتمد عليه، ومن تحتاج الحذر معه.'), svc: ['partnerships-commercial-development'],
+  { id: 'partners', icon: 'handshake', t: L('Partners & ecosystem', 'الشركاء والمنظومة'), d: L('Who can open doors, who you can rely on, and who you should be careful with.', 'من يفتح لك الأبواب، ومن تعتمد عليه، ومن تحتاج الحذر معه.'), svc: ['strategic-introductions'],
     q: [
       L('We have a clear idea of what we need a local partner for, or why we do not need one.', 'لدينا تصور واضح لحاجتنا إلى شريك محلي، أو لماذا لا نحتاج إليه.'),
       L('We have a shortlist of possible partners, distributors or suppliers, and we know how we would check them out.', 'لدينا قائمة مختصرة بشركاء أو موزعين أو موردين محتملين، ونعرف كيف سنتحقق منهم.'),
       L('We have talked to at least one organisation that has already done what we are about to do.', 'تحدثنا مع جهة واحدة على الأقل سبق أن فعلت ما نوشك أن نفعله.'),
       L('We know how a partnership would be structured: who decides, who earns what, and how either side could exit.', 'نعرف كيف ستُهيكل الشراكة: من يقرر، ومن يكسب ماذا، وكيف يمكن لأي طرف الخروج.')] },
-  { id: 'finance', icon: 'coins', t: L('Finance & governance', 'المالية والحوكمة'), d: L('Money, tax, decision-making and what happens when things do not go to plan.', 'المال والضرائب واتخاذ القرار، وما يحدث حين لا تسير الأمور وفق الخطة.'), svc: ['governance-finance-compliance', 'operations-business-support'],
+  { id: 'finance', icon: 'coins', t: L('Finance & governance', 'المالية والحوكمة'), d: L('Money, tax, decision-making and what happens when things do not go to plan.', 'المال والضرائب واتخاذ القرار، وما يحدث حين لا تسير الأمور وفق الخطة.'), svc: ['market-entry-guidance'],
     q: [
-      L('We have a budget for the first 18 to 24 months that covers setup costs and the time before revenue arrives.', 'لدينا ميزانية لأول ١٨ إلى ٢٤ شهرًا تغطي تكاليف التأسيس والفترة التي تسبق وصول الإيرادات.'),
+      L('We have a budget for the first 18 to 24 months that covers setup costs and the time before revenue arrives.', 'لدينا ميزانية لأول 18 إلى 24 شهرًا تغطي تكاليف التأسيس والفترة التي تسبق وصول الإيرادات.'),
       L('We understand the basics of our Saudi tax obligations (VAT, zakat or corporate income tax, withholding tax).', 'نفهم أساسيات التزاماتنا الضريبية في السعودية (ضريبة القيمة المضافة، والزكاة أو ضريبة الدخل، وضريبة الاستقطاع).'),
       L('We know how decisions, reporting and approvals between head office and Saudi will work.', 'نعرف كيف ستسير القرارات والتقارير والموافقات بين المقر الرئيسي والسعودية.'),
       L('We have thought through what could go wrong (delays, partner problems, regulation, currency) and what we would do.', 'فكرنا فيما قد يسوء (تأخيرات أو مشكلات شركاء أو أنظمة أو عملة) وماذا سنفعل.')] }
@@ -94,7 +94,7 @@ export const SC_BANDS = [
 export const SC_REPORT = {
   strategy: {
     low: { m: L('The case for Saudi Arabia is still more instinct than plan. That is common and fixable, but it is the area that most often decides whether the rest of the effort is pointed in the right direction.', 'الحجة للسوق السعودي ما زالت حدسًا أكثر منها خطة. وهذا شائع وقابل للإصلاح، لكنه المجال الذي يقرر غالبًا إن كان باقي الجهد موجّهًا في الاتجاه الصحيح.'),
-      a: [L('Write your “why Saudi, why now” in half a page and show it to someone who will disagree with it.', 'اكتب “لماذا السعودية ولماذا الآن” في نصف صفحة وأرِها لمن سيخالفك الرأي.'), L('Map three competitors already selling to your target customers and note how they win.', 'ارسم خريطة لثلاثة منافسين يبيعون بالفعل لعملائك المستهدفين، ودوّن كيف يفوزون.'), L('Decide what you would need to see in 12 months to call this a success, or to stop.', 'حدّد ما تحتاج رؤيته بعد ١٢ شهرًا لتعدّ التجربة ناجحة، أو لتتوقف.')] },
+      a: [L('Write your “why Saudi, why now” in half a page and show it to someone who will disagree with it.', 'اكتب “لماذا السعودية ولماذا الآن” في نصف صفحة وأرِها لمن سيخالفك الرأي.'), L('Map three competitors already selling to your target customers and note how they win.', 'ارسم خريطة لثلاثة منافسين يبيعون بالفعل لعملائك المستهدفين، ودوّن كيف يفوزون.'), L('Decide what you would need to see in 12 months to call this a success, or to stop.', 'حدّد ما تحتاج رؤيته بعد 12 شهرًا لتعدّ التجربة ناجحة، أو لتتوقف.')] },
     mid: { m: L('You have a reasonable thesis and some evidence behind it. The next step is to stress-test it, especially the parts that rely on your experience in other markets.', 'لديك فرضية معقولة وبعض الأدلة خلفها. الخطوة التالية اختبارها بجدية، خاصة الأجزاء التي تعتمد على تجربتك في أسواق أخرى.'),
       a: [L('List your three biggest assumptions and find one way to test each before you commit money.', 'دوّن أكبر ثلاثة افتراضات لديك وابحث عن طريقة لاختبار كل منها قبل الالتزام بالمال.'), L('Check what in your offer needs to change for Saudi customers, from pricing to language to service levels.', 'راجع ما يحتاج التغيير في عرضك للعميل السعودي، من التسعير إلى اللغة إلى مستويات الخدمة.')] },
     high: { m: L('Your strategy is clear and grounded. You know why you are here and what you are trying to achieve.', 'استراتيجيتك واضحة ومبنية على أسس. تعرف لماذا أنت هنا وما الذي تريد تحقيقه.'),
@@ -110,7 +110,7 @@ export const SC_REPORT = {
     low: { m: L('The practical side of setting up is still a blur. Entity choice, licences and premises all affect each other, and getting the order wrong is how projects lose months.', 'الجانب العملي للتأسيس ما زال ضبابيًا. اختيار الكيان والتراخيص والمقر تؤثر في بعضها، وخطأ الترتيب هو ما يضيّع الأشهر على المشاريع.'),
       a: [L('List every activity you will carry out in Saudi Arabia. Licensing follows activity, so this comes first.', 'دوّن كل نشاط ستمارسه في السعودية. فالترخيص يتبع النشاط، ولذلك يأتي هذا أولًا.'), L('Compare two or three entity options on control, cost, speed and liability, with your adviser.', 'قارن بين خيارين أو ثلاثة للكيان من حيث التحكم والتكلفة والسرعة والمسؤولية، مع مستشارك.'), L('Ask what you could do while approvals are pending, so you are not waiting idle.', 'اسأل عمّا يمكنك فعله أثناء انتظار الموافقات حتى لا تنتظر دون عمل.')] },
     mid: { m: L('You understand the main steps and have probably started. The risks now are sequencing, hidden dependencies and optimistic timelines.', 'تفهم الخطوات الرئيسية وربما بدأت. المخاطر الآن هي الترتيب والاعتماديات الخفية والجداول المتفائلة.'),
-      a: [L('Build a dependency map: which approval needs which document, and which step waits on which.', 'ابنِ خريطة اعتماديات: أي موافقة تحتاج أي مستند، وأي خطوة تنتظر أي خطوة.'), L('Add a 25 to 30 percent buffer to every timeline you were given. Then check what it does to your launch date.', 'أضف هامشًا بنسبة ٢٥ إلى ٣٠ بالمئة لكل جدول أُعطيته. ثم انظر أثره على موعد الإطلاق.')] },
+      a: [L('Build a dependency map: which approval needs which document, and which step waits on which.', 'ابنِ خريطة اعتماديات: أي موافقة تحتاج أي مستند، وأي خطوة تنتظر أي خطوة.'), L('Add a 25 to 30 percent buffer to every timeline you were given. Then check what it does to your launch date.', 'أضف هامشًا بنسبة 25 إلى 30 بالمئة لكل جدول أُعطيته. ثم انظر أثره على موعد الإطلاق.')] },
     high: { m: L('Your setup is well thought through, with a realistic timeline.', 'تأسيسك مدروس جيدًا وبجدول زمني واقعي.'),
       a: [L('Keep a living checklist of approvals and renewals so nothing quietly expires after launch.', 'احتفظ بقائمة حيّة للموافقات والتجديدات حتى لا ينتهي شيء بصمت بعد الإطلاق.')] } },
   people: {
@@ -159,14 +159,14 @@ export const SC_SECTOR_NOTE = {
 
 export const SC_RESULT = {
   meta: { title: L('Your readiness report | Growth Blueprint', 'تقرير جاهزيتك | غروث بلوبرينت'), description: L('Your personal Saudi readiness report.', 'تقرير جاهزيتك الشخصي للسوق السعودي.') },
-  eyebrow: L('Your Saudi readiness report', 'تقرير جاهزيتك للسوق السعودي'), overall: L('Overall readiness', 'الجاهزية الإجمالية'), outOf: L('out of 100', 'من ١٠٠'),
-  by: L('Your score by area', 'نتيجتك في كل مجال'), strengths: L('Where you are strong', 'أين أنت قوي'), priorities: L('Your three biggest gaps', 'أكبر ثلاث فجوات لديك'), noStrength: L('Nothing scored above 70 yet. That is fine: it just tells you where to start.', 'لا مجال تجاوز ٧٠ بعد. وهذا طبيعي: فهو يخبرك فقط من أين تبدأ.'),
+  eyebrow: L('Your Saudi readiness report', 'تقرير جاهزيتك للسوق السعودي'), overall: L('Overall readiness', 'الجاهزية الإجمالية'), outOf: L('out of 100', 'من 100'),
+  by: L('Your score by area', 'نتيجتك في كل مجال'), strengths: L('Where you are strong', 'أين أنت قوي'), priorities: L('Your three biggest gaps', 'أكبر ثلاث فجوات لديك'), noStrength: L('Nothing scored above 70 yet. That is fine: it just tells you where to start.', 'لا مجال تجاوز 70 بعد. وهذا طبيعي: فهو يخبرك فقط من أين تبدأ.'),
   detail: L('Area by area', 'مجالًا بعد مجال'), whatItMeans: L('What this means', 'ماذا يعني هذا'), doNext: L('What to do next', 'ما تفعله بعد ذلك'),
   flagged: { t: L('Questions to settle first', 'أسئلة تحتاج حسمًا أولًا'), d: L('You answered “not yet” or “not sure” to these. They are the quickest way to reduce risk.', 'أجبت عنها بـ“ليس بعد” أو “لست متأكدًا”. وهي أسرع طريق لتقليل المخاطر.') },
-  sector: L('A note for your sector', 'ملاحظة لقطاعك'), plan: L('Your first 30 days', 'أول ٣٠ يومًا لك'),
+  sector: L('A note for your sector', 'ملاحظة لقطاعك'), plan: L('Your first 30 days', 'أول 30 يومًا لك'),
   help: { t: L('Where we can help', 'أين يمكننا المساعدة'), d: L('Based on your gaps, these are the services most likely to be useful.', 'بحسب فجواتك، هذه الخدمات الأكثر احتمالًا لأن تفيدك.') },
   brief: { t: L('A sector brief for you', 'موجز قطاعي لك'), d: L('If you would like to go deeper on your sector, this brief is a good next read.', 'إن أردت التعمق في قطاعك فهذا الموجز قراءة تالية جيدة.'), cta: L('See the brief', 'اطلع على الموجز') },
-  cta: { t: L('Want to talk it through?', 'تريد أن نناقشها معًا؟'), d: L('A 30-minute conversation is usually enough to turn this report into a plan. No pressure, no obligation.', 'تكفي عادةً محادثة من ٣٠ دقيقة لتحويل هذا التقرير إلى خطة. دون ضغط ودون التزام.') },
+  cta: { t: L('Want to talk it through?', 'تريد أن نناقشها معًا؟'), d: L('A 30-minute conversation is usually enough to turn this report into a plan. No pressure, no obligation.', 'تكفي عادةً محادثة من 30 دقيقة لتحويل هذا التقرير إلى خطة. دون ضغط ودون التزام.') },
   email: { t: L('Get this report by email', 'احصل على هذا التقرير بالبريد'), d: L('We will send you a copy and, if you tick the box, nothing else unless you ask.', 'سنرسل لك نسخة، ولن نرسل غير ذلك ما لم تطلب، إلا إن وافقت بتأشير الخانة.'),
     plink: L('Privacy Notice', 'إشعار الخصوصية'), name: L('Your name', 'اسمك'), mail: L('Email address', 'البريد الإلكتروني'), company: L('Company (optional)', 'الشركة (اختياري)'),
     consent: L('I agree that Growth Blueprint may use my details and my scorecard result to send me my report and to reply to me. I have read the', 'أوافق على أن تستخدم غروث بلوبرينت بياناتي ونتيجتي في المقياس لإرسال تقريري والرد علي. وقد قرأت'),

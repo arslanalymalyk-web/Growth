@@ -96,3 +96,19 @@ dA, wA = text('غروث بلوبرينت', 'ar', 26, 300, 272, 0, rtl=True, anch
 st = f'<g transform="translate(250 34) scale(1.5)">{mark_body("url(#gs)", IVORY, GOLD1, "s")}</g><path d="{dE}" fill="{IVORY}"/><path d="{dS}" fill="{GOLD1}"/><path d="M252 240H348" stroke="{GOLD1}" stroke-opacity=".5" stroke-width=".8"/><path d="{dA}" fill="{GOLD1}"/>'
 write('logo-stacked.svg', svg(600, 300, st, 'Growth Blueprint — غروث بلوبرينت', NAVY, 's'))
 print('ok', sorted(os.listdir(OUT)))
+
+# ---- Small-size mark (16-32 px): arch + three bars only, thicker strokes, no node or rule ----
+def small_mark(g, bars, uid):
+    return f'''<path d="M9 58V34A31 31 0 0 1 32 4A31 31 0 0 1 55 34" fill="none" stroke="{g}" stroke-width="5.2" stroke-miterlimit="8"/>
+<path d="M55 58V45H41" fill="none" stroke="{g}" stroke-width="5.2"/>
+<path d="M16 58V47H22.5V58ZM25.5 58V38H32V58ZM35 58V28H41.5V58Z" fill="{bars}"/>'''
+write('mark-small.svg', svg(64, 64, small_mark('url(#gsm)', NAVY, 'sm'), 'Growth Blueprint mark (small sizes)', None, 'sm'))
+write('favicon-small.svg', svg(64, 64, f'<rect width="64" height="64" rx="14" fill="{NAVY}"/><g transform="translate(6 6) scale(.81)">{small_mark("url(#gfs)", IVORY, "fs")}</g>', 'Growth Blueprint', None, 'fs'))
+# ---- Alternative B: the bars become one rising step line (less generic than a bar chart) ----
+alt = f'''<path d="M10 58V34A30 30 0 0 1 32 5.1A30 30 0 0 1 54 34" fill="none" stroke="url(#gmb)" stroke-width="3.2" stroke-miterlimit="8"/>
+<path d="M54 58V44H41" fill="none" stroke="url(#gmb)" stroke-width="3.2"/>
+<path d="M17 58V50H24.500V42H32V34H39.500V26" fill="none" stroke="{NAVY}" stroke-width="3" stroke-linejoin="miter"/>
+<path d="M39.500 19.500L41.700 22.900L39.500 26.300L37.300 22.900Z" fill="url(#gmb)"/>
+<path d="M4 62.200H60M4 59.600V64.800M60 59.600V64.800" stroke="{GOLD2}" stroke-width=".9" fill="none"/>'''
+write('mark-alt-steps.svg', svg(72, 72, f'<g transform="translate(4 4)">{alt}</g>', 'Growth Blueprint mark, alternative B', None, 'mb'))
+print('small marks written')

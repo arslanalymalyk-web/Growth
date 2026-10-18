@@ -8,7 +8,7 @@ _Generated from the built site on 2026-10-18 by scripts/export-content.mjs. Edit
 
 # Global elements (on every page)
 
-**Navigation:** Home · Services · Industries · Our Approach · About · Insights · Briefs · Book a Consultation
+**Navigation:** Home · Services · Industries · Our Approach · About · Insights · Briefs · Book a Free Consultation
 
 **Cookie notice:** We use essential cookies to make this website work. With your consent we would also use analytics cookies to improve it. Cookie Policy Accept Essential only
 
@@ -37,18 +37,17 @@ Straight talking advisory for businesses that want to enter, set up and grow in 
 - About
 - Insights
 - Briefs
-- Book a Consultation
+- How we work
+- Team
+- Investor FAQ
+- Book a Free Consultation
 
 ## Our Services
 
-- Market Strategy & Entry
-- Formation & Establishment
-- Partnerships & Commercial Development
-- HR, Talent & Executive Mobility
-- Operations & Business Support
-- Governance, Finance & Compliance Coordination
-- Brand, Marketing & Digital Growth
-- Technology & Automation
+- Market Intelligence
+- Market Entry Guidance
+- Strategic Introductions
+- Cultural & Business Advisory
 
 ## Get in touch
 
@@ -58,7 +57,7 @@ Straight talking advisory for businesses that want to enter, set up and grow in 
 
 Licensed by MHRSD #970146 · Saudi Arabia · Vision 2030 aligned
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 © 2026 Growth Blueprint. All rights reserved.
 
@@ -78,11 +77,11 @@ _Page title: Growth Blueprint | Strategic advisory for Saudi Arabia_
 
 Saudi Arabia. Greater possibilities.
 
-# Your Growth Blueprint for Saudi Arabia
+# Clarity, Confidence & Connections for Growth in Saudi Arabia
 
-Coming to Saudi Arabia, setting up, or growing what you have started is a big decision, and you deserve straight answers. We help ambitious businesses make a plan that works on the ground, then stay with them while they carry it out.
+Your trusted Saudi advisory firm, helping international investors understand and access the Saudi market with confidence, aligned with Vision 2030.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 **[ Explore Our Services ]**
 
@@ -102,7 +101,7 @@ Thinking of coming in? We help you test the idea, choose the right way in, and g
 
 ## Grow in Saudi Arabia
 
-Already here and ready for more? We help you decide where to push next, and build the people, partners and systems to do it.
+Already here and ready for more? We help you find the right partners and stakeholders, and understand the culture and negotiation so you can grow.
 
 **[ See how growing works ]**
 
@@ -120,45 +119,29 @@ Our services
 
 ## Practical help at every step of your Saudi journey
 
-From the first conversation about whether to come at all, to the day you run a team of your own. Pick what you need. Leave the rest.
+Four services, from reading the market to opening the right doors. Pick what you need. Leave the rest.
 
-### Market Strategy & Entry
+### Market Intelligence
 
-An honest look at the market and a clear plan for how to enter it.
+Clear insight into Saudi opportunities across the sectors Vision 2030 is opening up.
 
-### Formation & Establishment
+### Market Entry Guidance
 
-Setting up your Saudi entity, licences and registrations, step by step.
+Plain-language help with regulations, licensing and the route that suits you.
 
-### Partnerships & Commercial Development
+### Strategic Introductions
 
-Finding the right partners, and building relationships that last.
+Introductions to vetted Saudi partners, industry leaders and key stakeholders.
 
-### HR, Talent & Executive Mobility
+### Cultural & Business Advisory
 
-Building your Saudi team, and helping your leaders settle in.
-
-### Operations & Business Support
-
-Getting your day-to-day running smoothly, and keeping it that way.
-
-### Governance, Finance & Compliance Coordination
-
-Keeping governance, finance and compliance in order, without the headaches.
-
-### Brand, Marketing & Digital Growth
-
-Making your brand relevant to Saudi customers, and turning attention into demand.
-
-### Technology & Automation
-
-Choosing the right technology, and letting it take the repetitive work.
+Guidance on Saudi business culture, negotiation and building relationships.
 
 Our industries
 
-## Sectors we know well, and why that matters
+## Sectors we brief, and why that matters
 
-Advice only helps if it fits how your sector really works. These are the industries we focus on.
+Advice only helps if it fits how your sector really works. These are the sectors we publish briefings for.
 
 - FMCG
 - Real Estate
@@ -179,25 +162,25 @@ Understand where you are, and where the real opportunities are.
 
 Choose the strategy and shape the roadmap.
 
-### Establish
+### Prepare
 
-Put the foundations in place so delivery can run smoothly.
+Get ready to act, with the right specialists beside you.
 
-### Execute
+### Connect
 
-Turn the plan into progress, with steady hands on the wheel.
+Meet the right people, and be ready for the conversation.
 
 ### Grow
 
-Scale what works, and build value that lasts.
+Build on what works, with advice when you need it.
 
-A founder-led advisory
+Led by experience
 
-## You deal with the person whose name is on the door
+## A managing director with 25+ years in multinational business
 
-Growth Blueprint is a small, founder-led firm, and that is deliberate. The person you meet at the start stays involved to the end, so the advice you get is candid, practical and personal. We would rather do fewer engagements well than many badly.
+Growth Blueprint was founded in 2024 in Jeddah and is led by Faisal Halawani. Around him is a bench of specialists in law, marketing and branding, real estate, and advertising and PR, so you get the right expert for your question.
 
-**[ Our story ]**
+**[ Meet the team ]**
 
 Our expert team
 
@@ -299,11 +282,11 @@ Our Readiness Scorecard asks 24 honest questions and gives you a report written 
 
 Let's talk
 
-## Book a conversation
+## Book a free consultation
 
 Tell us where you are and where you want to be. We will give you an honest view, even if the honest view is “not yet”.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -316,170 +299,131 @@ Our services
 
 # Services overview
 
-Practical help to enter, operate and grow in Saudi Arabia. Use one service, or several, and tell us if you are not sure where to start.
+Practical help to understand, enter and succeed in the Saudi market. Use one service, or several, and tell us if you are not sure where to start.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 A simple way to think about it
 
-## Three stages. Eight services.
+## Two stages. Four services.
 
-Most businesses move through the same three stages in Saudi Arabia: Enter, Operate and Grow. Our services follow them, so you can find what fits where you are today, and see what is coming next.
+Most investors first need to understand and enter the market, then connect with the right people and learn how business gets done. Our four services follow that path, so you can find what fits where you are today.
 
-Enter
+Understand & enter
 
-## Build your foundation
+## Know the market, then enter it properly
 
-Decide whether to come, how to come, and get set up properly the first time.
-
-Ideal for
-
-Businesses weighing Saudi Arabia, testing an opportunity, or opening their first local presence.
-
-### Market Strategy & Entry
-
-An honest look at the market and a clear plan for how to enter it.
-
-**[ Explore service ]**
-
-### Formation & Establishment
-
-Setting up your Saudi entity, licences and registrations, step by step.
-
-**[ Explore service ]**
-
-Operate
-
-## Turn plans into progress
-
-Find the right partners and people, and set up the way you work so it runs smoothly and stays compliant.
+Reliable intelligence to decide with, and clear guidance on the rules, the licences and the route in.
 
 Ideal for
 
-Businesses that have a presence and now need to build the team, the partnerships and the day-to-day machinery.
+Investors weighing Saudi Arabia, comparing sectors, or preparing to set up for the first time.
 
-### Partnerships & Commercial Development
+### Market Intelligence
 
-Finding the right partners, and building relationships that last.
-
-**[ Explore service ]**
-
-### HR, Talent & Executive Mobility
-
-Building your Saudi team, and helping your leaders settle in.
+Clear insight into Saudi opportunities across the sectors Vision 2030 is opening up.
 
 **[ Explore service ]**
 
-### Operations & Business Support
+### Market Entry Guidance
 
-Getting your day-to-day running smoothly, and keeping it that way.
-
-**[ Explore service ]**
-
-### Governance, Finance & Compliance Coordination
-
-Keeping governance, finance and compliance in order, without the headaches.
+Plain-language help with regulations, licensing and the route that suits you.
 
 **[ Explore service ]**
 
-Grow
+Connect & succeed
 
-## Scale for a bigger tomorrow
+## The right people, and the right way to work with them
 
-Win more customers, strengthen your brand, and use technology to do more with the team you have.
+Introductions to vetted partners and stakeholders, and practical advice on Saudi business culture, negotiation and relationships.
 
 Ideal for
 
-Businesses that are already trading and want to expand, deepen their market position or speed up.
+Businesses that need partners, buyers or authorities, and want to approach them with confidence.
 
-### Brand, Marketing & Digital Growth
+### Strategic Introductions
 
-Making your brand relevant to Saudi customers, and turning attention into demand.
+Introductions to vetted Saudi partners, industry leaders and key stakeholders.
 
 **[ Explore service ]**
 
-### Technology & Automation
+### Cultural & Business Advisory
 
-Choosing the right technology, and letting it take the repetitive work.
+Guidance on Saudi business culture, negotiation and building relationships.
 
 **[ Explore service ]**
 
 Let's plan what's next
 
-## Book a conversation
+## Book a free consultation
 
 Tell us what you are trying to do. We will tell you honestly which of our services would help, and which would not.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
 
-# PAGE: Service: Market Strategy & Entry
+# PAGE: Service: Market Intelligence
 
-_Page title: Market Strategy & Entry | Growth Blueprint_
+_Page title: Market Intelligence | Growth Blueprint_
 
 - Home
 - Services
-- Market Strategy & Entry
+- Market Intelligence
 
-# Market Strategy & Entry
+# Market Intelligence
 
-Before you spend money on a Saudi entry, find out whether the idea stands up. We look at the market honestly with you, compare the ways in, and leave you with a plan your board can say yes or no to.
+Before you commit capital, you need to know whether the opportunity is real. We give you sector-specific insight you can take to a board and decide on.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Service overview
 
-## Know before you commit
+## Decide with evidence, not enthusiasm
 
-Most entry mistakes are made in the first month, on assumptions nobody tested. We look at demand, competition, regulation and cost alongside you, set out the realistic routes in, and tell you which one we would choose and why. Sometimes the honest answer is “not yet”, and that is a good result too.
+We study the sector you are considering, set out what we find in plain language, and tell you honestly what it means for your plans, including when the answer is “not yet”.
 
 Who it is for
 
 ## Is this the right help for you?
 
 - You are weighing Saudi Arabia for the first time and want a clear-eyed view.
-- You already sell in the region and are asking whether the Kingdom is the next step.
-- You are an investor who wants to understand a sector before committing capital.
-- You need a decision paper your board will take seriously.
+- You are comparing sectors or cities before choosing where to focus.
+- Your board or investors need a report they can rely on.
 
 Sound familiar?
 
 ## Problems we help you solve
 
 - You cannot tell how much of the demand is real.
-- You do not know who you would really be competing against, or at what price.
-- Subsidiary, joint venture or partner: everyone has an opinion and none of them agree.
-- The ambition is clear, but the plan is not.
-- You suspect there are rules for your sector that nobody has told you about yet.
+- Public information is scattered, and not always current.
+- You do not know who you would really be competing with.
 
 What we do
 
 ## The work, in plain terms
 
-Practical work, in plain language, from the first question to a decision you can defend.
+Three kinds of work, each written to support a decision.
 
-- Market size, demand and growth: what is really there
-- Who you would compete with, and how they win
-- Which customers to go after first, and why they would choose you
-- Your entry options side by side, with our recommendation
-- The rules and licences that will affect you, flagged early
-- A phased launch roadmap with a first-year budget outline
+- Sector-specific briefings
+- Investment decision reports
+- Market trend analysis
+- Alignment of the opportunity with Vision 2030 priorities
+- Competitor and customer landscape
+- A clear recommendation on what to do next
 
 What you get
 
 ## What you will have at the end
 
-Market opportunity assessment
+A written sector briefing
 
-Competitor and pricing benchmark
+An investment decision report
 
-Entry options paper
+A market trend summary
 
-Phased launch roadmap
-
-A short summary for your board
+A short call to talk it through
 
 How it works
 
@@ -493,21 +437,21 @@ We start with your goals and your doubts, and agree the questions the decision d
 
 2
 
-### Assess
+### Research
 
-We study the market, the competition and the rules that apply to your sector.
+We gather and check the evidence, and say where it is thin.
 
 3
 
-### Compare
+### Analyse
 
-We set the entry options side by side against your goals, your appetite for risk and your timeline.
+We turn it into a view on the opportunity and the risks.
 
 4
 
-### Recommend
+### Advise
 
-We tell you what we would do, show you why, and turn it into a practical roadmap.
+We present it, answer your questions and recommend the next step.
 
 Your part
 
@@ -525,17 +469,17 @@ Questions we hear
 
 ## Good questions
 
-**How long does it take?**
+**Do you sell ready-made briefs?**
 
-Usually four to eight weeks, depending on the sector and how deep you want to go. We agree the scope and the timeline with you at the start, so there are no surprises.
+Yes, there is a short starter brief for each sector in our Briefs shop. For a decision about real capital we recommend a report written around your question.
 
-**Do you only work with foreign companies?**
+**Where does your information come from?**
 
-No. We also help regional and Saudi businesses that are entering a new sector or a new part of the Kingdom.
+From public and official sources, sector contacts and our network, and we say which is which. Where evidence is thin we tell you.
 
-**What if the answer is not to enter?**
+**Can you tell me whether to invest?**
 
-Then that is what we will tell you. A clear “not yet”, or “not like this”, can save you a great deal of money, and it is a perfectly good outcome.
+We give you a clear recommendation and our reasons. The decision, and the risk, stay with you.
 
 Related services
 
@@ -543,85 +487,77 @@ Related services
 
 **[ View all services ]**
 
-Formation & EstablishmentSetting up your Saudi entity, licences and registrations, step by step.Learn more Partnerships & Commercial DevelopmentFinding the right partners, and building relationships that last.Learn more Governance, Finance & Compliance CoordinationKeeping governance, finance and compliance in order, without the headaches.Learn more
+Market Entry GuidancePlain-language help with regulations, licensing and the route that suits you.Learn more Strategic IntroductionsIntroductions to vetted Saudi partners, industry leaders and key stakeholders.Learn more Cultural & Business AdvisoryGuidance on Saudi business culture, negotiation and building relationships.Learn more
 
 ## Want to talk this through?
 
 Tell us what you are working on and we will tell you honestly whether we can help.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
 
-# PAGE: Service: Formation & Establishment
+# PAGE: Service: Market Entry Guidance
 
-_Page title: Formation & Establishment | Growth Blueprint_
+_Page title: Market Entry Guidance | Growth Blueprint_
 
 - Home
 - Services
-- Formation & Establishment
+- Market Entry Guidance
 
-# Formation & Establishment
+# Market Entry Guidance
 
-Setting up a business in a new country is mostly paperwork, patience and knowing who to ask. We coordinate the whole thing so you can get on with running the business.
+Saudi rules on ownership, licensing and setup are changing, and they differ by sector. We help you understand them and choose the route that fits your business.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Service overview
 
-## A proper start in Saudi Arabia
+## The right route, the first time
 
-We help you choose the right structure, prepare the documents, deal with the relevant authorities and keep the process moving. You will always know where things stand, what is waiting on whom, and what comes next. We coordinate the work alongside your own lawyers and accountants; we do not replace them.
+We explain your options, set out what each involves, and coordinate with the legal, accounting and government-facing specialists in our network. We are advisers, not a law firm, and we say so when you need one.
 
 Who it is for
 
 ## Is this the right help for you?
 
-- You are an international business entering the Saudi market.
-- You are an established company opening a local entity or subsidiary.
-- You want a compliant start that does not lose months to avoidable delays.
-- You want one team to coordinate everything from incorporation to opening day.
+- You are choosing between a subsidiary, a joint venture or a partnership.
+- You need to understand foreign-ownership rules for your sector.
+- You want to know which government incentives you could use.
 
 Sound familiar?
 
 ## Problems we help you solve
 
-- The licensing and regulatory requirements feel like a maze.
-- You are not sure which legal structure suits your goals.
-- Several government bodies are involved and nobody seems to talk to each other.
-- Documents and approvals take longer than anyone told you.
-- Your sector has extra approvals on top of the general ones.
+- The rules are detailed and differ by sector.
+- It is hard to know what you need, in what order.
+- Mistakes at setup are slow and expensive to undo.
 
 What we do
 
 ## The work, in plain terms
 
-We handle the coordination from first decision to opening day, and we are honest about what depends on you and on the authorities.
+From “how do we come in?” to a clear, ordered plan.
 
-- Comparing entity structures and recommending one
-- Commercial registration and licensing support
-- Ongoing advice until you are ready to operate
-- Preparing and submitting incorporation documents
-- Sector-specific approvals and requirements
-- Working with service providers and other stakeholders
-- Liaison with the relevant government authorities
-- Registrations you need once you are established
-- Practical guidance on your ongoing obligations
+- Business setup pathways compared
+- Foreign-ownership rules for your sector
+- Licensing and registration requirements
+- Government incentives you may be able to use
+- Coordination with legal and accounting specialists
+- A sequenced roadmap for your entry
 
 What you get
 
 ## What you will have at the end
 
-A recommended structure and setup plan
+A comparison of entry options
 
-Incorporation and registration filings
+A licensing and registration checklist
 
-Commercial registration and the licences you need
+An incentives summary
 
-Supporting documents and approval correspondence
-
-A checklist for staying compliant after launch
+A phased entry roadmap
 
 How it works
 
@@ -629,27 +565,27 @@ How it works
 
 1
 
-### Plan
+### Clarify
 
-We learn what you want to do, compare the options, and agree a setup plan with realistic dates.
+We agree what you want to do in the Kingdom and what matters most.
 
 2
 
-### Prepare
+### Compare
 
-We prepare the documents and line up the authorities, so nothing waits on a missing page.
+We set out the routes in, with their trade-offs.
 
 3
 
-### Get approved
+### Plan
 
-We follow the licensing and registration steps, including any your sector adds.
+We order the steps and bring in the right specialists.
 
 4
 
-### Get ready to operate
+### Support
 
-We walk you through the registrations that come after, and what to do in your first weeks.
+We stay alongside you while the plan is carried out.
 
 Your part
 
@@ -667,17 +603,17 @@ Questions we hear
 
 ## Good questions
 
-**What legal structures can a foreign business use?**
+**Do you provide legal advice?**
 
-Typically a wholly owned subsidiary, a branch, a joint venture, or a regional headquarters arrangement. The right one depends on your sector, your goals and how much control you want. We set the options side by side with you and explain the trade-offs.
+We give business guidance and work with qualified legal advisers in our network for legal opinions and filings.
 
-**How long will it take?**
+**Can you set up the company for us?**
 
-It varies with the structure, the sector and how complete your documents are. We give you an expected timeline in your setup plan and update it honestly as approvals move.
+We guide you through the pathway and coordinate the specialists who carry out the formal steps.
 
-**Will you do everything for us?**
+**Are the rules the same for every sector?**
 
-We coordinate and manage the process end to end. Some steps need your authorised signatories or your information, and we tell you what we need and when, well in advance.
+No. Ownership, licences and incentives vary by sector, so we start from yours.
 
 Related services
 
@@ -685,45 +621,44 @@ Related services
 
 **[ View all services ]**
 
-Governance, Finance & Compliance CoordinationKeeping governance, finance and compliance in order, without the headaches.Learn more HR, Talent & Executive MobilityBuilding your Saudi team, and helping your leaders settle in.Learn more Operations & Business SupportGetting your day-to-day running smoothly, and keeping it that way.Learn more
+Market IntelligenceClear insight into Saudi opportunities across the sectors Vision 2030 is opening up.Learn more Strategic IntroductionsIntroductions to vetted Saudi partners, industry leaders and key stakeholders.Learn more Cultural & Business AdvisoryGuidance on Saudi business culture, negotiation and building relationships.Learn more
 
 ## Want to talk this through?
 
 Tell us what you are working on and we will tell you honestly whether we can help.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
 
-# PAGE: Service: Partnerships & Commercial Development
+# PAGE: Service: Strategic Introductions
 
-_Page title: Partnerships & Commercial Development | Growth Blueprint_
+_Page title: Strategic Introductions | Growth Blueprint_
 
 - Home
 - Services
-- Partnerships & Commercial Development
+- Strategic Introductions
 
-# Partnerships & Commercial Development
+# Strategic Introductions
 
-In Saudi Arabia, the right partner can save you a year. The wrong one can cost you two. We help you find, check and structure the partnerships that fit your plans.
+In Saudi Arabia, the right partner can save you a year. We introduce you to vetted partners, industry leaders and stakeholders, and help you prepare for the conversation.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Service overview
 
 ## The right partner changes the pace
 
-We help you work out what you actually need from a partner, build a shortlist, check people out properly, and negotiate terms that protect you. We make introductions and coordinate meetings. We do not promise access to named organisations, and we never act as your legal agent.
+We work out what you need from a partner, introduce you to people who fit, and support the meetings that follow. We do not promise access to named organisations, and we never act as your legal agent.
 
 Who it is for
 
 ## Is this the right help for you?
 
 - You are looking for a distributor, agent or joint-venture partner.
-- You want to reach the right buyers and organisations, and do not know how.
-- You are structuring a supply, licensing or franchise arrangement.
-- You are about to negotiate with a potential partner and want to be prepared.
+- You want to reach the right buyers, authorities and industry leaders.
+- You are planning a visit or a business roadshow.
 
 Sound familiar?
 
@@ -731,35 +666,32 @@ Sound familiar?
 
 - You have no way of knowing who is credible and well connected.
 - It is hard to judge a partner’s real capability and reputation.
-- The terms need to balance control, risk and incentives, and that is delicate.
-- Business customs differ, and misunderstandings are easy.
+- Cold approaches rarely get a reply.
 
 What we do
 
 ## The work, in plain terms
 
-From a long list to a signed agreement, with a clear head at each decision.
+From a long list to the right room, with a clear head at each step.
 
-- Deciding what a good partner looks like for you
-- Due-diligence support and capability checks
-- Introductions and meeting coordination
-- Commercial terms and structure options
-- Preparing for negotiation, and supporting you through it
-- A simple way to govern the partnership once it is running
+- Defining what a good partner looks like for you
+- Introductions to vetted Saudi partners
+- Introductions to government entities and industry leaders
+- Business roadshows and meeting programmes
+- Preparation before every meeting
+- Follow-up so conversations become relationships
 
 What you get
 
 ## What you will have at the end
 
-Partner criteria and a scoring framework
+Partner criteria and a shortlist
 
-A shortlist with capability assessments
+A meeting and roadshow plan
 
-A meeting and engagement plan
+A briefing for each meeting
 
-Term-sheet options and a negotiation brief
-
-A partner governance framework
+A follow-up summary
 
 How it works
 
@@ -769,25 +701,25 @@ How it works
 
 ### Define
 
-We agree what a good partner looks like for your strategy, before we look at anyone.
+We agree what a good partner looks like, before we look at anyone.
 
 2
 
 ### Search
 
-We identify candidates and screen them against your criteria.
+We identify candidates and check them against your criteria.
 
 3
 
-### Engage
+### Introduce
 
-We arrange introductions and structured conversations, and compare what we learn.
+We arrange introductions and prepare you for each conversation.
 
 4
 
-### Structure
+### Follow up
 
-We support the terms, the negotiation and an agreed way of working together.
+We help you turn first meetings into working relationships.
 
 Your part
 
@@ -807,15 +739,15 @@ Questions we hear
 
 **Can you guarantee introductions to specific companies?**
 
-No, and we would be wary of anyone who does. We find and approach partners that fit your criteria, and we support the conversations that follow.
+No, and we would be wary of anyone who does. We approach partners that fit your criteria and support the conversations that follow.
 
-**Can you act as our representative in the Kingdom?**
+**Can you represent us in the Kingdom?**
 
 We support you through the process, but we do not act as your legal agent or sign anything on your behalf.
 
 **How do you judge whether a partner is right?**
 
-We look at capability, track record, reputation, financial standing and fit with your goals, and we tell you plainly about any risks we see.
+We look at capability, track record, reputation and fit with your goals, and we tell you plainly about any risks we see.
 
 Related services
 
@@ -823,495 +755,74 @@ Related services
 
 **[ View all services ]**
 
-Market Strategy & EntryAn honest look at the market and a clear plan for how to enter it.Learn more Brand, Marketing & Digital GrowthMaking your brand relevant to Saudi customers, and turning attention into demand.Learn more Governance, Finance & Compliance CoordinationKeeping governance, finance and compliance in order, without the headaches.Learn more
+Market IntelligenceClear insight into Saudi opportunities across the sectors Vision 2030 is opening up.Learn more Market Entry GuidancePlain-language help with regulations, licensing and the route that suits you.Learn more Cultural & Business AdvisoryGuidance on Saudi business culture, negotiation and building relationships.Learn more
 
 ## Want to talk this through?
 
 Tell us what you are working on and we will tell you honestly whether we can help.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
 
-# PAGE: Service: HR, Talent & Executive Mobility
+# PAGE: Service: Cultural & Business Advisory
 
-_Page title: HR, Talent & Executive Mobility | Growth Blueprint_
+_Page title: Cultural & Business Advisory | Growth Blueprint_
 
 - Home
 - Services
-- HR, Talent & Executive Mobility
+- Cultural & Business Advisory
 
-# HR, Talent & Executive Mobility
+# Cultural & Business Advisory
 
-Your business in Saudi Arabia will only be as good as the people in it. We help you design the team, hire well, meet localisation expectations, and bring your leaders over without the usual stress.
+Good strategy can still stumble on small misunderstandings. We help you read the culture, prepare for negotiations and build relationships that last.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Service overview
 
-## People first
+## Understand how business really gets done
 
-We help you decide which roles to fill first, plan localisation sensibly, coordinate the search for key people, and look after the practical side of moving senior executives and their families. We work with qualified recruitment partners where specialist reach is needed.
+We coach you and your team on etiquette, expectations and pace, and prepare you for the conversations that matter. It is practical guidance, not a lecture.
 
 Who it is for
 
 ## Is this the right help for you?
 
-- You are building your first Saudi team.
-- You need to plan for Saudisation and are not sure what it means for you.
-- You are relocating senior people to the Kingdom.
-- You are designing the organisation you will run in Saudi Arabia.
+- Your team is new to Saudi business culture.
+- You are about to negotiate with a Saudi counterpart.
+- You want to build trust that lasts beyond the first deal.
 
 Sound familiar?
 
 ## Problems we help you solve
 
-- You are not sure what localisation expects of a business like yours.
-- Good people are in demand and hard to attract and keep.
-- Roles, grades and pay need to feel right locally, not just on paper.
-- Visas, residency and family relocation have a lot of moving parts.
+- Customs differ, and misunderstandings are easy.
+- Relationships and timing matter as much as the contract.
+- It is hard to tell what silence or delay really means.
 
 What we do
 
 ## The work, in plain terms
 
-Practical help with planning, hiring and moving.
+Practical help for the room, the table and the long run.
 
-- Organisation design and workforce planning
-- A localisation approach and role mapping
-- Coordinating the search for executives and specialists
-- Pay and benefits benchmarking
-- Visa, residency and relocation coordination
-- Onboarding and settling-in support
+- Cultural guidance for you and your team
+- Negotiation strategies and preparation
+- Relationship building with partners and stakeholders
+- Meeting etiquette and protocol
+- Support for the first visits and follow-up
 
 What you get
 
 ## What you will have at the end
 
-An organisation and workforce plan
+A cultural briefing for your team
 
-A localisation roadmap
+A negotiation preparation note
 
-Role profiles and pay benchmarks
-
-A plan for moving your executives
-
-An onboarding outline
-
-How it works
-
-## Four steps from start to finish
-
-1
-
-### Plan
-
-We work out the organisation you need and which roles to fill first.
-
-2
-
-### Find
-
-We coordinate the search for, and assessment of, your key people.
-
-3
-
-### Move
-
-We help with visas, residency and the practical side of settling in.
-
-4
-
-### Settle
-
-We help new people join well and fit into the way you work.
-
-Your part
-
-## How you can help us help you
-
-Share the documents and information we ask for, when we ask
-
-Review and approve our drafts promptly
-
-Join the key meetings, and bring decision-makers where you can
-
-Be open about your goals, your budget and your worries
-
-Questions we hear
-
-## Good questions
-
-**Do you do the recruiting yourselves?**
-
-We coordinate the search and the assessment, and we bring in qualified recruitment partners where you need specialist reach.
-
-**Can you explain what Saudisation means for us?**
-
-Yes. We outline what applies to your sector and size and help you plan a practical approach. We always confirm the current details with the relevant authority.
-
-**Do you help families who are relocating?**
-
-We coordinate the practical steps: residency, information about schools, and help with settling in.
-
-Related services
-
-## You might also need
-
-**[ View all services ]**
-
-Formation & EstablishmentSetting up your Saudi entity, licences and registrations, step by step.Learn more Operations & Business SupportGetting your day-to-day running smoothly, and keeping it that way.Learn more Governance, Finance & Compliance CoordinationKeeping governance, finance and compliance in order, without the headaches.Learn more
-
-## Want to talk this through?
-
-Tell us what you are working on and we will tell you honestly whether we can help.
-
-**[ Book a Consultation ]**
-
-
----
-
-# PAGE: Service: Operations & Business Support
-
-_Page title: Operations & Business Support | Growth Blueprint_
-
-- Home
-- Services
-- Operations & Business Support
-
-# Operations & Business Support
-
-The excitement of arriving fades quickly if the basics do not work. Premises, suppliers, processes, reporting: we help you set them up properly so your business runs smoothly from the first week.
-
-**[ Book a Consultation ]**
-
-Service overview
-
-## From set-up to steady state
-
-We help you find premises, line up suppliers, design simple processes and put reporting in place, then refine the way you work as volumes grow. We design, set up and support. The day-to-day running stays with your team or the provider you choose.
-
-Who it is for
-
-## Is this the right help for you?
-
-- You are opening your first Saudi office, site or facility.
-- You are building local supply chains and supplier relationships.
-- You want the same way of working across regions.
-- You are getting ready for more volume or higher service levels.
-
-Sound familiar?
-
-## Problems we help you solve
-
-- Finding suitable premises, suppliers and service providers takes time.
-- Processes need to meet local requirements, not just your head office’s.
-- Reporting and control are easiest to build at the start, and hardest to add later.
-- Growth can quietly erode service quality.
-
-What we do
-
-## The work, in plain terms
-
-Down-to-earth support that gets things running and keeps them improving.
-
-- Designing the operating model and processes
-- Finding premises and facilities
-- Identifying suppliers and vendors
-- Service levels and performance reporting
-- Choosing systems and tools
-- A simple improvement roadmap
-
-What you get
-
-## What you will have at the end
-
-An operating-model blueprint
-
-A process and responsibility map
-
-A supplier shortlist
-
-A performance dashboard outline
-
-An improvement roadmap
-
-How it works
-
-## Four steps from start to finish
-
-1
-
-### Design
-
-We shape an operating model around your goals, not a template.
-
-2
-
-### Set up
-
-We help with premises, suppliers and processes.
-
-3
-
-### Run
-
-We help your team work to agreed standards, with clear reporting.
-
-4
-
-### Improve
-
-We review performance and refine as you grow.
-
-Your part
-
-## How you can help us help you
-
-Share the documents and information we ask for, when we ask
-
-Review and approve our drafts promptly
-
-Join the key meetings, and bring decision-makers where you can
-
-Be open about your goals, your budget and your worries
-
-Questions we hear
-
-## Good questions
-
-**Do you run operations for us?**
-
-No. We design, set up and support. Running the business day to day stays with your team or the provider you choose.
-
-**Can you help if we are starting small?**
-
-Of course. Many clients begin lean and scale in stages once demand is proven. That is often the wisest way to start.
-
-**How do you choose suppliers?**
-
-Against criteria we agree with you first: capability, compliance, references and cost.
-
-Related services
-
-## You might also need
-
-**[ View all services ]**
-
-HR, Talent & Executive MobilityBuilding your Saudi team, and helping your leaders settle in.Learn more Technology & AutomationChoosing the right technology, and letting it take the repetitive work.Learn more Governance, Finance & Compliance CoordinationKeeping governance, finance and compliance in order, without the headaches.Learn more
-
-## Want to talk this through?
-
-Tell us what you are working on and we will tell you honestly whether we can help.
-
-**[ Book a Consultation ]**
-
-
----
-
-# PAGE: Service: Governance, Finance & Compliance Coordination
-
-_Page title: Governance, Finance & Compliance Coordination | Growth Blueprint_
-
-- Home
-- Services
-- Governance, Finance & Compliance Coordination
-
-# Governance, Finance & Compliance Coordination
-
-Nobody opens a business to spend their time on filing calendars. We help you set up governance, finance and compliance so they run quietly in the background, alongside the licensed advisers you rely on.
-
-**[ Book a Consultation ]**
-
-Service overview
-
-## A clear view of your obligations
-
-We coordinate with your legal, tax and accounting advisers and the relevant authorities, and help you see what you owe, to whom, and by when. To be clear: we are not a law, tax or audit firm. We coordinate and structure the work; your licensed advisers give the professional advice.
-
-Who it is for
-
-## Is this the right help for you?
-
-- You have just set up a Saudi entity and are building its controls.
-- Your finance and legal teams are coordinating across several advisers.
-- Your board wants clarity on its governance responsibilities.
-- You need to align local reporting with group standards.
-
-Sound familiar?
-
-## Problems we help you solve
-
-- Filing, reporting and renewal dates are easy to lose track of.
-- Group policies need to fit local requirements, and they rarely do automatically.
-- Several advisers and authorities are involved, and someone has to hold it all together.
-- A new entity needs governance that is proportionate, not heavy.
-
-What we do
-
-## The work, in plain terms
-
-Coordination and structure, working alongside your professional advisers.
-
-- A governance framework and delegation of authority
-- A compliance calendar and register of obligations
-- Coordinating finance and reporting set-up
-- Aligning policies with group standards
-- Working with your legal, tax and audit advisers
-- A risk register and outline of controls
-
-What you get
-
-## What you will have at the end
-
-A governance framework outline
-
-A compliance and filing calendar
-
-A register of obligations
-
-A policy alignment summary
-
-A plan for coordinating your advisers
-
-How it works
-
-## Four steps from start to finish
-
-1
-
-### Map
-
-We map your obligations, your advisers and who decides what.
-
-2
-
-### Design
-
-We outline a proportionate framework and a calendar you can actually follow.
-
-3
-
-### Coordinate
-
-We bring the inputs from advisers and authorities together.
-
-4
-
-### Embed
-
-We help your team run it day to day.
-
-Your part
-
-## How you can help us help you
-
-Share the documents and information we ask for, when we ask
-
-Review and approve our drafts promptly
-
-Join the key meetings, and bring decision-makers where you can
-
-Be open about your goals, your budget and your worries
-
-Questions we hear
-
-## Good questions
-
-**Are you a law, tax or audit firm?**
-
-No. We coordinate and structure the work. For professional advice you rely on your own licensed legal, tax and audit advisers.
-
-**Can you introduce us to advisers?**
-
-Yes, where it helps, we can introduce qualified firms. You decide whom to appoint.
-
-**Can you help with board reporting?**
-
-We can help you structure the governance and compliance information your board needs to see.
-
-Related services
-
-## You might also need
-
-**[ View all services ]**
-
-Formation & EstablishmentSetting up your Saudi entity, licences and registrations, step by step.Learn more Operations & Business SupportGetting your day-to-day running smoothly, and keeping it that way.Learn more Market Strategy & EntryAn honest look at the market and a clear plan for how to enter it.Learn more
-
-## Want to talk this through?
-
-Tell us what you are working on and we will tell you honestly whether we can help.
-
-**[ Book a Consultation ]**
-
-
----
-
-# PAGE: Service: Brand, Marketing & Digital Growth
-
-_Page title: Brand, Marketing & Digital Growth | Growth Blueprint_
-
-- Home
-- Services
-- Brand, Marketing & Digital Growth
-
-# Brand, Marketing & Digital Growth
-
-A brand that works in London or Singapore does not automatically work in Riyadh or Jeddah. We help you speak to Saudi customers in a way that feels natural, and build the digital presence that turns interest into sales.
-
-**[ Book a Consultation ]**
-
-Service overview
-
-## Be relevant, and be remembered
-
-We help you decide what to keep global and what to adapt locally, from your message and your pricing to your language and your channels. Then we build a marketing plan you can measure. We focus on strategy and planning, and we coordinate specialist agencies for production and media where you need them.
-
-Who it is for
-
-## Is this the right help for you?
-
-- You are an international brand localising for Saudi consumers.
-- You are launching a new product or service in the Kingdom.
-- You are building an Arabic and English digital presence.
-- You want your marketing spend to produce results you can measure.
-
-Sound familiar?
-
-## Problems we help you solve
-
-- Your message needs to fit local culture and language, not just be translated.
-- It is hard to choose the right channels and creators.
-- You are pricing and positioning against competitors who are already established.
-- You cannot yet tell whether early marketing spend is paying off.
-
-What we do
-
-## The work, in plain terms
-
-Strategy first, then focused work you can measure.
-
-- Brand positioning and message adaptation
-- A review of pricing and your offer
-- Channel strategy and campaign planning
-- A content strategy in Arabic and English
-- Guidance on your digital presence, search and e-commerce
-- A measurement framework, and reporting you can read
-
-What you get
-
-## What you will have at the end
-
-A positioning and messaging framework
-
-Pricing and offer recommendations
-
-A channel and campaign plan
-
-A content calendar outline
-
-A measurement dashboard outline
+A relationship plan
 
 How it works
 
@@ -1321,25 +832,25 @@ How it works
 
 ### Listen
 
-We learn your brand, your audience and your competitors.
+We learn who you are meeting and what you want from them.
 
 2
 
-### Position
+### Prepare
 
-We adapt your positioning and pricing for Saudi customers.
+We brief you on culture, expectations and likely sticking points.
 
 3
 
-### Plan
+### Accompany
 
-We plan the channels, content and campaigns.
+We support you through the early meetings.
 
 4
 
-### Measure
+### Reflect
 
-We set up reporting and keep improving with real data.
+We review what happened and plan the next step together.
 
 Your part
 
@@ -1357,17 +868,17 @@ Questions we hear
 
 ## Good questions
 
-**Do you run the campaigns?**
+**Is this training?**
 
-We focus on strategy and planning. For production and media buying we coordinate specialist agencies, so you get the right people for each job.
+It is advice and preparation tied to your real meetings and negotiations, rather than a generic course.
 
-**Can you adapt our existing brand?**
+**Do you attend meetings with us?**
 
-Yes. We advise on what should stay global and what should change locally, including language and tone.
+Where it helps, yes. We agree this with you in advance.
 
-**How will we know it is working?**
+**Can you negotiate on our behalf?**
 
-We agree a few measures with you at the start, linked to awareness, demand and sales, and we report on them in plain language.
+We prepare and support you. You stay the decision-maker, and we do not sign or commit on your behalf.
 
 Related services
 
@@ -1375,151 +886,13 @@ Related services
 
 **[ View all services ]**
 
-Market Strategy & EntryAn honest look at the market and a clear plan for how to enter it.Learn more Partnerships & Commercial DevelopmentFinding the right partners, and building relationships that last.Learn more Technology & AutomationChoosing the right technology, and letting it take the repetitive work.Learn more
+Market IntelligenceClear insight into Saudi opportunities across the sectors Vision 2030 is opening up.Learn more Market Entry GuidancePlain-language help with regulations, licensing and the route that suits you.Learn more Strategic IntroductionsIntroductions to vetted Saudi partners, industry leaders and key stakeholders.Learn more
 
 ## Want to talk this through?
 
 Tell us what you are working on and we will tell you honestly whether we can help.
 
-**[ Book a Consultation ]**
-
-
----
-
-# PAGE: Service: Technology & Automation
-
-_Page title: Technology & Automation | Growth Blueprint_
-
-- Home
-- Services
-- Technology & Automation
-
-# Technology & Automation
-
-Technology should make your Saudi operation simpler, not more complicated. We help you work out what you actually need, choose it without the sales pitch, and put it to work.
-
-**[ Book a Consultation ]**
-
-Service overview
-
-## Technology that serves the plan
-
-We help you assess your needs, compare solutions without bias, plan the implementation and find the repetitive work worth automating, with data, security and local requirements in mind from the start. Our advice is vendor-neutral: we do not resell software or take commission from technology providers.
-
-Who it is for
-
-## Is this the right help for you?
-
-- You are choosing the systems for a new Saudi entity.
-- Your teams spend too much time on manual, repetitive tasks.
-- You are planning a digital roadmap and want it to be realistic.
-- You need local systems and group systems to work together.
-
-Sound familiar?
-
-## Problems we help you solve
-
-- There are too many platforms and not enough honest guidance.
-- Data hosting and security expectations need to be met from day one.
-- Systems have to connect across entities and countries.
-- Automation projects can cost a lot and deliver little.
-
-What we do
-
-## The work, in plain terms
-
-Impartial advice, from working out the need to making sure people use the result.
-
-- A needs assessment and technology roadmap
-- Comparing solutions without bias
-- Finding the automation opportunities worth pursuing
-- A checklist for data, security and local requirements
-- Implementation planning and change support
-- Tracking the benefits and checking adoption
-
-What you get
-
-## What you will have at the end
-
-A technology roadmap
-
-A solution shortlist and evaluation
-
-An automation opportunity register
-
-An implementation plan
-
-A benefits tracking framework
-
-How it works
-
-## Four steps from start to finish
-
-1
-
-### Assess
-
-We map your needs, your current systems and your constraints.
-
-2
-
-### Choose
-
-We compare options against criteria we agree with you.
-
-3
-
-### Implement
-
-We plan the rollout and coordinate it with your providers.
-
-4
-
-### Adopt
-
-We check the benefits arrive and that people use what was built.
-
-Your part
-
-## How you can help us help you
-
-Share the documents and information we ask for, when we ask
-
-Review and approve our drafts promptly
-
-Join the key meetings, and bring decision-makers where you can
-
-Be open about your goals, your budget and your worries
-
-Questions we hear
-
-## Good questions
-
-**Do you sell software?**
-
-No. Our advice is vendor-neutral, and we do not earn commission from any technology provider.
-
-**Can you help with data-hosting questions?**
-
-We help you frame the questions and the requirements. You then confirm the specifics with your own legal and security advisers.
-
-**Where should automation start?**
-
-Usually with high-volume, rule-based work where the benefit is easy to measure. Small wins first builds confidence for the bigger ones.
-
-Related services
-
-## You might also need
-
-**[ View all services ]**
-
-Operations & Business SupportGetting your day-to-day running smoothly, and keeping it that way.Learn more Brand, Marketing & Digital GrowthMaking your brand relevant to Saudi customers, and turning attention into demand.Learn more Governance, Finance & Compliance CoordinationKeeping governance, finance and compliance in order, without the headaches.Learn more
-
-## Want to talk this through?
-
-Tell us what you are working on and we will tell you honestly whether we can help.
-
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -1534,23 +907,23 @@ Industries
 
 Every sector has its own rules, rhythms and risks. We focus on a handful, so our advice fits how your industry really works.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Our focus
 
-## Four core sectors
+## Three core sectors
 
-Where we spend most of our time, and where we can help you the most.
+Where our clients and our specialists are.
 
-FMCG & Consumer Brands Real Estate Hospitality Industry & Manufacturing
+Real Estate Industry & Manufacturing Healthcare & Life Sciences
 
 Also working in
 
-## Seven more sectors
+## Five more sectors
 
-Sectors where we see real momentum, and where we have a point of view worth sharing.
+Sectors where we see real momentum, and where we publish briefings.
 
-Technology & Digital Businesses Construction & Engineering Healthcare & Life Sciences Logistics & Supply Chain Retail & E-commerce Professional & Business Services Tourism & Leisure
+FMCG & Consumer Brands Hospitality Technology & Digital Businesses Logistics & Supply Chain Retail & E-commerce
 
 Let's talk about your sector
 
@@ -1558,73 +931,7 @@ Let's talk about your sector
 
 Tell us what you do and where you want to go. We will tell you what we see.
 
-**[ Book a Consultation ]**
-
-
----
-
-# PAGE: Industry: FMCG & Consumer Brands
-
-_Page title: FMCG & Consumer Brands | Growth Blueprint_
-
-- Home
-- Industries
-- FMCG & Consumer Brands
-
-Industries
-
-# FMCG & Consumer Brands
-
-Helping consumer brands, retailers and distributors get onto Saudi shelves, stay there, and grow.
-
-**[ Ask about this sector ]**
-
-The sector
-
-## A market that rewards the brands who get it right
-
-Saudi shoppers are young, connected and used to choice. They notice quality, value and a good story, and they switch quickly when a brand lets them down. For brands, that means a real opportunity and a high bar. We help you find your place in it: who to sell to first, how to get distribution that works, how to price, and how to stay on the shelf once you are there.
-
-The hard parts
-
-## Where consumer brands usually get stuck
-
-### Shoppers expect more
-
-Quality, value, health and a story they believe in. Getting just one of them wrong is enough to lose a repeat purchase.
-
-### Everyone is competing
-
-Global giants, regional brands and fast local challengers all want the same shelf.
-
-### Many channels to juggle
-
-Modern trade, neighbourhood shops and online all work differently, and they all want your attention.
-
-### Rules keep moving
-
-Labelling, registration and localisation requirements change, and an old answer can quickly become the wrong one.
-
-How we help
-
-## Where we usually come in
-
-Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
-
-- Market Strategy & Entry
-- Partnerships & Commercial Development
-- Brand, Marketing & Digital Growth
-- Operations & Business Support
-
-Other sectors
-
-Real EstateHospitalityManufacturingTechnology & DigitalView all industries
-
-## Talk to us about your sector
-
-A short conversation is often enough to see what the next step should be.
-
-**[ Make an enquiry ]**
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -1649,7 +956,7 @@ The sector
 
 ## Big projects, local detail
 
-New districts, large programmes and growing demand for homes, offices and shops are changing the property map of the Kingdom. The opportunity is real, but so is the detail: who owns the land, which approvals come in which order, and who is actually able to build. We help you look past the headlines to a project you can finance, approve and deliver.
+New districts, large programmes and growing demand for homes, offices and shops are changing the property map of the Kingdom. The opportunity is real, but so is the detail: who owns the land, which approvals come in which order, and who is actually able to build. We help you understand the market, the approvals landscape and the right local specialists, so you can judge a project before you commit.
 
 The hard parts
 
@@ -1677,80 +984,13 @@ How we help
 
 Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
 
-- Market Strategy & Entry
-- Formation & Establishment
-- Partnerships & Commercial Development
-- Governance, Finance & Compliance Coordination
+- Market Intelligence
+- Market Entry Guidance
+- Strategic Introductions
 
 Other sectors
 
-FMCGHospitalityManufacturingTechnology & DigitalView all industries
-
-## Talk to us about your sector
-
-A short conversation is often enough to see what the next step should be.
-
-**[ Make an enquiry ]**
-
-
----
-
-# PAGE: Industry: Hospitality
-
-_Page title: Hospitality | Growth Blueprint_
-
-- Home
-- Industries
-- Hospitality
-
-Industries
-
-# Hospitality
-
-Helping hotel, restaurant and experience operators open well and run well in a visitor economy that is being built right now.
-
-**[ Ask about this sector ]**
-
-The sector
-
-## A new visitor economy, built from the ground up
-
-Saudi Arabia is welcoming more visitors, building new destinations and rethinking what a stay can feel like. For operators, that is exciting, and demanding. You have to staff and license venues, plan for peaks and quiet months, and match the standards guests expect. We help you open well, and keep the quality up once the novelty wears off.
-
-The hard parts
-
-## What operators find hardest
-
-### Guests expect a lot
-
-They compare you with the best they have seen anywhere, and they share it when you miss.
-
-### Finding and keeping good people
-
-Skilled hospitality teams take time to build, and everyone is hiring.
-
-### Running several sites well
-
-Quality at scale needs systems, and a way of doing things that does not depend on one person.
-
-### Growing responsibly
-
-Balancing growth with heritage, environment and the community around you.
-
-How we help
-
-## Where we usually come in
-
-Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
-
-- Market Strategy & Entry
-- HR, Talent & Executive Mobility
-- Operations & Business Support
-- Brand, Marketing & Digital Growth
-
-Other sectors
-
-FMCGReal EstateManufacturingTechnology & DigitalView all industries
+ManufacturingHealthcare & Life SciencesFMCGHospitalityView all industries
 
 ## Talk to us about your sector
 
@@ -1781,7 +1021,7 @@ The sector
 
 ## A country that wants to make more
 
-Saudi Arabia is investing heavily in local manufacturing, and it has put policy, financing and land behind the goal. That is good news if you are planning a plant, but a plant is only as good as its site, its supply chain and its people. We help you work out where to build, what support may be available, and how to avoid the delays that catch most first-time investors.
+Saudi Arabia is investing heavily in local manufacturing, and it has put policy, financing and land behind the goal. That is good news if you are planning a plant, but a plant is only as good as its site, its supply chain and its people. We help you understand where to build, what support may be available, and which approvals to plan for.
 
 The hard parts
 
@@ -1809,146 +1049,13 @@ How we help
 
 Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
 
-- Market Strategy & Entry
-- Operations & Business Support
-- Technology & Automation
-- HR, Talent & Executive Mobility
+- Market Intelligence
+- Market Entry Guidance
+- Cultural & Business Advisory
 
 Other sectors
 
-FMCGReal EstateHospitalityTechnology & DigitalView all industries
-
-## Talk to us about your sector
-
-A short conversation is often enough to see what the next step should be.
-
-**[ Make an enquiry ]**
-
-
----
-
-# PAGE: Industry: Technology & Digital Businesses
-
-_Page title: Technology & Digital Businesses | Growth Blueprint_
-
-- Home
-- Industries
-- Technology & Digital Businesses
-
-Industries
-
-# Technology & Digital Businesses
-
-For software, platform and digital services companies selling to a market that is investing in digital.
-
-**[ Ask about this sector ]**
-
-The sector
-
-## A market buying digital at scale
-
-Government programmes, large enterprises and a young population are all pushing demand for cloud, data and digital services. But selling here is not like selling elsewhere. Deals can be slow, buyers will ask early about where data lives, and local presence matters. We help you understand how your buyers decide, find the right partner, and set up so that you are ready when they ask.
-
-The hard parts
-
-## What technology companies run into
-
-### Reaching the right buyers
-
-Enterprise and government buyers have their own ways of evaluating and procuring.
-
-### Data and security questions
-
-Expect questions on hosting, privacy and cybersecurity early in the conversation.
-
-### Presence and partners
-
-Direct team, integrator or reseller: each choice changes your costs and your control.
-
-### Hiring
-
-Technical talent is in demand everywhere. Plan your first hires early.
-
-How we help
-
-## Where we usually come in
-
-Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
-
-- Market Strategy & Entry
-- Partnerships & Commercial Development
-- Formation & Establishment
-- HR, Talent & Executive Mobility
-
-Other sectors
-
-FMCGReal EstateHospitalityManufacturingView all industries
-
-## Talk to us about your sector
-
-A short conversation is often enough to see what the next step should be.
-
-**[ Make an enquiry ]**
-
-
----
-
-# PAGE: Industry: Construction & Engineering
-
-_Page title: Construction & Engineering | Growth Blueprint_
-
-- Home
-- Industries
-- Construction & Engineering
-
-Industries
-
-# Construction & Engineering
-
-For contractors, consultants and investors who want to win work and deliver well on the Kingdom’s largest projects.
-
-**[ Ask about this sector ]**
-
-The sector
-
-## Building the Kingdom’s future
-
-Construction and engineering sit under almost everything the Kingdom is building: cities, infrastructure, industry. The pipeline is large and the standards are rising. If you want to be part of it, you need to know how projects are procured, who you can partner with, and how to manage cash across long payment cycles. We help you build a position, not just chase the next tender.
-
-The hard parts
-
-## What the sector finds hardest
-
-### More complex projects
-
-Larger, more ambitious, with more parties around the table.
-
-### Cost and supply pressure
-
-Material prices move, and global supply chains do not always cooperate.
-
-### Skills and capability
-
-Demand for specialist skills is rising faster than supply.
-
-### Standards and governance
-
-Higher expectations on compliance, safety and how projects are governed.
-
-How we help
-
-## Where we usually come in
-
-Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
-
-- Market Strategy & Entry
-- Partnerships & Commercial Development
-- HR, Talent & Executive Mobility
-- Governance, Finance & Compliance Coordination
-
-Other sectors
-
-FMCGReal EstateHospitalityManufacturingView all industries
+Real EstateHealthcare & Life SciencesFMCGHospitalityView all industries
 
 ## Talk to us about your sector
 
@@ -1979,7 +1086,7 @@ The sector
 
 ## A sector in transformation
 
-How care is funded, delivered and measured is changing. There is more room for private providers, more attention on prevention, and more digital health. Healthcare is also one of the most regulated sectors there is, and rightly so. We help you understand who the main bodies are, how approvals generally work, where partnerships fit, and how long things realistically take.
+How care is funded, delivered and measured is changing. There is more room for private providers, more attention on prevention, and more digital health. Healthcare is also one of the most regulated sectors there is, and rightly so. We help you understand who the main bodies are, how approvals generally work, and where partnerships fit.
 
 The hard parts
 
@@ -2007,14 +1114,210 @@ How we help
 
 Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
 
-- Market Strategy & Entry
-- Partnerships & Commercial Development
-- Operations & Business Support
-- Technology & Automation
+- Market Intelligence
+- Strategic Introductions
+- Market Entry Guidance
 
 Other sectors
 
-FMCGReal EstateHospitalityManufacturingView all industries
+Real EstateManufacturingFMCGHospitalityView all industries
+
+## Talk to us about your sector
+
+A short conversation is often enough to see what the next step should be.
+
+**[ Make an enquiry ]**
+
+
+---
+
+# PAGE: Industry: FMCG & Consumer Brands
+
+_Page title: FMCG & Consumer Brands | Growth Blueprint_
+
+- Home
+- Industries
+- FMCG & Consumer Brands
+
+Industries
+
+# FMCG & Consumer Brands
+
+Helping consumer brands, retailers and distributors get onto Saudi shelves, stay there, and grow.
+
+**[ Ask about this sector ]**
+
+The sector
+
+## A market that rewards the brands who get it right
+
+Saudi shoppers are young, connected and used to choice. They notice quality, value and a good story, and they switch quickly when a brand lets them down. For brands, that means a real opportunity and a high bar. We help you read the market, meet distributors and retail partners, and understand how Saudi buyers decide.
+
+The hard parts
+
+## Where consumer brands usually get stuck
+
+### Shoppers expect more
+
+Quality, value, health and a story they believe in. Getting just one of them wrong is enough to lose a repeat purchase.
+
+### Everyone is competing
+
+Global giants, regional brands and fast local challengers all want the same shelf.
+
+### Many channels to juggle
+
+Modern trade, neighbourhood shops and online all work differently, and they all want your attention.
+
+### Rules keep moving
+
+Labelling, registration and localisation requirements change, and an old answer can quickly become the wrong one.
+
+How we help
+
+## Where we usually come in
+
+Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
+
+- Market Intelligence
+- Strategic Introductions
+- Cultural & Business Advisory
+- Market Entry Guidance
+
+Other sectors
+
+Real EstateManufacturingHealthcare & Life SciencesHospitalityView all industries
+
+## Talk to us about your sector
+
+A short conversation is often enough to see what the next step should be.
+
+**[ Make an enquiry ]**
+
+
+---
+
+# PAGE: Industry: Hospitality
+
+_Page title: Hospitality | Growth Blueprint_
+
+- Home
+- Industries
+- Hospitality
+
+Industries
+
+# Hospitality
+
+Helping hotel, restaurant and experience operators open well and run well in a visitor economy that is being built right now.
+
+**[ Ask about this sector ]**
+
+The sector
+
+## A new visitor economy, built from the ground up
+
+Saudi Arabia is welcoming more visitors, building new destinations and rethinking what a stay can feel like. For operators, that is exciting, and demanding. You have to staff and license venues, plan for peaks and quiet months, and match the standards guests expect. We help you read the market, meet the right partners and understand what guests and regulators expect.
+
+The hard parts
+
+## What operators find hardest
+
+### Guests expect a lot
+
+They compare you with the best they have seen anywhere, and they share it when you miss.
+
+### Finding and keeping good people
+
+Skilled hospitality teams take time to build, and everyone is hiring.
+
+### Running several sites well
+
+Quality at scale needs systems, and a way of doing things that does not depend on one person.
+
+### Growing responsibly
+
+Balancing growth with heritage, environment and the community around you.
+
+How we help
+
+## Where we usually come in
+
+Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
+
+- Market Intelligence
+- Cultural & Business Advisory
+- Market Entry Guidance
+
+Other sectors
+
+Real EstateManufacturingHealthcare & Life SciencesFMCGView all industries
+
+## Talk to us about your sector
+
+A short conversation is often enough to see what the next step should be.
+
+**[ Make an enquiry ]**
+
+
+---
+
+# PAGE: Industry: Technology & Digital Businesses
+
+_Page title: Technology & Digital Businesses | Growth Blueprint_
+
+- Home
+- Industries
+- Technology & Digital Businesses
+
+Industries
+
+# Technology & Digital Businesses
+
+For software, platform and digital services companies selling to a market that is investing in digital.
+
+**[ Ask about this sector ]**
+
+The sector
+
+## A market buying digital at scale
+
+Government programmes, large enterprises and a young population are all pushing demand for cloud, data and digital services. But selling here is not like selling elsewhere. Deals can be slow, buyers will ask early about where data lives, and local presence matters. We help you understand how your buyers decide and meet the right partners.
+
+The hard parts
+
+## What technology companies run into
+
+### Reaching the right buyers
+
+Enterprise and government buyers have their own ways of evaluating and procuring.
+
+### Data and security questions
+
+Expect questions on hosting, privacy and cybersecurity early in the conversation.
+
+### Presence and partners
+
+Direct team, integrator or reseller: each choice changes your costs and your control.
+
+### Hiring
+
+Technical talent is in demand everywhere. Plan your first hires early.
+
+How we help
+
+## Where we usually come in
+
+Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
+
+- Market Intelligence
+- Strategic Introductions
+- Market Entry Guidance
+- Cultural & Business Advisory
+
+Other sectors
+
+Real EstateManufacturingHealthcare & Life SciencesFMCGView all industries
 
 ## Talk to us about your sector
 
@@ -2045,7 +1348,7 @@ The sector
 
 ## At the crossroads of three continents
 
-Ports, rail, airports, logistics parks and free zones are all being expanded to make the Kingdom a regional hub. For anyone who moves goods, the question is where to build and with whom. We help you compare locations and partners honestly, understand customs and licensing, and test a route before you commit to it.
+Ports, rail, airports, logistics parks and free zones are all being expanded to make the Kingdom a regional hub. For anyone who moves goods, the question is where to build and with whom. We help you compare locations and partners honestly and understand the licensing that applies.
 
 The hard parts
 
@@ -2073,14 +1376,13 @@ How we help
 
 Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
 
-- Market Strategy & Entry
-- Partnerships & Commercial Development
-- Operations & Business Support
-- Technology & Automation
+- Market Intelligence
+- Strategic Introductions
+- Market Entry Guidance
 
 Other sectors
 
-FMCGReal EstateHospitalityManufacturingView all industries
+Real EstateManufacturingHealthcare & Life SciencesFMCGView all industries
 
 ## Talk to us about your sector
 
@@ -2111,7 +1413,7 @@ The sector
 
 ## Shoppers who know what they want
 
-Saudi shoppers are digital, mobile and brand-aware, and they expect fast delivery, easy returns and an experience in Arabic that feels written for them. That raises the bar, and rewards the sellers who clear it. We help you choose channels, get payments and delivery right, and plan a first year that tests demand before it spends heavily.
+Saudi shoppers are digital, mobile and brand-aware, and they expect fast delivery, easy returns and an experience in Arabic that feels written for them. That raises the bar, and rewards the sellers who clear it. We help you read the market, meet the right partners and understand what Saudi shoppers expect, so your first year tests demand before it spends heavily.
 
 The hard parts
 
@@ -2139,146 +1441,13 @@ How we help
 
 Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
 
-- Market Strategy & Entry
-- Brand, Marketing & Digital Growth
-- Technology & Automation
-- Operations & Business Support
+- Market Intelligence
+- Cultural & Business Advisory
+- Market Entry Guidance
 
 Other sectors
 
-FMCGReal EstateHospitalityManufacturingView all industries
-
-## Talk to us about your sector
-
-A short conversation is often enough to see what the next step should be.
-
-**[ Make an enquiry ]**
-
-
----
-
-# PAGE: Industry: Professional & Business Services
-
-_Page title: Professional & Business Services | Growth Blueprint_
-
-- Home
-- Industries
-- Professional & Business Services
-
-Industries
-
-# Professional & Business Services
-
-For law, accounting, design, consulting and other professional firms building a practice in the Kingdom.
-
-**[ Ask about this sector ]**
-
-The sector
-
-## A sector built on trust
-
-In professional services, your reputation and your relationships are the product. The Kingdom’s transformation is creating demand for advice of every kind, and for firms that clients trust. We help you enter or grow in a way that builds credibility first: the right structure, the right people, and the right early clients.
-
-The hard parts
-
-## What professional firms are facing
-
-### Clients expect more
-
-Joined-up, tech-enabled advice rather than a stack of separate reports.
-
-### More competition
-
-Domestic and international firms are competing across almost every service line.
-
-### Talent
-
-Attracting, developing and keeping good people while demand changes.
-
-### Regulation and standards
-
-Licensing and professional standards are evolving, and you need to stay ahead of them.
-
-How we help
-
-## Where we usually come in
-
-Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
-
-- Market Strategy & Entry
-- Formation & Establishment
-- HR, Talent & Executive Mobility
-- Governance, Finance & Compliance Coordination
-
-Other sectors
-
-FMCGReal EstateHospitalityManufacturingView all industries
-
-## Talk to us about your sector
-
-A short conversation is often enough to see what the next step should be.
-
-**[ Make an enquiry ]**
-
-
----
-
-# PAGE: Industry: Tourism & Leisure
-
-_Page title: Tourism & Leisure | Growth Blueprint_
-
-- Home
-- Industries
-- Tourism & Leisure
-
-Industries
-
-# Tourism & Leisure
-
-For destination, attraction and leisure operators who want to be part of a fast-growing visitor economy.
-
-**[ Ask about this sector ]**
-
-The sector
-
-## Experiences people will travel for
-
-New destinations, heritage sites, events and leisure experiences are widening what the Kingdom offers a visitor. The best of them are memorable because they are well run, not just well built. We help operators and investors check demand, structure partnerships and build the operating capability to deliver a great day, again and again.
-
-The hard parts
-
-## What operators need to plan for
-
-### Demand that comes in waves
-
-Seasons, events and holidays make the calendar uneven. Plan for the quiet weeks too.
-
-### Designing the experience
-
-What makes a visit feel authentic and worth the journey, and how you keep it that way.
-
-### Partners and permissions
-
-Destination authorities, operators and suppliers all need to line up.
-
-### Protecting what people come to see
-
-Heritage and environment are the attraction. Growth has to respect them.
-
-How we help
-
-## Where we usually come in
-
-Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
-
-- Market Strategy & Entry
-- Partnerships & Commercial Development
-- Operations & Business Support
-- Brand, Marketing & Digital Growth
-
-Other sectors
-
-FMCGReal EstateHospitalityManufacturingView all industries
+Real EstateManufacturingHealthcare & Life SciencesFMCGView all industries
 
 ## Talk to us about your sector
 
@@ -2299,9 +1468,9 @@ Our approach
 
 A clear path, so you always know where you are.
 
-We work in five stages: Assess, Plan, Establish, Execute and Grow. Each has a clear purpose, clear outputs, and a moment where you decide whether to go on.
+We work in five stages: Assess, Plan, Prepare, Connect and Grow. Each has a clear purpose, clear outputs, and a moment where you decide whether to go on.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Why a method matters
 
@@ -2359,71 +1528,70 @@ Confirm the plan, and that you are ready to set up.
 
 03
 
-## Establish
+## Prepare
 
-Put the foundations in place so delivery can run smoothly.
+Get ready to act, with the right specialists beside you.
 
 ### What we do
 
-- Plan and design in detail
-- Set up governance and controls
-- Plan the people and resources
-- Line up partners and suppliers
+- Confirm the setup pathway and requirements
+- Coordinate legal and accounting specialists
+- Identify the incentives you can use
+- Prepare your team for the market
 
 ### What you get
 
-- A detailed delivery plan
-- A governance framework
-- A resource and capability plan
-- Partners lined up
+- A sequenced setup checklist
+- Specialists briefed and ready
+- A summary of incentives
+- A cultural briefing for your team
 
 ### Your decision
 
-Confirm the foundations are solid enough to begin.
+Confirm you are ready to start.
 
 04
 
-## Execute
+## Connect
 
-Turn the plan into progress, with steady hands on the wheel.
+Meet the right people, and be ready for the conversation.
 
 ### What we do
 
-- Run the work and keep it moving
-- Bring people with you
-- Track benefits and report plainly
-- Manage risk as it appears
+- Introduce you to vetted partners and stakeholders
+- Plan meetings and roadshows
+- Prepare you for each negotiation
+- Follow up so meetings become relationships
 
 ### What you get
 
-- Initiatives and milestones delivered
-- Improvements you can measure
-- People on board and using the change
-- A roadmap updated as you learn
+- A shortlist of partners
+- A meeting programme
+- A briefing for each meeting
+- A follow-up summary
 
 ### Your decision
 
-Review progress, and decide whether you are ready to scale.
+Decide which relationships to take forward.
 
 05
 
 ## Grow
 
-Scale what works, and build value that lasts.
+Build on what works, with advice when you need it.
 
 ### What we do
 
-- Scale what is working
+- Review what has worked and what has not
 - Spot the next opportunities
-- Make improvement a habit
-- Build capability for the long term
+- Keep your market view up to date
+- Advise on the next step
 
 ### What you get
 
-- A growth plan you can sustain
-- A stronger organisation
-- A pipeline of new opportunities
-- Value that lasts
+- A review of progress
+- Updated market insight
+- A clear next step
 
 ### Your decision
 
@@ -2435,7 +1603,7 @@ Built around you
 
 No two engagements look the same. We fit the pace, the priorities and the depth to your organisation, and we are happy to start small.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Related services
 
@@ -2443,7 +1611,7 @@ Related services
 
 Our services line up with these stages, and you can use as many or as few as you need.
 
-Market Strategy & EntryHR, Talent & Executive MobilityOperations & Business SupportBrand, Marketing & Digital GrowthGovernance, Finance & Compliance Coordination
+Market IntelligenceCultural & Business AdvisoryMarket Entry Guidance
 
 Let's talk
 
@@ -2451,7 +1619,7 @@ Let's talk
 
 Tell us what you are trying to do. We will be straight with you about how we might help.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -2464,7 +1632,7 @@ About us
 
 # About Us
 
-A small, founder-led Saudi advisory. We believe good advice is candid, practical and personal, and that it should leave you more capable than it found you.
+A Saudi advisory firm for international investors. We believe good advice is candid, practical and personal, and that it should leave you more capable than it found you.
 
 Founded2024
 
@@ -2476,15 +1644,15 @@ Based inJeddah
 
 Licensed by the Ministry of Human Resources & Social Development
 
-Founder-led
+Our story
 
 ## A personal commitment to meaningful impact
 
 Growth Blueprint began with a simple belief: businesses that come to Saudi Arabia deserve advice from someone who will tell them the truth, including the parts they would rather not hear.
 
-We work closely with organisations to sharpen their positioning, clarify their purpose and put sound principles into practice. We would rather take on fewer clients and do right by each one.
+We work closely with each client, and we would rather take on fewer engagements and do right by every one.
 
-Our founder is personally involved in every engagement. You will not be handed to a junior team after the first meeting. You get practical advice, coordinated support and honest perspectives, to help you handle complexity and reach your goals.
+Faisal Halawani, our Managing Director, brings more than 25 years in multinational business, innovation and commercial planning, and is a member of the Saudi Management Consultants Association. You get practical advice, coordinated support and honest perspectives.
 
 Our principles
 
@@ -2492,9 +1660,9 @@ Our principles
 
 Four commitments shape how we advise, support and work with you.
 
-### Personal involvement
+### Senior involvement
 
-The person you meet first stays involved to the end.
+Senior people stay involved from the first conversation.
 
 ### Practical advice
 
@@ -2510,9 +1678,9 @@ We tell you what we really think, including when it is “not yet”.
 
 The right people for the job
 
-## A small core, and the right specialists
+## A core team and an expert network
 
-We keep a small core team and bring in qualified specialists for each engagement: lawyers, tax advisers, recruiters, designers, technologists. They are the right people for the job, not whoever happens to be free.
+Alongside our core team sits a network of legal, accounting and sector specialists, with partners in marketing and branding, real estate, and advertising and PR. We bring in the right person for each question.
 
 That keeps us flexible and keeps your costs sensible, and it means you get focused, high-quality help for your particular situation.
 
@@ -2616,7 +1784,7 @@ Let's talk
 
 We would be glad to hear about your plans, and to tell you honestly whether we can help.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -2629,15 +1797,15 @@ Your journey in Saudi Arabia
 
 # Entering Saudi Arabia
 
-Getting into a new market is a series of decisions, and each one is easier when you can see the whole road. We help you assess the opportunity, compare the ways in, set up properly, find the right partners and plan a launch you can be proud of.
+Getting into a new market is a series of decisions, and each one is easier when you can see the whole road. We help you understand the opportunity, compare the ways in, prepare properly, meet the right partners and plan a launch you can be proud of.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 A clearer path
 
 ## From “should we?” to a successful launch
 
-Six steps take you from a first look at the market to a launch plan, with the right structure, partners and support lined up. You can use all six, or just the ones you need.
+Six steps take you from a first look at the market to a launch plan, with the right structure and partners in view. You can use all six, or just the ones you need.
 
 01
 
@@ -2653,15 +1821,15 @@ Subsidiary, joint venture or partnership: which fits your goals?
 
 03
 
-### Setting up
+### Preparing to set up
 
-Forming the company and working with the authorities.
+Understanding the pathway, the requirements and the specialists who carry out the formal steps.
 
 04
 
 ### Finding partners
 
-Identifying and checking local partners who fit.
+Introductions to vetted local partners who fit.
 
 05
 
@@ -2671,9 +1839,9 @@ A phased plan you can follow and fund.
 
 06
 
-### Ongoing support
+### Continued advice
 
-Help with whatever you need once you are up and running.
+Advice on the next step once you are under way.
 
 Market assessment
 
@@ -2697,37 +1865,37 @@ There is no single best way in. We compare the realistic options against your go
 - A strategic partnership
 - Other structures that might suit you
 
-Setting up
+Preparing to set up
 
-We coordinate the formation process with the relevant authorities and help you through each requirement.
+We explain the pathway and the requirements, and coordinate the legal and accounting specialists who carry out the formal steps.
 
 Finding partners
 
-We help you identify, check and approach local partners who share your goals.
+We introduce you to vetted local partners who share your goals, and prepare you for the conversations.
 
 Launch roadmap
 
 We build a phased plan, so you can start modestly and grow as you learn.
 
-Ongoing support
+Continued advice
 
-When you are up and running, we are here for whatever comes next.
+Once you are under way, we are here to advise on what comes next.
 
 Services that help
 
 ## Support that fits your entry
 
-Strategy, legal, tax, people and operations all matter in the first year. We bring the right help together so you do not have to coordinate it yourself.
+Strategy, legal, tax and relationships all matter in the first year. We bring the right help together so you do not have to coordinate it yourself.
 
 **[ Explore Our Services ]**
 
 Ready for the next step?
 
-## Book a conversation
+## Book a free consultation
 
 Tell us your plans and we will give you a straight answer on how we could help.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -2740,21 +1908,21 @@ Your journey in Saudi Arabia
 
 # Growing in Saudi Arabia
 
-You have a foothold. Now the question is where to push next. We help you look honestly at how you are doing, choose the growth bets worth making, and build the people, partners and brand to make them pay off.
+You have a foothold. Now the question is where to push next. We help you look honestly at the market, choose the growth bets worth making, and build the relationships to make them pay off.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 A stronger presence
 
 ## From a foothold to a position of strength
 
-Growth is rarely about doing more of everything. It is about choosing where to focus, and building the capability to follow through. These six steps help you do both.
+Growth is rarely about doing more of everything. It is about choosing where to focus, and building the relationships to follow through. These six steps help you do both.
 
 01
 
-### Performance review
+### Market review
 
-What is working, where value is leaking, and where to focus.
+What the market is telling you, and where to focus.
 
 02
 
@@ -2770,43 +1938,43 @@ Deepening the relationships that move you forward.
 
 04
 
-### People & organisation
+### Stakeholders
 
-The leaders, teams and structure to scale.
+The authorities, buyers and industry leaders who matter as you scale.
 
 05
 
-### Brand & digital
+### Culture & negotiation
 
-Being found, trusted and chosen.
+Being understood, trusted and chosen.
 
 06
 
-### Technology
+### Roadshows & visits
 
-Doing more with the team you have.
+Putting yourself in front of the right people.
 
 Growth priorities
 
 ## Back the bets that matter most
 
-We help you rank your growth options by value, feasibility and risk, so your next riyal and your next hire go where they count.
+We help you rank your growth options by value, feasibility and risk, so your next riyal goes where it counts.
 
 - Where your share is strong and where it is thin
 - A ranked list of growth options
 - What each option is likely to cost and return
 - A sensible order to do things in
 
-Building capability
+Building relationships
 
-## People, partners and brand, together
+## Partners, stakeholders and culture, together
 
-Growth needs the right people, the right partners and a brand that people recognise. We help you build all three in step, rather than one at a time.
+Growth needs the right partners, the right stakeholders and an understanding of how business gets done. We help you build all three in step.
 
-- Leadership and team design
+- Introductions to the right stakeholders
 - Partnerships that last
-- A brand and demand engine
-- Technology that saves time
+- Negotiation preparation
+- Roadshows and meeting programmes
 
 Keeping score
 
@@ -2816,29 +1984,29 @@ Partner development
 
 We help you strengthen the partners you have and open doors to new ones.
 
-Talent and leadership
+Relationship building
 
-Succession, localisation and developing the next layer of leaders.
+Staying close to the people who matter, over time.
 
-Running well as you scale
+Culture as you scale
 
-Better processes and service levels, so growth does not break what works.
+Practical guidance so growth does not strain the relationships that got you here.
 
 Services that help
 
 ## Support that fits your growth
 
-Strategy, partnerships, people, brand and technology, brought together around what you are trying to achieve.
+Market intelligence, introductions and cultural advice, brought together around what you are trying to achieve.
 
 **[ Explore Our Services ]**
 
 Ready for the next step?
 
-## Book a conversation
+## Book a free consultation
 
 Tell us where you are and where you want to go next. We will tell you honestly how we could help.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -2869,7 +2037,7 @@ Market Entry
 
 ## Seven questions to answer before you enter Saudi Arabia
 
-Sample editorial content
+Editorial draft: pending firm review
 
 Most entry problems start as unanswered questions in the first month. Here are the seven we ask every business before it commits, and why each one matters.
 
@@ -2879,7 +2047,7 @@ Commercial Strategy
 
 ## Why your home-market pricing will not work here
 
-Sample editorial content
+Editorial draft: pending firm review
 
 A price that works in one market can quietly fail in another. How to adapt your positioning and pricing for Saudi customers, without guessing.
 
@@ -2889,7 +2057,7 @@ Partnerships
 
 ## How to choose a partner in Saudi Arabia (and how not to)
 
-Sample editorial content
+Editorial draft: pending firm review
 
 The right partner can save you a year. The wrong one can cost you two. A plain guide to the criteria and the steps that tell them apart.
 
@@ -2899,7 +2067,7 @@ Regulatory & Operating Environment
 
 ## Map the rules before you commit
 
-Sample editorial content
+Editorial draft: pending firm review
 
 Regulation is rarely what derails an entry plan. Unexpected regulation is. A short mapping exercise at the start prevents expensive surprises.
 
@@ -2909,7 +2077,7 @@ Sectors & Opportunities
 
 ## Reading the signals: where the next growth sectors may emerge
 
-Sample editorial content
+Editorial draft: pending firm review
 
 National programmes are directing investment into new sectors. How to read those signals, and test whether a sector suits you.
 
@@ -2919,9 +2087,49 @@ Regulatory & Operating Environment
 
 ## Building your first Saudi team
 
-Sample editorial content
+Editorial draft: pending firm review
 
 Your first hires set the tone for culture, credibility and speed. A practical way to plan them, with localisation in mind from day one.
+
+**[ Read the article ]**
+
+Regulatory & Operating Environment
+
+## The foreign investment licence, in plain English
+
+Editorial draft: pending firm review
+
+What the licence is, who issues it, and the questions to settle before you apply.
+
+**[ Read the article ]**
+
+Regulatory & Operating Environment
+
+## The Regional Headquarters programme: does it affect you?
+
+Editorial draft: pending firm review
+
+Why selling to government entities can change where you need to be based.
+
+**[ Read the article ]**
+
+Regulatory & Operating Environment
+
+## Saudisation and Nitaqat: what it means for your hiring plan
+
+Editorial draft: pending firm review
+
+How Saudi-national employment targets shape the way you build a team.
+
+**[ Read the article ]**
+
+Regulatory & Operating Environment
+
+## Zakat, tax and VAT: the basics for a new Saudi entity
+
+Editorial draft: pending firm review
+
+The three obligations that surprise newcomers, and who deals with them.
 
 **[ Read the article ]**
 
@@ -2931,7 +2139,7 @@ Related services
 
 If something here sounds like your situation, these are the services most likely to help.
 
-Market Strategy & EntryBrand, Marketing & Digital GrowthPartnerships & Commercial DevelopmentOperations & Business Support
+Market IntelligenceCultural & Business AdvisoryStrategic IntroductionsMarket Entry Guidance
 
 The monthly brief
 
@@ -2949,11 +2157,11 @@ Yes, send me the monthly Growth Blueprint brief. I understand I can unsubscribe 
 
 Let's talk
 
-## Book a conversation
+## Book a free consultation
 
 Bring your questions. We are happy to talk them through.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -3050,26 +2258,24 @@ If you would like to talk any of them through, we would be glad to.
 
 ## Related services
 
-- Market Strategy & Entry
-- Governance, Finance & Compliance Coordination
-- Partnerships & Commercial Development
-- Brand, Marketing & Digital Growth
-- Formation & Establishment
-- Operations & Business Support
+- Market Intelligence
+- Market Entry Guidance
+- Strategic Introductions
+- Cultural & Business Advisory
 
 ## Talk it through with us
 
 If any of this sounds like your situation, we are happy to talk it through.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Thinking about Saudi Arabia?
 
-## Book a Consultation
+## Book a Free Consultation
 
 Tell us your plans and we will give you a straight answer on how we could help.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -3129,23 +2335,23 @@ Pricing and positioning are not one-off decisions. Treat them as things to test 
 
 ## Related services
 
-- Brand, Marketing & Digital Growth
-- Market Strategy & Entry
-- Partnerships & Commercial Development
+- Cultural & Business Advisory
+- Market Intelligence
+- Strategic Introductions
 
 ## Talk it through with us
 
 If any of this sounds like your situation, we are happy to talk it through.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Thinking about Saudi Arabia?
 
-## Book a Consultation
+## Book a Free Consultation
 
 Tell us your plans and we will give you a straight answer on how we could help.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -3205,23 +2411,23 @@ A disciplined approach, led by criteria rather than introductions, shortens the 
 
 ## Related services
 
-- Partnerships & Commercial Development
-- Market Strategy & Entry
-- Governance, Finance & Compliance Coordination
+- Strategic Introductions
+- Market Intelligence
+- Market Entry Guidance
 
 ## Talk it through with us
 
 If any of this sounds like your situation, we are happy to talk it through.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Thinking about Saudi Arabia?
 
-## Book a Consultation
+## Book a Free Consultation
 
 Tell us your plans and we will give you a straight answer on how we could help.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -3274,23 +2480,22 @@ Treat regulation as part of the plan from the first day, not a hurdle to clear a
 
 ## Related services
 
-- Formation & Establishment
-- Governance, Finance & Compliance Coordination
-- Market Strategy & Entry
+- Market Entry Guidance
+- Market Intelligence
 
 ## Talk it through with us
 
 If any of this sounds like your situation, we are happy to talk it through.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Thinking about Saudi Arabia?
 
-## Book a Consultation
+## Book a Free Consultation
 
 Tell us your plans and we will give you a straight answer on how we could help.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -3343,23 +2548,23 @@ The best sector choices combine national momentum with a credible reason why you
 
 ## Related services
 
-- Market Strategy & Entry
-- Partnerships & Commercial Development
-- Brand, Marketing & Digital Growth
+- Market Intelligence
+- Strategic Introductions
+- Cultural & Business Advisory
 
 ## Talk it through with us
 
 If any of this sounds like your situation, we are happy to talk it through.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Thinking about Saudi Arabia?
 
-## Book a Consultation
+## Book a Free Consultation
 
 Tell us your plans and we will give you a straight answer on how we could help.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -3412,23 +2617,310 @@ A thoughtful first team makes every later step faster, and your company more cre
 
 ## Related services
 
-- HR, Talent & Executive Mobility
-- Operations & Business Support
-- Formation & Establishment
+- Cultural & Business Advisory
+- Market Entry Guidance
 
 ## Talk it through with us
 
 If any of this sounds like your situation, we are happy to talk it through.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Thinking about Saudi Arabia?
 
-## Book a Consultation
+## Book a Free Consultation
 
 Tell us your plans and we will give you a straight answer on how we could help.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
+
+
+---
+
+# PAGE: Article: The foreign investment licence, in plain English
+
+_Page title: The foreign investment licence, in plain English | Growth Blueprint_
+
+- Home
+- Insights
+- The foreign investment licence, in plain English
+
+Insights
+
+# The foreign investment licence, in plain English
+
+A short guide for investors who are hearing the word “licence” for the first time.
+
+Most foreign companies that want to operate in Saudi Arabia begin with an investment licence from the Ministry of Investment (MISA). It is the first formal step, and a clear head before you apply saves time later.
+
+General information, written in October 2026. Rules change, so confirm the current requirements with the relevant authority or a qualified adviser before you act.
+
+01
+
+## What the licence does
+
+It authorises a foreign investor to carry out defined activities in the Kingdom. The activities you list matter: they shape what you can do and what other approvals you may need.
+
+02
+
+## Sector rules differ
+
+Some activities are open to full foreign ownership, some have conditions, and some need extra approvals from a sector regulator. Check your own sector early rather than assuming.
+
+03
+
+## Questions to settle before you apply
+
+What will the Saudi entity actually do? Who owns it, and through which group companies? Which regulators are involved? Who will sign and who will manage? Having these answers ready makes the process smoother.
+
+## To sum up
+
+The licence is a gate, not the whole journey. We help you work out your route, then coordinate the legal and accounting specialists who carry out the formal steps.
+
+## Contents
+
+- Introduction
+- 01What the licence does
+- 02Sector rules differ
+- 03Questions to settle before you apply
+- To sum up
+
+## Related services
+
+- Market Entry Guidance
+- Market Intelligence
+- Strategic Introductions
+- Cultural & Business Advisory
+
+## Talk it through with us
+
+If any of this sounds like your situation, we are happy to talk it through.
+
+**[ Book a Free Consultation ]**
+
+Thinking about Saudi Arabia?
+
+## Book a Free Consultation
+
+Tell us your plans and we will give you a straight answer on how we could help.
+
+**[ Book a Free Consultation ]**
+
+
+---
+
+# PAGE: Article: The Regional Headquarters programme: does it affect you?
+
+_Page title: The Regional Headquarters programme: does it affect you? | Growth Blueprint_
+
+- Home
+- Insights
+- The Regional Headquarters programme: does it affect you?
+
+Insights
+
+# The Regional Headquarters programme: does it affect you?
+
+A practical look at a rule that matters most to companies hoping to win public-sector work.
+
+The Kingdom has said that, with exceptions, government entities will contract with international companies that have a regional headquarters in Saudi Arabia. For some businesses this changes the entry plan completely; for others it does not matter at all.
+
+General information, written in October 2026. Rules change, so confirm the current requirements with the relevant authority or a qualified adviser before you act.
+
+01
+
+## Who it matters to
+
+Mainly to companies that expect a large share of revenue from government contracts. If your customers are private businesses or consumers, it may not apply to you.
+
+02
+
+## What to work out first
+
+How much of your plan depends on public-sector buyers? What would a regional headquarters need to look like for you: people, functions, premises? And what are the costs and the incentives?
+
+03
+
+## Check the current detail
+
+Conditions, exceptions and timing have been updated before. Always confirm the current position with the authority before you decide.
+
+## To sum up
+
+Whether to open a regional headquarters is a strategic decision, not a box to tick. We help you test it against your real revenue plan.
+
+## Contents
+
+- Introduction
+- 01Who it matters to
+- 02What to work out first
+- 03Check the current detail
+- To sum up
+
+## Related services
+
+- Market Entry Guidance
+- Market Intelligence
+- Strategic Introductions
+- Cultural & Business Advisory
+
+## Talk it through with us
+
+If any of this sounds like your situation, we are happy to talk it through.
+
+**[ Book a Free Consultation ]**
+
+Thinking about Saudi Arabia?
+
+## Book a Free Consultation
+
+Tell us your plans and we will give you a straight answer on how we could help.
+
+**[ Book a Free Consultation ]**
+
+
+---
+
+# PAGE: Article: Saudisation and Nitaqat: what it means for your hiring plan
+
+_Page title: Saudisation and Nitaqat: what it means for your hiring plan | Growth Blueprint_
+
+- Home
+- Insights
+- Saudisation and Nitaqat: what it means for your hiring plan
+
+Insights
+
+# Saudisation and Nitaqat: what it means for your hiring plan
+
+Build it into your plan on day one, not after your first inspection.
+
+Saudi Arabia expects private-sector employers to hire Saudi nationals. The Nitaqat system sorts companies into bands according to the share of Saudis they employ, and the band affects which services and visas a company can use.
+
+General information, written in October 2026. Rules change, so confirm the current requirements with the relevant authority or a qualified adviser before you act.
+
+01
+
+## Targets depend on your activity and size
+
+Required percentages vary by sector and company size, and they are revised from time to time. Ask for the figures that apply to your activity.
+
+02
+
+## Plan the team, not just the headcount
+
+Think about which roles suit Saudi hires, how you will recruit and develop them, and who will lead. A good team plan treats this as a strength, not only a requirement.
+
+03
+
+## Talk to specialists early
+
+Recruitment and employment-law specialists in our network can help you set realistic numbers and timelines.
+
+## To sum up
+
+The earlier hiring is part of the plan, the fewer surprises later. We can help you frame the questions to ask the specialists.
+
+## Contents
+
+- Introduction
+- 01Targets depend on your activity and size
+- 02Plan the team, not just the headcount
+- 03Talk to specialists early
+- To sum up
+
+## Related services
+
+- Market Entry Guidance
+- Market Intelligence
+- Strategic Introductions
+- Cultural & Business Advisory
+
+## Talk it through with us
+
+If any of this sounds like your situation, we are happy to talk it through.
+
+**[ Book a Free Consultation ]**
+
+Thinking about Saudi Arabia?
+
+## Book a Free Consultation
+
+Tell us your plans and we will give you a straight answer on how we could help.
+
+**[ Book a Free Consultation ]**
+
+
+---
+
+# PAGE: Article: Zakat, tax and VAT: the basics for a new Saudi entity
+
+_Page title: Zakat, tax and VAT: the basics for a new Saudi entity | Growth Blueprint_
+
+- Home
+- Insights
+- Zakat, tax and VAT: the basics for a new Saudi entity
+
+Insights
+
+# Zakat, tax and VAT: the basics for a new Saudi entity
+
+A first orientation before you speak to your accountant.
+
+The Zakat, Tax and Customs Authority (ZATCA) administers zakat, income tax, VAT and customs. For a new entity the first job is simply knowing which of them apply to you.
+
+General information, written in October 2026. Rules change, so confirm the current requirements with the relevant authority or a qualified adviser before you act.
+
+01
+
+## Zakat and income tax
+
+In general, the Saudi and GCC-owned share of a company is subject to zakat, and the foreign-owned share to income tax. Your ownership structure therefore matters.
+
+02
+
+## VAT
+
+VAT is charged at 15% on most goods and services, and businesses above the registration threshold must register, charge, file and keep proper invoices. E-invoicing rules also apply.
+
+03
+
+## Payments abroad
+
+Payments to non-residents, such as management fees or royalties, can attract withholding tax. Check before you structure intra-group charges.
+
+## To sum up
+
+We are advisers, not tax accountants. We help you ask the right questions and connect you with qualified accounting specialists.
+
+## Contents
+
+- Introduction
+- 01Zakat and income tax
+- 02VAT
+- 03Payments abroad
+- To sum up
+
+## Related services
+
+- Market Entry Guidance
+- Market Intelligence
+- Strategic Introductions
+- Cultural & Business Advisory
+
+## Talk it through with us
+
+If any of this sounds like your situation, we are happy to talk it through.
+
+**[ Book a Free Consultation ]**
+
+Thinking about Saudi Arabia?
+
+## Book a Free Consultation
+
+Tell us your plans and we will give you a straight answer on how we could help.
+
+**[ Book a Free Consultation ]**
 
 
 ---
@@ -3526,7 +3018,7 @@ Twenty-two questions to ask yourself before you enter or expand: strategy, custo
 
 **[ Download Checklist (PDF) ]**
 
-or Book a Consultation
+or Book a Free Consultation
 
 - 22Checklist items
 - 6Key areas
@@ -4666,15 +4158,15 @@ Take the 10-minute Saudi Readiness Scorecard to see how your own plans measure u
 
 # PAGE: Book a meeting
 
-_Page title: Book a Meeting | Growth Blueprint_
+_Page title: Book a Free Consultation | Growth Blueprint_
 
 Let's talk
 
-# Book a Meeting
+# Book a Free Consultation
 
-A relaxed, confidential first conversation. We will listen, ask a few questions, and tell you honestly whether and how we can help. No pressure, no obligation.
+Book a free 30-minute consultation to discuss your business goals and how we can help you reach them. We will listen, ask a few questions, and tell you honestly whether and how we can help. No pressure, no obligation.
 
-**[ Book a Consultation ]**
+**[ Book a Free Consultation ]**
 
 Why meet
 
@@ -4698,11 +4190,11 @@ Agree a sensible way forward, if we are the right fit.
 
 ## Schedule a meeting
 
-Our online calendar is on its way. Until it arrives, send us a request below and we will find a time that suits you.
+Send us a request below and we will find a time that suits you, online or in person.
 
-Online booking is coming
+How booking works
 
-For now, use the form below and we will reply within one working day.
+Use the form below. We will get back to you to confirm a time.
 
 ## How to prepare
 
@@ -4715,9 +4207,9 @@ You do not need to prepare much. If you like, it helps to:
 
 Send a request
 
-## Request a meeting
+## Request your free consultation
 
-A few details are enough. We will reply within one working day to find a time.
+A few details are enough. We will get back to you to find a time.
 
 Full name *
 
@@ -4749,7 +4241,13 @@ Come and see us in Jeddah, or meet online, whichever suits you better.
 
 Our Jeddah office is a comfortable place to talk things through in person.
 
-Office #303, Optima Tower, Al-Shatie District, Jeddah, Saudi ArabiaOffice #303, Optima Tower, Al-Shatie District, Jeddah. Sunday to Thursday, 9:30 AM to 5:30 PM (AST).
+Office #303, Optima Tower, Al-Shatie District, Jeddah, Saudi ArabiaOptima Tower, Al-Shatie District, Jeddah.
+
+- Sunday – Thursday9:30 AM – 5:30 PM
+- Friday – SaturdayClosed
+- Saudi Arabia Time (AST)
+
++966 50 662 6052faisal@getgrowthblueprint.com
 
 
 ---
@@ -4943,7 +4441,7 @@ Draft for legal review. This notice follows the structure and principles of the 
 
 Growth Blueprint (“we”, “us”) is the data controller for the personal data described here. We are based in Jeddah, Kingdom of Saudi Arabia. Commercial registration: [number to be added].
 
-Questions about your data go to our privacy contact: faisal@getgrowthblueprint.com. [Name or role of the person responsible for data protection to be added.]
+Questions about your data go to our privacy contact: faisal@getgrowthblueprint.com. Our Managing Director, Faisal Halawani, is responsible for data-protection matters until a dedicated data-protection lead is appointed. [Confirm with counsel whether the firm must register with, or notify, the Saudi Data & AI Authority (SDAIA) and whether a data-protection officer is required.]
 
 ## 2. What we collect, and why
 
@@ -4977,7 +4475,7 @@ Some of our providers may store or process data outside the Kingdom. If that hap
 
 ## 7. How long we keep it
 
-Enquiries and meeting requests: [24] months after our last contact, then deleted or anonymised. Newsletter: until you unsubscribe; we then keep only a minimal record that you opted out, and the proof of your consent, so we can honour your choice. Orders and invoices: for as long as tax and accounting law requires. Download logs: [12] months. Consent records: for as long as we use the data they cover, plus the period needed to show we complied.
+Enquiries and meeting requests: 24 months after our last contact, then deleted or anonymised. Newsletter: until you unsubscribe; we then keep only a minimal record that you opted out, and the proof of your consent, so we can honour your choice. Orders and invoices: for as long as tax and accounting law requires. Download logs: 12 months. Consent records: for as long as we use the data they cover, plus the period needed to show we complied.
 
 ## 8. Your rights
 
@@ -5005,7 +4503,7 @@ Please talk to us first, because we would like the chance to put things right. Y
 
 When we make a meaningful change we will update the date and version below and, where it affects how we use your data, ask for your agreement again.
 
-Version privacy-2026-1 · Effective 1 January 2026
+Version privacy-2026-2 · Effective 1 January 2026
 
 ## Use your rights
 
@@ -5048,7 +4546,11 @@ The website, its text, design and images belong to Growth Blueprint or are used 
 
 ## Buying briefs
 
-Prices are shown in Saudi riyals and exclude VAT, which is added at checkout. Briefs are digital products delivered by secure download. Because they are delivered instantly, we cannot offer a refund after you have downloaded one, but if a file is faulty or you were charged by mistake, write to us and we will put it right. Your use of a brief is governed by the licence below.
+Prices are shown in Saudi riyals and exclude VAT, which is added at checkout. Briefs are digital products delivered by secure download. Because they are delivered instantly, we cannot offer a refund after you have downloaded one, but if a file is faulty or you were charged by mistake, write to us and we will put it right. Your use of a brief is governed by the licence below. See “Cancellations and refunds” for what happens if something goes wrong.
+
+## Cancellations and refunds
+
+You may cancel an order for a full refund within 14 days if you have not downloaded the brief. Once a brief has been downloaded we cannot refund it, because it cannot be returned. If a file is faulty, is not the brief you ordered, or you were charged in error, write to us within 14 days and we will replace it or refund you. Refunds go back to the original payment method.
 
 ## Brief licence
 

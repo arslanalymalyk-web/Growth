@@ -8,6 +8,8 @@ export const SITE = {
   phoneHref: '+966506626052',
   address: L('Office #303, Optima Tower, Al-Shatie District, Jeddah, Saudi Arabia', 'مكتب 303، برج أوبتيما، حي الشاطئ، جدة، المملكة العربية السعودية'),
   linkedin: 'https://www.linkedin.com/company/105738251',
+  cr: process.env.SELLER_CR_NO || '',
+  vat: process.env.SELLER_VAT_NO || '',
   year: 2026
 };
 
@@ -22,8 +24,8 @@ export const NAV = [
 ];
 
 export const UI = {
-  book: L('Book a Consultation', 'احجز استشارة'),
-  bookShort: L('Book a Consultation', 'احجز استشارة'),
+  book: L('Book a Free Consultation', 'احجز استشارة مجانية'),
+  bookShort: L('Free Consultation', 'استشارة مجانية'),
   explore: L('Explore service', 'استكشف الخدمة'),
   exploreSector: L('Explore sector', 'استكشف القطاع'),
   learnMore: L('Learn more', 'اعرف المزيد'),
