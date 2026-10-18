@@ -5,7 +5,7 @@ import { L } from './ui.mjs';
 export const SC_VERSION = 'sc-2026-1';
 
 export const SC_PAGE = {
-  meta: { title: L('Saudi Readiness Scorecard | Growth Blueprint Advisory', 'مقياس الجاهزية للسوق السعودي | غروث بلوبرنت للاستشارات'), description: L('A free 10-minute diagnostic. Answer 24 questions and get a personal readiness report with your strengths, your gaps and what to do first.', 'تشخيص مجاني في ١٠ دقائق. أجب عن ٢٤ سؤالًا واحصل على تقرير جاهزية شخصي بنقاط قوتك وفجواتك وما تبدأ به أولًا.') },
+  meta: { title: L('Saudi Readiness Scorecard | Growth Blueprint', 'مقياس الجاهزية للسوق السعودي | غروث بلوبرينت'), description: L('A free 10-minute diagnostic. Answer 24 questions and get a personal readiness report with your strengths, your gaps and what to do first.', 'تشخيص مجاني في ١٠ دقائق. أجب عن ٢٤ سؤالًا واحصل على تقرير جاهزية شخصي بنقاط قوتك وفجواتك وما تبدأ به أولًا.') },
   hero: { eyebrow: L('Free diagnostic · about 10 minutes', 'تشخيص مجاني · نحو ١٠ دقائق'), title: L('How ready are you for Saudi Arabia?', 'ما مدى جاهزيتك للسوق السعودي؟'),
     lead: L('Most businesses find out what they missed after they have started. This scorecard helps you find out before. Twenty-four honest questions, a score you can trust, and a report written for your situation.', 'تكتشف أغلب الشركات ما فاتها بعد أن تبدأ. هذا المقياس يساعدك على اكتشافه قبل ذلك. أربعة وعشرون سؤالًا بصدق، ونتيجة يمكنك الوثوق بها، وتقرير مكتوب لحالتك أنت.'), img: 'ck-hero-night' },
   start: L('Start the scorecard', 'ابدأ المقياس'), resume: L('Pick up where you left off', 'أكمل من حيث توقفت'),
@@ -158,7 +158,7 @@ export const SC_SECTOR_NOTE = {
 };
 
 export const SC_RESULT = {
-  meta: { title: L('Your readiness report | Growth Blueprint Advisory', 'تقرير جاهزيتك | غروث بلوبرنت للاستشارات'), description: L('Your personal Saudi readiness report.', 'تقرير جاهزيتك الشخصي للسوق السعودي.') },
+  meta: { title: L('Your readiness report | Growth Blueprint', 'تقرير جاهزيتك | غروث بلوبرينت'), description: L('Your personal Saudi readiness report.', 'تقرير جاهزيتك الشخصي للسوق السعودي.') },
   eyebrow: L('Your Saudi readiness report', 'تقرير جاهزيتك للسوق السعودي'), overall: L('Overall readiness', 'الجاهزية الإجمالية'), outOf: L('out of 100', 'من ١٠٠'),
   by: L('Your score by area', 'نتيجتك في كل مجال'), strengths: L('Where you are strong', 'أين أنت قوي'), priorities: L('Your three biggest gaps', 'أكبر ثلاث فجوات لديك'), noStrength: L('Nothing scored above 70 yet. That is fine: it just tells you where to start.', 'لا مجال تجاوز ٧٠ بعد. وهذا طبيعي: فهو يخبرك فقط من أين تبدأ.'),
   detail: L('Area by area', 'مجالًا بعد مجال'), whatItMeans: L('What this means', 'ماذا يعني هذا'), doNext: L('What to do next', 'ما تفعله بعد ذلك'),
@@ -169,12 +169,12 @@ export const SC_RESULT = {
   cta: { t: L('Want to talk it through?', 'تريد أن نناقشها معًا؟'), d: L('A 30-minute conversation is usually enough to turn this report into a plan. No pressure, no obligation.', 'تكفي عادةً محادثة من ٣٠ دقيقة لتحويل هذا التقرير إلى خطة. دون ضغط ودون التزام.') },
   email: { t: L('Get this report by email', 'احصل على هذا التقرير بالبريد'), d: L('We will send you a copy and, if you tick the box, nothing else unless you ask.', 'سنرسل لك نسخة، ولن نرسل غير ذلك ما لم تطلب، إلا إن وافقت بتأشير الخانة.'),
     plink: L('Privacy Notice', 'إشعار الخصوصية'), name: L('Your name', 'اسمك'), mail: L('Email address', 'البريد الإلكتروني'), company: L('Company (optional)', 'الشركة (اختياري)'),
-    consent: L('I agree that Growth Blueprint Advisory may use my details and my scorecard result to send me my report and to reply to me. I have read the', 'أوافق على أن تستخدم غروث بلوبرنت للاستشارات بياناتي ونتيجتي في المقياس لإرسال تقريري والرد علي. وقد قرأت'),
-    marketing: L('Optional: send me the monthly Growth Blueprint brief, and occasional news. I can unsubscribe at any time.', 'اختياري: أرسلوا لي موجز غروث بلوبرنت الشهري وأخبارًا من حين لآخر. ويمكنني إلغاء الاشتراك في أي وقت.'),
+    consent: L('I agree that Growth Blueprint may use my details and my scorecard result to send me my report and to reply to me. I have read the', 'أوافق على أن تستخدم غروث بلوبرينت بياناتي ونتيجتي في المقياس لإرسال تقريري والرد علي. وقد قرأت'),
+    marketing: L('Optional: send me the monthly Growth Blueprint brief, and occasional news. I can unsubscribe at any time.', 'اختياري: أرسلوا لي موجز غروث بلوبرينت الشهري وأخبارًا من حين لآخر. ويمكنني إلغاء الاشتراك في أي وقت.'),
     send: L('Email me my report', 'أرسلوا لي تقريري'), done: L('Thank you. Your request has been received.', 'شكرًا لك. تم استلام طلبك.'), demo: L('Demonstration mode: nothing was sent because this copy of the site is not connected to our server.', 'وضع تجريبي: لم يُرسل شيء لأن هذه النسخة من الموقع غير متصلة بخادمنا.') },
   print: L('Print or save as PDF', 'اطبع أو احفظ بصيغة PDF'), retake: L('Retake the scorecard', 'أعد المقياس'), book: L('Book a conversation', 'احجز محادثة'),
   none: L('We could not find your answers on this device. Please take the scorecard first.', 'لم نجد إجاباتك على هذا الجهاز. يرجى إجراء المقياس أولًا.'),
   disclaimer: L('This report is generated from your own answers and is meant as a starting point. It is not legal, tax or investment advice, and it does not guarantee any outcome.', 'أُعدّ هذا التقرير من إجاباتك أنت، وهو نقطة انطلاق. وليس مشورة قانونية أو ضريبية أو استثمارية، ولا يضمن أي نتيجة.'),
   levels: { low: L('Needs attention', 'يحتاج اهتمامًا'), mid: L('Taking shape', 'يتشكل'), high: L('Strong', 'قوي') },
-  generated: L('Prepared by Growth Blueprint Advisory', 'أعدّته غروث بلوبرنت للاستشارات'), on: L('on', 'بتاريخ')
+  generated: L('Prepared by Growth Blueprint', 'أعدّته غروث بلوبرينت'), on: L('on', 'بتاريخ')
 };

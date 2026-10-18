@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72" role="img" aria-label="Growth Blueprint mark"><title>Growth Blueprint mark</title><defs><linearGradient id="gmdark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3cd9a"/><stop offset="1" stop-color="#b8944d"/></linearGradient></defs><g transform="translate(4 4)"><g>
+<path d="M10 58V34A30 30 0 0 1 32 5.1A30 30 0 0 1 54 34" fill="none" stroke="url(#gmdark)" stroke-width="3.2" stroke-linejoin="miter" stroke-miterlimit="8"/>
+<path d="M54 58V44H41" fill="none" stroke="url(#gmdark)" stroke-width="3.2" stroke-linejoin="miter"/>
+<path d="M18 58V49H21.6V58ZM25.6 58V41H29.2V58ZM33.2 58V32.5H36.8V58Z" fill="#f6f1e6"/>
+<path d="M35 20.2L37.2 23.6L35 27L32.8 23.6Z" fill="url(#gmdark)"/>
+<path d="M4 62.2H60M4 59.6V64.8M60 59.6V64.8" stroke="#e3cd9a" stroke-width=".9" fill="none"/>
+</g></g></svg>

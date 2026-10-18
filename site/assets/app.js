@@ -1,4 +1,4 @@
-/* Growth Blueprint Advisory: progressive enhancement. The site is fully readable without JavaScript. */
+/* Growth Blueprint: progressive enhancement. The site is fully readable without JavaScript. */
 (function () {
   'use strict';
   var $ = function (s, r) { return (r || document).querySelector(s); };

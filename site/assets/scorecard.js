@@ -232,7 +232,7 @@
   ]));
 
   var top = el('div', { class: 'sc-top' }, [
-    el('div', {}, [el('p', { class: 'eyebrow', text: D.lang === 'ar' ? 'غروث بلوبرنت للاستشارات' : 'Growth Blueprint Advisory' }), el('h1', { class: 'h2', text: R.eyebrow })]),
+    el('div', {}, [el('p', { class: 'eyebrow', text: D.lang === 'ar' ? 'غروث بلوبرينت' : 'Growth Blueprint' }), el('h1', { class: 'h2', text: R.eyebrow })]),
     el('div', { class: 'sc-top__act' }, [
       el('button', { type: 'button', class: 'btn btn--outline-dark btn--sm', onclick: function () { window.print(); } }, [el('span', { text: R.print })]),
       el('a', { class: 'btn btn--outline-dark btn--sm', href: D.urls.assess, onclick: function () { store.clear(); } }, [el('span', { text: R.retake })])

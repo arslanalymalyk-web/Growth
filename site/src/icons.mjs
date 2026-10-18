@@ -70,5 +70,5 @@ const SOCIAL = {
 };
 export const social = (name) => `<svg class="ic ic-fill" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">${SOCIAL[name]}</svg>`;
 
-/** Brand mark: three rising towers inside a gold diamond outline. */
-export const logoMark = `<svg class="logo-mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" aria-hidden="true"><path d="M20 2 38 20 20 38 2 20z"/><path d="M13 27V19l3-2v10M17.500 27V13l3-3 3 3v14M24.500 27v-9l3 2v7M11 27h18"/></svg>`;
+/** Brand mark: a pointed gateway arch drawn as a "G", three rising bars and a drafting rule. Source: brand/mark.svg */
+export const logoMark = `<svg class="logo-mark" viewBox="0 0 64 68" fill="none" aria-hidden="true"><defs><linearGradient id="gbm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3cd9a"/><stop offset="1" stop-color="#b8944d"/></linearGradient></defs><path d="M10 58V34A30 30 0 0 1 32 5.1A30 30 0 0 1 54 34M54 58V44H41" stroke="url(#gbm)" stroke-width="3.2" stroke-miterlimit="8"/><path d="M18 58V49H21.600V58ZM25.600 58V41H29.200V58ZM33.200 58V32.500H36.800V58Z" fill="#f6f1e6"/><path d="M35 20.200L37.200 23.600L35 27L32.800 23.600Z" fill="url(#gbm)"/><path d="M4 62.200H60M4 59.600V64.800M60 59.600V64.800" stroke="#c9a867" stroke-width=".9"/></svg>`;

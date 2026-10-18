@@ -61,7 +61,7 @@ for (const lang of ['en', 'ar']) {
 }
 
 // Root: language redirect
-writeFileSync(join(dist, 'index.html'), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Growth Blueprint Advisory</title>
+writeFileSync(join(dist, 'index.html'), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Growth Blueprint</title>
 <meta http-equiv="refresh" content="0; url=en/index.html"><link rel="canonical" href="en/index.html">
 <script>var l=(navigator.language||'en').toLowerCase().indexOf('ar')===0?'ar':'en';location.replace(l+'/index.html')</script></head>
 <body><p><a href="en/index.html">English</a> · <a href="ar/index.html">العربية</a></p></body></html>`);

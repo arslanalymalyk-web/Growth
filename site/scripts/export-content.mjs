@@ -77,7 +77,7 @@ const scBlock = (lang) => {
 };
 
 for (const lang of ['en', 'ar']) {
-  const parts = [`# Growth Blueprint Advisory: website content (${lang === 'en' ? 'English' : 'العربية'})\n`, `_Generated from the built site on ${new Date().toISOString().slice(0, 10)} by scripts/export-content.mjs. Edit the copy in src/*.mjs, not this file._\n`];
+  const parts = [`# Growth Blueprint: website content (${lang === 'en' ? 'English' : 'العربية'})\n`, `_Generated from the built site on ${new Date().toISOString().slice(0, 10)} by scripts/export-content.mjs. Edit the copy in src/*.mjs, not this file._\n`];
   let first = true;
   for (const [name, path] of pages) {
     await pg.goto(pathToFileURL(join(root, 'dist', lang, path, 'index.html')).href);

@@ -1,4 +1,4 @@
-// Growth Blueprint Advisory: web server (no dependencies).
+// Growth Blueprint: web server (no dependencies).
 //   node server.mjs            -> http://127.0.0.1:3000
 // Serves dist/, plus the JSON API used by the forms, the newsletter and the briefs shop.
 // See README.md for configuration (CRM webhook, payments, download signing).
@@ -254,7 +254,7 @@ export function createApp(opts = {}) {
     const o = authOrder(req, q.get('o'), q.get('k') || req.headers['x-order-key']); if (!o) return send(req, res, 404, 'Not found', { 'Content-Type': 'text/plain; charset=utf-8' });
     const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
     const rows = o.items.map((i) => `<tr><td>${esc(i.title)}</td><td style="text-align:right">${i.price.toFixed(2)}</td></tr>`).join('');
-    const htmlDoc = `<!doctype html><meta charset="utf-8"><title>Invoice ${esc(o.id)}</title><body style="font:14px/1.5 system-ui;max-width:640px;margin:40px auto;padding:0 20px"><h1 style="font-weight:500">Tax invoice (simulated)</h1><p>Seller: Growth Blueprint Advisory · VAT no. ${esc(cfg.sellerVat)}<br>Invoice ref: ${esc(o.id)} · ${esc(o.createdAt.slice(0, 10))}<br>Buyer: ${esc(o.buyer.name)}${o.buyer.company ? ', ' + esc(o.buyer.company) : ''}${o.buyer.vatNo ? ' · VAT ' + esc(o.buyer.vatNo) : ''}</p><table style="width:100%;border-collapse:collapse" border="0"><tr><th style="text-align:left">Item</th><th style="text-align:right">SAR</th></tr>${rows}<tr><td>Subtotal</td><td style="text-align:right">${o.subtotal.toFixed(2)}</td></tr><tr><td>VAT 15%</td><td style="text-align:right">${o.vat.toFixed(2)}</td></tr><tr><th style="text-align:left">Total</th><th style="text-align:right">${o.total.toFixed(2)}</th></tr></table><p style="color:#666;font-size:12px">This is a demonstration invoice. It is not a ZATCA-compliant e-invoice.</p>`;
+    const htmlDoc = `<!doctype html><meta charset="utf-8"><title>Invoice ${esc(o.id)}</title><body style="font:14px/1.5 system-ui;max-width:640px;margin:40px auto;padding:0 20px"><h1 style="font-weight:500">Tax invoice (simulated)</h1><p>Seller: Growth Blueprint · VAT no. ${esc(cfg.sellerVat)}<br>Invoice ref: ${esc(o.id)} · ${esc(o.createdAt.slice(0, 10))}<br>Buyer: ${esc(o.buyer.name)}${o.buyer.company ? ', ' + esc(o.buyer.company) : ''}${o.buyer.vatNo ? ' · VAT ' + esc(o.buyer.vatNo) : ''}</p><table style="width:100%;border-collapse:collapse" border="0"><tr><th style="text-align:left">Item</th><th style="text-align:right">SAR</th></tr>${rows}<tr><td>Subtotal</td><td style="text-align:right">${o.subtotal.toFixed(2)}</td></tr><tr><td>VAT 15%</td><td style="text-align:right">${o.vat.toFixed(2)}</td></tr><tr><th style="text-align:left">Total</th><th style="text-align:right">${o.total.toFixed(2)}</th></tr></table><p style="color:#666;font-size:12px">This is a demonstration invoice. It is not a ZATCA-compliant e-invoice.</p>`;
     return send(req, res, 200, htmlDoc, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
   };
 
@@ -327,7 +327,7 @@ if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {
   const port = Number(process.env.PORT || 3000), host = process.env.HOST || '127.0.0.1';
   const s = createApp();
   s.listen(port, host, () => {
-    console.log(`Growth Blueprint Advisory on http://${host}:${port}`);
+    console.log(`Growth Blueprint on http://${host}:${port}`);
     console.log(`  shop payments : ${s.cfg.demoPayments ? 'SIMULATED (set DEMO_PAYMENTS=0 and add a provider for live sales)' : 'not configured (checkout disabled)'}`);
     console.log(`  CRM webhook   : ${s.cfg.crmUrl ? 'configured' : 'not configured (events are kept in data/crm-outbox.jsonl)'}`);
     console.log('  email         : outbox only (data/mail-outbox.jsonl)');

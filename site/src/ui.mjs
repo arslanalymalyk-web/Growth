@@ -2,11 +2,12 @@
 export const L = (en, ar) => ({ en, ar });
 
 export const SITE = {
-  name: L('Growth Blueprint Advisory', 'غروث بلوبرنت للاستشارات'),
-  email: 'info@growthblueprint.sa',
-  phone: '+966 11 123 4567',
-  phoneHref: '+966111234567',
-  address: L('Riyadh, Kingdom of Saudi Arabia', 'الرياض، المملكة العربية السعودية'),
+  name: L('Growth Blueprint', 'غروث بلوبرينت'),
+  email: 'faisal@getgrowthblueprint.com',
+  phone: '+966 50 662 6052',
+  phoneHref: '+966506626052',
+  address: L('Office #303, Optima Tower, Al-Shatie District, Jeddah, Saudi Arabia', 'مكتب 303، برج أوبتيما، حي الشاطئ، جدة، المملكة العربية السعودية'),
+  linkedin: 'https://www.linkedin.com/company/105738251',
   year: 2026
 };
 
@@ -47,7 +48,7 @@ export const UI = {
   cookies: L('Cookie Policy', 'سياسة ملفات الارتباط'),
   rights: L('All rights reserved.', 'جميع الحقوق محفوظة.'),
   footerTag: L('Straight talking advisory for businesses that want to enter, set up and grow in Saudi Arabia.', 'استشارات صريحة للشركات التي تريد الدخول إلى السعودية والتأسيس فيها والنمو.'),
-  demoNote: L('Demonstration website. Contact details and sample content are illustrative placeholders.', 'موقع تجريبي. بيانات التواصل والمحتوى النموذجي أمثلة توضيحية.'),
+  demoNote: L('Prototype build: payments are simulated and some sample content is illustrative.', 'نسخة تجريبية: المدفوعات محاكاة وبعض المحتوى النموذجي توضيحي.'),
   cookieText: L('We use essential cookies to make this website work. With your consent we would also use analytics cookies to improve it.', 'نستخدم ملفات ارتباط أساسية لتشغيل هذا الموقع. وبموافقتك سنستخدم أيضًا ملفات تحليلية لتحسينه.'),
   cookieAccept: L('Accept', 'موافق'),
   cookieDecline: L('Essential only', 'الأساسية فقط'),

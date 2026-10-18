@@ -4,6 +4,7 @@ import { SERVICES, STAGES, serviceBySlug, RESPONSIBILITIES } from './services.mj
 import { INDUSTRIES, industryBySlug } from './industries.mjs';
 import * as P from './pages.mjs';
 import { CONSENT } from './legal.mjs';
+import { proofStrip, vision, team, clients, hoursBlock, FIRM } from './firm.mjs';
 import { newsletter, heroWow, imgAr, esc, shell, hero, ctaBand, btn, arrow, eyebrow, sectionHead, serviceCard, faq } from './render.mjs';
 
 const T = (ctx, v) => esc(ctx.t(v));
@@ -33,6 +34,7 @@ export function home(ctx) {
 ${heroWow(ctx, { eyebrow: H.hero.eyebrow, title: H.hero.title, lead: H.hero.lead, img: 'hero-home', card: H.hero.card,
   ctas: [btn(ctx, UI.book, 'book-a-meeting/', 'gold'), btn(ctx, UI.exploreServices, 'services/', 'outline')] })}
 <section class="paths"><div class="container container--wide paths__in">${paths}</div></section>
+${proofStrip(ctx)}
 <section class="sec sec--ivory" aria-labelledby="svc-t"><div class="container container--wide">
   ${sectionHead(ctx, { eyebrow: H.services.eyebrow, title: H.services.title, body: H.services.intro, id: 'svc-t', side: true })}
   <div class="tiles">${svc}</div>
@@ -50,7 +52,9 @@ ${heroWow(ctx, { eyebrow: H.hero.eyebrow, title: H.hero.title, lead: H.hero.lead
   <div class="founder__copy"><p class="eyebrow">${T(ctx, H.founder.eyebrow)}</p><h2 class="h2" id="fo-t">${T(ctx, H.founder.title)}</h2><p>${T(ctx, H.founder.body)}</p>
     <a class="btn btn--outline-dark" href="${ctx.href('about/')}"><span>${T(ctx, H.founder.cta)}</span>${arrow}</a></div>
 </section>
-<section class="sec sec--ivory" aria-labelledby="in-t"><div class="container container--wide">
+${team(ctx)}
+${clients(ctx)}
+<section class="sec sec--deep" aria-labelledby="in-t"><div class="container container--wide">
   <div class="sec-head sec-head--split"><div>${eyebrow(ctx, H.insights.eyebrow, 'eyebrow--rule')}<h2 class="h2" id="in-t">${T(ctx, H.insights.title)}</h2></div>
   <a class="more more--gold" href="${ctx.href('insights/')}"><span>${T(ctx, UI.viewAllInsights)}</span>${arrow}</a></div>
   <div class="posts">${ins}</div>
@@ -127,7 +131,7 @@ ${hero(ctx, { crumbs: crumbs(ctx, { label: L('Services', 'خدماتنا'), href
   <div class="rels">${rel}</div>
 </div></section>
 ${ctaBand(ctx, { title: Lb.ctaTitle, body: Lb.ctaBody, img: 'band-man-desert' })}`;
-  return shell(ctx, { title: L(`${s.title.en} | Growth Blueprint Advisory`, `${s.title.ar} | غروث بلوبرنت للاستشارات`), description: s.lead, active: 'services', body });
+  return shell(ctx, { title: L(`${s.title.en} | Growth Blueprint`, `${s.title.ar} | غروث بلوبرينت`), description: s.lead, active: 'services', body });
 }
 
 /* ===================== INDUSTRIES ===================== */
@@ -172,7 +176,7 @@ ${hero(ctx, { crumbs: crumbs(ctx, { label: L('Industries', 'القطاعات'), 
 </div></section>
 <section class="sec sec--ivory sec--tight"><div class="container container--wide chips"><p class="eyebrow">${T(ctx, Lb.otherSectors)}</p><div>${others}<a class="chip chip--all" href="${ctx.href('industries/')}">${T(ctx, UI.viewAllIndustries)}</a></div></div></section>
 ${ctaBand(ctx, { title: Lb.ctaTitle, body: Lb.ctaBody, img: 'cta-fort-palm', target: 'enquiry/', cta: UI.enquire })}`;
-  return shell(ctx, { title: L(`${i.title.en} | Growth Blueprint Advisory`, `${i.title.ar} | غروث بلوبرنت للاستشارات`), description: i.tagline, active: 'industries', body });
+  return shell(ctx, { title: L(`${i.title.en} | Growth Blueprint`, `${i.title.ar} | غروث بلوبرينت`), description: i.tagline, active: 'industries', body });
 }
 
 /* ===================== APPROACH ===================== */
@@ -204,6 +208,7 @@ export function about(ctx) {
   const pr = A.principles.items.map((p) => `<li><span>${icon(p.icon)}</span><h3 class="h4">${T(ctx, p.t)}</h3><p>${T(ctx, p.d)}</p></li>`).join('');
   const body = `
 ${hero(ctx, { ...A.hero, ctas: [] })}
+${proofStrip(ctx)}
 <section class="sec sec--ivory"><div class="container container--wide split split--img-start">
   <figure class="figure figure--tall"><img src="${ctx.img(A.founder.img)}" alt="${esc(ctx.t(L('A Saudi business leader looking over the Riyadh skyline', 'قائد أعمال سعودي يتأمل أفق الرياض')))}" loading="lazy"></figure>
   <div><p class="eyebrow">${T(ctx, A.founder.eyebrow)}</p><h2 class="h2">${T(ctx, A.founder.title)}</h2>${A.founder.paras.map((p) => `<p class="body-p">${T(ctx, p)}</p>`).join('')}</div>
@@ -213,6 +218,9 @@ ${hero(ctx, { ...A.hero, ctas: [] })}
   <div><p class="eyebrow">${T(ctx, A.specialists.eyebrow)}</p><h2 class="h2">${T(ctx, A.specialists.title)}</h2>${A.specialists.paras.map((p) => `<p class="body-p">${T(ctx, p)}</p>`).join('')}</div>
   <figure class="figure"><img src="${ctx.img(A.specialists.img)}" alt="" loading="lazy"></figure>
 </div></section>
+${vision(ctx)}
+${team(ctx)}
+${clients(ctx)}
 ${ctaBand(ctx, { ...A.cta, img: 'cta-rocks-dark' })}`;
   return shell(ctx, { title: A.meta.title, description: A.meta.description, active: 'about', body });
 }
@@ -277,7 +285,7 @@ ${hero(ctx, { eyebrow: Lb.eyebrow, title: a.title, lead: a.lead, img: a.hero, cr
   </aside>
 </div></section>
 ${ctaBand(ctx, { eyebrow: Lb.bandEyebrow, title: UI.book, body: Lb.bandBody, img: 'cta-rocks-dark' })}`;
-  return shell(ctx, { title: L(`${a.title.en} | Growth Blueprint Advisory`, `${a.title.ar} | غروث بلوبرنت للاستشارات`), description: a.excerpt, active: 'insights', body });
+  return shell(ctx, { title: L(`${a.title.en} | Growth Blueprint`, `${a.title.ar} | غروث بلوبرينت`), description: a.excerpt, active: 'insights', body });
 }
 
 /* ===================== CHECKLIST ===================== */

@@ -1,4 +1,4 @@
-# Growth Blueprint Advisory: website content (English)
+# Growth Blueprint: website content (English)
 
 
 _Generated from the built site on 2026-10-18 by scripts/export-content.mjs. Edit the copy in src/*.mjs, not this file._
@@ -52,19 +52,21 @@ Straight talking advisory for businesses that want to enter, set up and grow in 
 
 ## Get in touch
 
-- Riyadh, Kingdom of Saudi Arabia
-- info@growthblueprint.sa
-- +966 11 123 4567
+- Office #303, Optima Tower, Al-Shatie District, Jeddah, Saudi Arabia
+- faisal@getgrowthblueprint.com
+- +966 50 662 6052
+
+Licensed by MHRSD #970146 · Saudi Arabia · Vision 2030 aligned
 
 **[ Book a Consultation ]**
 
-© 2026 Growth Blueprint Advisory. All rights reserved.
+© 2026 Growth Blueprint. All rights reserved.
 
 - Privacy Policy
 - Terms of Use
 - Cookie Policy
 
-Demonstration website. Contact details and sample content are illustrative placeholders.
+Prototype build: payments are simulated and some sample content is illustrative.
 
 
 
@@ -72,7 +74,7 @@ Demonstration website. Contact details and sample content are illustrative place
 
 # PAGE: Home
 
-_Page title: Growth Blueprint Advisory | Strategic advisory for Saudi Arabia_
+_Page title: Growth Blueprint | Strategic advisory for Saudi Arabia_
 
 Saudi Arabia. Greater possibilities.
 
@@ -103,6 +105,16 @@ Thinking of coming in? We help you test the idea, choose the right way in, and g
 Already here and ready for more? We help you decide where to push next, and build the people, partners and systems to do it.
 
 **[ See how growing works ]**
+
+Founded2024
+
+Years of leadership experience25+
+
+Licensed#970146
+
+Based inJeddah
+
+Licensed by the Ministry of Human Resources & Social Development
 
 Our services
 
@@ -183,9 +195,75 @@ A founder-led advisory
 
 ## You deal with the person whose name is on the door
 
-Growth Blueprint Advisory is a small, founder-led firm, and that is deliberate. The person you meet at the start stays involved to the end, so the advice you get is candid, practical and personal. We would rather do fewer engagements well than many badly.
+Growth Blueprint is a small, founder-led firm, and that is deliberate. The person you meet at the start stays involved to the end, so the advice you get is candid, practical and personal. We would rather do fewer engagements well than many badly.
 
 **[ Our story ]**
+
+Our expert team
+
+## Deep Saudi market knowledge, international business expertise
+
+Five practitioners across strategy, law, branding, real estate and communications.
+
+### Faisal Halawani
+
+Managing Director
+
+More than 25 years in multinational business, innovation and commercial planning. Member of the Saudi Management Consultants Association.
+
+StrategyInnovation
+
+### Hatim Shetifi
+
+Legal Advisor
+
+20 years as a legal consultant. Head of Hatim Shetifi Office for advocates and legal consultants.
+
+LegalRegulations
+
+### Ahmad Al-Zaeem
+
+Marketing & Branding Expert
+
+Managing Director of Saudi Aim, with extensive experience in marketing, creative design and branding and re-branding for Saudi and international businesses.
+
+MarketingBranding
+
+### Mohammed Shitifi
+
+Real Estate Specialist
+
+CEO of Shetifi Real Estate, with more than 5 years in the real estate industry, specialising in Saudi market opportunities and property investment.
+
+Real estateInvestment
+
+### Salah Abu Alwafa
+
+Advertising & PR Expert
+
+More than 28 years managing communication and PR campaigns, online and offline.
+
+AdvertisingPR
+
+Licensed by the Ministry of Human Resources & Social Development · #970146
+
+What our clients say
+
+## Real businesses that trusted us with their entry
+
+Growth Blueprint provided invaluable guidance for our Saudi-Swiss joint venture. Their deep understanding of local regulations and cultural nuances made our market entry smooth and successful.
+
+BLBrownstone LtdSaudi-Swiss company
+
+Exceptional support in establishing our sleep medicine clinic in Saudi Arabia. Growth Blueprint's healthcare sector expertise and regulatory guidance were instrumental to our success.
+
+HMHakeem Medical TouchSleep medicine clinic
+
+As an Italian manufacturer entering the Saudi market, Growth Blueprint's strategic introductions and market intelligence reports gave us the confidence to invest and expand successfully.
+
+S2Sano2Italian manufacturer
+
+Quotes are shared by the clients named, as published by the firm.
 
 Latest insights
 
@@ -232,7 +310,7 @@ Tell us where you are and where you want to be. We will give you an honest view,
 
 # PAGE: Services overview
 
-_Page title: Services | Growth Blueprint Advisory_
+_Page title: Services | Growth Blueprint_
 
 Our services
 
@@ -339,7 +417,7 @@ Tell us what you are trying to do. We will tell you honestly which of our servic
 
 # PAGE: Service: Market Strategy & Entry
 
-_Page title: Market Strategy & Entry | Growth Blueprint Advisory_
+_Page title: Market Strategy & Entry | Growth Blueprint_
 
 - Home
 - Services
@@ -478,7 +556,7 @@ Tell us what you are working on and we will tell you honestly whether we can hel
 
 # PAGE: Service: Formation & Establishment
 
-_Page title: Formation & Establishment | Growth Blueprint Advisory_
+_Page title: Formation & Establishment | Growth Blueprint_
 
 - Home
 - Services
@@ -620,7 +698,7 @@ Tell us what you are working on and we will tell you honestly whether we can hel
 
 # PAGE: Service: Partnerships & Commercial Development
 
-_Page title: Partnerships & Commercial Development | Growth Blueprint Advisory_
+_Page title: Partnerships & Commercial Development | Growth Blueprint_
 
 - Home
 - Services
@@ -758,7 +836,7 @@ Tell us what you are working on and we will tell you honestly whether we can hel
 
 # PAGE: Service: HR, Talent & Executive Mobility
 
-_Page title: HR, Talent & Executive Mobility | Growth Blueprint Advisory_
+_Page title: HR, Talent & Executive Mobility | Growth Blueprint_
 
 - Home
 - Services
@@ -896,7 +974,7 @@ Tell us what you are working on and we will tell you honestly whether we can hel
 
 # PAGE: Service: Operations & Business Support
 
-_Page title: Operations & Business Support | Growth Blueprint Advisory_
+_Page title: Operations & Business Support | Growth Blueprint_
 
 - Home
 - Services
@@ -1034,7 +1112,7 @@ Tell us what you are working on and we will tell you honestly whether we can hel
 
 # PAGE: Service: Governance, Finance & Compliance Coordination
 
-_Page title: Governance, Finance & Compliance Coordination | Growth Blueprint Advisory_
+_Page title: Governance, Finance & Compliance Coordination | Growth Blueprint_
 
 - Home
 - Services
@@ -1172,7 +1250,7 @@ Tell us what you are working on and we will tell you honestly whether we can hel
 
 # PAGE: Service: Brand, Marketing & Digital Growth
 
-_Page title: Brand, Marketing & Digital Growth | Growth Blueprint Advisory_
+_Page title: Brand, Marketing & Digital Growth | Growth Blueprint_
 
 - Home
 - Services
@@ -1310,7 +1388,7 @@ Tell us what you are working on and we will tell you honestly whether we can hel
 
 # PAGE: Service: Technology & Automation
 
-_Page title: Technology & Automation | Growth Blueprint Advisory_
+_Page title: Technology & Automation | Growth Blueprint_
 
 - Home
 - Services
@@ -1448,7 +1526,7 @@ Tell us what you are working on and we will tell you honestly whether we can hel
 
 # PAGE: Industries overview
 
-_Page title: Industries | Growth Blueprint Advisory_
+_Page title: Industries | Growth Blueprint_
 
 Industries
 
@@ -1487,7 +1565,7 @@ Tell us what you do and where you want to go. We will tell you what we see.
 
 # PAGE: Industry: FMCG & Consumer Brands
 
-_Page title: FMCG & Consumer Brands | Growth Blueprint Advisory_
+_Page title: FMCG & Consumer Brands | Growth Blueprint_
 
 - Home
 - Industries
@@ -1553,7 +1631,7 @@ A short conversation is often enough to see what the next step should be.
 
 # PAGE: Industry: Real Estate
 
-_Page title: Real Estate | Growth Blueprint Advisory_
+_Page title: Real Estate | Growth Blueprint_
 
 - Home
 - Industries
@@ -1619,7 +1697,7 @@ A short conversation is often enough to see what the next step should be.
 
 # PAGE: Industry: Hospitality
 
-_Page title: Hospitality | Growth Blueprint Advisory_
+_Page title: Hospitality | Growth Blueprint_
 
 - Home
 - Industries
@@ -1685,7 +1763,7 @@ A short conversation is often enough to see what the next step should be.
 
 # PAGE: Industry: Industry & Manufacturing
 
-_Page title: Industry & Manufacturing | Growth Blueprint Advisory_
+_Page title: Industry & Manufacturing | Growth Blueprint_
 
 - Home
 - Industries
@@ -1751,7 +1829,7 @@ A short conversation is often enough to see what the next step should be.
 
 # PAGE: Industry: Technology & Digital Businesses
 
-_Page title: Technology & Digital Businesses | Growth Blueprint Advisory_
+_Page title: Technology & Digital Businesses | Growth Blueprint_
 
 - Home
 - Industries
@@ -1817,7 +1895,7 @@ A short conversation is often enough to see what the next step should be.
 
 # PAGE: Industry: Construction & Engineering
 
-_Page title: Construction & Engineering | Growth Blueprint Advisory_
+_Page title: Construction & Engineering | Growth Blueprint_
 
 - Home
 - Industries
@@ -1883,7 +1961,7 @@ A short conversation is often enough to see what the next step should be.
 
 # PAGE: Industry: Healthcare & Life Sciences
 
-_Page title: Healthcare & Life Sciences | Growth Blueprint Advisory_
+_Page title: Healthcare & Life Sciences | Growth Blueprint_
 
 - Home
 - Industries
@@ -1949,7 +2027,7 @@ A short conversation is often enough to see what the next step should be.
 
 # PAGE: Industry: Logistics & Supply Chain
 
-_Page title: Logistics & Supply Chain | Growth Blueprint Advisory_
+_Page title: Logistics & Supply Chain | Growth Blueprint_
 
 - Home
 - Industries
@@ -2015,7 +2093,7 @@ A short conversation is often enough to see what the next step should be.
 
 # PAGE: Industry: Retail & E-commerce
 
-_Page title: Retail & E-commerce | Growth Blueprint Advisory_
+_Page title: Retail & E-commerce | Growth Blueprint_
 
 - Home
 - Industries
@@ -2081,7 +2159,7 @@ A short conversation is often enough to see what the next step should be.
 
 # PAGE: Industry: Professional & Business Services
 
-_Page title: Professional & Business Services | Growth Blueprint Advisory_
+_Page title: Professional & Business Services | Growth Blueprint_
 
 - Home
 - Industries
@@ -2147,7 +2225,7 @@ A short conversation is often enough to see what the next step should be.
 
 # PAGE: Industry: Tourism & Leisure
 
-_Page title: Tourism & Leisure | Growth Blueprint Advisory_
+_Page title: Tourism & Leisure | Growth Blueprint_
 
 - Home
 - Industries
@@ -2213,7 +2291,7 @@ A short conversation is often enough to see what the next step should be.
 
 # PAGE: Our Approach
 
-_Page title: Our Approach | Growth Blueprint Advisory_
+_Page title: Our Approach | Growth Blueprint_
 
 Our approach
 
@@ -2380,7 +2458,7 @@ Tell us what you are trying to do. We will be straight with you about how we mig
 
 # PAGE: About
 
-_Page title: About Us | Growth Blueprint Advisory_
+_Page title: About Us | Growth Blueprint_
 
 About us
 
@@ -2388,11 +2466,21 @@ About us
 
 A small, founder-led Saudi advisory. We believe good advice is candid, practical and personal, and that it should leave you more capable than it found you.
 
+Founded2024
+
+Years of leadership experience25+
+
+Licensed#970146
+
+Based inJeddah
+
+Licensed by the Ministry of Human Resources & Social Development
+
 Founder-led
 
 ## A personal commitment to meaningful impact
 
-Growth Blueprint Advisory began with a simple belief: businesses that come to Saudi Arabia deserve advice from someone who will tell them the truth, including the parts they would rather not hear.
+Growth Blueprint began with a simple belief: businesses that come to Saudi Arabia deserve advice from someone who will tell them the truth, including the parts they would rather not hear.
 
 We work closely with organisations to sharpen their positioning, clarify their purpose and put sound principles into practice. We would rather take on fewer clients and do right by each one.
 
@@ -2428,6 +2516,100 @@ We keep a small core team and bring in qualified specialists for each engagement
 
 That keeps us flexible and keeps your costs sensible, and it means you get focused, high-quality help for your particular situation.
 
+Vision & mission
+
+## We act as both an Enabler and a Gateway to the Saudi market: your bridge to Vision 2030 opportunities.
+
+### Vision
+
+To be the trusted partner for international investors seeking to grow in Saudi Arabia, bridging global ambition with local opportunity.
+
+### Mission
+
+To provide clarity, confidence and connections that enable sustainable growth for our clients in Saudi Arabia.
+
+### Deep local knowledge
+
+With a global perspective.
+
+### Streamlined access
+
+To opportunities and stakeholders.
+
+### Cost-effective
+
+A flexible advisory approach.
+
+### A strong network
+
+Legal, accounting and sector experts.
+
+Our expert team
+
+## Deep Saudi market knowledge, international business expertise
+
+Five practitioners across strategy, law, branding, real estate and communications.
+
+### Faisal Halawani
+
+Managing Director
+
+More than 25 years in multinational business, innovation and commercial planning. Member of the Saudi Management Consultants Association.
+
+StrategyInnovation
+
+### Hatim Shetifi
+
+Legal Advisor
+
+20 years as a legal consultant. Head of Hatim Shetifi Office for advocates and legal consultants.
+
+LegalRegulations
+
+### Ahmad Al-Zaeem
+
+Marketing & Branding Expert
+
+Managing Director of Saudi Aim, with extensive experience in marketing, creative design and branding and re-branding for Saudi and international businesses.
+
+MarketingBranding
+
+### Mohammed Shitifi
+
+Real Estate Specialist
+
+CEO of Shetifi Real Estate, with more than 5 years in the real estate industry, specialising in Saudi market opportunities and property investment.
+
+Real estateInvestment
+
+### Salah Abu Alwafa
+
+Advertising & PR Expert
+
+More than 28 years managing communication and PR campaigns, online and offline.
+
+AdvertisingPR
+
+Licensed by the Ministry of Human Resources & Social Development · #970146
+
+What our clients say
+
+## Real businesses that trusted us with their entry
+
+Growth Blueprint provided invaluable guidance for our Saudi-Swiss joint venture. Their deep understanding of local regulations and cultural nuances made our market entry smooth and successful.
+
+BLBrownstone LtdSaudi-Swiss company
+
+Exceptional support in establishing our sleep medicine clinic in Saudi Arabia. Growth Blueprint's healthcare sector expertise and regulatory guidance were instrumental to our success.
+
+HMHakeem Medical TouchSleep medicine clinic
+
+As an Italian manufacturer entering the Saudi market, Growth Blueprint's strategic introductions and market intelligence reports gave us the confidence to invest and expand successfully.
+
+S2Sano2Italian manufacturer
+
+Quotes are shared by the clients named, as published by the firm.
+
 Let's talk
 
 ## Come and meet us
@@ -2441,7 +2623,7 @@ We would be glad to hear about your plans, and to tell you honestly whether we c
 
 # PAGE: Entering Saudi Arabia
 
-_Page title: Entering Saudi Arabia | Growth Blueprint Advisory_
+_Page title: Entering Saudi Arabia | Growth Blueprint_
 
 Your journey in Saudi Arabia
 
@@ -2552,7 +2734,7 @@ Tell us your plans and we will give you a straight answer on how we could help.
 
 # PAGE: Growing in Saudi Arabia
 
-_Page title: Growing in Saudi Arabia | Growth Blueprint Advisory_
+_Page title: Growing in Saudi Arabia | Growth Blueprint_
 
 Your journey in Saudi Arabia
 
@@ -2663,7 +2845,7 @@ Tell us where you are and where you want to go next. We will tell you honestly h
 
 # PAGE: Insights
 
-_Page title: Insights | Growth Blueprint Advisory_
+_Page title: Insights | Growth Blueprint_
 
 Insights
 
@@ -2778,7 +2960,7 @@ Bring your questions. We are happy to talk them through.
 
 # PAGE: Article: Seven questions to answer before you enter Saudi Arabia
 
-_Page title: Seven questions to answer before you enter Saudi Arabia | Growth Blueprint Advisory_
+_Page title: Seven questions to answer before you enter Saudi Arabia | Growth Blueprint_
 
 - Home
 - Insights
@@ -2894,7 +3076,7 @@ Tell us your plans and we will give you a straight answer on how we could help.
 
 # PAGE: Article: Why your home-market pricing will not work here
 
-_Page title: Why your home-market pricing will not work here | Growth Blueprint Advisory_
+_Page title: Why your home-market pricing will not work here | Growth Blueprint_
 
 - Home
 - Insights
@@ -2970,7 +3152,7 @@ Tell us your plans and we will give you a straight answer on how we could help.
 
 # PAGE: Article: How to choose a partner in Saudi Arabia (and how not to)
 
-_Page title: How to choose a partner in Saudi Arabia (and how not to) | Growth Blueprint Advisory_
+_Page title: How to choose a partner in Saudi Arabia (and how not to) | Growth Blueprint_
 
 - Home
 - Insights
@@ -3046,7 +3228,7 @@ Tell us your plans and we will give you a straight answer on how we could help.
 
 # PAGE: Article: Map the rules before you commit
 
-_Page title: Map the rules before you commit | Growth Blueprint Advisory_
+_Page title: Map the rules before you commit | Growth Blueprint_
 
 - Home
 - Insights
@@ -3115,7 +3297,7 @@ Tell us your plans and we will give you a straight answer on how we could help.
 
 # PAGE: Article: Reading the signals: where the next growth sectors may emerge
 
-_Page title: Reading the signals: where the next growth sectors may emerge | Growth Blueprint Advisory_
+_Page title: Reading the signals: where the next growth sectors may emerge | Growth Blueprint_
 
 - Home
 - Insights
@@ -3184,7 +3366,7 @@ Tell us your plans and we will give you a straight answer on how we could help.
 
 # PAGE: Article: Building your first Saudi team
 
-_Page title: Building your first Saudi team | Growth Blueprint Advisory_
+_Page title: Building your first Saudi team | Growth Blueprint_
 
 - Home
 - Insights
@@ -3253,7 +3435,7 @@ Tell us your plans and we will give you a straight answer on how we could help.
 
 # PAGE: Readiness Scorecard: introduction
 
-_Page title: Saudi Readiness Scorecard | Growth Blueprint Advisory_
+_Page title: Saudi Readiness Scorecard | Growth Blueprint_
 
 Free diagnostic · about 10 minutes
 
@@ -3334,7 +3516,7 @@ The scorecard is a guide to help you think and plan. It is not legal, tax or inv
 
 # PAGE: Readiness Checklist
 
-_Page title: Saudi Market Readiness Checklist | Growth Blueprint Advisory_
+_Page title: Saudi Market Readiness Checklist | Growth Blueprint_
 
 Tools & resources
 
@@ -3464,7 +3646,7 @@ This checklist is for general information. It is not legal or professional advic
 
 # PAGE: Briefs shop
 
-_Page title: Sector briefs | Growth Blueprint Advisory_
+_Page title: Sector briefs | Growth Blueprint_
 
 Sector briefs
 
@@ -3589,7 +3771,7 @@ Briefs are general guidance written by advisers. They are not legal, tax or inve
 
 # PAGE: Brief: FMCG & Consumer Brands: the Saudi market-entry brief
 
-_Page title: FMCG & Consumer Brands: the Saudi market-entry brief | Growth Blueprint Advisory_
+_Page title: FMCG & Consumer Brands: the Saudi market-entry brief | Growth Blueprint_
 
 - Home
 - Sector briefs
@@ -3695,7 +3877,7 @@ Briefs are general guidance written by advisers. They are not legal, tax or inve
 
 # PAGE: Brief: Real Estate: the Saudi market-entry brief
 
-_Page title: Real Estate: the Saudi market-entry brief | Growth Blueprint Advisory_
+_Page title: Real Estate: the Saudi market-entry brief | Growth Blueprint_
 
 - Home
 - Sector briefs
@@ -3801,7 +3983,7 @@ Briefs are general guidance written by advisers. They are not legal, tax or inve
 
 # PAGE: Brief: Hospitality: the Saudi market-entry brief
 
-_Page title: Hospitality: the Saudi market-entry brief | Growth Blueprint Advisory_
+_Page title: Hospitality: the Saudi market-entry brief | Growth Blueprint_
 
 - Home
 - Sector briefs
@@ -3907,7 +4089,7 @@ Briefs are general guidance written by advisers. They are not legal, tax or inve
 
 # PAGE: Brief: Industry & Manufacturing: the Saudi market-entry brief
 
-_Page title: Industry & Manufacturing: the Saudi market-entry brief | Growth Blueprint Advisory_
+_Page title: Industry & Manufacturing: the Saudi market-entry brief | Growth Blueprint_
 
 - Home
 - Sector briefs
@@ -4013,7 +4195,7 @@ Briefs are general guidance written by advisers. They are not legal, tax or inve
 
 # PAGE: Brief: Technology & Digital: the Saudi market-entry brief
 
-_Page title: Technology & Digital: the Saudi market-entry brief | Growth Blueprint Advisory_
+_Page title: Technology & Digital: the Saudi market-entry brief | Growth Blueprint_
 
 - Home
 - Sector briefs
@@ -4119,7 +4301,7 @@ Briefs are general guidance written by advisers. They are not legal, tax or inve
 
 # PAGE: Brief: Healthcare & Life Sciences: the Saudi market-entry brief
 
-_Page title: Healthcare & Life Sciences: the Saudi market-entry brief | Growth Blueprint Advisory_
+_Page title: Healthcare & Life Sciences: the Saudi market-entry brief | Growth Blueprint_
 
 - Home
 - Sector briefs
@@ -4225,7 +4407,7 @@ Briefs are general guidance written by advisers. They are not legal, tax or inve
 
 # PAGE: Brief: Logistics & Supply Chain: the Saudi market-entry brief
 
-_Page title: Logistics & Supply Chain: the Saudi market-entry brief | Growth Blueprint Advisory_
+_Page title: Logistics & Supply Chain: the Saudi market-entry brief | Growth Blueprint_
 
 - Home
 - Sector briefs
@@ -4331,7 +4513,7 @@ Briefs are general guidance written by advisers. They are not legal, tax or inve
 
 # PAGE: Brief: Retail & E-commerce: the Saudi market-entry brief
 
-_Page title: Retail & E-commerce: the Saudi market-entry brief | Growth Blueprint Advisory_
+_Page title: Retail & E-commerce: the Saudi market-entry brief | Growth Blueprint_
 
 - Home
 - Sector briefs
@@ -4437,7 +4619,7 @@ Briefs are general guidance written by advisers. They are not legal, tax or inve
 
 # PAGE: Basket
 
-_Page title: Your basket | Growth Blueprint Advisory_
+_Page title: Your basket | Growth Blueprint_
 
 # Your basket
 
@@ -4450,7 +4632,7 @@ Your basket is empty.
 
 # PAGE: Checkout
 
-_Page title: Your basket | Growth Blueprint Advisory_
+_Page title: Your basket | Growth Blueprint_
 
 # Your basket
 
@@ -4463,7 +4645,7 @@ Your basket is empty.
 
 # PAGE: Order page
 
-_Page title: Order confirmed | Growth Blueprint Advisory_
+_Page title: Order confirmed | Growth Blueprint_
 
 Order confirmed
 
@@ -4484,7 +4666,7 @@ Take the 10-minute Saudi Readiness Scorecard to see how your own plans measure u
 
 # PAGE: Book a meeting
 
-_Page title: Book a Meeting | Growth Blueprint Advisory_
+_Page title: Book a Meeting | Growth Blueprint_
 
 Let's talk
 
@@ -4551,7 +4733,7 @@ What would you like to talk about? *
 
 Anything else we should know? (optional)
 
-I agree that Growth Blueprint Advisory may use the details I have given to reply to me and arrange a conversation. I have read the Privacy Notice
+I agree that Growth Blueprint may use the details I have given to reply to me and arrange a conversation. I have read the Privacy Notice
 
 Optional: send me the monthly Growth Blueprint brief and occasional news. I can unsubscribe at any time.
 
@@ -4559,22 +4741,22 @@ Optional: send me the monthly Growth Blueprint brief and occasional news. I can 
 
 Where we are
 
-## Riyadh, Saudi Arabia
+## Jeddah, Saudi Arabia
 
-Come and see us in Riyadh, or meet online, whichever suits you better.
+Come and see us in Jeddah, or meet online, whichever suits you better.
 
 ## Our office
 
-Our Riyadh office is a comfortable place to talk things through in person.
+Our Jeddah office is a comfortable place to talk things through in person.
 
-Riyadh, Kingdom of Saudi ArabiaWe will share the exact address when your meeting is confirmed.
+Office #303, Optima Tower, Al-Shatie District, Jeddah, Saudi ArabiaOffice #303, Optima Tower, Al-Shatie District, Jeddah. Sunday to Thursday, 9:30 AM to 5:30 PM (AST).
 
 
 ---
 
 # PAGE: Enquiry form
 
-_Page title: Make an Enquiry | Growth Blueprint Advisory_
+_Page title: Make an Enquiry | Growth Blueprint_
 
 # From Saudi ambition to lasting impact
 
@@ -4629,7 +4811,7 @@ We are proud to help businesses play a part in it, one good decision at a time.
 
 # PAGE: Enquiry confirmation
 
-_Page title: Demo enquiry confirmation | Growth Blueprint Advisory_
+_Page title: Demo enquiry confirmation | Growth Blueprint_
 
 # Demo enquiry confirmation
 
@@ -4740,7 +4922,7 @@ We have removed you from the monthly brief and we will not email you again about
 
 # PAGE: Privacy Notice
 
-_Page title: Privacy Notice | Growth Blueprint Advisory_
+_Page title: Privacy Notice | Growth Blueprint_
 
 Privacy Notice
 
@@ -4759,9 +4941,9 @@ Draft for legal review. This notice follows the structure and principles of the 
 
 ## 1. Who we are
 
-Growth Blueprint Advisory (“we”, “us”) is the data controller for the personal data described here. We are based in Riyadh, Kingdom of Saudi Arabia. Commercial registration: [number to be added].
+Growth Blueprint (“we”, “us”) is the data controller for the personal data described here. We are based in Jeddah, Kingdom of Saudi Arabia. Commercial registration: [number to be added].
 
-Questions about your data go to our privacy contact: privacy@growthblueprint.sa. [Name or role of the person responsible for data protection to be added.]
+Questions about your data go to our privacy contact: faisal@getgrowthblueprint.com. [Name or role of the person responsible for data protection to be added.]
 
 ## 2. What we collect, and why
 
@@ -4801,7 +4983,7 @@ Enquiries and meeting requests: [24] months after our last contact, then deleted
 
 Under the PDPL you have the right to be told how your data is used, to access it, to get a copy in a readable form, to have it corrected or completed, to ask us to destroy it, and to withdraw your consent. You may also object in some circumstances. If you are a minor or someone who lacks capacity, your guardian can act for you.
 
-Use the form below or email privacy@growthblueprint.sa. We will confirm your request and aim to answer within 30 days. We may need to check it is really you before we act, and there are limited cases where we must keep data, such as tax records. We will explain if that applies.
+Use the form below or email faisal@getgrowthblueprint.com. We will confirm your request and aim to answer within 30 days. We may need to check it is really you before we act, and there are limited cases where we must keep data, such as tax records. We will explain if that applies.
 
 ## 9. How we keep it safe
 
@@ -4839,14 +5021,14 @@ Anything else we should know? (optional)
 
 **[ Send my request ]**
 
-privacy@growthblueprint.sa · Riyadh, Kingdom of Saudi Arabia
+faisal@getgrowthblueprint.com · Office #303, Optima Tower, Al-Shatie District, Jeddah, Saudi Arabia
 
 
 ---
 
 # PAGE: Terms of Use
 
-_Page title: Terms of Use | Growth Blueprint Advisory_
+_Page title: Terms of Use | Growth Blueprint_
 
 Terms of Use
 
@@ -4862,7 +5044,7 @@ Everything on this site, including the scorecard report and the sector briefs, i
 
 ## Our content
 
-The website, its text, design and images belong to Growth Blueprint Advisory or are used with permission. You may view and print pages for your own use. Please do not copy or republish them without asking us.
+The website, its text, design and images belong to Growth Blueprint or are used with permission. You may view and print pages for your own use. Please do not copy or republish them without asking us.
 
 ## Buying briefs
 
@@ -4886,14 +5068,14 @@ These terms are governed by the laws of the Kingdom of Saudi Arabia.
 
 ## Contact
 
-info@growthblueprint.sa · Riyadh, Kingdom of Saudi Arabia
+faisal@getgrowthblueprint.com · Office #303, Optima Tower, Al-Shatie District, Jeddah, Saudi Arabia
 
 
 ---
 
 # PAGE: Cookie Policy
 
-_Page title: Cookie Policy | Growth Blueprint Advisory_
+_Page title: Cookie Policy | Growth Blueprint_
 
 Cookie Policy
 

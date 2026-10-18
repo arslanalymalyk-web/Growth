@@ -114,7 +114,7 @@ export function footer(ctx) {
       <div class="ftr-brand">
         <a class="brand" href="${ctx.href('')}">${logoMark}<span class="brand__text"><b>GROWTH BLUEPRINT</b><i>ADVISORY</i></span></a>
         <p>${esc(ctx.t(UI.footerTag))}</p>
-        <div class="social"><a href="#" aria-label="LinkedIn">${social('linkedin')}</a><a href="#" aria-label="X">${social('x')}</a><a href="#" aria-label="YouTube">${social('youtube')}</a></div>
+        <div class="social"><a href="${SITE.linkedin}" rel="noopener" target="_blank" aria-label="LinkedIn (opens in a new tab)">${social('linkedin')}</a></div>
       </div>
       <div><h2 class="ftr-h">${esc(ctx.t(UI.quickLinks))}</h2><ul class="ftr-list">${q}</ul></div>
       <div><h2 class="ftr-h">${esc(ctx.t(UI.ourServices))}</h2><ul class="ftr-list ftr-list--sm">${svc}</ul></div>
@@ -124,6 +124,7 @@ export function footer(ctx) {
           <li>${icon('mail')}<a href="mailto:${SITE.email}">${SITE.email}</a></li>
           <li>${icon('phone')}<a href="tel:${SITE.phoneHref}" dir="ltr">${SITE.phone}</a></li>
         </ul>
+        <p class="ftr-lic">${esc(ctx.t(L('Licensed by MHRSD #970146 · Saudi Arabia · Vision 2030 aligned', 'مرخّصة من وزارة الموارد البشرية والتنمية الاجتماعية رقم 970146 · المملكة العربية السعودية · متوافقة مع رؤية 2030')))}</p>
         ${btn(ctx, UI.book, 'book-a-meeting/', 'outline-gold', 'btn--sm')}
       </div>
     </div>
@@ -163,6 +164,8 @@ export function shell(ctx, { title, description, active, body, extraHead = '', b
 <link rel="alternate" hreflang="en" href="${ctx.lang === 'en' ? '' : ctx.switchHref}">
 <link rel="alternate" hreflang="ar" href="${ctx.lang === 'ar' ? '' : ctx.switchHref}">
 <link rel="icon" href="${ctx.asset('favicon.svg')}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="${ctx.asset('apple-touch-icon.png')}">
+<meta property="og:image" content="${ctx.asset('og-image.png')}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Naskh+Arabic:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="${ctx.asset('styles.css')}">

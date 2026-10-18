@@ -82,13 +82,13 @@ ${hero(ctx, { crumbs: crumbs(ctx, { label: SHOP.hero.eyebrow, href: ctx.href('sh
 </div></section>
 <section class="sec sec--deep"><div class="container container--wide"><div class="sec-head sec-head--split"><div><h2 class="h2 h2--md">${T(ctx, D.related)}</h2></div><a class="more more--gold" href="${ctx.href('shop/')}"><span>${T(ctx, D.back)}</span>${arrow}</a></div><div class="pcards pcards--3">${related}</div><p class="shop-disc">${T(ctx, D.notAdvice)}</p></div></section>
 ${shopScript(ctx)}`;
-  return shell(ctx, { title: L(`${p.title.en} | Growth Blueprint Advisory`, `${p.title.ar} | غروث بلوبرنت للاستشارات`), description: p.tagline, active: 'shop', body, scripts: ['shop.js'] });
+  return shell(ctx, { title: L(`${p.title.en} | Growth Blueprint`, `${p.title.ar} | غروث بلوبرينت`), description: p.tagline, active: 'shop', body, scripts: ['shop.js'] });
 }
 
 export function shopBasket(ctx) {
   const B = SHOP.basketPage;
   const body = `<section class="sec sec--ivory shop-page"><div class="container container--md"><h1 class="h2">${T(ctx, B.title)}</h1><div id="basket" aria-live="polite"></div></div></section>${shopScript(ctx)}`;
-  return shell(ctx, { title: L(`${B.title.en} | Growth Blueprint Advisory`, `${B.title.ar} | غروث بلوبرنت للاستشارات`), description: SHOP.meta.description, active: 'shop', body, scripts: ['shop.js'], extraHead: '<meta name="robots" content="noindex">' });
+  return shell(ctx, { title: L(`${B.title.en} | Growth Blueprint`, `${B.title.ar} | غروث بلوبرينت`), description: SHOP.meta.description, active: 'shop', body, scripts: ['shop.js'], extraHead: '<meta name="robots" content="noindex">' });
 }
 
 export function shopCheckout(ctx) {
@@ -115,7 +115,7 @@ export function shopCheckout(ctx) {
   </form></div>
   <aside class="co__sum"><div class="buybox"><h2 class="h4">${T(ctx, C.summary)}</h2><div id="co-summary"></div></div></aside>
 </div></section>${shopScript(ctx)}`;
-  return shell(ctx, { title: L(`${C.eyebrow.en} | Growth Blueprint Advisory`, `${C.eyebrow.ar} | غروث بلوبرنت للاستشارات`), description: SHOP.meta.description, active: 'shop', body, scripts: ['shop.js'], extraHead: '<meta name="robots" content="noindex">' });
+  return shell(ctx, { title: L(`${C.eyebrow.en} | Growth Blueprint`, `${C.eyebrow.ar} | غروث بلوبرينت`), description: SHOP.meta.description, active: 'shop', body, scripts: ['shop.js'], extraHead: '<meta name="robots" content="noindex">' });
 }
 
 export function shopOrder(ctx) {
@@ -124,7 +124,7 @@ export function shopOrder(ctx) {
 ${hero(ctx, { eyebrow: O.eyebrow, title: O.title, lead: O.lead, img: 'hero-man-light' })}
 <section class="sec sec--ivory shop-page"><div class="container container--md"><div id="order" aria-live="polite"><p class="shop-empty">${T(ctx, SHOP.order.preparing)}</p></div>
 <div class="licbox licbox--next"><p class="eyebrow">${T(ctx, O.next)}</p><p>${T(ctx, O.nextBody)}</p>${btn(ctx, O.nextCta, 'readiness-scorecard/', 'gold', 'btn--sm')}</div></div></section>${shopScript(ctx)}`;
-  return shell(ctx, { title: L(`${O.eyebrow.en} | Growth Blueprint Advisory`, `${O.eyebrow.ar} | غروث بلوبرنت للاستشارات`), description: O.lead, active: 'shop', body, scripts: ['shop.js'], extraHead: '<meta name="robots" content="noindex"><meta name="referrer" content="no-referrer">' });
+  return shell(ctx, { title: L(`${O.eyebrow.en} | Growth Blueprint`, `${O.eyebrow.ar} | غروث بلوبرينت`), description: O.lead, active: 'shop', body, scripts: ['shop.js'], extraHead: '<meta name="robots" content="noindex"><meta name="referrer" content="no-referrer">' });
 }
 
 /* ---------- newsletter confirmation pages ---------- */
@@ -155,7 +155,7 @@ export function privacy(ctx) {
     <p class="err" role="alert" hidden data-pr-err></p><p class="nl__ok" role="status" hidden data-pr-msg></p>
     <button class="btn btn--gold" type="submit"><span>${T(ctx, F.submit)}</span>${arrow}</button>
   </form>
-  <p class="legal__contact">privacy@growthblueprint.sa · ${T(ctx, SITE.address)}</p>
+  <p class="legal__contact">faisal@getgrowthblueprint.com · ${T(ctx, SITE.address)}</p>
 </div></section>`;
   return shell(ctx, { title: P.meta.title, description: P.meta.description, active: null, body });
 }

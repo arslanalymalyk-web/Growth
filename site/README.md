@@ -1,4 +1,4 @@
-# Growth Blueprint Advisory: website, scorecard, briefs shop and server
+# Growth Blueprint: website, scorecard, briefs shop and server
 
 A bilingual (English `/en`, Arabic `/ar`, right-to-left), mobile-first website with:
 
