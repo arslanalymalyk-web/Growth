@@ -1,0 +1,34 @@
+{
+  "fmcg.pdf": {
+    "pages": 11,
+    "bytes": 329190
+  },
+  "real-estate.pdf": {
+    "pages": 11,
+    "bytes": 328480
+  },
+  "hospitality.pdf": {
+    "pages": 11,
+    "bytes": 326202
+  },
+  "manufacturing.pdf": {
+    "pages": 11,
+    "bytes": 328636
+  },
+  "technology.pdf": {
+    "pages": 11,
+    "bytes": 324032
+  },
+  "healthcare.pdf": {
+    "pages": 11,
+    "bytes": 322936
+  },
+  "logistics.pdf": {
+    "pages": 11,
+    "bytes": 327084
+  },
+  "retail.pdf": {
+    "pages": 11,
+    "bytes": 324609
+  }
+}

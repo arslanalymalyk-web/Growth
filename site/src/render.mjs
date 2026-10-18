@@ -1,5 +1,6 @@
 import { icon, social, logoMark } from './icons.mjs';
 import { L, NAV, UI, SITE } from './ui.mjs';
+import { NEWS } from './legal.mjs';
 import { SERVICES } from './services.mjs';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -48,6 +49,26 @@ export const sectionHead = (ctx, { eyebrow: e, title, body, tone = 'light', cent
     ${body ? `<p class="sec-head__body">${esc(ctx.t(body))}</p>` : ''}
   </div>`;
 
+
+/* ---------- newsletter form (footer, Insights, shop) ---------- */
+export function newsletter(ctx, { variant = 'band', id = 'nl', source = 'site' } = {}) {
+  const compact = variant === 'compact';
+  const data = `data-newsletter data-source="${source}" data-ok="${esc(ctx.t(NEWS.ok))}" data-demo="${esc(ctx.t(NEWS.demo))}" data-demo-confirm="${esc(ctx.t(NEWS.demoConfirm))}" data-err-email="${esc(ctx.t(NEWS.errEmail))}" data-err-consent="${esc(ctx.t(NEWS.errConsent))}" data-err-server="${esc(ctx.t(NEWS.errServer))}"`;
+  return `
+<form class="nl nl--${variant}" ${data} novalidate aria-label="${esc(ctx.t(NEWS.eyebrow))}">
+  ${compact ? `<h2 class="ftr-h">${esc(ctx.t(NEWS.eyebrow))}</h2><p class="nl__body">${esc(ctx.t(L('One useful email a month about doing business in Saudi Arabia.', 'رسالة واحدة مفيدة كل شهر عن ممارسة الأعمال في السعودية.')))}</p>` : `<p class="eyebrow">${esc(ctx.t(NEWS.eyebrow))}</p><h2 class="h2">${esc(ctx.t(NEWS.title))}</h2><p class="nl__body">${esc(ctx.t(NEWS.body))}</p>`}
+  <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <div class="nl__row">
+    ${compact ? '' : `<div class="field"><label for="${id}-name">${esc(ctx.t(NEWS.name))}</label><input id="${id}-name" name="name" type="text" autocomplete="name"></div>`}
+    <div class="field"><label ${compact ? 'class="sr-only"' : ''} for="${id}-email">${esc(ctx.t(NEWS.email))}</label><input id="${id}-email" name="email" type="email" autocomplete="email" dir="ltr" placeholder="${compact ? esc(ctx.t(NEWS.email)) : ''}" required></div>
+    <button class="btn btn--gold" type="submit"><span>${esc(ctx.t(NEWS.submit))}</span>${arrow}</button>
+  </div>
+  <label class="check"><input type="checkbox" name="consent"><span class="check__b" aria-hidden="true">${icon('check')}</span><span>${esc(ctx.t(NEWS.consent))} <a href="${ctx.href('privacy/')}">${esc(ctx.t(NEWS.privacyLink))}</a></span></label>
+  <p class="err" role="alert" hidden data-news-err></p>
+  <p class="nl__ok" role="status" hidden data-news-msg></p>
+</form>`;
+}
+
 /* ---------- Header / footer ---------- */
 export function header(ctx, active) {
   const items = NAV.map((n) => `<li><a href="${ctx.href(n.path)}" ${active === n.id ? 'aria-current="page" class="is-active"' : ''}>${esc(ctx.t(n.label))}</a></li>`).join('');
@@ -66,6 +87,7 @@ export function header(ctx, active) {
       <div class="lang" role="group" aria-label="${esc(ctx.t(UI.language))}">
         <a href="${ctx.lang === 'en' ? '#' : ctx.switchHref}" lang="en" ${ctx.lang === 'en' ? 'aria-current="true" class="is-active"' : ''}>EN</a><span aria-hidden="true">|</span><a href="${ctx.lang === 'ar' ? '#' : ctx.switchHref}" lang="ar" ${ctx.lang === 'ar' ? 'aria-current="true" class="is-active"' : ''}>AR</a>
       </div>
+      <a class="basket-link" href="${ctx.href('shop/basket/')}" aria-label="${esc(ctx.t(L('Basket', 'السلة')))}">${icon('bag')}<span class="basket-link__n" data-basket-count hidden>0</span></a>
       ${btn(ctx, UI.book, 'book-a-meeting/', 'gold', 'btn--sm hdr__cta')}
     </div>
     <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="${esc(ctx.t(UI.menu))}"><span></span><span></span><span></span></button>
@@ -87,6 +109,7 @@ export function footer(ctx) {
   return `
 <footer class="site-footer">
   <div class="container container--wide">
+    <div class="ftr-news">${newsletter(ctx, { variant: 'compact', id: 'fnl', source: 'footer' })}</div>
     <div class="ftr-grid">
       <div class="ftr-brand">
         <a class="brand" href="${ctx.href('')}">${logoMark}<span class="brand__text"><b>GROWTH BLUEPRINT</b><i>ADVISORY</i></span></a>
@@ -119,7 +142,7 @@ export function footer(ctx) {
 }
 
 /* ---------- Page shell ---------- */
-export function shell(ctx, { title, description, active, body, extraHead = '', bodyClass = '' }) {
+export function shell(ctx, { title, description, active, body, extraHead = '', bodyClass = '', scripts = [] }) {
   const t = ctx.t;
   const alt = ctx.path;
   const base = `${ctx.href('').replace(/index\.html$/, '')}`;
@@ -153,12 +176,13 @@ ${body}
 </main>
 ${footer(ctx)}
 <script src="${ctx.asset('app.js')}" defer></script>
+${scripts.map((f) => `<script src="${ctx.asset(f)}" defer></script>`).join('\n')}
 </body>
 </html>`;
 }
 
 /* ---------- Shared sections ---------- */
-export function hero(ctx, { eyebrow: e, title, sub, lead, img, side, ctas = [], crumbs, tone = 'dark', pos, full = false }) {
+export function hero(ctx, { eyebrow: e, title, sub, lead, img, side, ctas = [], crumbs, tone = 'dark', pos, full = false, live = null }) {
   const cr = crumbs
     ? `<nav class="crumbs" aria-label="${esc(ctx.t(L('Breadcrumb', 'مسار التنقل')))}"><ol>${crumbs.map((c, i) => `<li>${c.href ? `<a href="${c.href}">${esc(ctx.t(c.label))}</a>` : `<span aria-current="page">${esc(ctx.t(c.label))}</span>`}</li>`).join('')}</ol></nav>`
     : '';
@@ -170,10 +194,10 @@ export function hero(ctx, { eyebrow: e, title, sub, lead, img, side, ctas = [], 
     <div class="hero__copy">
       ${cr}
       ${e ? `<p class="eyebrow">${esc(ctx.t(e))}</p>` : ''}
-      <h1 class="hero__title">${esc(ctx.t(title))}</h1>
+      <h1 class="hero__title"${live ? ` data-live="${esc(ctx.t(live.title))}"` : ''}>${esc(ctx.t(title))}</h1>
       <span class="rule" aria-hidden="true"></span>
       ${sub ? `<p class="hero__sub">${esc(ctx.t(sub))}</p>` : ''}
-      ${lead ? `<p class="hero__lead">${esc(ctx.t(lead))}</p>` : ''}
+      ${lead ? `<p class="hero__lead"${live ? ` data-live="${esc(ctx.t(live.lead))}"` : ''}>${esc(ctx.t(lead))}</p>` : ''}
       ${ctas.length ? `<div class="hero__ctas">${ctas.join('')}</div>` : ''}
     </div>
     ${side ? `<ul class="hero__side" aria-hidden="true">${side.map((s) => `<li>${esc(ctx.t(s))}</li>`).join('')}</ul>` : ''}
@@ -208,3 +232,63 @@ export const serviceCard = (ctx, s, { photo = true } = {}) => `
 </article>`;
 
 export const faq = (ctx, items) => `<div class="faq">${items.map((f, i) => `<details ${i === 0 ? '' : ''}><summary><span>${esc(ctx.t(f.q))}</span><i aria-hidden="true">${icon('plus')}</i></summary><div class="faq__a"><p>${esc(ctx.t(f.a))}</p></div></details>`).join('')}</div>`;
+
+
+/* ---------- WOW hero: blueprint draws itself, photo reveals, scorecard card floats in ---------- */
+function skylineBlueprint() {
+  const W = 1440, base = 330;
+  const gen = [], lm = [];
+  // generic towers (x, width, height, setback): kept below y=140 so nothing is cropped on wide screens
+  const towers = [[0, 74, 96, 1], [86, 52, 150, 0], [150, 64, 118, 1], [226, 48, 176, 0], [286, 72, 104, 1], [366, 56, 156, 0], [434, 62, 126, 1], [506, 46, 186, 0], [548, 64, 112, 1],
+    [964, 50, 124, 1], [1030, 58, 170, 0], [1100, 56, 150, 1], [1126, 56, 176, 0], [1194, 70, 126, 1], [1276, 52, 160, 0], [1340, 62, 108, 1], [1410, 40, 136, 0]];
+  towers.forEach(([x, w, h, sb]) => {
+    const top = base - h;
+    gen.push(`M${x} ${base}V${top}H${x + w}V${base}`);
+    if (sb) gen.push(`M${x + 8} ${top}V${top - 12}H${x + w - 8}V${top}`);
+    for (let y = top + 16; y < base - 8; y += 16) gen.push(`M${x + 6} ${y}H${x + w - 6}`);
+  });
+  // Landmarks sit in the clear space between the headline and the scorecard card
+  const f = 640, k = 826; // centre x of each landmark
+  lm.push(`M${f - 18} ${base}V236L${f - 12} 218H${f + 12}L${f + 18} 236V${base}`, `M${f} 218V208`, `M${f - 12} 196a12 12 0 1 0 24 0a12 12 0 1 0-24 0`, `M${f} 184V150`, `M${f - 10} 250H${f + 10}M${f - 10} 268H${f + 10}M${f - 10} 286H${f + 10}`);
+  lm.push(`M${k - 56} ${base}V210C${k - 56} 166 ${k - 30} 140 ${k} 140C${k + 30} 140 ${k + 56} 166 ${k + 56} 210V${base}`, `M${k - 28} 236C${k - 24} 196 ${k - 10} 180 ${k} 180C${k + 10} 180 ${k + 24} 196 ${k + 28} 236`, `M${k - 28} 236H${k + 28}`, `M${k - 28} 236V${base}M${k + 28} 236V${base}`, `M${k} 140V120`);
+  lm.push(`M${k - 56} ${base + 14}H${k + 56}M${k - 56} ${base + 8}V${base + 20}M${k + 56} ${base + 8}V${base + 20}`);
+  const ground = `<path d="M0 ${base}H${W}" pathLength="1" style="--i:0"/>`;
+  const el = (arr, off) => arr.map((d, i) => `<path d="${d}" pathLength="1" style="--i:${i + off}"/>`).join('');
+  return `<svg class="wow__sky" viewBox="0 0 ${W} ${base + 24}" preserveAspectRatio="xMidYMax slice" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><g class="gen">${el(gen, 1)}</g><g class="lm">${el(lm, 40)}</g>${ground}</svg>`;
+}
+
+export function heroWow(ctx, { eyebrow: e, title, lead, img, card, ctas }) {
+  const words = ctx.t(title).split(' ').map((w, i) => `<span class="w"><span style="--wi:${i}">${esc(w)}</span></span>`).join(' ');
+  const bars = card.sample.map(([k, v], i) => `<li style="--i:${i}"><span>${esc(ctx.t(k))}</span><i><b style="--v:${v}%"></b></i><em>${v}</em></li>`).join('');
+  return `
+<section class="wow" aria-labelledby="wow-title">
+  <div class="wow__grid" aria-hidden="true"></div>
+  <div class="wow__photo" aria-hidden="true"><div class="wow__img" style="background-image:url('${ctx.img(img)}')"></div></div>
+  <div class="wow__shade" aria-hidden="true"></div>
+  ${skylineBlueprint()}
+  <p class="wow__coords" dir="ltr" aria-hidden="true">24.7136° N · 46.6753° E</p>
+  <div class="container container--wide wow__in">
+    <div class="wow__copy">
+      <p class="eyebrow wow__eyebrow">${esc(ctx.t(e))}</p>
+      <h1 class="wow__title" id="wow-title" aria-label="${esc(ctx.t(title))}">${words}</h1>
+      <span class="wow__rule" aria-hidden="true"></span>
+      <p class="wow__lead">${esc(ctx.t(lead))}</p>
+      <div class="wow__ctas">${ctas.join('')}</div>
+      <ul class="wow__pills" aria-hidden="true"><li>${esc(ctx.t(L('Enter', 'ادخل')))}</li><li>${esc(ctx.t(L('Operate', 'شغّل')))}</li><li>${esc(ctx.t(L('Grow', 'انمُ')))}</li></ul>
+    </div>
+    <aside class="wow__card" aria-label="${esc(ctx.t(card.label))}">
+      <p class="wow__card-k">${esc(ctx.t(card.kicker))}</p>
+      <h2 class="wow__card-t">${esc(ctx.t(card.title))}</h2>
+      <div class="wow__ring" data-score="${card.score}" role="img" aria-label="${esc(ctx.t(card.sampleLabel))} ${card.score}/100">
+        <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="ring-bg"/><circle cx="60" cy="60" r="52" class="ring-fg" pathLength="100" style="--s:${card.score}"/></svg>
+        <div><b data-count="${card.score}">${card.score}</b><small>${esc(ctx.t(card.sampleLabel))}</small></div>
+      </div>
+      <ul class="wow__bars" aria-hidden="true">${bars}</ul>
+      <p class="wow__card-d">${esc(ctx.t(card.body))}</p>
+      <a class="btn btn--gold" href="${ctx.href('readiness-scorecard/')}"><span>${esc(ctx.t(card.cta))}</span>${arrow}</a>
+    </aside>
+  </div>
+  <a class="wow__cue" href="#after-hero" aria-label="${esc(ctx.t(L('Scroll down', 'مرّر للأسفل')))}"><span></span></a>
+</section>
+<div id="after-hero"></div>`;
+}

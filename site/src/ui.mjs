@@ -16,7 +16,8 @@ export const NAV = [
   { id: 'industries', path: 'industries/', label: L('Industries', 'القطاعات') },
   { id: 'approach', path: 'our-approach/', label: L('Our Approach', 'منهجنا') },
   { id: 'about', path: 'about/', label: L('About', 'من نحن') },
-  { id: 'insights', path: 'insights/', label: L('Insights', 'رؤى') }
+  { id: 'insights', path: 'insights/', label: L('Insights', 'رؤى') },
+  { id: 'shop', path: 'shop/', label: L('Briefs', 'الموجزات') }
 ];
 
 export const UI = {

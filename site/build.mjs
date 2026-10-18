@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 import { makeCtx } from './src/render.mjs';
 import * as V from './src/views.mjs';
 import * as P from './src/pages.mjs';
+import * as V2 from './src/views2.mjs';
+import { PRODUCTS } from './src/shop.mjs';
 import { SERVICES } from './src/services.mjs';
 import { INDUSTRIES } from './src/industries.mjs';
 
@@ -29,9 +31,19 @@ const routes = [
   ['book-a-meeting/', V.book],
   ['enquiry/', V.enquiry],
   ['enquiry/confirmation/', V.confirmation],
-  ['privacy/', (c) => V.legal(c, 'privacy')],
-  ['terms/', (c) => V.legal(c, 'terms')],
-  ['cookies/', (c) => V.legal(c, 'cookies')]
+  ['readiness-scorecard/', V.scorecardIntro],
+  ['readiness-scorecard/assessment/', V.scorecardAssessment],
+  ['readiness-scorecard/results/', V.scorecardResults],
+  ['shop/', V2.shopIndex],
+  ...PRODUCTS.map((p) => [`shop/${p.slug}/`, (c) => V2.shopProduct(c, p)]),
+  ['shop/basket/', V2.shopBasket],
+  ['shop/checkout/', V2.shopCheckout],
+  ['shop/order/', V2.shopOrder],
+  ['newsletter/confirmed/', (c) => V2.newsletterPage(c, 'confirmed')],
+  ['newsletter/unsubscribed/', (c) => V2.newsletterPage(c, 'unsubscribed')],
+  ['privacy/', V2.privacy],
+  ['terms/', V2.terms],
+  ['cookies/', V2.cookies]
 ];
 
 let count = 0;

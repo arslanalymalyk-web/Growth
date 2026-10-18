@@ -3,7 +3,8 @@ import { L, UI, SITE, NAV } from './ui.mjs';
 import { SERVICES, STAGES, serviceBySlug, RESPONSIBILITIES } from './services.mjs';
 import { INDUSTRIES, industryBySlug } from './industries.mjs';
 import * as P from './pages.mjs';
-import { imgAr, esc, shell, hero, ctaBand, btn, arrow, eyebrow, sectionHead, serviceCard, faq } from './render.mjs';
+import { CONSENT } from './legal.mjs';
+import { newsletter, heroWow, imgAr, esc, shell, hero, ctaBand, btn, arrow, eyebrow, sectionHead, serviceCard, faq } from './render.mjs';
 
 const T = (ctx, v) => esc(ctx.t(v));
 const crumbs = (ctx, ...items) => [{ label: UI.breadcrumbHome, href: ctx.href('') }, ...items];
@@ -29,7 +30,7 @@ export function home(ctx) {
     return `<article class="post"><a class="post__img" href="${ctx.href(`insights/${a.slug}/`)}" tabindex="-1" aria-hidden="true"><img src="${ctx.img(a.thumb)}" alt="" loading="lazy"></a><h3 class="h4"><a href="${ctx.href(`insights/${a.slug}/`)}">${T(ctx, a.title)}</a></h3><p>${T(ctx, a.excerpt).slice(0, 118)}…</p><a class="more more--gold" href="${ctx.href(`insights/${a.slug}/`)}"><span>${T(ctx, UI.readMore)}</span>${arrow}</a></article>`;
   }).join('');
   const body = `
-${hero(ctx, { eyebrow: H.hero.eyebrow, title: H.hero.title, lead: H.hero.lead, img: 'hero-home', full: true, pos: 'center 40%', side: H.hero.side,
+${heroWow(ctx, { eyebrow: H.hero.eyebrow, title: H.hero.title, lead: H.hero.lead, img: 'hero-home', card: H.hero.card,
   ctas: [btn(ctx, UI.book, 'book-a-meeting/', 'gold'), btn(ctx, UI.exploreServices, 'services/', 'outline')] })}
 <section class="paths"><div class="container container--wide paths__in">${paths}</div></section>
 <section class="sec sec--ivory" aria-labelledby="svc-t"><div class="container container--wide">
@@ -248,6 +249,7 @@ ${hero(ctx, { ...I.hero })}
 <section class="sec sec--ivory sec--tight"><div class="container container--wide"><div class="filters" role="group" aria-label="${esc(ctx.t(L('Filter articles', 'تصفية المقالات')))}">${chips}</div>
 <div class="ilist" id="ilist">${rows}</div><p class="empty" id="iempty" hidden>${T(ctx, I.empty)}</p></div></section>
 <section class="sec sec--ivory sec--line"><div class="container container--wide"><p class="eyebrow eyebrow--rule">${T(ctx, I.related.eyebrow)}</p><h2 class="h2">${T(ctx, I.related.title)}</h2><p class="lead">${T(ctx, I.related.body)}</p><div class="rlinks">${rel}</div></div></section>
+<section class="sec sec--deep"><div class="container container--md">${newsletter(ctx, { variant: 'band', id: 'inl', source: 'insights' })}</div></section>
 ${ctaBand(ctx, { ...I.cta, img: 'cta-rocks-dark' })}`;
   return shell(ctx, { title: I.meta.title, description: I.meta.description, active: 'insights', body });
 }
@@ -324,6 +326,10 @@ ${hero(ctx, { eyebrow: B.hero.eyebrow, title: B.hero.title, lead: B.hero.lead, i
     </div>
     <div class="field"><label for="b-help">${T(ctx, F.help)}</label><select id="b-help" name="help" required><option value="">${T(ctx, F.select)}</option>${opts}</select><small class="err" hidden></small></div>
     <div class="field"><label for="b-more">${T(ctx, F.more)}</label><textarea id="b-more" name="more" rows="4" placeholder="${esc(ctx.t(F.moreHint))}"></textarea></div>
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="field"><label class="check"><input type="checkbox" name="consent"><span class="check__b" aria-hidden="true">${icon('check')}</span><span>${T(ctx, CONSENT.processing)} <a href="${ctx.href('privacy/')}">${T(ctx, CONSENT.privacy)}</a></span></label><small class="err" data-consent-err hidden>${T(ctx, CONSENT.err)}</small></div>
+    <label class="check"><input type="checkbox" name="marketing"><span class="check__b" aria-hidden="true">${icon('check')}</span><span>${T(ctx, CONSENT.marketing)}</span></label>
+    <p class="err" role="alert" hidden data-form-err>${T(ctx, CONSENT.formErr)}</p>
     <button class="btn btn--gold" type="submit"><span>${T(ctx, F.submit)}</span>${arrow}</button>
   </form></div></div>
   <figure class="req__img" style="background-image:url('${ctx.img(B.location.img)}')"><figcaption><p class="eyebrow">${T(ctx, B.location.eyebrow)}</p><h2 class="h2">${T(ctx, B.location.title)}</h2><span class="rule" aria-hidden="true"></span><p>${T(ctx, B.location.body)}</p></figcaption></figure>
@@ -367,7 +373,10 @@ ${hero(ctx, { title: E.hero.title, lead: E.hero.lead, img: E.hero.img, pos: 'rig
     </div>
     <div class="enq__step" data-step="5" hidden>
       <h3 class="h4">${T(ctx, f.review)}</h3><dl class="review" id="review"></dl>
-      <label class="check check--consent"><input type="checkbox" id="consent" name="consent"><span class="check__b" aria-hidden="true">${icon('check')}</span><span>${T(ctx, f.consent)}</span></label><small class="err" id="consentErr" hidden>${T(ctx, f.consentErr)}</small>
+      <input class="hp" type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="check check--consent"><input type="checkbox" id="consent" name="consent"><span class="check__b" aria-hidden="true">${icon('check')}</span><span>${T(ctx, CONSENT.processing)} <a href="${ctx.href('privacy/')}">${T(ctx, CONSENT.privacy)}</a></span></label><small class="err" id="consentErr" hidden>${T(ctx, CONSENT.err)}</small>
+      <label class="check"><input type="checkbox" id="marketing" name="marketing"><span class="check__b" aria-hidden="true">${icon('check')}</span><span>${T(ctx, CONSENT.marketing)}</span></label>
+      <p class="err" role="alert" hidden data-form-err>${T(ctx, CONSENT.formErr)}</p>
     </div>
     <div class="enq__nav"><button type="button" class="btn btn--outline-dark" data-back hidden><span>${T(ctx, UI.back)}</span></button><button type="submit" class="btn btn--gold" data-next><span data-next-l>${T(ctx, UI.continue)}</span>${arrow}</button></div>
   </form>
@@ -380,15 +389,18 @@ ${hero(ctx, { title: E.hero.title, lead: E.hero.lead, img: E.hero.img, pos: 'rig
 
 /* ===================== CONFIRMATION ===================== */
 export function confirmation(ctx) {
-  const C = P.CONFIRM;
+  const C = P.CONFIRM, V = C.live;
   const next = C.next.items.map((n) => `<li><span>${icon(n.icon)}</span><div><b>${T(ctx, n.t)}</b><p>${T(ctx, n.d)}</p></div></li>`).join('');
   const info = C.info.items.map((n) => `<li><span>${icon(n.icon)}</span><h3 class="h4">${T(ctx, n.t)}</h3><p>${T(ctx, n.d)}</p></li>`).join('');
+  const lv = (demo, live) => `data-live="${esc(ctx.t(live))}"`;
   const body = `
-${hero(ctx, { title: C.hero.title, lead: C.hero.lead, img: C.hero.img })}
-<section class="sec sec--ivory sec--center"><div class="container container--md"><span class="thanks__ic">${icon('send')}</span><p class="eyebrow">${T(ctx, C.thanks.eyebrow)}</p><h2 class="h2">${T(ctx, C.thanks.title)}</h2><p class="lead lead--center">${T(ctx, C.thanks.body)}</p></div></section>
-<section class="sec sec--ivory sec--tight sec--line"><div class="container container--wide next"><div><p class="eyebrow">${T(ctx, C.next.eyebrow)}</p><h2 class="h2">${T(ctx, C.next.title)}</h2><span class="rule" aria-hidden="true"></span><p>${T(ctx, C.next.body)}</p></div><ol class="nxt">${next}</ol></div></section>
+<div data-confirm-page data-live-title="${esc(ctx.t(V.title))}"></div>
+${hero(ctx, { title: C.hero.title, lead: C.hero.lead, img: C.hero.img, live: { title: V.title, lead: V.lead } })}
+<section class="sec sec--ivory sec--center"><div class="container container--md"><span class="thanks__ic">${icon('send')}</span><p class="eyebrow" ${lv(0, V.eyebrow)}>${T(ctx, C.thanks.eyebrow)}</p><h2 class="h2" ${lv(0, V.title)}>${T(ctx, C.thanks.title)}</h2><p class="lead lead--center" ${lv(0, V.body)}>${T(ctx, C.thanks.body)}</p>
+  <p class="ref-line" data-live-only hidden>${T(ctx, V.ref)}: <b data-ref></b></p><p class="demo-chip" data-demo-only>${T(ctx, L('Demonstration: nothing was sent', 'عرض تجريبي: لم يُرسل شيء'))}</p></div></section>
+<section class="sec sec--ivory sec--tight sec--line"><div class="container container--wide next"><div><p class="eyebrow" ${lv(0, V.nextEyebrow)}>${T(ctx, C.next.eyebrow)}</p><h2 class="h2">${T(ctx, C.next.title)}</h2><span class="rule" aria-hidden="true"></span><p ${lv(0, V.nextBody)}>${T(ctx, C.next.body)}</p></div><ol class="nxt">${next}</ol></div></section>
 <section class="split-band split-band--navy split-band--photo-left"><figure class="split-band__img"><img src="${ctx.img(C.explore.img)}" alt="" loading="lazy"></figure><div class="split-band__copy"><p class="eyebrow">${T(ctx, C.explore.eyebrow)}</p><h2 class="h2">${T(ctx, C.explore.title)}</h2><p>${T(ctx, C.explore.body)}</p><div class="stack">${btn(ctx, C.explore.home, '', 'gold')}${btn(ctx, C.explore.services, 'services/', 'outline-gold')}</div></div></section>
-<section class="sec sec--ivory sec--center"><div class="container container--wide"><p class="eyebrow">${T(ctx, C.info.eyebrow)}</p><h2 class="h2">${T(ctx, C.info.title)}</h2><p class="lead lead--center">${T(ctx, C.info.body)}</p><ul class="trust trust--4">${info}</ul></div></section>
+<section class="sec sec--ivory sec--center" data-demo-only><div class="container container--wide"><p class="eyebrow">${T(ctx, C.info.eyebrow)}</p><h2 class="h2">${T(ctx, C.info.title)}</h2><p class="lead lead--center">${T(ctx, C.info.body)}</p><ul class="trust trust--4">${info}</ul></div></section>
 ${ctaBand(ctx, { eyebrow: C.purpose.eyebrow, title: C.purpose.title, body: C.purpose.body, img: C.purpose.img, variant: 'light', cta: C.purpose.cta, target: 'our-approach/' })}`;
   return shell(ctx, { title: C.meta.title, description: C.meta.description, active: null, body, extraHead: '<meta name="robots" content="noindex">' });
 }
@@ -406,4 +418,64 @@ export function legal(ctx, key) {
 export function notFound(ctx) {
   const body = `<section class="legal-hero"><div class="container container--md"><p class="eyebrow">404</p><h1 class="hero__title">${T(ctx, UI.notFoundTitle)}</h1><span class="rule" aria-hidden="true"></span><p class="hero__lead">${T(ctx, UI.notFoundBody)}</p><div class="hero__ctas">${btn(ctx, UI.home, '', 'gold')}${btn(ctx, UI.exploreServices, 'services/', 'outline')}</div></div></section>`;
   return shell(ctx, { title: UI.notFoundTitle, description: UI.notFoundBody, active: null, body, extraHead: '<meta name="robots" content="noindex">' });
+}
+
+/* ===================== SCORECARD ===================== */
+import { SC_PAGE, SC_UI, SC_DIMS, SC_BANDS, SC_REPORT, SC_STAGE_PLAN, SC_SECTOR_NOTE, SC_RESULT, SC_VERSION } from './scorecard.mjs';
+import { PRODUCTS } from './shop.mjs';
+import { serviceBySlug as svcBySlug } from './services.mjs';
+
+export function scorecardIntro(ctx) {
+  const S = SC_PAGE;
+  const get = S.get.items.map((g) => `<li><span>${icon(g.icon)}</span><h3 class="h4">${T(ctx, g.t)}</h3><p>${T(ctx, g.d)}</p></li>`).join('');
+  const how = S.how.steps.map((h) => `<li><span class="how__n">${h.n}</span><h3 class="h4">${T(ctx, h.t)}</h3><p>${T(ctx, h.d)}</p></li>`).join('');
+  const dims = SC_DIMS.map((d) => `<li><span>${icon(d.icon)}</span><div><b>${T(ctx, d.t)}</b><small>${T(ctx, d.d)}</small></div></li>`).join('');
+  const body = `
+${hero(ctx, { eyebrow: S.hero.eyebrow, title: S.hero.title, lead: S.hero.lead, img: S.hero.img, ctas: [`<a class="btn btn--gold" href="${ctx.href('readiness-scorecard/assessment/')}" data-sc-start><span>${T(ctx, S.start)}</span>${arrow}</a>`, `<a class="btn btn--outline" href="${ctx.href('readiness-scorecard/assessment/')}" data-sc-resume hidden><span>${T(ctx, S.resume)}</span>${arrow}</a>`] })}
+<section class="sec sec--ivory"><div class="container container--wide"><p class="eyebrow eyebrow--rule">${T(ctx, S.get.eyebrow)}</p><h2 class="h2">${T(ctx, S.get.title)}</h2><ul class="sc-get">${get}</ul></div></section>
+<section class="sec sec--deep"><div class="container container--wide split"><div><p class="eyebrow eyebrow--rule">${T(ctx, S.how.eyebrow)}</p><h2 class="h2">${T(ctx, S.how.title)}</h2><ol class="how">${how}</ol></div>
+<div class="sc-dims"><h3 class="h4">${T(ctx, L('The six areas we look at', 'المجالات الستة التي ننظر فيها'))}</h3><ul>${dims}</ul></div></div></section>
+<section class="sec sec--ivory sec--tight"><div class="container container--wide sc-priv"><span>${icon('lock')}</span><div><h2 class="h3">${T(ctx, S.privacy.title)}</h2><p>${T(ctx, S.privacy.body)}</p><a class="more" href="${ctx.href('privacy/')}"><span>${T(ctx, S.privacy.link)}</span>${arrow}</a></div></div></section>
+${ctaBand(ctx, { eyebrow: L('Ten minutes, no sign-up', 'عشر دقائق دون تسجيل'), title: SC_PAGE.hero.title, body: SC_PAGE.note, img: 'ck-cta-terrace', cta: S.start, target: 'readiness-scorecard/assessment/' })}`;
+  return shell(ctx, { title: S.meta.title, description: S.meta.description, active: null, body, scripts: ['scorecard.js'] });
+}
+
+const scData = (ctx) => {
+  const t = ctx.t;
+  return {
+    v: SC_VERSION, lang: ctx.lang,
+    ui: { ctx: { title: t(SC_UI.ctx.title), body: t(SC_UI.ctx.body), sector: t(SC_UI.ctx.sector), stage: t(SC_UI.ctx.stage), size: t(SC_UI.ctx.size), choose: t(SC_UI.ctx.choose), other: t(SC_UI.ctx.other), stages: SC_UI.ctx.stages.map(t), sizes: SC_UI.ctx.sizes.map(t) },
+      scale: SC_UI.scale.map(t), unsure: t(SC_UI.unsure), q: t(SC_UI.q), part: t(SC_UI.step), of: t(SC_UI.of), min: t(SC_UI.min), minutes: t(SC_UI.minutes), back: t(SC_UI.back), next: t(SC_UI.next), finish: t(SC_UI.finish), saved: t(SC_UI.saved), answerAll: t(SC_UI.answerAll) },
+    sectors: INDUSTRIES.map((i) => ({ id: i.slug, t: t(i.title) })),
+    dims: SC_DIMS.map((d) => ({ id: d.id, t: t(d.t), d: t(d.d), icon: d.id, q: d.q.map(t), svc: d.svc }))
+  };
+};
+
+export function scorecardAssessment(ctx) {
+  const body = `
+<section class="sc-app-wrap"><div class="container container--md">
+  <div id="sc-app" data-results="${ctx.href('readiness-scorecard/results/')}" aria-live="polite"><noscript><p class="sc-nojs">${T(ctx, SC_UI.noJs)}</p></noscript></div>
+</div></section>
+<script type="application/json" id="sc-data">${JSON.stringify(scData(ctx))}</script>`;
+  return shell(ctx, { title: SC_PAGE.meta.title, description: SC_PAGE.meta.description, active: null, body, bodyClass: 'page-sc', scripts: ['scorecard.js'], extraHead: '<meta name="robots" content="noindex">' });
+}
+
+export function scorecardResults(ctx) {
+  const R = SC_RESULT, t = ctx.t;
+  const data = {
+    ...scData(ctx),
+    r: { eyebrow: t(R.eyebrow), overall: t(R.overall), outOf: t(R.outOf), by: t(R.by), strengths: t(R.strengths), priorities: t(R.priorities), noStrength: t(R.noStrength), detail: t(R.detail), whatItMeans: t(R.whatItMeans), doNext: t(R.doNext), flagged: { t: t(R.flagged.t), d: t(R.flagged.d) }, sector: t(R.sector), plan: t(R.plan), help: { t: t(R.help.t), d: t(R.help.d) }, brief: { t: t(R.brief.t), d: t(R.brief.d), cta: t(R.brief.cta) }, cta: { t: t(R.cta.t), d: t(R.cta.d) },
+      email: Object.fromEntries(Object.entries(R.email).map(([k, v]) => [k, t(v)])), print: t(R.print), retake: t(R.retake), book: t(R.book), none: t(R.none), disclaimer: t(R.disclaimer), levels: { low: t(R.levels.low), mid: t(R.levels.mid), high: t(R.levels.high) }, generated: t(R.generated), on: t(R.on), start: t(SC_PAGE.start) },
+    bands: SC_BANDS.map((b) => ({ min: b.min, id: b.id, t: t(b.t), p: t(b.p), c: b.c })),
+    report: Object.fromEntries(Object.entries(SC_REPORT).map(([k, lv]) => [k, Object.fromEntries(Object.entries(lv).map(([l, o]) => [l, { m: t(o.m), a: o.a.map(t) }]))])),
+    stagePlan: Object.fromEntries(Object.entries(SC_STAGE_PLAN).map(([k, v]) => [k, v.map(t)])),
+    sectorNote: Object.fromEntries(Object.entries(SC_SECTOR_NOTE).map(([k, v]) => [k, t(v)])),
+    services: Object.fromEntries(SC_DIMS.flatMap((d) => d.svc).map((sl) => [sl, { t: t(svcBySlug(sl).title), href: ctx.href(`services/${sl}/`) }])),
+    briefs: Object.fromEntries(PRODUCTS.map((p) => [p.sector, { t: t(p.title), href: ctx.href(`shop/${p.slug}/`) }])),
+    urls: { assess: ctx.href('readiness-scorecard/assessment/'), book: ctx.href('book-a-meeting/'), privacy: ctx.href('privacy/'), results: ctx.href('readiness-scorecard/results/') }
+  };
+  const body = `
+<section class="sc-report-wrap"><div class="container container--wide"><div id="sc-report" aria-live="polite"></div></div></section>
+<script type="application/json" id="sc-data">${JSON.stringify(data)}</script>`;
+  return shell(ctx, { title: R.meta.title, description: R.meta.description, active: null, body, bodyClass: 'page-sc page-report', scripts: ['scorecard.js'], extraHead: '<meta name="robots" content="noindex">' });
 }
