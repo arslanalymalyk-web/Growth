@@ -165,7 +165,6 @@ export function shell(ctx, { title, description, active, body, extraHead = '', b
 <link rel="alternate" hreflang="ar" href="${ctx.lang === 'ar' ? '' : ctx.switchHref}">
 <link rel="icon" href="${ctx.asset('favicon.svg')}" type="image/svg+xml">
 <link rel="apple-touch-icon" href="${ctx.asset('apple-touch-icon.png')}">
-<meta property="og:image" content="${ctx.asset('og-image.png')}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Naskh+Arabic:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="${ctx.asset('styles.css')}">
