@@ -57,7 +57,7 @@ ${heroWow(ctx, { eyebrow: H.hero.eyebrow, title: H.hero.title, lead: H.hero.lead
 </div></section>
 <section class="resource" style="--cta-img:url('${ctx.img('p-desert')}')"><div class="resource__bg" aria-hidden="true"></div>
   <div class="container container--wide resource__in"><div><p class="eyebrow">${T(ctx, H.resource.eyebrow)}</p><h2 class="h2">${T(ctx, H.resource.title)}</h2><p>${T(ctx, H.resource.body)}</p>
-  <a class="btn btn--outline" href="${ctx.href('readiness-checklist/')}"><span>${T(ctx, H.resource.cta)}</span>${arrow}</a></div>
+  <a class="btn btn--outline" href="${ctx.href('readiness-scorecard/')}"><span>${T(ctx, H.resource.cta)}</span>${arrow}</a></div>
   <span class="resource__ic" aria-hidden="true">${icon('filechk')}</span></div></section>
 <section class="talk"><div class="container container--wide talk__in"><div><p class="eyebrow">${T(ctx, H.cta.eyebrow)}</p><h2 class="h2">${T(ctx, H.cta.title)}</h2></div><p>${T(ctx, H.cta.body)}</p>${btn(ctx, UI.book, 'book-a-meeting/', 'gold')}</div></section>`;
   return shell(ctx, { title: H.meta.title, description: H.meta.description, active: 'home', body, bodyClass: 'page-home' });
@@ -259,16 +259,16 @@ export function article(ctx, a) {
   const toc = a.sections.map((s, i) => `<li><a href="#s${i + 1}"><span>0${i + 1}</span>${T(ctx, s.h).replace(/\?$/, '')}</a></li>`).join('');
   const secs = a.sections.map((s, i) => `
   <section class="asec" id="s${i + 1}"><div class="asec__t"><span class="asec__n">0${i + 1}</span><span class="asec__ic">${icon(s.icon)}</span></div>
-    <div class="asec__b"><h2 class="h3 h3--lg">${T(ctx, s.h)}</h2><p>${T(ctx, s.p)}</p></div><figure class="asec__img"><img src="${ctx.img(s.img)}" alt="" loading="lazy"></figure></section>`).join('');
+    <div class="asec__b"><h2 class="h3 h3--lg">${T(ctx, s.h)}</h2>${[].concat(s.p).map((x) => `<p>${T(ctx, x)}</p>`).join('')}</div><figure class="asec__img"><img src="${ctx.img(s.img)}" alt="" loading="lazy"></figure></section>`).join('');
   const rel = a.related.slice(0, 6).map((sl) => serviceBySlug(sl)).map((s) => `<li><a href="${ctx.href(`services/${s.slug}/`)}"><span>${icon(s.icon)}</span><b>${T(ctx, s.title)}</b>${arrow}</a></li>`).join('');
   const body = `
 ${hero(ctx, { eyebrow: Lb.eyebrow, title: a.title, lead: a.lead, img: a.hero, crumbs: crumbs(ctx, { label: L('Insights', 'رؤى'), href: ctx.href('insights/') }, { label: a.title }) })}
 <section class="sec sec--ivory"><div class="container container--wide art">
   <div class="art__main">
     <figure class="art__hero"><img src="${ctx.img(a.bodyImg)}" alt="" loading="eager"></figure>
-    <p class="art__intro">${T(ctx, a.intro)}</p>
+    <div class="art__intro">${[].concat(a.intro).map((x) => `<p>${T(ctx, x)}</p>`).join('')}</div>
     ${secs}
-    <div class="art__concl" id="concl"><h2 class="h3 h3--lg">${T(ctx, Lb.conclusion)}</h2><p>${T(ctx, a.conclusion)}</p></div>
+    <div class="art__concl" id="concl"><h2 class="h3 h3--lg">${T(ctx, Lb.conclusion)}</h2>${[].concat(a.conclusion).map((x) => `<p>${T(ctx, x)}</p>`).join('')}</div>
   </div>
   <aside class="art__aside">
     <nav class="box" aria-label="${esc(ctx.t(Lb.toc))}"><h2 class="h4">${T(ctx, Lb.toc)}</h2><span class="rule" aria-hidden="true"></span><ol class="toc"><li><a href="#top">${T(ctx, Lb.intro)}</a></li>${toc}<li><a href="#concl">${T(ctx, Lb.conclusion)}</a></li></ol></nav>
@@ -406,15 +406,6 @@ ${ctaBand(ctx, { eyebrow: C.purpose.eyebrow, title: C.purpose.title, body: C.pur
 }
 
 /* ===================== LEGAL / 404 ===================== */
-export function legal(ctx, key) {
-  const D = P.LEGAL[key];
-  const body = `
-<section class="legal-hero"><div class="container container--md"><p class="eyebrow">${T(ctx, UI[key === 'privacy' ? 'privacy' : key === 'terms' ? 'terms' : 'cookies'])}</p><h1 class="hero__title">${T(ctx, D.title)}</h1><span class="rule" aria-hidden="true"></span><p class="hero__lead">${T(ctx, D.lead)}</p></div></section>
-<section class="sec sec--ivory"><div class="container container--md legal"><p class="legal__upd">${T(ctx, D.updated)}</p>${D.sections.map(([h, p]) => `<h2 class="h3">${T(ctx, h)}</h2><p>${T(ctx, p)}</p>`).join('')}
-<h2 class="h3">${T(ctx, L('Contact', 'التواصل'))}</h2><p><a href="mailto:${SITE.email}">${SITE.email}</a> · ${T(ctx, SITE.address)}</p></div></section>`;
-  return shell(ctx, { title: L(`${D.title.en} | Growth Blueprint Advisory`, `${D.title.ar} | غروث بلوبرنت للاستشارات`), description: D.lead, active: null, body });
-}
-
 export function notFound(ctx) {
   const body = `<section class="legal-hero"><div class="container container--md"><p class="eyebrow">404</p><h1 class="hero__title">${T(ctx, UI.notFoundTitle)}</h1><span class="rule" aria-hidden="true"></span><p class="hero__lead">${T(ctx, UI.notFoundBody)}</p><div class="hero__ctas">${btn(ctx, UI.home, '', 'gold')}${btn(ctx, UI.exploreServices, 'services/', 'outline')}</div></div></section>`;
   return shell(ctx, { title: UI.notFoundTitle, description: UI.notFoundBody, active: null, body, extraHead: '<meta name="robots" content="noindex">' });

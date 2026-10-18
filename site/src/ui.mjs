@@ -46,7 +46,7 @@ export const UI = {
   terms: L('Terms of Use', 'شروط الاستخدام'),
   cookies: L('Cookie Policy', 'سياسة ملفات الارتباط'),
   rights: L('All rights reserved.', 'جميع الحقوق محفوظة.'),
-  footerTag: L('Strategic advisory for ambitious businesses to enter, establish and grow in Saudi Arabia.', 'استشارات استراتيجية للشركات الطموحة للدخول والتأسيس والنمو في المملكة العربية السعودية.'),
+  footerTag: L('Straight talking advisory for businesses that want to enter, set up and grow in Saudi Arabia.', 'استشارات صريحة للشركات التي تريد الدخول إلى السعودية والتأسيس فيها والنمو.'),
   demoNote: L('Demonstration website. Contact details and sample content are illustrative placeholders.', 'موقع تجريبي. بيانات التواصل والمحتوى النموذجي أمثلة توضيحية.'),
   cookieText: L('We use essential cookies to make this website work. With your consent we would also use analytics cookies to improve it.', 'نستخدم ملفات ارتباط أساسية لتشغيل هذا الموقع. وبموافقتك سنستخدم أيضًا ملفات تحليلية لتحسينه.'),
   cookieAccept: L('Accept', 'موافق'),
@@ -61,5 +61,5 @@ export const UI = {
   eyebrowToc: L('Contents', 'المحتويات'),
   relatedServices: L('Related services', 'خدمات ذات صلة'),
   notFoundTitle: L('Page not found', 'الصفحة غير موجودة'),
-  notFoundBody: L('The page you are looking for may have moved or no longer exists.', 'ربما نُقلت الصفحة التي تبحث عنها أو لم تعد موجودة.')
+  notFoundBody: L('We could not find that page. It may have moved, or the link may be wrong. Let us point you somewhere useful.', 'لم نجد هذه الصفحة. ربما نُقلت أو أن الرابط غير صحيح. دعنا نوجهك إلى مكان مفيد.')
 };

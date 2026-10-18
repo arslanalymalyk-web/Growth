@@ -387,7 +387,7 @@ button { cursor: pointer; }
 .rlink span { color: var(--gold-500); } .rlink .ic { width: 46px; height: 46px; stroke-width: 1.05; } .rlink b { font: 400 1.15rem/1.25 var(--display); color: var(--navy-900); } [dir='rtl'] .rlink b { font-weight: 500; } .rlink .arr { color: var(--gold-500); } .rlink:hover b { color: var(--gold-700); }
 @media (max-width: 800px) { .rlinks { grid-template-columns: 1fr 1fr; gap: 24px 0; } .rlink:nth-child(3) { border: 0; } }
 .art { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: clamp(28px, 4vw, 56px); align-items: start; }
-.art__hero img { width: 100%; aspect-ratio: 16 / 5.5; object-fit: cover; } .art__intro { margin: 22px 0 8px; color: var(--ink-2); font-size: 1.04rem; line-height: 1.75; padding-bottom: 28px; border-bottom: 1px solid var(--ivory-300); }
+.art__hero img { width: 100%; aspect-ratio: 16 / 5.5; object-fit: cover; } .art__intro { margin: 22px 0 8px; color: var(--ink-2); font-size: 1.06rem; line-height: 1.8; padding-bottom: 28px; border-bottom: 1px solid var(--ivory-300); } .art__intro p + p, .asec__b p + p, .art__concl p + p { margin-top: 14px; }
 .asec { display: grid; grid-template-columns: 72px 1fr 34%; gap: 24px; padding-block: 34px; border-bottom: 1px solid var(--ivory-300); align-items: start; }
 .asec__n { display: block; font: 400 2.6rem/1 var(--display); color: var(--gold-500); } .asec__ic { color: var(--gold-500); display: block; margin-top: 14px; } .asec__ic .ic { width: 34px; height: 34px; stroke-width: 1.1; }
 .asec__b p { color: var(--ink-2); margin-top: 12px; font-size: .96rem; line-height: 1.7; }
@@ -587,7 +587,7 @@ button { cursor: pointer; }
 /* =====================================================================
    Forms: honeypot, newsletter, consent, basket link
    ===================================================================== */
-.hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.hp { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); opacity: 0; pointer-events: none; border: 0; }
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .nl { display: grid; gap: 14px; }
 .nl__body { color: var(--ink-2); max-width: 56ch; }
