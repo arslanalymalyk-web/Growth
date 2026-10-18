@@ -1,0 +1,122 @@
+import type { Locale } from "@/i18n/config";
+import type { ShopUi } from "../types";
+
+/**
+ * Interface copy for the sector-brief shop. It contains NO briefs, descriptions, prices, licence or refund terms and no
+ * provider names: those come from client-approved product and shop data (src/shop/config.ts or the client's Sanity project),
+ * none of which has been supplied. English = draft pending client approval. DRAFT Arabic: needs professional review.
+ */
+export const sampleShopUi: Record<Locale, ShopUi> = {
+  en: {
+    review: "draft",
+    meta: { title: "Sector Briefs | Growth Blueprint Advisory", description: "Sector briefs for businesses entering or growing in Saudi Arabia." },
+    hero: { eyebrow: "Sector briefs", title: "Sector briefs", intro: "Individual sector briefs, delivered as secure digital downloads." },
+    crumb: "Sector briefs",
+    demo: { banner: "DEMO MODE: preview products, prices and a simulated checkout for layout testing only. Nothing here is real: no brief exists and no order or payment is made.", price: "Demo price: sample amount, not a real price", file: "Demo file: a placeholder text file, not a real brief" },
+    previewBadge: "Preview product",
+    unavailable: {
+      badge: "Not available yet",
+      title: "Sector briefs are not available yet",
+      body: "The shop is being prepared. No briefs are on sale and nothing can be purchased yet.",
+      note: "This page does not collect any personal information and no order has been made.",
+      consultCta: "Book a Consultation",
+      industriesCta: "Explore our industries",
+    },
+    formats: { pdf: "PDF", epub: "EPUB", docx: "Word (DOCX)", xlsx: "Excel (XLSX)", pptx: "PowerPoint (PPTX)", zip: "ZIP archive" },
+    catalogue: { title: "Browse the briefs", filters: "Filter the briefs", sector: "Sector", format: "Format", all: "All", count: "{n} briefs", countOne: "1 brief", empty: "No briefs are available yet.", noMatch: "No briefs match these filters.", clear: "Clear filters", view: "View brief", priceTbc: "Price to be confirmed", imagePending: "Approved preview image pending" },
+    product: {
+      about: "About this brief", details: "Brief details", format: "Format", size: "File size", pages: "Pages", language: "Language", languages: { en: "English", ar: "Arabic" }, sector: "Sector",
+      delivery: "Delivery", deliveryValue: "Secure download link, available after payment is verified", validity: "Each link works for {duration} and is created for your order.", validityTbc: "Download link validity to be confirmed.",
+      price: "Price", priceTbc: "Price to be confirmed", terms: "Licence and refund terms", licence: "Licence terms", refund: "Refund terms", termsPending: "Approval needed: client-approved wording is awaited.",
+      buy: "Buy this brief", buyUnavailable: "Purchase is not available yet", buyUnavailableNote: "This brief cannot be bought yet. Nothing has been ordered.", back: "All briefs", sectorLink: "View the sector", previewNote: "Preview product for layout testing. It is not a real brief and cannot be bought.", consult: "Book a Consultation",
+    },
+    checkout: {
+      title: "Checkout", intro: "Review the brief and the terms, then continue to the payment provider's secure page.", summary: "Order summary", brief: "Brief", price: "Price", priceTbc: "Price to be confirmed", format: "Format", delivery: "Delivery", deliveryValue: "Secure download link after payment",
+      email: "Email address for your order", emailHelp: "Used to send your order confirmation and download link.", consentTitle: "Terms and consent", required: "Required", optional: "Optional",
+      termsAccept: "I have read and agree to the licence and refund terms for this brief.", termsPlaceholder: "Agreement to the licence and refund terms. Approval needed: client-approved wording is awaited.",
+      commsPlaceholder: "Purchase-related emails (order confirmation and download link). Approval needed: client-reviewed wording is awaited.",
+      marketingPlaceholder: "Marketing emails. Separate from your order and not needed to buy. Approval needed: client-reviewed wording is awaited.",
+      privacyPending: "Privacy notice: awaiting client-approved text.",
+      hosted: "Payment is taken on the payment provider's own secure hosted page. You will leave this site to pay.", noCard: "This site never asks for, sees or stores your card details.",
+      continue: "Continue to secure payment", preparing: "Preparing secure payment…", cancel: "Cancel", cancelledNote: "Payment preparation was cancelled. Nothing was ordered.", handoffError: "We could not start payment. Nothing was ordered. Please try again.", notEnabled: "Online payment is not enabled yet. Nothing was ordered.", retry: "Try again", back: "Back to the brief",
+      localNote: "In this version your details stay in this browser tab and are not sent anywhere. No order is created.",
+      errors: { title: "There is a problem", hint: "Please fix the following before continuing:", emailRequired: "Enter your email address.", emailInvalid: "Enter a valid email address.", emailTooLong: "This email address is too long.", terms: "You must agree to the licence and refund terms to continue.", comms: "You must accept purchase-related emails to receive your download." },
+    },
+    order: {
+      confirmed: { title: "Payment verified", body: "Your payment was verified. You can get your secure download below." },
+      pending: { title: "Payment pending", body: "Your payment is still being processed. Your download will be available once it is verified." },
+      failed: { title: "Payment failed", body: "Your payment did not go through. No download has been released." },
+      cancelled: { title: "Checkout cancelled", body: "Checkout was cancelled. No download has been released." },
+      checkoutExpired: { title: "Checkout expired", body: "This checkout session expired and your order was not completed. No download has been released." },
+      unverified: { title: "We could not verify an order", body: "We could not find a verified order for this page. If you completed a payment, please contact us before trying again." },
+      pageTitle: "Order status | Growth Blueprint Advisory", summary: "Your brief", tryAgain: "Try again", backToShop: "Back to the shop", home: "Back to homepage", demoNote: "Demo result: simulated, no order or payment was made.",
+    },
+    download: {
+      title: "Your secure download", intro: "Download links are created for you on request, work for a short time and are tied to your order.", file: "{format}, {size}", get: "Get secure download link", preparing: "Preparing your secure link…", ready: "Your link is ready.", open: "Download now",
+      expiresIn: "This link expires in {time}.", resendLink: "Send a new link by email", note: "Keep this page private: it is tied to your order.",
+      expired: { title: "This link has expired", body: "For security, download links only work for a short time. Get a new link to continue." }, getNew: "Get a new link",
+      errors: { generic: "We could not prepare your download. Please try again.", notPaid: "We could not verify your payment yet.", limit: "You have reached the download limit for this order.", unavailable: "Downloads are not available right now.", retry: "Try again" },
+    },
+    resend: {
+      title: "Resend your download link", intro: "Enter the email address and order reference from your order confirmation to request a new link.", email: "Email address", order: "Order reference", orderHelp: "Shown on your order confirmation.", submit: "Request a new link", sending: "Sending…",
+      errors: { title: "There is a problem", hint: "Please fix the following before continuing:", emailRequired: "Enter your email address.", emailInvalid: "Enter a valid email address.", orderRequired: "Enter your order reference." },
+      resultTitle: "Request received", neutral: "If an order matches these details, a new link will be sent to that email address.", demoNote: "Simulated: nothing was sent and nothing was stored.", notEnabled: "Resending links is not enabled yet.", back: "Back to the shop",
+    },
+  },
+  ar: {
+    review: "needs-professional-review",
+    meta: { title: "الموجزات القطاعية | Growth Blueprint Advisory", description: "موجزات قطاعية للشركات التي تدخل المملكة العربية السعودية أو تنمو فيها." },
+    hero: { eyebrow: "موجزات قطاعية", title: "الموجزات القطاعية", intro: "موجزات قطاعية فردية، تُسلَّم كملفات رقمية بتنزيل آمن." },
+    crumb: "الموجزات القطاعية",
+    demo: { banner: "وضع تجريبي: منتجات معاينة وأسعار وصفحة دفع محاكاة لاختبار التصميم فقط. لا شيء هنا حقيقي: لا يوجد موجز ولا يُنشأ أي طلب أو دفع.", price: "سعر تجريبي: مبلغ نموذجي وليس سعرًا حقيقيًا", file: "ملف تجريبي: ملف نصي مؤقت وليس موجزًا حقيقيًا" },
+    previewBadge: "منتج للمعاينة",
+    unavailable: {
+      badge: "غير متاح بعد",
+      title: "الموجزات القطاعية غير متاحة بعد",
+      body: "المتجر قيد الإعداد. لا توجد موجزات معروضة للبيع ولا يمكن شراء أي شيء بعد.",
+      note: "لا تجمع هذه الصفحة أي معلومات شخصية ولم يُنشأ أي طلب.",
+      consultCta: "احجز استشارة",
+      industriesCta: "اكتشف قطاعاتنا",
+    },
+    formats: { pdf: "PDF", epub: "EPUB", docx: "Word (DOCX)", xlsx: "Excel (XLSX)", pptx: "PowerPoint (PPTX)", zip: "أرشيف ZIP" },
+    catalogue: { title: "تصفّح الموجزات", filters: "تصفية الموجزات", sector: "القطاع", format: "الصيغة", all: "الكل", count: "{n} موجزات", countOne: "موجز واحد", empty: "لا توجد موجزات متاحة بعد.", noMatch: "لا توجد موجزات تطابق هذه المرشحات.", clear: "مسح المرشحات", view: "عرض الموجز", priceTbc: "السعر قيد التأكيد", imagePending: "صورة المعاينة المعتمدة قيد الانتظار" },
+    product: {
+      about: "عن هذا الموجز", details: "تفاصيل الموجز", format: "الصيغة", size: "حجم الملف", pages: "عدد الصفحات", language: "اللغة", languages: { en: "الإنجليزية", ar: "العربية" }, sector: "القطاع",
+      delivery: "التسليم", deliveryValue: "رابط تنزيل آمن، يتاح بعد التحقق من الدفع", validity: "يعمل كل رابط لمدة {duration} ويُنشأ لطلبك.", validityTbc: "مدة صلاحية رابط التنزيل قيد التأكيد.",
+      price: "السعر", priceTbc: "السعر قيد التأكيد", terms: "شروط الترخيص والاسترداد", licence: "شروط الترخيص", refund: "شروط الاسترداد", termsPending: "مطلوب اعتماد: بانتظار صياغة يعتمدها العميل.",
+      buy: "اشترِ هذا الموجز", buyUnavailable: "الشراء غير متاح بعد", buyUnavailableNote: "لا يمكن شراء هذا الموجز بعد. ولم يُطلب أي شيء.", back: "جميع الموجزات", sectorLink: "عرض القطاع", previewNote: "منتج للمعاينة لاختبار التصميم. وهو ليس موجزًا حقيقيًا ولا يمكن شراؤه.", consult: "احجز استشارة",
+    },
+    checkout: {
+      title: "إتمام الشراء", intro: "راجع الموجز والشروط، ثم تابع إلى صفحة الدفع الآمنة لدى مزوّد الدفع.", summary: "ملخص الطلب", brief: "الموجز", price: "السعر", priceTbc: "السعر قيد التأكيد", format: "الصيغة", delivery: "التسليم", deliveryValue: "رابط تنزيل آمن بعد الدفع",
+      email: "البريد الإلكتروني لطلبك", emailHelp: "يُستخدم لإرسال تأكيد الطلب ورابط التنزيل.", consentTitle: "الشروط والموافقة", required: "مطلوب", optional: "اختياري",
+      termsAccept: "قرأت شروط الترخيص والاسترداد الخاصة بهذا الموجز وأوافق عليها.", termsPlaceholder: "الموافقة على شروط الترخيص والاسترداد. مطلوب اعتماد: بانتظار صياغة يعتمدها العميل.",
+      commsPlaceholder: "رسائل البريد المتعلقة بالشراء (تأكيد الطلب ورابط التنزيل). مطلوب اعتماد: بانتظار صياغة يراجعها العميل.",
+      marketingPlaceholder: "رسائل بريد تسويقية. منفصلة عن طلبك وغير لازمة للشراء. مطلوب اعتماد: بانتظار صياغة يراجعها العميل.",
+      privacyPending: "إشعار الخصوصية: بانتظار النص المعتمد من العميل.",
+      hosted: "يتم الدفع على صفحة مزوّد الدفع المستضافة والآمنة الخاصة به. وستغادر هذا الموقع لإتمام الدفع.", noCard: "لا يطلب هذا الموقع بيانات بطاقتك ولا يراها ولا يخزنها.",
+      continue: "المتابعة إلى الدفع الآمن", preparing: "جارٍ تجهيز الدفع الآمن…", cancel: "إلغاء", cancelledNote: "أُلغي تجهيز الدفع. ولم يُطلب أي شيء.", handoffError: "تعذّر بدء الدفع. ولم يُطلب أي شيء. يُرجى المحاولة مرة أخرى.", notEnabled: "الدفع عبر الإنترنت غير مفعّل بعد. ولم يُطلب أي شيء.", retry: "إعادة المحاولة", back: "العودة إلى الموجز",
+      localNote: "في هذه النسخة تبقى بياناتك في علامة التبويب هذه ولا تُرسل إلى أي جهة. ولا يُنشأ أي طلب.",
+      errors: { title: "توجد مشكلة", hint: "يُرجى معالجة ما يلي قبل المتابعة:", emailRequired: "أدخل بريدك الإلكتروني.", emailInvalid: "أدخل بريدًا إلكترونيًا صالحًا.", emailTooLong: "البريد الإلكتروني طويل جدًا.", terms: "يجب الموافقة على شروط الترخيص والاسترداد للمتابعة.", comms: "يجب قبول رسائل البريد المتعلقة بالشراء لاستلام التنزيل." },
+    },
+    order: {
+      confirmed: { title: "تم التحقق من الدفع", body: "تم التحقق من دفعتك. يمكنك الحصول على التنزيل الآمن أدناه." },
+      pending: { title: "الدفع قيد المعالجة", body: "ما زالت دفعتك قيد المعالجة. وسيتاح التنزيل بعد التحقق منها." },
+      failed: { title: "فشل الدفع", body: "لم تتم عملية الدفع. ولم يُتَح أي تنزيل." },
+      cancelled: { title: "أُلغي الدفع", body: "أُلغيت عملية الدفع. ولم يُتَح أي تنزيل." },
+      checkoutExpired: { title: "انتهت صلاحية الدفع", body: "انتهت صلاحية جلسة الدفع ولم يكتمل طلبك. ولم يُتَح أي تنزيل." },
+      unverified: { title: "تعذّر التحقق من طلب", body: "لم نجد طلبًا مؤكَّدًا لهذه الصفحة. وإذا أتممت دفعة فيُرجى التواصل معنا قبل المحاولة مجددًا." },
+      pageTitle: "حالة الطلب | Growth Blueprint Advisory", summary: "موجزك", tryAgain: "إعادة المحاولة", backToShop: "العودة إلى المتجر", home: "العودة إلى الصفحة الرئيسية", demoNote: "نتيجة تجريبية: محاكاة فقط، ولم يُجرَ أي طلب أو دفع.",
+    },
+    download: {
+      title: "تنزيلك الآمن", intro: "تُنشأ روابط التنزيل لك عند الطلب، وتعمل لمدة قصيرة، وترتبط بطلبك.", file: "{format}، {size}", get: "احصل على رابط تنزيل آمن", preparing: "جارٍ تجهيز رابطك الآمن…", ready: "رابطك جاهز.", open: "نزّل الآن",
+      expiresIn: "ينتهي هذا الرابط خلال {time}.", resendLink: "أرسل رابطًا جديدًا بالبريد", note: "أبقِ هذه الصفحة خاصة: فهي مرتبطة بطلبك.",
+      expired: { title: "انتهت صلاحية هذا الرابط", body: "حفاظًا على الأمان، تعمل روابط التنزيل لمدة قصيرة فقط. احصل على رابط جديد للمتابعة." }, getNew: "احصل على رابط جديد",
+      errors: { generic: "تعذّر تجهيز التنزيل. يُرجى المحاولة مرة أخرى.", notPaid: "لم نتمكن من التحقق من دفعتك بعد.", limit: "بلغت الحد الأقصى للتنزيل لهذا الطلب.", unavailable: "التنزيل غير متاح حاليًا.", retry: "إعادة المحاولة" },
+    },
+    resend: {
+      title: "إعادة إرسال رابط التنزيل", intro: "أدخل البريد الإلكتروني ورقم الطلب من تأكيد طلبك لطلب رابط جديد.", email: "البريد الإلكتروني", order: "رقم الطلب", orderHelp: "يظهر في تأكيد طلبك.", submit: "اطلب رابطًا جديدًا", sending: "جارٍ الإرسال…",
+      errors: { title: "توجد مشكلة", hint: "يُرجى معالجة ما يلي قبل المتابعة:", emailRequired: "أدخل بريدك الإلكتروني.", emailInvalid: "أدخل بريدًا إلكترونيًا صالحًا.", orderRequired: "أدخل رقم طلبك." },
+      resultTitle: "تم استلام الطلب", neutral: "إذا كان هناك طلب يطابق هذه البيانات، فسيُرسل رابط جديد إلى هذا البريد الإلكتروني.", demoNote: "محاكاة: لم يُرسل أي شيء ولم يُحفظ أي شيء.", notEnabled: "إعادة إرسال الروابط غير مفعّلة بعد.", back: "العودة إلى المتجر",
+    },
+  },
+};

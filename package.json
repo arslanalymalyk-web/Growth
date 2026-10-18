@@ -1,0 +1,36 @@
+{
+  "name": "growth-blueprint-advisory",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "check": "npm run typecheck && npm run lint && npm run test:scorecard && npm run test:booking && npm run test:shop && npm run test:contact && npm run test:seo && npm run test:analytics && npm run build",
+    "test:scorecard": "node --test scripts/scorecard.test.ts",
+    "test:booking": "node --test scripts/booking.test.ts",
+    "test:shop": "node --test scripts/shop.test.ts",
+    "test:contact": "node --test scripts/contact.test.ts",
+    "test:seo": "node --test scripts/seo.test.ts",
+    "test:analytics": "node --test scripts/analytics.test.ts"
+  },
+  "dependencies": {
+    "@sanity/client": "^8.9.0",
+    "next": "^16.4.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.2",
+    "postcss": "^8.5.30",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
+  }
+}
