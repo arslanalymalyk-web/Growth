@@ -13,12 +13,12 @@ if '--map' in sys.argv:
     mp = json.load(open(sys.argv[sys.argv.index('--map') + 1])); base = os.path.join(here, '..', 'photos-src'); done = 0
     for slot, m in mp.items():
         if slot.startswith('_'): continue
-        w, h = dims[slot]; px = min(2200, max(900, round(w * 2.6))); im = ImageOps.exif_transpose(Image.open(os.path.join(base, m['src'] + '.jpg'))).convert('RGB')
+        w, h = dims[slot]; px = min(1800, max(900, round(w * 2.6))); im = ImageOps.exif_transpose(Image.open(os.path.join(base, m['src'] + '.jpg'))).convert('RGB')
         ar = w / h; cw = min(im.width, im.height * ar) / m.get('zoom', 1.0); ch = cw / ar
         x0 = min(max(m.get('cx', .5) * im.width - cw / 2, 0), im.width - cw); y0 = min(max(m.get('cy', .5) * im.height - ch / 2, 0), im.height - ch)
         crop = im.crop((round(x0), round(y0), round(x0 + cw), round(y0 + ch))); px = min(px, crop.width); ph = round(px / ar)
         crop = crop.resize((px, ph), Image.LANCZOS)
-        if not dry: crop.save(os.path.join(out, slot + '.webp'), 'WEBP', quality=84, method=6)
+        if not dry: crop.save(os.path.join(out, slot + '.webp'), 'WEBP', quality=74, method=6)
         print(('would write ' if dry else 'wrote '), slot + '.webp', f'{px}x{ph}', '<-', m['src']); done += 1
     print(done, 'image(s)'); sys.exit(0)
 src = sys.argv[1] if len(sys.argv) > 1 else sys.exit(__doc__)
