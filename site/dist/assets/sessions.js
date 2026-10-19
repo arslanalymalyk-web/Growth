@@ -15,9 +15,11 @@
   var totals = function (plan) { var sub = D.plans[plan].price, vat = Math.round(sub * D.vat * 100) / 100; return { sub: sub, vat: vat, total: Math.round((sub + vat) * 100) / 100 }; };
 
   /* ---------- local demonstration (no server): rules, storage ---------- */
-  var DEMO_KEY = 'gba.sess.demo';
-  var demoAll = function () { try { return JSON.parse(localStorage.getItem(DEMO_KEY) || '{}'); } catch (e) { return {}; } };
-  var demoSave = function (o) { var a = demoAll(); a[o.id] = o; try { localStorage.setItem(DEMO_KEY, JSON.stringify(a)); } catch (e) { /* unavailable */ } };
+  var DEMO_KEY = 'gba.sess.demo', MEM = window.__gbaMem = window.__gbaMem || {};   // browsers can block storage on file://, so keep a copy in memory too
+  var sget = function (k, area) { try { var v = window[area || 'localStorage'].getItem(k); if (v != null) return v; } catch (e) { /* blocked */ } return MEM[k] == null ? null : MEM[k]; };
+  var sset = function (k, v, area) { MEM[k] = v; try { window[area || 'localStorage'].setItem(k, v); } catch (e) { /* blocked */ } };
+  var demoAll = function () { try { return JSON.parse(sget(DEMO_KEY) || '{}'); } catch (e) { return {}; } };
+  var demoSave = function (o) { var a = demoAll(); a[o.id] = o; sset(DEMO_KEY, JSON.stringify(a)); };
   var localSlots = function () {
     var R = D.rules, out = [], now = Date.now(), taken = {}; var all = demoAll(); Object.keys(all).forEach(function (k) { all[k].bookings.forEach(function (b) { if (b.status === 'booked') taken[b.slot] = 1; }); });
     var today = new Date(now + R.tzOffsetMin * 60000); today = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
@@ -77,6 +79,7 @@
       G.post('/api/sessions/book', body).then(function (r) {
         if (r.status === 0 || r.status === 404 || r.status === 405) { /* no server: local demonstration */ var id = 'DEMO-' + Math.random().toString(36).slice(2, 8).toUpperCase(), key = Math.random().toString(36).slice(2), t = totals(state.plan);
           demoSave({ id: id, key: key, plan: state.plan, status: 'paid', simulated: true, createdAt: new Date().toISOString(), currency: D.cur, subtotal: t.sub, vat: t.vat, total: t.total, credits: D.plans[state.plan].n - 1, validUntil: new Date(Date.now() + D.bundleValidDays * 864e5).toISOString().slice(0, 10), bookings: [{ n: 1, slot: slot, status: 'booked', mode: body.mode, rescheduled: 0 }], buyer: { name: body.buyer.name, email: body.buyer.email } });
+          if (window.__gbaSingle) { sset('gba.sess.cur', JSON.stringify({ o: id, k: key }), 'sessionStorage'); window.location.hash = '#/' + D.lang + '/book-a-session/confirmation/'; return; }
           window.location.href = D.urls.confirm + '?o=' + id + '#k=' + key; return; }
         if (r.ok && r.data && r.data.redirect) { window.location.href = r.data.redirect; return; }
         done(); var code = r.data && r.data.error;
@@ -90,7 +93,8 @@
   /* ---------- confirmation page ---------- */
   var root = $('#sx-conf');
   if (root) {
-    var q = new URLSearchParams(location.search), oid = q.get('o') || '', hk = (location.hash.match(/k=([^&]+)/) || [])[1] || '', polls = 0, order = null, isLocal = false;
+    var q = new URLSearchParams(location.search), cur = {}; try { cur = JSON.parse(sget('gba.sess.cur', 'sessionStorage') || '{}'); } catch (e) { cur = {}; }
+    var oid = q.get('o') || cur.o || '', hk = (location.hash.match(/k=([^&]+)/) || [])[1] || cur.k || '', polls = 0, order = null, isLocal = false;
     var hdr = { 'x-order-key': hk };
     var fetchOrder = function () { return G.get('/api/sessions/order?o=' + encodeURIComponent(oid), hdr).then(function (r) { if (r.ok && r.data && r.data.order) { isLocal = false; return r.data.order; } var d = demoAll()[oid]; if (d && d.key === hk) { isLocal = true; return d; } return null; }); };
     var inH = function (iso) { return (Date.parse(iso) - Date.now()) / 36e5; };

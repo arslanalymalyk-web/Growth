@@ -14,6 +14,7 @@
     ts: function () { var f = GBA._form, i = f && f.querySelector('[name=cf-turnstile-response]'); return i ? i.value : ''; },
     tsReset: function () { try { if (window.turnstile && GBA._form) { var w = GBA._form.querySelector('.cf-turnstile'); if (w) window.turnstile.reset(w); } } catch (e) { /* ignore */ } },
     post: function (path, body, headers) {
+      if (location.protocol === 'file:') return Promise.resolve({ ok: false, status: 0, data: null, demo: true }); // opened from disk: no server, so go straight to demonstration mode
       var tk = GBA.ts(); if (tk && body && !body.turnstile) body.turnstile = tk;
       var h = { 'Content-Type': 'application/json' }; if (headers) for (var k in headers) h[k] = headers[k];
       return fetch(path, { method: 'POST', headers: h, body: JSON.stringify(body) }).then(function (r) { GBA.tsReset();
@@ -21,6 +22,7 @@
       }).catch(function () { return { ok: false, status: 0, data: null, demo: true }; });
     },
     get: function (path, headers) {
+      if (location.protocol === 'file:') return Promise.resolve({ ok: false, status: 0, data: null });
       return fetch(path, { headers: headers || {} }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok && j.ok !== false, status: r.status, data: j }; }, function () { return { ok: false, status: r.status, data: null, demo: r.status === 404 || r.status === 501 }; }); }).catch(function () { return { ok: false, status: 0, data: null, demo: true }; });
     },
     basket: function () { try { var b = JSON.parse(window.localStorage.getItem('gba.basket') || '[]'); return Array.isArray(b) ? b : []; } catch (e) { return []; } },
