@@ -8,7 +8,7 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   /* Shared helpers. API calls fall back to "demo mode" when no server is reachable (static hosting, file://). */
   var GBA = window.GBA = {
-    versions: { privacy: 'privacy-2026-2', marketing: 'marketing-2026-1', licence: 'licence-2026-1' },
+    versions: { privacy: 'privacy-2026-3', marketing: 'marketing-2026-1', licence: 'licence-2026-1' },
     lang: document.documentElement.lang === 'ar' ? 'ar' : 'en',
     /* Cloudflare Turnstile token of the form being submitted (empty when Turnstile is not enabled) */
     ts: function () { var f = GBA._form, i = f && f.querySelector('[name=cf-turnstile-response]'); return i ? i.value : ''; },
@@ -67,7 +67,8 @@
     var update = function () { var i = Math.round(pos() / step()), v = perView(), n = items.length; if (count) count.textContent = (i + 1) + '–' + Math.min(n, i + v) + ' / ' + n; };
     var go = function (dir) { if (dir > 0 && atEnd()) tr.scrollTo({ left: 0 }); else if (dir < 0 && pos() < 4) tr.scrollTo({ left: sign * (tr.scrollWidth - tr.clientWidth) }); else tr.scrollBy({ left: sign * dir * step() }); };
     var stop = function () { if (timer) { clearInterval(timer); timer = null; } };
-    var start = function () { stop(); if (!paused) timer = setInterval(function () { if (!document.hidden) go(1); }, 4500); };
+    var ms = Math.max(1500, Number(qs.getAttribute('data-qs-interval')) || 4500);
+    var start = function () { stop(); if (!paused) timer = setInterval(function () { if (!document.hidden) go(1); }, ms); };
     var setPaused = function (v) { paused = v; if (pp) { pp.setAttribute('aria-pressed', String(v)); pp.innerHTML = v ? ICON('M8 5l11 7-11 7z') : ICON('M9 5v14M15 5v14'); } if (v) stop(); else start(); };
     if (prev) prev.addEventListener('click', function () { go(-1); });
     if (next) next.addEventListener('click', function () { go(1); });
@@ -76,7 +77,8 @@
     ['mouseleave', 'focusout'].forEach(function (e) { qs.addEventListener(e, function () { if (!paused) start(); }); });
     tr.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
     tr.addEventListener('keydown', function (e) { var k = e.key; if (k === 'ArrowRight') { e.preventDefault(); go(rtl ? -1 : 1); } else if (k === 'ArrowLeft') { e.preventDefault(); go(rtl ? 1 : -1); } });
-    onDoc(window, 'resize', update); setPaused(paused); update();
+    var fit = function () { var can = tr.scrollWidth > tr.clientWidth + 4; var ctl = $('.qs__ctl', qs); if (ctl) ctl.hidden = !can; if (!can) stop(); update(); };
+    onDoc(window, 'resize', fit); setPaused(paused); fit();
   });
 
   /* Cookie notice (choice stored locally; nothing is loaded either way in this demo) */

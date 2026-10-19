@@ -1,0 +1,38 @@
+[
+ {
+  "name": "Brownstone Ltd",
+  "kind": {
+   "en": "Saudi-Swiss company",
+   "ar": "شركة سعودية سويسرية"
+  },
+  "initials": "BL",
+  "quote": {
+   "en": "Growth Blueprint provided invaluable guidance for our Saudi-Swiss joint venture. Their deep understanding of local regulations and cultural nuances made our market entry smooth and successful.",
+   "ar": "قدّمت غروث بلوبرينت إرشادًا لا يُقدَّر بثمن لمشروعنا المشترك السعودي السويسري. وبفضل فهمها العميق للأنظمة المحلية والفروق الثقافية جاء دخولنا السوق سلسًا وناجحًا."
+  }
+ },
+ {
+  "name": "Hakeem Medical Touch",
+  "kind": {
+   "en": "Sleep medicine clinic",
+   "ar": "عيادة طب النوم"
+  },
+  "initials": "HM",
+  "quote": {
+   "en": "Exceptional support in establishing our sleep medicine clinic in Saudi Arabia. Growth Blueprint's healthcare sector expertise and regulatory guidance were instrumental to our success.",
+   "ar": "دعم استثنائي في تأسيس عيادة طب النوم لدينا في المملكة. وكانت خبرة غروث بلوبرينت في القطاع الصحي وإرشادها التنظيمي عاملين أساسيين في نجاحنا."
+  }
+ },
+ {
+  "name": "Sano2",
+  "kind": {
+   "en": "Italian manufacturer",
+   "ar": "مُصنِّع إيطالي"
+  },
+  "initials": "S2",
+  "quote": {
+   "en": "As an Italian manufacturer entering the Saudi market, Growth Blueprint's strategic introductions and market intelligence reports gave us the confidence to invest and expand successfully.",
+   "ar": "بصفتنا مُصنِّعًا إيطاليًا يدخل السوق السعودي، منحتنا تعريفات غروث بلوبرينت الاستراتيجية وتقارير استخبارات السوق الثقة للاستثمار والتوسع بنجاح."
+  }
+ }
+]

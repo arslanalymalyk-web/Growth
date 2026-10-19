@@ -38,6 +38,7 @@ Straight talking advisory for businesses that want to enter, set up and grow in 
 - Insights
 - Briefs
 - How we work
+- Book a session
 - Team
 - Investor FAQ
 - Book a Free Consultation
@@ -48,6 +49,7 @@ Straight talking advisory for businesses that want to enter, set up and grow in 
 - Market Entry Guidance
 - Strategic Introductions
 - Cultural & Business Advisory
+- Advisory Sessions
 
 ## Get in touch
 
@@ -137,6 +139,10 @@ Introductions to vetted Saudi partners, industry leaders and key stakeholders.
 
 Guidance on Saudi business culture, negotiation and building relationships.
 
+### Advisory Sessions
+
+One-to-one sessions you can book and pay for online, singly or as a bundle of three.
+
 Our industries
 
 ## Sectors we brief, and why that matters
@@ -185,6 +191,36 @@ Led by experience
 Growth Blueprint was founded in 2024 in Jeddah and is led by Faisal Halawani. Around him is a bench of specialists in law, marketing and branding, real estate, and advertising and PR, so you get the right expert for your question.
 
 **[ Meet the team ]**
+
+Ways to start
+
+## Start the way that suits you
+
+Free or paid, short or long: choose the first step that fits your question.
+
+### Free 30-minute consultation
+
+Talk through your plans with us. No obligation, no hard sell.
+
+Book a free consultation
+
+### Advisory sessions
+
+Sixty focused minutes on your question. One session or a bundle of three, booked and paid online.
+
+Book a session
+
+### Saudi Readiness Scorecard
+
+Answer 24 short statements and get a personal report in about ten minutes. Free.
+
+Take the scorecard
+
+### Sector briefs
+
+Short starter briefs for eight sectors, with secure download.
+
+Browse the briefs
 
 Our expert team
 
@@ -250,63 +286,7 @@ As an Italian manufacturer entering the Saudi market, Growth Blueprint's strateg
 
 S2Sano2Italian manufacturer
 
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-01Client nameRetail group
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-02Client nameReal-estate developer
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-03Client nameLogistics operator
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-04Client nameTechnology company
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-05Client nameHospitality brand
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-06Client nameFood & beverage brand
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-07Client nameIndustrial manufacturer
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-08Client nameConsulting partner
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-09Client nameInvestment firm
-
-1–3 / 12
-
-Quotes are shared by the clients named, as published by the firm. Cards marked “Sample” are layout placeholders, not client quotes.
+Quotes are shared by the clients named, as published by the firm.
 
 Latest insights
 
@@ -410,6 +390,22 @@ Introductions to vetted Saudi partners, industry leaders and key stakeholders.
 ### Cultural & Business Advisory
 
 Guidance on Saudi business culture, negotiation and building relationships.
+
+**[ Explore service ]**
+
+Sessions
+
+## Work with us, session by session
+
+One-to-one advisory sessions you can book and pay for online, as a single session or a bundle of three.
+
+Ideal for
+
+Investors with a specific question who want expert time without a long engagement.
+
+### Advisory Sessions
+
+One-to-one sessions you can book and pay for online, singly or as a bundle of three.
 
 **[ Explore service ]**
 
@@ -939,6 +935,155 @@ Where it helps, yes. We agree this with you in advance.
 **Can you negotiate on our behalf?**
 
 We prepare and support you. You stay the decision-maker, and we do not sign or commit on your behalf.
+
+Related services
+
+## You might also need
+
+**[ View all services ]**
+
+Market IntelligenceClear insight into Saudi opportunities across the sectors Vision 2030 is opening up.Learn more Market Entry GuidancePlain-language help with regulations, licensing and the route that suits you.Learn more Strategic IntroductionsIntroductions to vetted Saudi partners, industry leaders and key stakeholders.Learn more
+
+## Want to talk this through?
+
+Tell us what you are working on and we will tell you honestly whether we can help.
+
+**[ Book a Free Consultation ]**
+
+
+---
+
+# PAGE: Service: Advisory Sessions
+
+_Page title: Advisory Sessions | Growth Blueprint_
+
+- Home
+- Services
+- Advisory Sessions
+
+# Advisory Sessions
+
+Sometimes you do not need a long engagement, just sixty focused minutes with people who know the market. Book a session online, pay by card and get a written summary afterwards.
+
+**[ Book a session ]**
+
+Service overview
+
+## Expert time, without the long engagement
+
+A session is a working conversation about your question: an entry route, a partner shortlist, a negotiation, a regulation you need explained in plain language. Choose a single session, or a bundle of three if you want to keep going: first to frame the problem, then to test your plan, then to prepare for the meeting that matters.
+
+Choose your session
+
+Single sessionSAR 1,500 excl. VATOne 60-minute session with a written summary afterwards.
+
+**[ Book now ]**
+
+Best valueThree-session bundleSAR 3,900 excl. VATThree 60-minute sessions at a lower price per session. Book the first now and schedule the others when you are ready.
+
+**[ Book now ]**
+
+Who it is for
+
+## Is this the right help for you?
+
+- You have one clear question and want an expert view this week.
+- You are preparing for a board decision, a visit or a negotiation.
+- You want to test a plan before you commit to a bigger engagement.
+
+Sound familiar?
+
+## Problems we help you solve
+
+- You do not know which questions matter most.
+- Public information is hard to interpret for your case.
+- You need an answer faster than a full project allows.
+
+What we do
+
+## The work, in plain terms
+
+Bring a question, leave with a view and a list of next steps.
+
+- Sixty minutes, online or at our Jeddah office
+- Preparation from the note you send when you book
+- Plain-language guidance on market, entry, introductions or culture
+- A written summary of the session
+- A short list of recommended next steps
+
+What you get
+
+## What you will have at the end
+
+A written summary of what we discussed
+
+Recommended next steps
+
+For bundles: a plan for the remaining sessions
+
+How it works
+
+## Four steps from start to finish
+
+1
+
+### Book
+
+Choose one session or three, pick a time and pay online.
+
+2
+
+### Prepare
+
+Tell us your question. We prepare before you arrive.
+
+3
+
+### Meet
+
+Sixty focused minutes, online or in Jeddah.
+
+4
+
+### Follow up
+
+You receive a written summary and next steps.
+
+Your part
+
+## How you can help us help you
+
+Share the documents and information we ask for, when we ask
+
+Review and approve our drafts promptly
+
+Join the key meetings, and bring decision-makers where you can
+
+Be open about your goals, your budget and your worries
+
+Questions we hear
+
+## Good questions
+
+**Is a session the same as the free consultation?**
+
+No. The free 30-minute consultation helps us understand your situation and whether we can help. A session is sixty minutes of working advice on your question, with a written summary.
+
+**Can I reschedule?**
+
+Yes, free of charge up to 24 hours before the session, from your confirmation page.
+
+**How does the bundle work?**
+
+You book the first session when you pay, and schedule the other two when you are ready, within 120 days.
+
+**Is this legal or tax advice?**
+
+No. We give business guidance and can introduce you to qualified legal and accounting specialists.
+
+**Is my card safe?**
+
+Card payments are taken on your payment provider’s secure page. We never see or store your card number.
 
 Related services
 
@@ -2461,63 +2606,7 @@ As an Italian manufacturer entering the Saudi market, Growth Blueprint's strateg
 
 S2Sano2Italian manufacturer
 
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-01Client nameRetail group
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-02Client nameReal-estate developer
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-03Client nameLogistics operator
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-04Client nameTechnology company
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-05Client nameHospitality brand
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-06Client nameFood & beverage brand
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-07Client nameIndustrial manufacturer
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-08Client nameConsulting partner
-
-Sample
-
-Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
-
-09Client nameInvestment firm
-
-1–3 / 12
-
-Quotes are shared by the clients named, as published by the firm. Cards marked “Sample” are layout placeholders, not client quotes.
+Quotes are shared by the clients named, as published by the firm.
 
 Let's talk
 
@@ -5189,6 +5278,7 @@ Questions about your data go to our privacy contact: faisal@getgrowthblueprint.c
 | When | What we collect | Why |
 | You contact us (enquiry or meeting request) | Name, email, company, phone (optional), role (optional), your message | To reply, arrange a conversation and keep a record of it |
 | You use the Readiness Scorecard | Your answers stay on your device. If you ask for the report by email: name, email, company (optional) and a summary of your scores | To send your report and, if you agree, to follow up |
+| You book and pay for an advisory session | Name, email, company (optional), phone (optional), VAT number (optional), the topic you want to cover, your chosen time and meeting format, and the payment status and amount. Card details are entered on our payment provider’s secure page: we never see or store your card number. | To arrange and deliver your session, send confirmations and reminders, issue your invoice and meet tax and accounting duties |
 | You subscribe to the monthly brief | Email, name (optional), language | To send the brief. We use a confirmation email (double opt-in) |
 | You buy a sector brief | Name, email, company (optional), VAT number (optional), country, what you bought, download records | To process the order, deliver the files, issue a tax invoice and prevent misuse of download links |
 | You visit the website | Language and cookie choice, scorecard progress and basket (stored on your device). With your consent, anonymous usage statistics | To make the site work and, if you agree, to improve it |
@@ -5216,7 +5306,7 @@ Some of our providers may store or process data outside the Kingdom. If that hap
 
 ## 7. How long we keep it
 
-Enquiries and meeting requests: 24 months after our last contact, then deleted or anonymised. Newsletter: until you unsubscribe; we then keep only a minimal record that you opted out, and the proof of your consent, so we can honour your choice. Orders and invoices: for as long as tax and accounting law requires. Download logs: 12 months. Consent records: for as long as we use the data they cover, plus the period needed to show we complied.
+Enquiries and meeting requests: 24 months after our last contact, then deleted or anonymised. Newsletter: until you unsubscribe; we then keep only a minimal record that you opted out, and the proof of your consent, so we can honour your choice. Orders, session bookings and invoices: for as long as tax and accounting law requires. Download logs: 12 months. Consent records: for as long as we use the data they cover, plus the period needed to show we complied.
 
 ## 8. Your rights
 
@@ -5244,7 +5334,7 @@ Please talk to us first, because we would like the chance to put things right. Y
 
 When we make a meaningful change we will update the date and version below and, where it affects how we use your data, ask for your agreement again.
 
-Version privacy-2026-2 · Effective 1 January 2026
+Version privacy-2026-3 · Effective 1 January 2026
 
 ## Use your rights
 
@@ -5292,6 +5382,10 @@ Prices are shown in Saudi riyals and exclude VAT, which is added at checkout. Br
 ## Cancellations and refunds
 
 You may cancel an order for a full refund within 14 days if you have not downloaded the brief. Once a brief has been downloaded we cannot refund it, because it cannot be returned. If a file is faulty, is not the brief you ordered, or you were charged in error, write to us within 14 days and we will replace it or refund you. Refunds go back to the original payment method.
+
+## Advisory sessions
+
+You can book a single 60-minute session or a bundle of three. Prices are shown in Saudi riyals before VAT, and VAT is added before you pay. A booking is confirmed when payment succeeds, and the time is held for you for a short while during payment. You can reschedule free of charge up to 24 hours before a session, from your confirmation page. If you cancel more than 24 hours before a session we will refund the session fee; we cannot refund a session that has taken place or a missed session. A bundle must be scheduled within 120 days of purchase, and unused sessions after that date lapse unless we agree otherwise. Sessions are business guidance, not legal, tax or financial advice. If we have to cancel, we will offer you a new time or a full refund for that session.
 
 ## Brief licence
 

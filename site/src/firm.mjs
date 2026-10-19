@@ -1,5 +1,6 @@
 // Verified facts about the firm, taken from the firm's published website (getgrowthblueprint.com).
 // Arabic text is our translation and needs native review. Client quotes are as published by the firm.
+import { readFileSync } from 'node:fs';
 import { L } from './ui.mjs';
 import { icon } from './icons.mjs';
 import { esc, sectionHead } from './render.mjs';
@@ -30,24 +31,14 @@ export const FIRM = {
     { i: 'AA', n: L('Ahmad Al-Zaeem', 'أحمد الزعيم'), r: L('Marketing & Branding Expert', 'خبير التسويق والعلامات التجارية'), b: L('Managing Director of Saudi Aim, with extensive experience in marketing, creative design and branding and re-branding for Saudi and international businesses.', 'المدير العام لشركة سعودي إيم، وله خبرة واسعة في التسويق والتصميم الإبداعي وبناء العلامات التجارية وإعادة بنائها للشركات السعودية والدولية.'), tags: [L('Marketing', 'التسويق'), L('Branding', 'العلامة التجارية')] },
     { i: 'MS', n: L('Mohammed Shitifi', 'محمد شطيفي'), r: L('Real Estate Specialist', 'متخصص في العقار'), b: L('CEO of Shetifi Real Estate, with more than 5 years in the real estate industry, specialising in Saudi market opportunities and property investment.', 'الرئيس التنفيذي لشطيفي العقارية، بخبرة تزيد على 5 سنوات في القطاع العقاري، ومتخصص في فرص السوق السعودي والاستثمار العقاري.'), tags: [L('Real estate', 'العقار'), L('Investment', 'الاستثمار')] },
     { i: 'SA', n: L('Salah Abu Alwafa', 'صلاح أبو الوفا'), r: L('Advertising & PR Expert', 'خبير الإعلان والعلاقات العامة'), b: L('More than 28 years managing communication and PR campaigns, online and offline.', 'أكثر من 28 عامًا في إدارة حملات الاتصال والعلاقات العامة، عبر الإنترنت وخارجه.'), tags: [L('Advertising', 'الإعلان'), L('PR', 'العلاقات العامة')] }
-  ],
-  clients: [
-    { i: 'BL', n: 'Brownstone Ltd', k: L('Saudi-Swiss company', 'شركة سعودية سويسرية'), q: L('Growth Blueprint provided invaluable guidance for our Saudi-Swiss joint venture. Their deep understanding of local regulations and cultural nuances made our market entry smooth and successful.', 'قدّمت غروث بلوبرينت إرشادًا لا يُقدَّر بثمن لمشروعنا المشترك السعودي السويسري. وبفضل فهمها العميق للأنظمة المحلية والفروق الثقافية جاء دخولنا السوق سلسًا وناجحًا.') },
-    { i: 'HM', n: 'Hakeem Medical Touch', k: L('Sleep medicine clinic', 'عيادة طب النوم'), q: L("Exceptional support in establishing our sleep medicine clinic in Saudi Arabia. Growth Blueprint's healthcare sector expertise and regulatory guidance were instrumental to our success.", 'دعم استثنائي في تأسيس عيادة طب النوم لدينا في المملكة. وكانت خبرة غروث بلوبرينت في القطاع الصحي وإرشادها التنظيمي عاملين أساسيين في نجاحنا.') },
-    { i: 'S2', n: 'Sano2', k: L('Italian manufacturer', 'مُصنِّع إيطالي'), q: L("As an Italian manufacturer entering the Saudi market, Growth Blueprint's strategic introductions and market intelligence reports gave us the confidence to invest and expand successfully.", 'بصفتنا مُصنِّعًا إيطاليًا يدخل السوق السعودي، منحتنا تعريفات غروث بلوبرينت الاستراتيجية وتقارير استخبارات السوق الثقة للاستثمار والتوسع بنجاح.') }
   ]
 };
 
 
-/** Layout slots for more testimonials. They are clearly labelled samples, never real quotes. Set TESTIMONIAL_SAMPLES=0 at build time to publish only the real ones. */
-const SAMPLE_SECTORS = [
-  [L('Retail group', 'مجموعة تجزئة'), L('Healthcare', 'الرعاية الصحية')], [L('Real-estate developer', 'مطوّر عقاري'), L('Real estate', 'العقار')], [L('Logistics operator', 'مشغّل لوجستي'), L('Logistics', 'الخدمات اللوجستية')],
-  [L('Technology company', 'شركة تقنية'), L('Technology', 'التقنية')], [L('Hospitality brand', 'علامة ضيافة'), L('Hospitality', 'الضيافة')], [L('Food & beverage brand', 'علامة أغذية ومشروبات'), L('FMCG', 'السلع الاستهلاكية')],
-  [L('Industrial manufacturer', 'مُصنِّع صناعي'), L('Manufacturing', 'التصنيع')], [L('Consulting partner', 'شريك استشاري'), L('Services', 'الخدمات')], [L('Investment firm', 'شركة استثمار'), L('Investment', 'الاستثمار')]
-];
-const SAMPLE_Q = L('Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.', 'خانة نموذجية: استبدلها باقتباس حقيقي من عميل، بموافقته الكتابية واسم الموقّع.');
-const SAMPLES = SAMPLE_SECTORS.map(([k, sec], i) => ({ i: String(i + 1).padStart(2, '0'), n: L('Client name', 'اسم العميل'), k, q: SAMPLE_Q, sample: true, sector: sec }));
-export const TESTIMONIALS = FIRM.clients.concat(process.env.TESTIMONIAL_SAMPLES === '0' ? [] : SAMPLES);
+/** Client testimonials live in src/testimonials.json (name, kind, initials, quote, each with en/ar). Only add quotes a client has approved in writing. */
+const RAW = JSON.parse(readFileSync(new URL('./testimonials.json', import.meta.url), 'utf8'));
+export const TESTIMONIALS = RAW.map((c) => ({ i: c.initials || String(c.name).split(/\s+/).map((w) => w[0]).join('').slice(0, 2).toUpperCase(), n: L(c.name, c.name), k: L(c.kind.en, c.kind.ar), q: L(c.quote.en, c.quote.ar), date: c.date || '', role: c.role || '' }));
+FIRM.clients = TESTIMONIALS;
 
 const lab = {
   founded: L('Founded', 'تأسست'), years: L('Years of leadership experience', 'سنوات من الخبرة القيادية'), licensed: L('Licensed', 'مرخّصة'),
@@ -81,11 +72,11 @@ export const team = (ctx, tone = 'sec--deep') => `<section class="sec ${tone}" a
 
 export const clients = (ctx) => `<section class="sec sec--ivory" aria-labelledby="cl-t"><div class="container container--wide">
   ${sectionHead(ctx, { eyebrow: lab.cliE, title: lab.cliT, id: 'cl-t' })}
-  <div class="qs" role="region" aria-roledescription="carousel" aria-label="${esc(ctx.t(lab.cliE))}" data-qs>
-    <ul class="quotes qs__track" tabindex="0" data-qs-track>${TESTIMONIALS.map((c, n) => `<li class="${c.sample ? 'is-sample' : ''}" aria-label="${n + 1} / ${TESTIMONIALS.length}">${c.sample ? `<span class="qs__tag">${T(ctx, L('Sample', 'نموذج'))}</span>` : ''}<blockquote><p>${T(ctx, c.q)}</p></blockquote><footer><span class="member__av member__av--sm" aria-hidden="true">${c.i}</span><b>${T(ctx, typeof c.n === 'string' ? L(c.n, c.n) : c.n)}</b><i>${T(ctx, c.k)}</i></footer></li>`).join('')}</ul>
+  <div class="qs" role="region" aria-roledescription="carousel" aria-label="${esc(ctx.t(lab.cliE))}" data-qs data-qs-interval="3000">
+    <ul class="quotes qs__track" tabindex="0" data-qs-track>${TESTIMONIALS.map((c, n) => `<li aria-label="${n + 1} / ${TESTIMONIALS.length}"><blockquote><p>${T(ctx, c.q)}</p></blockquote><footer><span class="member__av member__av--sm" aria-hidden="true">${c.i}</span><b>${T(ctx, c.n)}</b><i>${T(ctx, c.role ? L(c.role + ', ' + c.k.en, c.role + '، ' + c.k.ar) : c.k)}</i></footer></li>`).join('')}</ul>
     <div class="qs__ctl"><button type="button" class="qs__btn" data-qs-prev aria-label="${esc(ctx.t(L('Previous testimonials', 'الشهادات السابقة')))}">${icon('arrowLeft')}</button><button type="button" class="qs__btn" data-qs-next aria-label="${esc(ctx.t(L('Next testimonials', 'الشهادات التالية')))}">${icon('arrowRight')}</button><button type="button" class="qs__btn qs__btn--pp" data-qs-pause aria-pressed="false" aria-label="${esc(ctx.t(L('Pause automatic sliding', 'إيقاف التمرير التلقائي')))}">${icon('pause')}</button><span class="qs__count" aria-live="polite" data-qs-count></span></div>
   </div>
-  <p class="proof__note proof__note--c">${T(ctx, lab.cliN)}${process.env.TESTIMONIAL_SAMPLES === '0' ? '' : ' ' + ctx.t(L('Cards marked “Sample” are layout placeholders, not client quotes.', 'البطاقات المعلَّمة «نموذج» خانات تصميمية وليست اقتباسات عملاء.'))}</p>
+  <p class="proof__note proof__note--c">${T(ctx, lab.cliN)}</p>
 </div></section>`;
 
 export const hoursBlock = (ctx) => `<ul class="hours">${FIRM.hours.map((h) => `<li><span>${T(ctx, h.d)}</span><b>${T(ctx, h.t)}</b></li>`).join('')}<li class="hours__tz">${T(ctx, FIRM.tz)}</li></ul>`;

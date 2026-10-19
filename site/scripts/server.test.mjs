@@ -78,7 +78,7 @@ test('lead: validates, records consent versions, queues for CRM when no webhook 
   const r = await s.call('/api/lead', { method: 'POST', json: { ...base, consent: { processing: true, marketing: true } } });
   const j = await r.json(); assert.equal(r.status, 200); assert.match(j.ref, /^GBA-\d{6}-[0-9A-F]{6}$/);
   const types = s.lines('consents').map((c) => c.type); assert.deepEqual(types, ['lead-processing', 'lead-marketing']);
-  assert.equal(s.lines('consents')[0].version, 'privacy-2026-2');
+  assert.equal(s.lines('consents')[0].version, 'privacy-2026-3');
   assert.equal(s.lines('leads')[0].contact.email, 'sara@example.com');
   await s.app.idle(); assert.equal(s.lines('crm-outbox')[0].status, 'unconfigured');
 });
@@ -201,4 +201,74 @@ test('captcha: when Turnstile is configured, forms without a valid token are ref
   const s = await start({ turnstileSecret: 'x' }); t.after(s.close);
   const r = await s.call('/api/newsletter', { method: 'POST', json: { email: 'a@example.com', consent: true, lang: 'en' } });
   assert.equal(r.status, 400); assert.equal((await r.json()).error, 'captcha');
+});
+
+/* ---------------- advisory sessions ---------------- */
+const sbuyer = { name: 'Sara Almansour', email: 'sara@example.com', company: 'Neom Ventures' };
+const sBody = (slot, extra = {}) => ({ plan: 'single', slot, buyer: sbuyer, topic: 'Entry route for a healthcare clinic', consent: { privacy: true, terms: true, marketing: false }, lang: 'en', ...extra });
+async function firstSlots(s, n = 3) { const a = await (await s.call('/api/sessions/availability?days=21')).json(); return a.days.flatMap((d) => d.slots).slice(0, n); }
+
+test('sessions: slots follow the rules (Sunday to Thursday, 24h lead, nothing on blackout dates)', async (t) => {
+  const s = await start(); t.after(s.close);
+  const a = await (await s.call('/api/sessions/availability?days=28')).json(); assert.ok(a.days.length >= 10);
+  for (const d of a.days) { const dow = new Date(d.date + 'T00:00:00Z').getUTCDay(); assert.ok(dow <= 4, `${d.date} is a Friday or Saturday`); for (const sl of d.slots) assert.ok(Date.parse(sl) > Date.now() + 23.9 * 36e5); }
+  const first = a.days[0].date; const b = await start({ sess: { blackout: first } }); t.after(b.close);
+  assert.ok(!(await (await b.call('/api/sessions/availability?days=28')).json()).days.some((d) => d.date === first));
+  const c = await (await s.call('/api/sessions/config')).json(); assert.equal(c.plans.single.n, 1); assert.equal(c.plans.bundle.n, 3); assert.equal(c.pay, 'demo');
+});
+
+test('sessions: booking validates input, takes payment (simulated), blocks double booking, issues invoice, ICS and CRM event', async (t) => {
+  const s = await start(); t.after(s.close);
+  const [slot, slot2] = await firstSlots(s, 2);
+  const post = (b) => s.call('/api/sessions/book', { method: 'POST', json: b });
+  assert.equal((await post(sBody(slot, { consent: { privacy: true, terms: false } }))).status, 400);
+  assert.equal((await post(sBody(slot, { consent: { privacy: false, terms: true } }))).status, 400);
+  assert.equal((await post(sBody('2030-01-01T09:30:00.000Z'))).status, 400);
+  assert.equal((await post(sBody(slot.replace(/:\d\d\.000Z$/, ':01.000Z')))).status, 400, 'off-grid time');
+  assert.equal((await post(sBody(slot, { plan: 'free' }))).status, 400);
+  const ok = await (await post(sBody(slot, { price: 1, total: 1 }))).json(); assert.equal(ok.status, 'paid'); assert.equal(ok.total, 1725); // 1500 + 15% VAT, client price ignored
+  assert.equal((await post(sBody(slot))).status, 409, 'same slot cannot be booked twice');
+  const o = await (await s.call(`/api/sessions/order?o=${ok.id}`, { headers: { 'x-order-key': ok.key } })).json(); assert.equal(o.order.bookings[0].slot, slot); assert.equal(o.order.credits, 0);
+  assert.equal((await s.call(`/api/sessions/order?o=${ok.id}`, { headers: { 'x-order-key': 'nope' } })).status, 404);
+  const ics = await (await s.call(`/api/sessions/ics?o=${ok.id}&k=${ok.key}&n=1`)).text(); assert.match(ics, /BEGIN:VEVENT/); assert.match(ics, /DTSTART:\d{8}T\d{6}Z/);
+  const inv = await (await s.call(`/api/shop/invoice?o=${ok.id}&k=${ok.key}`)).text(); assert.match(inv, /INV-000001/); assert.match(inv, /Advisory session/); assert.match(inv, /<svg/);
+  assert.equal(s.lines('consents').filter((c) => c.order === ok.id).map((c) => c.type).sort().join(), 'session-privacy,session-terms');
+  await s.app.idle(); assert.ok(s.lines('crm-outbox').some((r) => r.evt && r.evt.event === 'session.booked'));
+  assert.ok(!(await firstSlots(s, 40)).includes(slot), 'taken slot disappears from availability'); void slot2;
+});
+
+test('sessions: a bundle gives three sessions, scheduled one by one, and reschedule closes 24h before', async (t) => {
+  const s = await start(); t.after(s.close);
+  const [a, b, c, d] = await firstSlots(s, 4);
+  const r = await (await s.call('/api/sessions/book', { method: 'POST', json: sBody(a, { plan: 'bundle' }) })).json(); assert.equal(r.total, 4485); // 3900 + VAT
+  const H = { 'x-order-key': r.key }, sch = (slot) => s.call('/api/sessions/schedule', { method: 'POST', headers: H, json: { o: r.id, slot } });
+  assert.equal((await (await s.call(`/api/sessions/order?o=${r.id}`, { headers: H })).json()).order.credits, 2);
+  assert.equal((await sch(b)).status, 200); assert.equal((await sch(b)).status, 409); assert.equal((await sch(c)).status, 200); assert.equal((await sch(d)).status, 403, 'no credits left');
+  assert.equal((await s.call('/api/sessions/schedule', { method: 'POST', headers: { 'x-order-key': 'bad' }, json: { o: r.id, slot: d } })).status, 404);
+  const rs = await s.call('/api/sessions/reschedule', { method: 'POST', headers: H, json: { o: r.id, n: 3, slot: d } }); assert.equal(rs.status, 200);
+  assert.equal((await (await s.call(`/api/sessions/order?o=${r.id}`, { headers: H })).json()).order.bookings[2].slot, d);
+  const late = await start({ sess: { leadHours: 0, rescheduleHours: 24 * 400 } }); t.after(late.close);
+  const [x, y] = await firstSlots(late, 2); const lr = await (await late.call('/api/sessions/book', { method: 'POST', json: sBody(x) })).json();
+  assert.equal((await late.call('/api/sessions/reschedule', { method: 'POST', headers: { 'x-order-key': lr.key }, json: { o: lr.id, n: 1, slot: y } })).status, 403);
+});
+
+test('payments: with a provider configured the order stays pending until the provider says paid for the right amount', async (t) => {
+  const inv = { id: 'inv_1', status: 'initiated', amount: 0, currency: 'SAR' }, seen = [];
+  const mock = http.createServer((req, res) => { let b = ''; req.on('data', (c) => (b += c)); req.on('end', () => { seen.push([req.method, req.url, req.headers.authorization]); res.setHeader('Content-Type', 'application/json');
+    if (req.method === 'POST' && req.url === '/invoices') { const j = JSON.parse(b); inv.amount = j.amount; res.end(JSON.stringify({ id: inv.id, url: 'https://pay.example/inv_1', status: 'initiated' })); } else if (req.url === '/invoices/inv_1') res.end(JSON.stringify(inv)); else { res.statusCode = 404; res.end('{}'); } }); });
+  await new Promise((r) => mock.listen(0, '127.0.0.1', r)); t.after(() => mock.close());
+  const s = await start({ payProvider: 'moyasar', payKey: 'sk_test_x', payApi: `http://127.0.0.1:${mock.address().port}`, demoPayments: false }); t.after(s.close);
+  const [slot] = await firstSlots(s, 1);
+  const r = await (await s.call('/api/sessions/book', { method: 'POST', json: sBody(slot) })).json();
+  assert.equal(r.status, 'pending'); assert.equal(r.redirect, 'https://pay.example/inv_1'); assert.equal(inv.amount, 172500, 'amount in halalas, set by the server');
+  assert.match(seen[0][2], /^Basic /);
+  const ver = () => s.call('/api/pay/verify', { method: 'POST', headers: { 'x-order-key': r.key }, json: { o: r.id } }).then((x) => x.json());
+  assert.equal((await ver()).status, 'pending');
+  assert.equal((await s.call(`/api/shop/invoice?o=${r.id}&k=${r.key}`)).status, 404, 'no invoice before payment');
+  inv.status = 'paid'; inv.amount = 100; assert.equal((await ver()).status, 'pending', 'wrong amount is not accepted');
+  inv.amount = 172500; assert.equal((await ver()).status, 'paid');
+  assert.equal((await s.call(`/api/shop/invoice?o=${r.id}&k=${r.key}`)).status, 200);
+  const b = await (await s.call('/api/shop/checkout', { method: 'POST', json: { items: ['fmcg-market-entry-brief'], buyer, consent: okConsent, lang: 'en' } })).json(); assert.equal(b.status, 'pending');
+  const dl = await s.call('/api/shop/download-link', { method: 'POST', headers: { 'x-order-key': b.key }, json: { o: b.orderId, item: 'fmcg-market-entry-brief' } }); assert.equal(dl.status, 404, 'no download before payment');
+  const off = await start({ demoPayments: false }); t.after(off.close); assert.equal((await off.call('/api/sessions/book', { method: 'POST', json: sBody(slot) })).status, 501);
 });

@@ -7,6 +7,7 @@ import * as V from './src/views.mjs';
 import * as P from './src/pages.mjs';
 import * as V2 from './src/views2.mjs';
 import * as X from './src/extra.mjs';
+import * as V3 from './src/views3.mjs';
 import { PRODUCTS } from './src/shop.mjs';
 import { SERVICES } from './src/services.mjs';
 import { INDUSTRIES } from './src/industries.mjs';
@@ -34,6 +35,8 @@ const routes = [
   ...P.ARTICLES.map((a) => [`insights/${a.slug}/`, (c) => V.article(c, a)]),
   ['readiness-checklist/', V.checklist],
   ['book-a-meeting/', V.book],
+  ['book-a-session/', V3.bookSession],
+  ['book-a-session/confirmation/', V3.sessionConfirmation],
   ['enquiry/', V.enquiry],
   ['enquiry/confirmation/', V.confirmation],
   ['readiness-scorecard/', V.scorecardIntro],
@@ -74,7 +77,7 @@ writeFileSync(join(dist, 'index.html'), `<!doctype html><html lang="en"><head><m
 // Static assets
 cpSync(join(root, 'assets'), join(dist, 'assets'), { recursive: true });
 // robots + sitemap: search engines are blocked unless SITE_URL is set at build time (e.g. SITE_URL=https://www.example.com node build.mjs)
-const NO_INDEX = ['shop/basket/', 'shop/checkout/', 'shop/order/', 'readiness-scorecard/assessment/', 'readiness-scorecard/results/', 'enquiry/confirmation/', 'newsletter/confirmed/', 'newsletter/unsubscribed/'];
+const NO_INDEX = ['book-a-session/confirmation/', 'shop/basket/', 'shop/checkout/', 'shop/order/', 'readiness-scorecard/assessment/', 'readiness-scorecard/results/', 'enquiry/confirmation/', 'newsletter/confirmed/', 'newsletter/unsubscribed/'];
 if (SITE_URL) {
   writeFileSync(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /download/\nDisallow: /admin\nSitemap: ${SITE_URL}/sitemap.xml\n`);
   const day = new Date().toISOString().slice(0, 10);

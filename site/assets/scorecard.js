@@ -55,7 +55,7 @@
       var left = Math.max(1, Math.round((total - state.step) * 10 / total));
       return el('div', { class: 'sc-head' }, [
         el('div', { class: 'sc-head__row' }, [el('span', { class: 'sc-head__part', text: U.part + ' ' + (state.step + 1) + ' ' + U.of + ' ' + total }), el('span', { class: 'sc-head__min', text: U.min + ' ' + left + ' ' + U.minutes })]),
-        el('div', { class: 'sc-bar', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': String(total), 'aria-valuenow': String(state.step + 1) }, [el('i', { style: 'width:' + Math.round(((state.step + 1) / total) * 100) + '%' })])
+        el('div', { class: 'sc-bar', role: 'progressbar', 'aria-label': (D.lang === 'ar' ? 'تقدم المقياس' : 'Scorecard progress'), 'aria-valuemin': '0', 'aria-valuemax': String(total), 'aria-valuenow': String(state.step + 1) }, [el('i', { style: 'width:' + Math.round(((state.step + 1) / total) * 100) + '%' })])
       ]);
     };
     var nav = function (valid) {

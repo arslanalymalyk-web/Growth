@@ -105,3 +105,10 @@ Maps every item of `CRITICAL_REVIEW_V2.md` to its status.
 ## Round 4: Industries rewritten
 - The Industries page now lists 13 industries under "Industries we plan around" (replacing "Core sectors"), each with who it is for, a planning line, "What to bring to the discussion" and an explore link, then "From industry to engagement". Every industry has its own page. Five were added: business consulting, construction & engineering, energy & sustainability, education & training, food & agriculture.
 - **Confirm:** the firm has not said it works in all 13. The page is worded as planning questions, not a track record, and carries the line "starting points for discussion, not official licensing checklists". Remove any industry the firm does not want to advertise (`src/industries.mjs`). Briefs exist for 8 of them only.
+
+## Round 5: sessions, testimonials, imagery, final review
+- **Paid advisory sessions** (single or bundle of three, booking, card payment, reschedule, calendar file, invoice, consent log): built and tested. Real card payment, prices, calendar sync, video links and cancellation policy still need you: see `FINAL_REVIEW.md` section 3.
+- **New service page** (Advisory Sessions), home "Ways to start" band, Terms and Privacy updated (privacy version `privacy-2026-3`), two new FAQ answers.
+- **Testimonials:** sample cards removed; data in `src/testimonials.json`; advances every 3 seconds; kit in `TESTIMONIALS_KIT.md`. Only 3 real quotes exist.
+- **Imagery decision:** real photography, not AI photoreal. `IMAGE_BRIEF.md` and `scripts/import-photos.py`.
+- **Accessibility:** axe audit script added; 5 issues fixed; 0 violations.

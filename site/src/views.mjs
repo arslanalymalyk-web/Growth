@@ -4,6 +4,7 @@ import { SERVICES, STAGES, serviceBySlug, RESPONSIBILITIES } from './services.mj
 import { INDUSTRIES, industryBySlug } from './industries.mjs';
 import * as P from './pages.mjs';
 import { CONSENT } from './legal.mjs';
+import { SESS, SX } from './sessions.mjs';
 import { proofStrip, vision, team, clients, hoursBlock, FIRM } from './firm.mjs';
 import { tsWidget, newsletter, heroWow, imgAr, esc, shell, hero, ctaBand, btn, arrow, eyebrow, sectionHead, serviceCard, faq } from './render.mjs';
 
@@ -52,6 +53,10 @@ ${proofStrip(ctx)}
   <div class="founder__copy"><p class="eyebrow">${T(ctx, H.founder.eyebrow)}</p><h2 class="h2" id="fo-t">${T(ctx, H.founder.title)}</h2><p>${T(ctx, H.founder.body)}</p>
     <a class="btn btn--outline-dark" href="${ctx.href('about/')}"><span>${T(ctx, H.founder.cta)}</span>${arrow}</a></div>
 </section>
+<section class="sec sec--ivory" aria-labelledby="st-t"><div class="container container--wide">
+  ${sectionHead(ctx, { eyebrow: H.start.eyebrow, title: H.start.title, body: H.start.intro, id: 'st-t', side: true })}
+  <ul class="startgrid">${H.start.cards.map((c) => `<li><a href="${ctx.href(c.href)}"><span class="startgrid__ic">${icon(c.icon)}</span><h3 class="h4">${T(ctx, c.t)}</h3><p>${T(ctx, c.d)}</p><span class="more more--gold"><span>${T(ctx, c.cta)}</span>${arrow}</span></a></li>`).join('')}</ul>
+</div></section>
 ${team(ctx)}
 ${clients(ctx)}
 <section class="sec sec--deep" aria-labelledby="in-t"><div class="container container--wide">
@@ -66,6 +71,8 @@ ${clients(ctx)}
 <section class="talk"><div class="container container--wide talk__in"><div><p class="eyebrow">${T(ctx, H.cta.eyebrow)}</p><h2 class="h2">${T(ctx, H.cta.title)}</h2></div><p>${T(ctx, H.cta.body)}</p>${btn(ctx, UI.book, 'book-a-meeting/', 'gold')}</div></section>`;
   return shell(ctx, { title: H.meta.title, description: H.meta.description, active: 'home', body, bodyClass: 'page-home' });
 }
+
+const sessionPlans = (ctx) => `<section class="sec sec--deep sec--tight"><div class="container container--wide"><p class="eyebrow eyebrow--rule">${T(ctx, L('Choose your session', 'اختر جلستك'))}</p><div class="sx-plans sx-plans--static">${['single', 'bundle'].map((k) => { const p = SX.plans[k], pr = SESS.plans[k], m = (n) => (ctx.lang === 'ar' ? `${new Intl.NumberFormat('ar-SA-u-nu-latn').format(n)} ${SESS.cur}` : `${SESS.cur} ${new Intl.NumberFormat('en-GB').format(n)}`); return `<a class="sx-plan" href="${ctx.href('book-a-session/')}"><span class="sx-plan__in">${p.badge ? `<em class="sx-plan__badge">${T(ctx, p.badge)}</em>` : ''}<b class="sx-plan__t">${T(ctx, p.t)}</b><span class="sx-plan__price">${m(pr.price)} <small>${T(ctx, SX.ui.exVat)}</small></span><span class="sx-plan__d">${T(ctx, p.d)}</span>${btn(ctx, L('Book now', 'احجز الآن'), 'book-a-session/', 'gold', 'btn--sm')}</span></a>`; }).join('')}</div></div></section>`;
 
 /* ===================== SERVICES ===================== */
 export function servicesOverview(ctx) {
@@ -97,11 +104,12 @@ export function serviceDetail(ctx, s) {
   const rel = s.related.map((r) => serviceBySlug(r)).map((r) => `
     <a class="rel" href="${ctx.href(`services/${r.slug}/`)}"><span class="rel__img"><img src="${ctx.img(r.card)}" alt="" loading="lazy"></span><span class="rel__b"><b>${T(ctx, r.title)}</b><span>${T(ctx, r.short)}</span><span class="more more--sm"><span>${T(ctx, UI.learnMore)}</span>${arrow}</span></span></a>`).join('');
   const body = `
-${hero(ctx, { crumbs: crumbs(ctx, { label: L('Services', 'خدماتنا'), href: ctx.href('services/') }, { label: s.title }), title: s.title, lead: s.lead, img: s.hero, pos: s.heroPos, ctas: [btn(ctx, UI.book, 'book-a-meeting/', 'gold')] })}
+${hero(ctx, { crumbs: crumbs(ctx, { label: L('Services', 'خدماتنا'), href: ctx.href('services/') }, { label: s.title }), title: s.title, lead: s.lead, img: s.hero, pos: s.heroPos, ctas: [btn(ctx, s.cta ? s.cta.label : UI.book, s.cta ? s.cta.target : 'book-a-meeting/', 'gold')] })}
 <section class="sec sec--ivory"><div class="container container--wide split split--img-end">
   <div>${eyebrow(ctx, s.overview.eyebrow, 'eyebrow--rule')}<h2 class="h2">${T(ctx, s.overview.heading)}</h2><p class="lead">${T(ctx, s.overview.body)}</p></div>
   <figure class="figure"><img src="${ctx.img(s.overview.img)}" alt="" loading="lazy"></figure>
 </div></section>
+${s.slug === 'advisory-sessions' ? sessionPlans(ctx) : ''}
 <section class="sec sec--ivory sec--tight sec--line"><div class="container container--wide two-col">
   <div><p class="eyebrow eyebrow--rule">${T(ctx, Lb.whoFor)}</p><h2 class="h3 h3--lg">${T(ctx, Lb.whoForTitle)}</h2>${list(s.whoFor, 'wf')}</div>
   <div class="two-col__r"><p class="eyebrow eyebrow--rule">${T(ctx, Lb.challenges)}</p><h2 class="h3 h3--lg">${T(ctx, Lb.challengesTitle)}</h2>${list(s.challenges, 'ch')}</div>
@@ -305,7 +313,7 @@ ${hero(ctx, { eyebrow: C.hero.eyebrow, title: C.hero.title, lead: C.hero.lead, i
 <section class="sec sec--ivory"><div class="container container--wide split split--img-end"><div>${eyebrow(ctx, C.start.eyebrow)}<h2 class="h2">${T(ctx, C.start.title)}</h2><p class="lead">${T(ctx, C.start.body)}</p></div><figure class="figure"><img src="${ctx.img(C.start.img)}" alt="" loading="lazy"></figure></div></section>
 <section class="sec sec--ivory sec--tight" id="checklist"><div class="container container--wide">
   <div class="ck-head"><div>${eyebrow(ctx, C.list.eyebrow)}<h2 class="h2">${T(ctx, C.list.title)}</h2></div>
-    <div class="ck-progress" role="group" aria-label="${esc(ctx.t(C.list.progress))}"><div class="ck-progress__l"><span>${T(ctx, C.list.progress)}</span><b id="ckPct">0%</b></div><div class="ck-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="ckBar"><i id="ckFill"></i></div>
+    <div class="ck-progress" role="group" aria-label="${esc(ctx.t(C.list.progress))}"><div class="ck-progress__l"><span>${T(ctx, C.list.progress)}</span><b id="ckPct">0%</b></div><div class="ck-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="ckBar" aria-label="${esc(ctx.t(C.list.progress))}"><i id="ckFill"></i></div>
       <div class="ck-actions"><button class="link-btn" data-ck-reset>${T(ctx, C.list.reset)}</button><button class="link-btn" data-print>${T(ctx, C.list.print)}</button></div></div></div>
   <div class="cks">${areas}</div>
 </div></section>

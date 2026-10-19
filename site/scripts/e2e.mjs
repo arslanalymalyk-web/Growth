@@ -104,7 +104,7 @@ for (const lang of ['en', 'ar']) {
   ok(/ref=GBA-/.test(p.url()), 'enquiry confirmation carries a real reference');
   ok(/GBA-\d{6}-[0-9A-F]{6}/.test(await p.textContent('[data-ref]')), 'confirmation page shows the reference');
   ok(/Thank you/.test(await p.textContent('h1')), 'confirmation uses the live wording, not the demo wording');
-  const l = lines('leads').filter((x) => x.type === 'enquiry').at(-1); ok(l && l.contact.company === 'Al Noor Foods' && l.consents.processing.version === 'privacy-2026-2', 'enquiry stored with consent version');
+  const l = lines('leads').filter((x) => x.type === 'enquiry').at(-1); ok(l && l.contact.company === 'Al Noor Foods' && l.consents.processing.version === 'privacy-2026-3', 'enquiry stored with consent version');
   ok(lines('crm-outbox').some((c) => c.evt && c.evt.event === 'lead.enquiry'), 'enquiry queued for the CRM webhook');
   await p.goto(`${base}/en/book-a-meeting/index.html`);
   await p.fill('#b-name', 'Lina'); await p.fill('#b-co', 'Lina Co'); await p.fill('#b-em', 'lina@example.com'); await p.selectOption('#b-help', { index: 1 });
@@ -122,6 +122,30 @@ for (const lang of ['en', 'ar']) {
   await p.fill('#pr-email', 'omar@example.com'); await p.selectOption('#pr-type', 'deletion'); await p.click('[data-privacy-form] button[type=submit]');
   await p.waitForSelector('[data-pr-msg]:not([hidden])'); ok(/PDP-/.test(await p.textContent('[data-pr-msg]')), 'privacy request returns a reference and a due date');
   ok(lines('privacy-requests').at(-1).type === 'deletion', 'privacy request logged');
+  await p.context().close();
+}
+
+/* ---- advisory sessions: bundle booking, simulated card payment, scheduling the second session ---- */
+for (const lang of ['en', 'ar']) {
+  const p = await page(lang);
+  await p.goto(`${base}/${lang}/book-a-session/index.html`);
+  await p.waitForSelector('#sx-days .sx-day'); await p.waitForSelector('#sx-times .sx-time');
+  await p.check('input[name=plan][value=bundle]', { force: true });
+  ok(/4[,٬.]?485/.test((await p.textContent('#sx-sum')).replace(/\s/g, '')) || /4485|4,485/.test(await p.textContent('#sx-sum')), `${lang}: bundle total with VAT is shown (4,485)`);
+  await p.click('#sx-pay'); await p.waitForTimeout(200);
+  ok((await p.locator('.err:visible').count()) >= 3, `${lang}: booking form validates name, email, topic, consents and the time`);
+  await p.locator('#sx-times .sx-time').first().click();
+  await p.fill('#sx-name', 'Sara Almansour'); await p.fill('#sx-email', 'sara@example.com'); await p.fill('#sx-company', 'Neom Ventures'); await p.fill('#sx-topic', 'Entry route for a clinic');
+  await p.locator('input[name=terms]').check({ force: true }); await p.locator('input[name=privacy]').check({ force: true });
+  await Promise.all([p.waitForURL('**/book-a-session/confirmation/**'), p.click('#sx-pay')]);
+  await p.waitForSelector('.sx-books li');
+  ok((await p.locator('.sx-books li').count()) === 1 && /2/.test(await p.textContent('.sx-credits h3')), `${lang}: confirmation lists the first session and 2 left to schedule`);
+  await p.click('.sx-credits .btn'); await p.waitForSelector('.sx-credits .sx-time'); await p.locator('.sx-credits .sx-time').first().click(); await p.locator('.sx-credits .btn--gold').last().click();
+  await p.waitForFunction(() => document.querySelectorAll('.sx-books li').length === 2); ok(true, `${lang}: second session scheduled from the confirmation page`);
+  const so = lines('sessions').filter((x) => x.plan === 'bundle').at(-1); ok(so && so.status === 'paid' && so.bookings.length === 2 && so.credits === 1, `${lang}: server stored the paid bundle with two bookings`);
+  ok(so.total === 4485 && lines('consents').some((c) => c.type === 'session-terms' && c.order === so.id), `${lang}: price set by the server and terms consent recorded`);
+  const ics = await p.evaluate(async () => { const o = new URLSearchParams(location.search).get('o'), k = location.hash.match(/k=([^&]+)/)[1]; const r = await fetch(`/api/sessions/ics?o=${o}&k=${k}&n=1`); return r.headers.get('content-type') + (await r.text()).slice(0, 15); });
+  ok(/text\/calendar/.test(ics) && /BEGIN:VCALENDAR/.test(ics), `${lang}: calendar file downloads`);
   await p.context().close();
 }
 

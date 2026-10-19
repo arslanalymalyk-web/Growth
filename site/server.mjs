@@ -9,10 +9,11 @@ import { dirname, extname, join, normalize, resolve, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
 import { PRODUCTS, productBySlug, VAT_RATE } from './src/shop.mjs';
+import { SESS, slotsForDate, localDate } from './src/sessions.mjs';
 const qrcode = createRequire(import.meta.url)('./vendor/qrcode-generator.cjs');
 
 const here = dirname(fileURLToPath(import.meta.url));
-export const VERSIONS = { privacy: 'privacy-2026-2', marketing: 'marketing-2026-1', licence: 'licence-2026-1' };
+export const VERSIONS = { privacy: 'privacy-2026-3', marketing: 'marketing-2026-1', licence: 'licence-2026-1', sessions: 'sessions-2026-1' };
 const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.ico': 'image/x-icon', '.txt': 'text/plain; charset=utf-8', '.pdf': 'application/pdf', '.xml': 'application/xml' };
 
 const b64u = (b) => Buffer.from(b).toString('base64url');
@@ -41,6 +42,11 @@ export function createApp(opts = {}) {
     mailKey: process.env.RESEND_API_KEY || '',
     mailWebhook: process.env.MAIL_WEBHOOK_URL || '',
     turnstileSecret: opts.turnstileSecret ?? process.env.TURNSTILE_SECRET_KEY ?? '',
+    payProvider: opts.payProvider ?? process.env.PAYMENT_PROVIDER ?? '',          // '' (simulated or off) | 'moyasar' (hosted invoice page)
+    payKey: opts.payKey ?? process.env.MOYASAR_SECRET_KEY ?? '',
+    payApi: (opts.payApi ?? process.env.PAYMENT_API_BASE ?? 'https://api.moyasar.com/v1').replace(/\/$/, ''),
+    sess: (() => { const o = opts.sess || {}, num = (v, d) => (Number.isFinite(Number(v)) && v !== '' && v != null ? Number(v) : d); return { ...SESS, ...o, plans: { single: { n: 1, price: num(o.single ?? process.env.SESSION_PRICE_SINGLE, SESS.plans.single.price) }, bundle: { n: 3, price: num(o.bundle ?? process.env.SESSION_PRICE_BUNDLE, SESS.plans.bundle.price) } }, blackout: (o.blackout || process.env.SESSION_BLACKOUT_DATES || '').toString().split(',').map((x) => x.trim()).filter(Boolean) }; })(),
+    meetingUrl: process.env.MEETING_URL || '',
     adminToken: opts.adminToken ?? process.env.ADMIN_TOKEN ?? '',
     analyticsDomain: process.env.ANALYTICS_DOMAIN || '',
     trustProxy: opts.trustProxy ?? process.env.TRUST_PROXY === '1',
@@ -64,6 +70,8 @@ export function createApp(opts = {}) {
   const append = (n, o) => appendFileSync(file(n), JSON.stringify(o) + '\n', { mode: 0o600 });
   const readAll = (n) => (existsSync(file(n)) ? readFileSync(file(n), 'utf8').split('\n').filter(Boolean).map((l) => { try { return JSON.parse(l); } catch { return null; } }).filter(Boolean) : []);
   const orders = new Map(); readAll('orders').forEach((o) => orders.set(o.id, o));
+  const sess = new Map(); readAll('sessions').forEach((o) => sess.set(o.id, o));
+  const saveSess = (o) => { sess.set(o.id, o); append('sessions', o); };
   const subs = new Map(); readAll('newsletter').forEach((s) => subs.set(s.emailHash, s));
   const usedNonces = new Set(readAll('downloads').map((d) => d.nonce));
   const now = () => Date.now();
@@ -252,7 +260,7 @@ export function createApp(opts = {}) {
 
   H['POST /api/shop/checkout'] = async (req, res, body) => {
     if (clip(body.website, 50)) return json(req, res, 400, { ok: false, error: 'invalid' });
-    if (!cfg.demoPayments) return json(req, res, 501, { ok: false, error: 'payments_not_configured' });
+    const pm = payMode(); if (pm === 'off') return json(req, res, 501, { ok: false, error: 'payments_not_configured' });
     const slugs = [...new Set((Array.isArray(body.items) ? body.items : []).map((s) => String(s)).filter((s) => productBySlug(s)))].slice(0, 8);
     if (!slugs.length) return json(req, res, 400, { ok: false, error: 'items' });
     const b = body.buyer || {}, email = clip(b.email, 254).toLowerCase(), name = clip(b.name, 100);
@@ -263,14 +271,19 @@ export function createApp(opts = {}) {
     const items = slugs.map((s) => { const p = productBySlug(s); return { slug: s, title: p.title.en, file: p.file, price: p.price, downloads: 0 }; }); // price comes from the server catalogue, never from the client
     const subtotal = money(items.reduce((a, i) => a + i.price, 0)), vat = money(subtotal * VAT_RATE), total = money(subtotal + vat);
     const id = ref('ORD'), key = randomBytes(24).toString('base64url'), L = lang(body.lang);
-    const invoiceNo = 'INV-' + String(Math.max(0, ...[...orders.values()].map((x) => Number(String(x.invoiceNo || '').slice(4)) || 0)) + 1).padStart(6, '0');
-    const order = { id, invoiceNo, keyHash: sha256(key), status: 'paid', paymentMode: 'simulated', createdAt: iso(), lang: L, buyer: { name, email, company: clip(b.company, 120), vatNo: clip(b.vatNo, 40), country: clip(b.country, 60) }, items, subtotal, vat, total, emailHash: hashEmail(email) };
+    const invoiceNo = nextInvoiceNo();
+    const order = { id, invoiceNo, keyHash: sha256(key), status: pm === 'demo' ? 'paid' : 'pending', paymentMode: pm === 'demo' ? 'simulated' : cfg.payProvider, payment: {}, createdAt: iso(), lang: L, buyer: { name, email, company: clip(b.company, 120), vatNo: clip(b.vatNo, 40), country: clip(b.country, 60) }, items, subtotal, vat, total, emailHash: hashEmail(email) };
     orders.set(id, order); append('orders', order);
     append('consents', consentRecord('order-licence', true, VERSIONS.licence, body, req, { order: id, emailHash: order.emailHash }));
     append('consents', consentRecord('order-privacy', true, VERSIONS.privacy, body, req, { order: id, emailHash: order.emailHash }));
     const wantsNews = body.consent.marketing === true;
     if (wantsNews) { append('consents', consentRecord('order-marketing', true, VERSIONS.marketing, body, req, { order: id, emailHash: order.emailHash })); const eh = order.emailHash; if (!subs.get(eh)) { const sub = { emailHash: eh, email, name, lang: L, topics: [], status: 'pending', ts: iso(), source: 'shop' }; subs.set(eh, sub); append('newsletter', sub); sendMail({ to: email, subject: 'Please confirm your subscription', text: `${origin(req)}/api/newsletter/confirm?t=${makeToken({ k: 'confirm', e: email, l: L, exp: now() + 7 * 864e5 })}`, kind: 'newsletter-confirm' }); } }
     const orderUrl = `${origin(req)}/${L}/shop/order/index.html?o=${id}#k=${key}`;
+    if (pm === 'provider') {
+      try { const pr = await providerCreate(order, orderUrl, `${origin(req)}/${L}/shop/checkout/index.html`); order.payment = { ref: pr.ref, url: pr.url }; orders.set(id, order); append('orders', order); }
+      catch (e) { order.status = 'failed'; orders.set(id, order); append('orders', order); return json(req, res, 502, { ok: false, error: 'payment_unavailable' }); }
+      return json(req, res, 200, { ok: true, orderId: id, key, status: 'pending', redirect: order.payment.url, total });
+    }
     const delivered = sendMail({ to: email, subject: L === 'ar' ? `إيصال طلبك ${id}` : `Your receipt ${id}`, text: orderUrl, kind: 'receipt' });
     crm({ id, event: 'order.paid', occurredAt: order.createdAt, lang: L, source: 'shop', contact: { name, email, company: order.buyer.company }, data: { total, currency: 'SAR', items: slugs, paymentMode: 'simulated' }, consents: { marketing: { given: wantsNews, version: VERSIONS.marketing, ts: order.createdAt } } });
     return json(req, res, 200, { ok: true, orderId: id, key, emailSent: delivered, redirect: `/${L}/shop/order/index.html?o=${id}#k=${key}`, total });
@@ -297,7 +310,8 @@ export function createApp(opts = {}) {
     return Buffer.concat([tlv(1, cfg.sellerName), tlv(2, cfg.sellerVat), tlv(3, ts), tlv(4, o.total.toFixed(2)), tlv(5, o.vat.toFixed(2))]).toString('base64');
   };
   H['GET /api/shop/invoice'] = (req, res, _b, q) => {
-    const o = authOrder(req, q.get('o'), q.get('k') || req.headers['x-order-key']); if (!o) return send(req, res, 404, 'Not found', { 'Content-Type': 'text/plain; charset=utf-8' });
+    const so = authSess(q.get('o'), q.get('k') || req.headers['x-order-key']);
+    const o = so ? { ...so, paymentMode: so.payment.mode, items: [{ title: (so.plan === 'bundle' ? 'Advisory sessions: bundle of three' : 'Advisory session: single') + ' (60 min)', price: so.subtotal }] } : authOrder(req, q.get('o'), q.get('k') || req.headers['x-order-key']); if (!o || o.status !== 'paid') return send(req, res, 404, 'Not found', { 'Content-Type': 'text/plain; charset=utf-8' });
     const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
     const sim = o.paymentMode === 'simulated';
     const qr = qrcode(0, 'M'); qr.addData(zatcaQr(o), 'Byte'); qr.make();
@@ -349,6 +363,114 @@ function tabs(){var n=$('tabs');n.hidden=false;n.innerHTML=KINDS.map(function(k)
 function load(){api('/api/admin/data?kind='+K).then(function(d){if(!d.ok){$('msg').textContent='Not authorised.';return}$('msg').textContent=d.count+' records in '+K;tabs();var cols=[];d.rows.forEach(function(r){Object.keys(r).forEach(function(c){if(cols.indexOf(c)<0)cols.push(c)})});$('out').innerHTML='<table><tr>'+cols.map(function(c){return '<th>'+h(c)+'</th>'}).join('')+(K==='privacy'?'<th>action</th>':'')+'</tr>'+d.rows.slice().reverse().map(function(r){return '<tr>'+cols.map(function(c){return '<td>'+h(r[c])+'</td>'}).join('')+(K==='privacy'?'<td><select data-ref="'+h(r.ref)+'">'+['received','in-progress','done','refused'].map(function(s){return '<option'+(s===r.status?' selected':'')+'>'+s+'</option>'}).join('')+'</select></td>':'')+'</tr>'}).join('')+'</table>';$('out').querySelectorAll('select[data-ref]').forEach(function(s){s.onchange=function(){api('/api/admin/privacy-status',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ref:s.dataset.ref,status:s.value})}).then(load)}})})}
 $('login').onsubmit=function(e){e.preventDefault();T=$('tok').value;load()}})();`;
 
+  /* ================= Advisory sessions: one session or a bundle of three, paid online ================= */
+  const nextInvoiceNo = () => 'INV-' + String(Math.max(0, ...[...orders.values(), ...sess.values()].map((x) => Number(String(x.invoiceNo || '').slice(4)) || 0)) + 1).padStart(6, '0');
+  const payMode = () => (cfg.payProvider === 'moyasar' && cfg.payKey ? 'provider' : cfg.demoPayments ? 'demo' : 'off');
+
+  /** Hosted-invoice payment through a Saudi gateway (Moyasar API shape). Card details never touch this server. UNTESTED against the live service: verify in the provider's sandbox before launch. */
+  async function providerCreate(o, successUrl, backUrl) {
+    const r = await fetch(`${cfg.payApi}/invoices`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Basic ' + Buffer.from(cfg.payKey + ':').toString('base64') }, signal: AbortSignal.timeout(10000),
+      body: JSON.stringify({ amount: Math.round(o.total * 100), currency: 'SAR', description: `Growth Blueprint ${o.id}`, success_url: successUrl, back_url: backUrl, callback_url: `${origin({ headers: {} })}/api/pay/callback`, metadata: { order: o.id } }) });
+    const j = await r.json().catch(() => ({})); if (!r.ok || !j.id || !j.url) throw new Error('provider ' + r.status);
+    return { ref: j.id, url: j.url };
+  }
+  async function providerStatus(o) {
+    const r = await fetch(`${cfg.payApi}/invoices/${encodeURIComponent(o.payment.ref)}`, { headers: { Authorization: 'Basic ' + Buffer.from(cfg.payKey + ':').toString('base64') }, signal: AbortSignal.timeout(10000) });
+    const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error('provider ' + r.status);
+    if (j.status === 'paid' && Number(j.amount) === Math.round(o.total * 100) && String(j.currency || 'SAR').toUpperCase() === 'SAR') return 'paid';
+    return ['failed', 'canceled', 'cancelled', 'expired'].includes(j.status) ? 'failed' : 'pending';
+  }
+  const sView = (o) => ({ id: o.id, plan: o.plan, status: o.status, createdAt: o.createdAt, currency: 'SAR', subtotal: o.subtotal, vat: o.vat, total: o.total, invoiceNo: o.invoiceNo, credits: o.credits, validUntil: o.validUntil, simulated: o.payment.mode === 'simulated', bookings: o.bookings.map((b) => ({ n: b.n, slot: b.slot, status: b.status, mode: b.mode, rescheduled: b.rescheduled || 0 })), buyer: { name: o.buyer.name, email: o.buyer.email } });
+  const authSess = (id, key) => { const o = sess.get(String(id || '')); if (!o || !key || !safeEq(sha256(String(key)), o.keyHash)) return null; return o; };
+  const live = (o) => o.status === 'paid' || (o.status === 'pending' && now() <= Date.parse(o.holdUntil));
+  const taken = (iso, self) => { for (const o of sess.values()) if (live(o)) for (const b of o.bookings) if (b.slot === iso && b.status === 'booked' && !(self && self.id === o.id && self.n === b.n)) return true; return false; };
+  const slotOk = (iso) => { const t = Date.parse(iso); if (!Number.isFinite(t) || new Date(t).toISOString() !== iso) return false; if (t < now() + cfg.sess.leadHours * 36e5 || t > now() + cfg.sess.horizonDays * 864e5) return false; return slotsForDate(localDate(iso, cfg.sess), cfg.sess.blackout, cfg.sess).includes(iso); };
+  const fmtAst = (iso) => new Date(Date.parse(iso) + cfg.sess.tzOffsetMin * 60000).toISOString().replace('T', ' ').slice(0, 16) + ' AST';
+  const where = (b) => (b.mode === 'person' ? cfg.sellerAddress : cfg.meetingUrl || 'Online: we will email the video link before the session');
+
+  function sessionMail(o, b, kind) {
+    const L = o.lang, base = origin({ headers: {} });
+    const ics = (n) => `${base}/api/sessions/ics?o=${o.id}&n=${n}`;
+    const subj = { booked: L === 'ar' ? `تأكيد جلستك (${o.id})` : `Your session is confirmed (${o.id})`, scheduled: L === 'ar' ? `تم تحديد موعد جلستك (${o.id})` : `Your session is scheduled (${o.id})`, rescheduled: L === 'ar' ? `تم تغيير موعد جلستك (${o.id})` : `Your session was rescheduled (${o.id})` }[kind];
+    const text = L === 'ar' ? `الموعد: ${fmtAst(b.slot)} (توقيت المملكة)\nالمكان: ${where(b)}\nالمرجع: ${o.id}\n` : `When: ${fmtAst(b.slot)} (Saudi Arabia time)\nWhere: ${where(b)}\nReference: ${o.id}\nManage your booking with the link on the page you saw after paying.\n`;
+    return sendMail({ to: o.buyer.email, subject: subj, text, kind: 'session-' + kind });
+  }
+  async function markPaid(o) {
+    if (o.status === 'paid') return; o.status = 'paid'; o.paidAt = iso(); o.invoiceNo = o.invoiceNo || nextInvoiceNo();
+    if (o.plan === 'bundle') o.validUntil = new Date(now() + cfg.sess.bundleValidDays * 864e5).toISOString().slice(0, 10);
+    saveSess(o); sessionMail(o, o.bookings[0], 'booked');
+    crm({ id: o.id, event: 'session.booked', occurredAt: o.paidAt, lang: o.lang, source: 'book-a-session', contact: { name: o.buyer.name, email: o.buyer.email, company: o.buyer.company, phone: o.buyer.phone }, data: { plan: o.plan, slot: o.bookings[0].slot, mode: o.bookings[0].mode, topic: o.topic, total: o.total, currency: 'SAR', paymentMode: o.payment.mode }, consents: {} });
+  }
+
+  H['GET /api/sessions/config'] = (req, res) => json(req, res, 200, { ok: true, tz: cfg.sess.tzName, minutes: cfg.sess.minutes, vat: cfg.sess.vat, cur: 'SAR', plans: cfg.sess.plans, bundleValidDays: cfg.sess.bundleValidDays, rescheduleHours: cfg.sess.rescheduleHours, pay: payMode() });
+  H['GET /api/sessions/availability'] = (req, res, _b, q) => {
+    const days = Math.min(Math.max(parseInt(q.get('days') || '14', 10) || 14, 1), 35); const d = q.get('from') && /^\d{4}-\d{2}-\d{2}$/.test(q.get('from')) ? q.get('from') : localDate(new Date().toISOString(), cfg.sess);
+    const out = [];
+    for (let i = 0; i < days; i++) { const dt = new Date(Date.parse(d + 'T00:00:00Z') + i * 864e5).toISOString().slice(0, 10); const slots = slotsForDate(dt, cfg.sess.blackout, cfg.sess).filter((x) => slotOk(x) && !taken(x)); if (slots.length) out.push({ date: dt, slots }); }
+    return json(req, res, 200, { ok: true, tz: cfg.sess.tzName, days: out });
+  };
+
+  H['POST /api/sessions/book'] = async (req, res, body) => {
+    if (clip(body.website, 50)) return json(req, res, 400, { ok: false, error: 'invalid' });
+    const pm = payMode(); if (pm === 'off') return json(req, res, 501, { ok: false, error: 'payments_not_configured' });
+    const plan = cfg.sess.plans[body.plan] ? body.plan : null; if (!plan) return json(req, res, 400, { ok: false, error: 'plan' });
+    const b = body.buyer || {}, email = clip(b.email, 254).toLowerCase(), name = clip(b.name, 100), topic = clip(body.topic, 1500);
+    if (!name) return json(req, res, 400, { ok: false, error: 'name' }); if (!EMAIL.test(email)) return json(req, res, 400, { ok: false, error: 'email' }); if (!topic) return json(req, res, 400, { ok: false, error: 'topic' });
+    if (!body.consent || body.consent.privacy !== true) return json(req, res, 400, { ok: false, error: 'privacy' }); if (body.consent.terms !== true) return json(req, res, 400, { ok: false, error: 'terms' });
+    const slot = String(body.slot || ''); if (!slotOk(slot)) return json(req, res, 400, { ok: false, error: 'slot' }); if (taken(slot)) return json(req, res, 409, { ok: false, error: 'taken' });
+    const L = lang(body.lang), id = ref('SES'), key = randomBytes(24).toString('base64url'), price = cfg.sess.plans[plan].price, subtotal = money(price), vat = money(subtotal * cfg.sess.vat), total = money(subtotal + vat);
+    const o = { id, keyHash: sha256(key), plan, status: 'pending', createdAt: iso(), holdUntil: new Date(now() + cfg.sess.holdMin * 60000).toISOString(), lang: L, topic, emailHash: hashEmail(email), subtotal, vat, total, credits: cfg.sess.plans[plan].n - 1,
+      buyer: { name, email, company: clip(b.company, 120), phone: clip(b.phone, 40), vatNo: clip(b.vatNo, 40) }, bookings: [{ n: 1, slot, status: 'booked', mode: body.mode === 'person' ? 'person' : 'online', rescheduled: 0 }], payment: { mode: pm === 'demo' ? 'simulated' : cfg.payProvider } };
+    append('consents', consentRecord('session-terms', true, VERSIONS.sessions, body, req, { order: id, emailHash: o.emailHash })); append('consents', consentRecord('session-privacy', true, VERSIONS.privacy, body, req, { order: id, emailHash: o.emailHash }));
+    if (body.consent.marketing === true) { append('consents', consentRecord('session-marketing', true, VERSIONS.marketing, body, req, { order: id, emailHash: o.emailHash })); if (!subs.get(o.emailHash)) { const sub = { emailHash: o.emailHash, email, name, lang: L, topics: [], status: 'pending', ts: iso(), source: 'session' }; subs.set(o.emailHash, sub); append('newsletter', sub); } }
+    const conf = `/${L}/book-a-session/confirmation/index.html?o=${id}#k=${key}`;
+    if (pm === 'demo') { saveSess(o); await markPaid(o); return json(req, res, 200, { ok: true, id, key, status: 'paid', redirect: conf, total }); }
+    try { const p = await providerCreate(o, `${origin(req)}${conf}`, `${origin(req)}/${L}/book-a-session/index.html`); o.payment.ref = p.ref; o.payment.url = p.url; saveSess(o); }
+    catch (e) { return json(req, res, 502, { ok: false, error: 'payment_unavailable' }); }
+    return json(req, res, 200, { ok: true, id, key, status: 'pending', redirect: o.payment.url, total });
+  };
+
+  H['GET /api/sessions/order'] = (req, res, _b, q) => { const o = authSess(q.get('o'), req.headers['x-order-key']); if (!o) return json(req, res, 404, { ok: false, error: 'not_found' }); return json(req, res, 200, { ok: true, order: sView(o), reschedule: cfg.sess.rescheduleHours }); };
+
+  H['POST /api/sessions/schedule'] = (req, res, body) => {
+    const o = authSess(body.o, req.headers['x-order-key']); if (!o || o.status !== 'paid') return json(req, res, 404, { ok: false, error: 'not_found' });
+    if (o.credits < 1) return json(req, res, 403, { ok: false, error: 'no_credits' }); if (o.validUntil && now() > Date.parse(o.validUntil + 'T23:59:59Z')) return json(req, res, 403, { ok: false, error: 'expired' });
+    const slot = String(body.slot || ''); if (!slotOk(slot)) return json(req, res, 400, { ok: false, error: 'slot' }); if (taken(slot)) return json(req, res, 409, { ok: false, error: 'taken' });
+    const bk = { n: o.bookings.length + 1, slot, status: 'booked', mode: body.mode === 'person' ? 'person' : 'online', rescheduled: 0 }; o.bookings.push(bk); o.credits -= 1; saveSess(o);
+    sessionMail(o, bk, 'scheduled'); crm({ id: `${o.id}-${bk.n}`, event: 'session.scheduled', occurredAt: iso(), lang: o.lang, source: 'book-a-session', contact: { name: o.buyer.name, email: o.buyer.email }, data: { plan: o.plan, slot, n: bk.n }, consents: {} });
+    return json(req, res, 200, { ok: true, order: sView(o) });
+  };
+  H['POST /api/sessions/reschedule'] = (req, res, body) => {
+    const o = authSess(body.o, req.headers['x-order-key']); if (!o || o.status !== 'paid') return json(req, res, 404, { ok: false, error: 'not_found' });
+    const bk = o.bookings.find((x) => x.n === Number(body.n) && x.status === 'booked'); if (!bk) return json(req, res, 404, { ok: false, error: 'not_found' });
+    if (Date.parse(bk.slot) - now() < cfg.sess.rescheduleHours * 36e5) return json(req, res, 403, { ok: false, error: 'too_late' }); if ((bk.rescheduled || 0) >= 2) return json(req, res, 403, { ok: false, error: 'limit' });
+    const slot = String(body.slot || ''); if (!slotOk(slot)) return json(req, res, 400, { ok: false, error: 'slot' }); if (taken(slot, { id: o.id, n: bk.n })) return json(req, res, 409, { ok: false, error: 'taken' });
+    bk.slot = slot; bk.rescheduled = (bk.rescheduled || 0) + 1; saveSess(o); sessionMail(o, bk, 'rescheduled'); return json(req, res, 200, { ok: true, order: sView(o) });
+  };
+  H['GET /api/sessions/ics'] = (req, res, _b, q) => {
+    const o = authSess(q.get('o'), q.get('k') || req.headers['x-order-key']); const bk = o && o.bookings.find((x) => x.n === Number(q.get('n'))); if (!o || !bk || o.status !== 'paid') return send(req, res, 404, 'Not found', { 'Content-Type': 'text/plain; charset=utf-8' });
+    const z = (t) => new Date(t).toISOString().replace(/[-:]/g, '').replace(/\.\d+/, ''), esc = (t) => String(t).replace(/([,;\\])/g, '\\$1').replace(/\n/g, '\\n');
+    const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Growth Blueprint//Sessions//EN', 'CALSCALE:GREGORIAN', 'BEGIN:VEVENT', `UID:${o.id}-${bk.n}@growthblueprint`, `DTSTAMP:${z(now())}`, `DTSTART:${z(bk.slot)}`, `DTEND:${z(Date.parse(bk.slot) + cfg.sess.minutes * 60000)}`, 'SUMMARY:Growth Blueprint advisory session', `LOCATION:${esc(where(bk))}`, `DESCRIPTION:${esc('Reference ' + o.id)}`, 'END:VEVENT', 'END:VCALENDAR'].join('\r\n') + '\r\n';
+    return send(req, res, 200, ics, { 'Content-Type': 'text/calendar; charset=utf-8', 'Content-Disposition': `attachment; filename="growth-blueprint-session-${bk.n}.ics"`, 'Cache-Control': 'no-store' });
+  };
+  /** Re-checks a pending payment with the provider (on return from the payment page, and from the provider callback). */
+  async function verifyOrder(o) {
+    if (o.status !== 'pending' || !o.payment || !o.payment.ref) return o.status;
+    try {
+      const st = await providerStatus(o);
+      if (st === 'paid') { if (o.bookings) await markPaid(o); else { o.status = 'paid'; o.paidAt = iso(); orders.set(o.id, o); append('orders', o); sendMail({ to: o.buyer.email, subject: o.lang === 'ar' ? `إيصال طلبك ${o.id}` : `Your receipt ${o.id}`, text: `${origin({ headers: {} })}/${o.lang}/shop/order/index.html?o=${o.id}`, kind: 'receipt' }); } }
+      else if (st === 'failed') { o.status = 'failed'; if (o.bookings) saveSess(o); else { orders.set(o.id, o); append('orders', o); } }
+    } catch { /* leave pending */ }
+    return o.status;
+  }
+  H['POST /api/pay/verify'] = async (req, res, body) => {
+    const key = req.headers['x-order-key'] || body.k; const o = authSess(body.o, key) || authOrder(req, body.o, key); if (!o) return json(req, res, 404, { ok: false, error: 'not_found' });
+    return json(req, res, 200, { ok: true, status: await verifyOrder(o) });
+  };
+  H['POST /api/pay/callback'] = async (req, res, body) => {
+    const id = body && ((body.metadata && body.metadata.order) || body.order); const o = id && (sess.get(String(id)) || orders.get(String(id))); if (o) await verifyOrder(o); return json(req, res, 200, { ok: true }); // status is always re-read from the provider; the payload is never trusted
+  };
+
   H['GET /api/health'] = (req, res) => json(req, res, 200, { ok: true, shop: cfg.demoPayments ? 'simulated-payments' : 'payments-not-configured', crm: cfg.crmUrl ? 'configured' : 'not-configured', mail: mailReady() ? cfg.mailProvider : 'outbox', captcha: cfg.turnstileSecret ? 'turnstile' : 'honeypot-only', admin: cfg.adminToken ? 'enabled' : 'disabled' });
 
   function download(req, res, tok) {
@@ -392,12 +514,12 @@ $('login').onsubmit=function(e){e.preventDefault();T=$('tok').value;load()}})();
       const h = H[key];
       if (u.pathname.startsWith('/api/')) {
         if (!h) return json(req, res, req.method === 'GET' || req.method === 'POST' ? 404 : 405, { ok: false, error: 'not_found' });
-        const kind = key.includes('/shop/') ? 'shop' : req.method === 'GET' ? 'read' : 'form';
+        const kind = /\/(shop|sessions|pay)\//.test(key) ? 'shop' : req.method === 'GET' ? 'read' : 'form';
         if (limited(ipHash(req), kind)) return json(req, res, 429, { ok: false, error: 'rate_limited' });
         if (req.method === 'POST') {
           if (!sameOrigin(req)) return json(req, res, 403, { ok: false, error: 'origin' });
           let body; try { body = await readBody(req); } catch (e) { return json(req, res, e.status || 400, { ok: false, error: e.code || 'bad_request' }); }
-          if (cfg.turnstileSecret && /^POST \/api\/(newsletter|lead|privacy\/request|shop\/checkout)$/.test(key) && !(await turnstileOk(body.turnstile, req))) return json(req, res, 400, { ok: false, error: 'captcha' });
+          if (cfg.turnstileSecret && /^POST \/api\/(newsletter|lead|privacy\/request|shop\/checkout|sessions\/book)$/.test(key) && !(await turnstileOk(body.turnstile, req))) return json(req, res, 400, { ok: false, error: 'captcha' });
           return await h(req, res, body, u.searchParams);
         }
         return await h(req, res, null, u.searchParams);

@@ -7,7 +7,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..'), dir = join(roo
 const update = process.argv.includes('--update');
 const pw = await import(process.env.PLAYWRIGHT_MODULE ? pathToFileURL(process.env.PLAYWRIGHT_MODULE).href : 'playwright').catch(() => import(pathToFileURL('/opt/node-tools/node_modules/playwright/index.mjs').href));
 const b = await (pw.chromium || pw.default.chromium).launch({ executablePath: process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium' });
-const pages = ['', 'services/', 'about/', 'team/', 'shop/', 'readiness-scorecard/', 'privacy/'];
+const pages = ['', 'services/', 'industries/', 'about/', 'team/', 'shop/', 'book-a-session/', 'readiness-scorecard/', 'privacy/'];
 const views = [['d', 1280, 800], ['m', 390, 800]];
 const diffPage = await b.newPage(); let failed = 0;
 for (const lang of ['en', 'ar']) for (const p of pages) for (const [tag, w, h] of views) {

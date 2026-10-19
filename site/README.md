@@ -69,6 +69,8 @@ Every consent or withdrawal is appended to `data/consents.jsonl` with the consen
 | `ADMIN_TOKEN` | unset (console off) | Enables `/admin`: read-only tables of leads, newsletter, orders, consents, CRM and mail logs, CSV export, and privacy-request status. Use a long random value; serve only over HTTPS. |
 | `ANALYTICS_DOMAIN` | unset | Build-time. Adds Plausible (cookieless) and loads it **only after the visitor accepts** the cookie notice. Also set it on the server so the CSP allows it. |
 | `SITE_URL` | unset | Build-time. Enables canonical, hreflang, Open Graph URL, JSON-LD, `sitemap.xml` and a crawl-friendly `robots.txt`. Without it the site tells crawlers to stay away. |
+| `PAYMENT_PROVIDER`, `MOYASAR_SECRET_KEY`, `PAYMENT_API_BASE` | unset (simulated) | Hosted card payment for sessions and the shop (Moyasar invoice API shape). Card numbers never touch this server. **Untested against the live service**: run it in the provider's sandbox first. Set `PUBLIC_BASE_URL` too. |
+| `SESSION_PRICE_SINGLE`, `SESSION_PRICE_BUNDLE`, `SESSION_BLACKOUT_DATES`, `MEETING_URL` | 1500, 3900 (placeholders), none, none | Advisory sessions: prices before VAT, holiday dates, and a standing video link. Slot rules (days, times, lead time, reschedule window) are in `src/sessions.mjs`. |
 | `SELLER_NAME`, `SELLER_VAT_NO`, `SELLER_CR_NO`, `SELLER_ADDRESS` | placeholders | Printed on invoices (and, at build time, `SELLER_CR_NO` fills the privacy notice). |
 | `DEMO_PAYMENTS` | `1` unless `NODE_ENV=production` | **Simulated** payments. In production with `DEMO_PAYMENTS=0` the checkout returns 501 until a real provider is added. |
 
@@ -91,10 +93,11 @@ See `.env.example`.
 ## Tests
 
 ```bash
-node --test scripts/server.test.mjs      # 13 server tests: consent, tokens, limits, CRM signing, invoice QR, admin, mail provider, captcha
+node --test scripts/server.test.mjs      # 17 server tests: consent, tokens, limits, CRM signing, invoice QR, admin, mail provider, captcha
 node scripts/check-links.mjs             # every internal link and anchor, plus title/description/h1 on every page
 PORT=3300 DATA_DIR=/tmp/gba node server.mjs &
 DATA_DIR=/tmp/gba node scripts/e2e.mjs http://127.0.0.1:3300     # browser journeys; needs Playwright + Chromium
+node scripts/a11y.mjs                    # axe-core WCAG audit of 26 pages x EN/AR x desktop/phone (needs scripts/axe.min.js)
 node scripts/visual.mjs                  # screenshot comparison against tests/visual (use --update after intended changes)
 ```
 The end-to-end suite drives the scorecard (English and Arabic), basket to checkout to download (verifying the PDF), newsletter double opt-in, enquiry and booking to the CRM queue, and the privacy request, and fails on any console error or Content-Security-Policy violation.

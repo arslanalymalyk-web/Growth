@@ -107,7 +107,7 @@ const skyline = `<svg class="skyline" viewBox="0 0 420 110" fill="none" stroke="
 
 export function footer(ctx) {
   const svc = SERVICES.map((s) => `<li><a href="${ctx.href(`services/${s.slug}/`)}">${esc(ctx.t(s.title))}</a></li>`).join('');
-  const q = NAV.concat([{ id: 'how', path: 'how-we-work/', label: L('How we work', 'كيف نعمل') }, { id: 'team', path: 'team/', label: L('Team', 'الفريق') }, { id: 'faq', path: 'faq/', label: L('Investor FAQ', 'أسئلة المستثمرين') }, { id: 'book', path: 'book-a-meeting/', label: UI.book }]).map((n) => `<li><a href="${ctx.href(n.path)}">${esc(ctx.t(n.label))}</a></li>`).join('');
+  const q = NAV.concat([{ id: 'how', path: 'how-we-work/', label: L('How we work', 'كيف نعمل') }, { id: 'sess', path: 'book-a-session/', label: L('Book a session', 'احجز جلسة') }, { id: 'team', path: 'team/', label: L('Team', 'الفريق') }, { id: 'faq', path: 'faq/', label: L('Investor FAQ', 'أسئلة المستثمرين') }, { id: 'book', path: 'book-a-meeting/', label: UI.book }]).map((n) => `<li><a href="${ctx.href(n.path)}">${esc(ctx.t(n.label))}</a></li>`).join('');
   return `
 <footer class="site-footer">
   <div class="container container--wide">
@@ -145,7 +145,7 @@ export function footer(ctx) {
 }
 
 /* ---------- Page shell ---------- */
-const NOINDEX = new Set(['shop/basket/', 'shop/checkout/', 'shop/order/', 'readiness-scorecard/assessment/', 'readiness-scorecard/results/', 'enquiry/confirmation/', 'newsletter/confirmed/', 'newsletter/unsubscribed/']);
+const NOINDEX = new Set(['book-a-session/confirmation/', 'shop/basket/', 'shop/checkout/', 'shop/order/', 'readiness-scorecard/assessment/', 'readiness-scorecard/results/', 'enquiry/confirmation/', 'newsletter/confirmed/', 'newsletter/unsubscribed/']);
 export const SITE_URL = (process.env.SITE_URL || '').replace(/\/$/, '');
 
 /** Site-wide organisation data (home page). Facts come from the firm's published website. */
