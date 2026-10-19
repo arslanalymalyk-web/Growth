@@ -101,3 +101,7 @@ Maps every item of `CRITICAL_REVIEW_V2.md` to its status.
 - **Testimonials:** a slider with previous, next and pause controls, reading in the page direction (left to right in English, right to left in Arabic). It holds 12 slots: the 3 real quotes plus 9 cards clearly marked "Sample". I did not invent client quotes. Replace each sample card in `src/firm.mjs`, or build with `TESTIMONIAL_SAMPLES=0` to publish only real ones.
 - **Dead space:** section, hero, banner, footer and form padding reduced across the site.
 - **Images:** see above.
+
+## Round 4: Industries rewritten
+- The Industries page now lists 13 industries under "Industries we plan around" (replacing "Core sectors"), each with who it is for, a planning line, "What to bring to the discussion" and an explore link, then "From industry to engagement". Every industry has its own page. Five were added: business consulting, construction & engineering, energy & sustainability, education & training, food & agriculture.
+- **Confirm:** the firm has not said it works in all 13. The page is worded as planning questions, not a track record, and carries the line "starting points for discussion, not official licensing checklists". Remove any industry the firm does not want to advertise (`src/industries.mjs`). Briefs exist for 8 of them only.

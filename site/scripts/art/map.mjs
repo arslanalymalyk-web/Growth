@@ -11,6 +11,7 @@ const V = {
   energy: () => B.energy('day', 15), energyDawn: () => B.energy('dawn', 37), factory: () => B.factory('dawn', 16), factoryDusk: () => B.factory('dusk', 42), medical: () => B.medical('day', 17),
   board: () => B.boardroom('dusk', 18), boardNight: () => B.boardroom('night', 38), arcade: () => B.arcade('gold', 19), arcadeNight: () => B.arcade('night', 43), arcadeBlue: () => B.arcade('blue', 44), arcadeDusk: () => B.arcade('dusk', 45),
   lattice: () => B.lattice('night', 20), lattice2: () => B.lattice('night', 46, { step: 110, cx: .3 }), lattice3: () => B.lattice('night', 47, { step: 190, cx: .7, cy: .3 }),
+  campus: () => B.campus('gold', 26), campusDay: () => B.campus('day', 57), farm: () => B.farm('gold', 27), farmDawn: () => B.farm('dawn', 58),
   tech: () => B.tech('night', 21), cranes: () => B.cranes('dawn', 22), towers: () => B.towersUp('blue', 24), mount: () => B.mountains('blue', 25), mountDusk: () => B.mountains('dusk', 48),
   alula: () => alula('gold', 3), alulaDay: () => alula('day', 49), alulaDawn: () => alula('dawn', 50), alulaNight: () => alula('night', 51), alulaBlue: () => alula('blue', 52),
   diriyah: () => diriyah('gold', 4), diriyahDusk: () => diriyah('dusk', 53), diriyahDay: () => diriyah('day', 54),
@@ -29,6 +30,7 @@ const ASSIGN = {
   'alula-tombs': ['alula'], 'colonnade-tower': ['arcadeBlue'], 'curved-building': ['towers'], 'fort-tower': ['diriyah'], 'founder-back': ['riyGold', 'xMinYMid'], 'jeddah-waterfront': ['cornGold'], 'lounge-arch': ['arcadeNight'], 'palms-arch': ['arcade'], 'man-on-rocks': ['alulaDay'], 'meeting-window': ['board'], 'office-lobby': ['arcadeDusk'], 'walkers-mashrabiya': ['lattice3'], 'sq-palms-fort': ['diriyahDay'],
   'sq1': ['desertGold'], 'sq2': ['energy'], 'sq3': ['mount'], 'sq4': ['redsea'], 'sq5': ['lattice2'], 'sq6': ['alulaDawn'], 'sq7': ['mountDusk'],
   'stage1': ['riyDawn', 'xMinYMid'], 'stage2': ['lattice'], 'stage3': ['cranes'], 'stage4': ['port'], 'stage5': ['energyDawn'],
+  'ind-energy': ['energy'], 'p-energy': ['energyDawn'], 'ind-education': ['campus'], 'p-education': ['campusDay'], 'ind-food': ['farm'], 'p-food': ['farmDawn'],
   'ck1': ['lattice'], 'ck2': ['lattice2'], 'ck3': ['towers'], 'ck4': ['desertGold'], 'ck5': ['redsea'], 'ck6': ['mount']
 };
 export const MAP = {};

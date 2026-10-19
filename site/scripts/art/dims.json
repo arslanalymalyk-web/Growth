@@ -111,7 +111,19 @@
 342,
 243
 ],
+"ind-education": [
+340,
+302
+],
+"ind-energy": [
+340,
+302
+],
 "ind-fmcg": [
+340,
+302
+],
+"ind-food": [
 340,
 302
 ],
@@ -199,6 +211,14 @@
 724,
 362
 ],
+"p-education": [
+724,
+362
+],
+"p-energy": [
+724,
+362
+],
 "p-engineering-workspace": [
 724,
 362
@@ -210,6 +230,10 @@
 "p-fmcg-overview": [
 540,
 326
+],
+"p-food": [
+724,
+362
 ],
 "p-founder": [
 669,

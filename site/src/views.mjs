@@ -137,19 +137,21 @@ ${ctaBand(ctx, { title: Lb.ctaTitle, body: Lb.ctaBody, img: 'band-man-desert' })
 /* ===================== INDUSTRIES ===================== */
 export function industriesOverview(ctx) {
   const I = P.INDUSTRIES_PAGE;
-  const card = (i, big) => `
-  <a class="icard ${big ? 'icard--big' : ''}" href="${ctx.href(`industries/${i.slug}/`)}"><span class="icard__img"><img src="${ctx.img(i.card)}" alt="" loading="lazy"></span><span class="icard__b"><span class="icard__ic">${icon(i.icon)}</span><b>${T(ctx, i.title)}</b>${arrow}</span></a>`;
-  const core = INDUSTRIES.filter((i) => i.group === 'core').map((i) => card(i, true)).join('');
-  const tgt = INDUSTRIES.filter((i) => i.group === 'target').map((i) => card(i, false)).join('');
+  const card = (i) => `
+  <article class="pcard-i"><a class="pcard-i__img" href="${ctx.href(`industries/${i.slug}/`)}" tabindex="-1" aria-hidden="true"><img src="${ctx.img(i.card)}" alt="${esc(ctx.t(I.alt(i.title)))}" loading="lazy"></a>
+    <div class="pcard-i__b"><span class="pcard-i__ic">${icon(i.icon)}</span><h3 class="h4"><a href="${ctx.href(`industries/${i.slug}/`)}">${T(ctx, i.title)}</a></h3><p class="pcard-i__who">${T(ctx, i.plan.who)}</p>
+      <p>${T(ctx, i.plan.plan)}</p><p class="pcard-i__bl"><b>${T(ctx, I.bring)}</b>${T(ctx, i.plan.bring)}</p>
+      <a class="more more--gold" href="${ctx.href(`industries/${i.slug}/`)}"><span>${T(ctx, I.explore)}</span>${arrow}</a></div></article>`;
   const body = `
 ${hero(ctx, { ...I.hero, ctas: [btn(ctx, UI.book, 'book-a-meeting/', 'gold')] })}
 <section class="sec sec--ivory"><div class="container container--wide">
-  <p class="eyebrow eyebrow--rule">${T(ctx, I.core.eyebrow)}</p><h2 class="h2">${T(ctx, I.core.title)}</h2><p class="lead lead--narrow">${T(ctx, I.core.body)}</p>
-  <div class="icards icards--4">${core}</div>
+  <p class="eyebrow eyebrow--rule">${T(ctx, I.plan.eyebrow)}</p><h2 class="h2">${T(ctx, I.plan.title)}</h2><p class="lead lead--narrow">${T(ctx, I.plan.body)}</p>
+  <p class="draft-note"><span>${icon('shield')}</span><span>${T(ctx, I.plan.note)}</span></p>
+  <div class="pcards-i">${INDUSTRIES.map(card).join('')}</div>
 </div></section>
-<section class="sec sec--deep"><div class="container container--wide">
-  <p class="eyebrow eyebrow--rule">${T(ctx, I.target.eyebrow)}</p><h2 class="h2">${T(ctx, I.target.title)}</h2><p class="lead lead--narrow">${T(ctx, I.target.body)}</p>
-  <div class="icards icards--7">${tgt}</div>
+<section class="sec sec--navy"><div class="container container--wide split">
+  <div><p class="eyebrow eyebrow--rule">${T(ctx, I.path.eyebrow)}</p><h2 class="h2">${T(ctx, I.path.title)}</h2><p class="lead">${T(ctx, I.path.body)}</p></div>
+  <ol class="proc proc--on-navy">${I.path.steps.map((t, n) => `<li><span class="proc__n">${n + 1}</span><h3 class="h4">${T(ctx, t)}</h3></li>`).join('')}</ol>
 </div></section>
 ${ctaBand(ctx, { ...I.cta, img: 'cta-desert-cliffs' })}`;
   return shell(ctx, { title: I.meta.title, description: I.meta.description, active: 'industries', body });
@@ -159,13 +161,14 @@ export function industryDetail(ctx, i) {
   const Lb = P.INDUSTRY_LABELS;
   const ch = i.challenges.map(([t, d, ic]) => `<li><span class="ch__i">${icon(ic)}</span><h3 class="h4">${T(ctx, t)}</h3><p>${T(ctx, d)}</p></li>`).join('');
   const svc = i.services.map((sl) => serviceBySlug(sl)).map((s) => `<li><a href="${ctx.href(`services/${s.slug}/`)}"><span>${icon(s.icon)}</span><b>${T(ctx, s.title)}</b>${arrow}</a></li>`).join('');
-  const others = INDUSTRIES.filter((x) => x.slug !== i.slug).slice(0, 4).map((x) => `<a class="chip" href="${ctx.href(`industries/${x.slug}/`)}">${T(ctx, x.short)}</a>`).join('');
+  const others = INDUSTRIES.filter((x) => x.slug !== i.slug).slice(0, 6).map((x) => `<a class="chip" href="${ctx.href(`industries/${x.slug}/`)}">${T(ctx, x.short)}</a>`).join('');
   const body = `
 ${hero(ctx, { crumbs: crumbs(ctx, { label: L('Industries', 'القطاعات'), href: ctx.href('industries/') }, { label: i.title }), eyebrow: Lb.eyebrow, title: i.title, lead: i.tagline, img: i.hero, ctas: [btn(ctx, Lb.enquire, 'enquiry/', 'gold')] })}
 <section class="sec sec--ivory"><div class="container container--wide split split--img-end">
   <div>${eyebrow(ctx, Lb.overview, 'eyebrow--rule')}<h2 class="h2">${T(ctx, i.overviewTitle)}</h2><p class="lead">${T(ctx, i.overview)}</p></div>
-  <figure class="figure"><img src="${ctx.img(i.over)}" alt="" loading="lazy"></figure>
+  <figure class="figure"><img src="${ctx.img(i.over)}" alt="${esc(ctx.t(P.INDUSTRIES_PAGE.alt(i.title)))}" loading="lazy"></figure>
 </div></section>
+<section class="sec sec--ivory sec--tight sec--line"><div class="container container--wide two-col"><div><p class="eyebrow eyebrow--rule">${T(ctx, Lb.plan)}</p><h2 class="h3 h3--lg">${T(ctx, i.plan.who)}</h2><p class="body-p">${T(ctx, i.plan.plan)}</p></div><div class="two-col__r"><p class="eyebrow eyebrow--rule">${T(ctx, P.INDUSTRIES_PAGE.bring)}</p><p class="body-p">${T(ctx, i.plan.bring)}</p><p class="draft-note"><span>${icon('shield')}</span><span>${T(ctx, P.INDUSTRIES_PAGE.plan.note)}</span></p></div></div></section>
 <section class="sec sec--deep"><div class="container container--wide">
   ${eyebrow(ctx, Lb.challenges, 'eyebrow--rule')}<h2 class="h2 h2--md">${T(ctx, i.challengesTitle)}</h2>
   <ul class="ch">${ch}</ul>

@@ -208,3 +208,28 @@ export function mountains(t = 'blue', seed = 25) {
   let rf = ''; for (let i = 0; i < 60; i++) rf += `<rect x="${f(r() * W)}" y="${f(y + 20 + r() * 420)}" width="${f(40 + r() * 200)}" height="2" fill="#fff" opacity="${f(.05 + r() * .12)}"/>`; s.add(rf);
   return s;
 }
+
+/** University / training campus: arched facade with a dome, courtyard and palms. */
+export function campus(t = 'gold', seed = 26) {
+  const r = rng(seed), P = TOD[t], s = new S(t), y = 930, stone = t === 'night' ? '#4a4266' : '#e2c79c';
+  s.add(sky(t, { horizon: y })); s.add(sun(380, y - 140, 60, t, .9)); s.add(haze(y - 240, 300, P.haze, .5));
+  const g = id('cm'); s.def(defs.grad(g, [[0, mix(stone, P.haze, .3)], [1, mix(stone, '#2a1d18', .45)]], 0, 0, 1, 0));
+  s.add(`<rect x="420" y="${y - 330}" width="1560" height="360" fill="url(#${g})"/><rect x="380" y="${y - 350}" width="1640" height="30" fill="${mix(stone, '#2a1d18', .2)}"/>`);
+  s.add(`<path d="M1020 ${y - 330}a180 180 0 0 1 360 0z" fill="${mix(stone, P.haze, .25)}"/><path d="M1200 ${y - 510}V${y - 600}" stroke="#d4af5f" stroke-width="6"/><circle cx="1200" cy="${y - 606}" r="14" fill="#d4af5f"/>`);
+  for (let i = 0; i < 9; i++) { const x = 470 + i * 166; s.add(`<path d="M${x} ${y + 30}V${y - 120}Q${x} ${y - 200} ${x + 60} ${y - 220}Q${x + 120} ${y - 200} ${x + 120} ${y - 120}V${y + 30}Z" fill="${mix(P.near, '#000', .2)}"/><path d="M${x + 14} ${y + 30}V${y - 110}Q${x + 14} ${y - 170} ${x + 60} ${y - 190}Q${x + 106} ${y - 170} ${x + 106} ${y - 110}V${y + 30}Z" fill="${P.glow}" opacity="${t === 'day' ? .15 : .5}"/>`); }
+  s.add(`<rect y="${y + 30}" width="${W}" height="${H}" fill="${mix(stone, '#000', .35)}"/>`);
+  for (let i = -6; i <= 6; i++) s.add(`<line x1="1200" y1="${y + 30}" x2="${1200 + i * 330}" y2="${H}" stroke="#000" stroke-opacity=".1" stroke-width="2"/>`);
+  for (const [x, sc] of [[200, 1.5], [330, 1.1], [2100, 1.6], [2260, 1.15]]) s.add(palm(x, y + 120, sc, '#1f4f31', (x % 3 - 1) * 30, r));
+  return s;
+}
+/** Date-palm grove and irrigated fields at golden hour. */
+export function farm(t = 'gold', seed = 27) {
+  const r = rng(seed), P = TOD[t], s = new S(t), y = 760;
+  s.add(sky(t, { horizon: y })); s.add(sun(1700, y - 80, 62, t, .95)); s.add(haze(y - 220, 280, P.haze, .5));
+  s.add(ridge(r, y - 10, 36, mix(P.far, P.haze, .3), { rough: .4, freq: .5, sharp: .3 }));
+  const gg = id('fg'); s.def(defs.grad(gg, [[0, mix('#7aa24c', P.haze, .35)], [1, '#2b4a24']])); s.add(`<rect y="${y}" width="${W}" height="${H}" fill="url(#${gg})"/>`);
+  for (let row = 0; row < 9; row++) { const e = row / 9, yy = y + 30 + e * e * 520; s.add(`<rect y="${f(yy)}" width="${W}" height="${f(6 + e * 20)}" fill="#1f3a1b" opacity=".35"/>`); }
+  for (let row = 0; row < 7; row++) { const e = Math.pow(row / 7, 1.4), yy = y + 40 + e * 560, sc = .35 + e * 1.4; for (let x = -100 + (row % 2) * 90; x < W + 100; x += 330 * (.4 + e * .9)) s.add(palm(f(x + r() * 20), f(yy), f(sc), '#17401f', (r() - .5) * 40, r)); }
+  s.add(haze(y + 60, 140, P.haze, .2));
+  return s;
+}

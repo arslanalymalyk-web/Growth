@@ -143,10 +143,14 @@ Our industries
 
 Advice only helps if it fits how your sector really works. These are the sectors we publish briefings for.
 
-- FMCG
-- Real Estate
-- Hospitality
-- Manufacturing
+- Technology
+- Manufacturing & industry
+- Healthcare
+- Real estate & property
+- Energy & sustainability
+- Logistics
+- Hospitality & tourism
+- Retail & commercial
 
 Our approach
 
@@ -961,25 +965,169 @@ Industries
 
 # Industries overview
 
-Every sector has its own rules, rhythms and risks. We focus on a handful, so our advice fits how your industry really works.
+Every sector has its own rules, rhythms and risks. Find the starting questions for yours, then bring us what you already know.
 
 **[ Book a Free Consultation ]**
 
-Our focus
+Industries we plan around
 
-## Three core sectors
+## Industries we plan around
 
-Where our clients and our specialists are.
+What you sell, how you deliver it and where you operate all affect your setup. Find the starting questions for your industry.
 
-Real Estate Industry & Manufacturing Healthcare & Life Sciences
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
 
-Also working in
+### Technology
 
-## Five more sectors
+Software, digital services and technology businesses
 
-Sectors where we see real momentum, and where we publish briefings.
+Clarify software and service activities, data handling, delivery model and local team needs.
 
-FMCG & Consumer Brands Hospitality Technology & Digital Businesses Logistics & Supply Chain Retail & E-commerce
+What to bring to the discussionProduct and service description; ownership records; proposed customer and delivery model; staffing plan.
+
+**[ Explore this industry ]**
+
+### Manufacturing & industry
+
+Production and industrial businesses
+
+Map production activities, facility needs, utilities, supply chain and specialist review dependencies.
+
+What to bring to the discussionProduct categories; production plan; facility assumptions; equipment and workforce requirements.
+
+**[ Explore this industry ]**
+
+### Business consulting
+
+Consultancies and specialist service firms
+
+Define service activities, professional credentials, contracting model and any specialist practice requirements.
+
+What to bring to the discussionService catalog; qualifications where relevant; ownership information; team and client model.
+
+**[ Explore this industry ]**
+
+### Construction & engineering
+
+Contractors and project-delivery businesses
+
+Assess project activities, workforce mobilization, site needs and any sector-specific qualifications requiring confirmation.
+
+What to bring to the discussionProject profile; contracting scope; credentials; workforce and equipment assumptions.
+
+**[ Explore this industry ]**
+
+### Healthcare
+
+Clinical and healthcare-related businesses
+
+Separate the business establishment plan from specialist facility, practitioner and activity requirements.
+
+What to bring to the discussionOperating model; facility concept; service categories; practitioner and ownership information.
+
+**[ Explore this industry ]**
+
+### Logistics
+
+Transport, warehousing and supply-chain businesses
+
+Distinguish transport and storage activities, operating footprint, fleet or warehouse needs and partner dependencies.
+
+What to bring to the discussionActivity description; footprint and facility plan; fleet assumptions; proposed customer model.
+
+**[ Explore this industry ]**
+
+### Retail & commercial
+
+Stores, showrooms and online sellers
+
+Plan around your product categories, sales channels, premises, supply chain and workforce.
+
+What to bring to the discussionProduct catalog, store or online sales model, ownership details and proposed operating footprint.
+
+**[ Explore this industry ]**
+
+### Energy & sustainability
+
+Energy services, renewable projects and environmental operations
+
+Map your delivery model, technical partners and operating footprint.
+
+What to bring to the discussionProject concept; intended services; partner roles; equipment and site assumptions.
+
+**[ Explore this industry ]**
+
+### Real estate & property
+
+Property services, asset operations and development support
+
+Define the activities, ownership model and team responsibilities.
+
+What to bring to the discussionProperty or service concept; proposed activities; ownership model; operating locations.
+
+**[ Explore this industry ]**
+
+### Hospitality & tourism
+
+Accommodation, visitor experiences and hospitality services
+
+Plan around your guest offer, premises and operating team.
+
+What to bring to the discussionGuest offer; facility concept; service model; staffing and partner assumptions.
+
+**[ Explore this industry ]**
+
+### Education & training
+
+Training providers and learning businesses
+
+Clarify your programs, delivery channels, instructors and facility needs.
+
+What to bring to the discussionProgram outline; delivery format; instructor credentials; audience and facility plan.
+
+**[ Explore this industry ]**
+
+### Food & agriculture
+
+Food production, agricultural businesses and distribution
+
+Define the products, facilities, supply chain and handling needs.
+
+What to bring to the discussionProduct categories; production model; facility concept; sourcing and distribution plan.
+
+**[ Explore this industry ]**
+
+### FMCG & consumer brands
+
+Consumer-goods brands, importers and distributors
+
+Define your product categories, labelling and handling needs, distribution route and pricing approach.
+
+What to bring to the discussionProduct range; target customers; distributor or retailer plans; ownership information.
+
+**[ Explore this industry ]**
+
+How an engagement starts
+
+## From industry to engagement
+
+Identify intended activities, assess the relevant dependencies, agree the document checklist and confirm a scoped proposal. Your roadmap then records client actions, consultant reviews and any external stages separately.
+
+1
+
+### Identify intended activities
+
+2
+
+### Assess the relevant dependencies
+
+3
+
+### Agree the document checklist
+
+4
+
+### Confirm a scoped proposal
 
 Let's talk about your sector
 
@@ -992,343 +1140,17 @@ Tell us what you do and where you want to go. We will tell you what we see.
 
 ---
 
-# PAGE: Industry: Real Estate
+# PAGE: Industry: Technology
 
-_Page title: Real Estate | Growth Blueprint_
-
-- Home
-- Industries
-- Real Estate
-
-Industries
-
-# Real Estate
-
-For developers, investors and operators who want to build, buy or run property in a market that is growing fast.
-
-**[ Ask about this sector ]**
-
-The sector
-
-## Big projects, local detail
-
-New districts, large programmes and growing demand for homes, offices and shops are changing the property map of the Kingdom. The opportunity is real, but so is the detail: who owns the land, which approvals come in which order, and who is actually able to build. We help you understand the market, the approvals landscape and the right local specialists, so you can judge a project before you commit.
-
-The hard parts
-
-## What tends to trip investors up
-
-### Choosing the right opportunity
-
-Which district, which type of asset, and which partners fit your investment case.
-
-### Understanding the rules
-
-Ownership, registration and development rules have been changing. What was true last year may not be now.
-
-### Delivery and the people who deliver
-
-Good contractors and consultants are in demand. Capacity is often the real constraint.
-
-### Making it perform after it is built
-
-Asset management and operations decide long-term value, and they are often an afterthought.
-
-How we help
-
-## Where we usually come in
-
-Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
-
-- Market Intelligence
-- Market Entry Guidance
-- Strategic Introductions
-
-Other sectors
-
-ManufacturingHealthcare & Life SciencesFMCGHospitalityView all industries
-
-## Talk to us about your sector
-
-A short conversation is often enough to see what the next step should be.
-
-**[ Make an enquiry ]**
-
-
----
-
-# PAGE: Industry: Industry & Manufacturing
-
-_Page title: Industry & Manufacturing | Growth Blueprint_
+_Page title: Technology | Growth Blueprint_
 
 - Home
 - Industries
-- Industry & Manufacturing
+- Technology
 
 Industries
 
-# Industry & Manufacturing
-
-For manufacturers and industrial investors building plants, supply chains and skills in the Kingdom.
-
-**[ Ask about this sector ]**
-
-The sector
-
-## A country that wants to make more
-
-Saudi Arabia is investing heavily in local manufacturing, and it has put policy, financing and land behind the goal. That is good news if you are planning a plant, but a plant is only as good as its site, its supply chain and its people. We help you understand where to build, what support may be available, and which approvals to plan for.
-
-The hard parts
-
-## Where plants tend to lose time
-
-### Site and incentives
-
-The right location, and an honest picture of the support you can and cannot count on.
-
-### A supply chain that works locally
-
-Reliable suppliers and logistics, close enough to keep your costs sensible.
-
-### Skilled people
-
-Recruiting and training technicians, while meeting localisation expectations.
-
-### Technology and automation
-
-Productivity decides who competes. The right level of automation is a decision, not a default.
-
-How we help
-
-## Where we usually come in
-
-Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
-
-- Market Intelligence
-- Market Entry Guidance
-- Cultural & Business Advisory
-
-Other sectors
-
-Real EstateHealthcare & Life SciencesFMCGHospitalityView all industries
-
-## Talk to us about your sector
-
-A short conversation is often enough to see what the next step should be.
-
-**[ Make an enquiry ]**
-
-
----
-
-# PAGE: Industry: Healthcare & Life Sciences
-
-_Page title: Healthcare & Life Sciences | Growth Blueprint_
-
-- Home
-- Industries
-- Healthcare & Life Sciences
-
-Industries
-
-# Healthcare & Life Sciences
-
-For providers, suppliers and investors working with a healthcare system that is being reshaped.
-
-**[ Ask about this sector ]**
-
-The sector
-
-## A sector in transformation
-
-How care is funded, delivered and measured is changing. There is more room for private providers, more attention on prevention, and more digital health. Healthcare is also one of the most regulated sectors there is, and rightly so. We help you understand who the main bodies are, how approvals generally work, and where partnerships fit.
-
-The hard parts
-
-## What providers and suppliers face
-
-### Rising demand
-
-A growing, more health-conscious population expects better access and more personal care.
-
-### A system in change
-
-Reform is moving towards integrated, value-based and digital models of care.
-
-### Cost and sustainability
-
-Managing cost pressure while keeping the service financially sound.
-
-### People and skills
-
-Attracting and keeping clinicians and specialists in a sector that is growing fast.
-
-How we help
-
-## Where we usually come in
-
-Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
-
-- Market Intelligence
-- Strategic Introductions
-- Market Entry Guidance
-
-Other sectors
-
-Real EstateManufacturingFMCGHospitalityView all industries
-
-## Talk to us about your sector
-
-A short conversation is often enough to see what the next step should be.
-
-**[ Make an enquiry ]**
-
-
----
-
-# PAGE: Industry: FMCG & Consumer Brands
-
-_Page title: FMCG & Consumer Brands | Growth Blueprint_
-
-- Home
-- Industries
-- FMCG & Consumer Brands
-
-Industries
-
-# FMCG & Consumer Brands
-
-Helping consumer brands, retailers and distributors get onto Saudi shelves, stay there, and grow.
-
-**[ Ask about this sector ]**
-
-The sector
-
-## A market that rewards the brands who get it right
-
-Saudi shoppers are young, connected and used to choice. They notice quality, value and a good story, and they switch quickly when a brand lets them down. For brands, that means a real opportunity and a high bar. We help you read the market, meet distributors and retail partners, and understand how Saudi buyers decide.
-
-The hard parts
-
-## Where consumer brands usually get stuck
-
-### Shoppers expect more
-
-Quality, value, health and a story they believe in. Getting just one of them wrong is enough to lose a repeat purchase.
-
-### Everyone is competing
-
-Global giants, regional brands and fast local challengers all want the same shelf.
-
-### Many channels to juggle
-
-Modern trade, neighbourhood shops and online all work differently, and they all want your attention.
-
-### Rules keep moving
-
-Labelling, registration and localisation requirements change, and an old answer can quickly become the wrong one.
-
-How we help
-
-## Where we usually come in
-
-Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
-
-- Market Intelligence
-- Strategic Introductions
-- Cultural & Business Advisory
-- Market Entry Guidance
-
-Other sectors
-
-Real EstateManufacturingHealthcare & Life SciencesHospitalityView all industries
-
-## Talk to us about your sector
-
-A short conversation is often enough to see what the next step should be.
-
-**[ Make an enquiry ]**
-
-
----
-
-# PAGE: Industry: Hospitality
-
-_Page title: Hospitality | Growth Blueprint_
-
-- Home
-- Industries
-- Hospitality
-
-Industries
-
-# Hospitality
-
-Helping hotel, restaurant and experience operators open well and run well in a visitor economy that is being built right now.
-
-**[ Ask about this sector ]**
-
-The sector
-
-## A new visitor economy, built from the ground up
-
-Saudi Arabia is welcoming more visitors, building new destinations and rethinking what a stay can feel like. For operators, that is exciting, and demanding. You have to staff and license venues, plan for peaks and quiet months, and match the standards guests expect. We help you read the market, meet the right partners and understand what guests and regulators expect.
-
-The hard parts
-
-## What operators find hardest
-
-### Guests expect a lot
-
-They compare you with the best they have seen anywhere, and they share it when you miss.
-
-### Finding and keeping good people
-
-Skilled hospitality teams take time to build, and everyone is hiring.
-
-### Running several sites well
-
-Quality at scale needs systems, and a way of doing things that does not depend on one person.
-
-### Growing responsibly
-
-Balancing growth with heritage, environment and the community around you.
-
-How we help
-
-## Where we usually come in
-
-Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
-
-- Market Intelligence
-- Cultural & Business Advisory
-- Market Entry Guidance
-
-Other sectors
-
-Real EstateManufacturingHealthcare & Life SciencesFMCGView all industries
-
-## Talk to us about your sector
-
-A short conversation is often enough to see what the next step should be.
-
-**[ Make an enquiry ]**
-
-
----
-
-# PAGE: Industry: Technology & Digital Businesses
-
-_Page title: Technology & Digital Businesses | Growth Blueprint_
-
-- Home
-- Industries
-- Technology & Digital Businesses
-
-Industries
-
-# Technology & Digital Businesses
+# Technology
 
 For software, platform and digital services companies selling to a market that is investing in digital.
 
@@ -1339,6 +1161,18 @@ The sector
 ## A market buying digital at scale
 
 Government programmes, large enterprises and a young population are all pushing demand for cloud, data and digital services. But selling here is not like selling elsewhere. Deals can be slow, buyers will ask early about where data lives, and local presence matters. We help you understand how your buyers decide and meet the right partners.
+
+Where to start
+
+## Software, digital services and technology businesses
+
+Clarify software and service activities, data handling, delivery model and local team needs.
+
+What to bring to the discussion
+
+Product and service description; ownership records; proposed customer and delivery model; staffing plan.
+
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
 
 The hard parts
 
@@ -1371,9 +1205,9 @@ Every business is different, so we start with a conversation, not a package. The
 - Market Entry Guidance
 - Cultural & Business Advisory
 
-Other sectors
+Other industries
 
-Real EstateManufacturingHealthcare & Life SciencesFMCGView all industries
+Manufacturing & industryBusiness consultingConstruction & engineeringHealthcareLogisticsRetail & commercialView all industries
 
 ## Talk to us about your sector
 
@@ -1384,17 +1218,325 @@ A short conversation is often enough to see what the next step should be.
 
 ---
 
-# PAGE: Industry: Logistics & Supply Chain
+# PAGE: Industry: Manufacturing & industry
 
-_Page title: Logistics & Supply Chain | Growth Blueprint_
+_Page title: Manufacturing & industry | Growth Blueprint_
 
 - Home
 - Industries
-- Logistics & Supply Chain
+- Manufacturing & industry
 
 Industries
 
-# Logistics & Supply Chain
+# Manufacturing & industry
+
+For manufacturers and industrial investors building plants, supply chains and skills in the Kingdom.
+
+**[ Ask about this sector ]**
+
+The sector
+
+## A country that wants to make more
+
+Saudi Arabia is investing heavily in local manufacturing, and it has put policy, financing and land behind the goal. That is good news if you are planning a plant, but a plant is only as good as its site, its supply chain and its people. We help you understand where to build, what support may be available, and which approvals to plan for.
+
+Where to start
+
+## Production and industrial businesses
+
+Map production activities, facility needs, utilities, supply chain and specialist review dependencies.
+
+What to bring to the discussion
+
+Product categories; production plan; facility assumptions; equipment and workforce requirements.
+
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
+
+The hard parts
+
+## Where plants tend to lose time
+
+### Site and incentives
+
+The right location, and an honest picture of the support you can and cannot count on.
+
+### A supply chain that works locally
+
+Reliable suppliers and logistics, close enough to keep your costs sensible.
+
+### Skilled people
+
+Recruiting and training technicians, while meeting localisation expectations.
+
+### Technology and automation
+
+Productivity decides who competes. The right level of automation is a decision, not a default.
+
+How we help
+
+## Where we usually come in
+
+Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
+
+- Market Intelligence
+- Market Entry Guidance
+- Cultural & Business Advisory
+
+Other industries
+
+TechnologyBusiness consultingConstruction & engineeringHealthcareLogisticsRetail & commercialView all industries
+
+## Talk to us about your sector
+
+A short conversation is often enough to see what the next step should be.
+
+**[ Make an enquiry ]**
+
+
+---
+
+# PAGE: Industry: Business consulting
+
+_Page title: Business consulting | Growth Blueprint_
+
+- Home
+- Industries
+- Business consulting
+
+Industries
+
+# Business consulting
+
+For consultancies and specialist service firms that want to serve clients in the Kingdom.
+
+**[ Ask about this sector ]**
+
+The sector
+
+## Selling expertise starts with trust
+
+Clients here buy from people they know and from firms that have shown they understand the local context. For a service firm that means being clear about what you offer, who will deliver it, and which credentials or practice requirements apply to your field. We help you shape the offer, understand how buyers choose, and meet the right partners.
+
+Where to start
+
+## Consultancies and specialist service firms
+
+Define service activities, professional credentials, contracting model and any specialist practice requirements.
+
+What to bring to the discussion
+
+Service catalog; qualifications where relevant; ownership information; team and client model.
+
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
+
+The hard parts
+
+## What tends to trip firms up
+
+### Defining the service activities
+
+The way a service is described can decide which requirements apply. Settle it early.
+
+### Professional credentials
+
+Some fields need recognised qualifications or practice approvals, and those need checking, not assuming.
+
+### Winning the first clients
+
+Introductions and references matter more than brochures. Plan how you will earn trust.
+
+### Team and delivery model
+
+Who is on the ground, who flies in, and who owns the client relationship.
+
+How we help
+
+## Where we usually come in
+
+Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
+
+- Market Intelligence
+- Strategic Introductions
+- Cultural & Business Advisory
+
+Other industries
+
+TechnologyManufacturing & industryConstruction & engineeringHealthcareLogisticsRetail & commercialView all industries
+
+## Talk to us about your sector
+
+A short conversation is often enough to see what the next step should be.
+
+**[ Make an enquiry ]**
+
+
+---
+
+# PAGE: Industry: Construction & engineering
+
+_Page title: Construction & engineering | Growth Blueprint_
+
+- Home
+- Industries
+- Construction & engineering
+
+Industries
+
+# Construction & engineering
+
+For contractors and project-delivery businesses looking at the Kingdom’s building and infrastructure programmes.
+
+**[ Ask about this sector ]**
+
+The sector
+
+## Big programmes, specific requirements
+
+Large building and infrastructure programmes create demand for capable contractors and engineers. They also bring detailed requirements around qualifications, site mobilisation and contracting. We help you understand where your type of project fits, which requirements need confirming, and which local partners could help you deliver.
+
+Where to start
+
+## Contractors and project-delivery businesses
+
+Assess project activities, workforce mobilization, site needs and any sector-specific qualifications requiring confirmation.
+
+What to bring to the discussion
+
+Project profile; contracting scope; credentials; workforce and equipment assumptions.
+
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
+
+The hard parts
+
+## What tends to trip contractors up
+
+### Project activities and scope
+
+What you will build or engineer shapes the licences and qualifications you need.
+
+### Qualifications and credentials
+
+Sector-specific qualifications often need confirming before you bid.
+
+### Workforce and equipment
+
+Mobilising people and equipment is a plan in its own right.
+
+### Finding the right partners
+
+Local subcontractors and suppliers can make or break delivery.
+
+How we help
+
+## Where we usually come in
+
+Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
+
+- Market Intelligence
+- Market Entry Guidance
+- Strategic Introductions
+
+Other industries
+
+TechnologyManufacturing & industryBusiness consultingHealthcareLogisticsRetail & commercialView all industries
+
+## Talk to us about your sector
+
+A short conversation is often enough to see what the next step should be.
+
+**[ Make an enquiry ]**
+
+
+---
+
+# PAGE: Industry: Healthcare
+
+_Page title: Healthcare | Growth Blueprint_
+
+- Home
+- Industries
+- Healthcare
+
+Industries
+
+# Healthcare
+
+For providers, suppliers and investors working with a healthcare system that is being reshaped.
+
+**[ Ask about this sector ]**
+
+The sector
+
+## A sector in transformation
+
+How care is funded, delivered and measured is changing. There is more room for private providers, more attention on prevention, and more digital health. Healthcare is also one of the most regulated sectors there is, and rightly so. We help you understand who the main bodies are, how approvals generally work, and where partnerships fit.
+
+Where to start
+
+## Clinical and healthcare-related businesses
+
+Separate the business establishment plan from specialist facility, practitioner and activity requirements.
+
+What to bring to the discussion
+
+Operating model; facility concept; service categories; practitioner and ownership information.
+
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
+
+The hard parts
+
+## What providers and suppliers face
+
+### Rising demand
+
+A growing, more health-conscious population expects better access and more personal care.
+
+### A system in change
+
+Reform is moving towards integrated, value-based and digital models of care.
+
+### Cost and sustainability
+
+Managing cost pressure while keeping the service financially sound.
+
+### People and skills
+
+Attracting and keeping clinicians and specialists in a sector that is growing fast.
+
+How we help
+
+## Where we usually come in
+
+Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
+
+- Market Intelligence
+- Strategic Introductions
+- Market Entry Guidance
+
+Other industries
+
+TechnologyManufacturing & industryBusiness consultingConstruction & engineeringLogisticsRetail & commercialView all industries
+
+## Talk to us about your sector
+
+A short conversation is often enough to see what the next step should be.
+
+**[ Make an enquiry ]**
+
+
+---
+
+# PAGE: Industry: Logistics
+
+_Page title: Logistics | Growth Blueprint_
+
+- Home
+- Industries
+- Logistics
+
+Industries
+
+# Logistics
 
 For operators, shippers and investors who want to move goods through the Kingdom, and use it as a hub.
 
@@ -1405,6 +1547,18 @@ The sector
 ## At the crossroads of three continents
 
 Ports, rail, airports, logistics parks and free zones are all being expanded to make the Kingdom a regional hub. For anyone who moves goods, the question is where to build and with whom. We help you compare locations and partners honestly and understand the licensing that applies.
+
+Where to start
+
+## Transport, warehousing and supply-chain businesses
+
+Distinguish transport and storage activities, operating footprint, fleet or warehouse needs and partner dependencies.
+
+What to bring to the discussion
+
+Activity description; footprint and facility plan; fleet assumptions; proposed customer model.
+
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
 
 The hard parts
 
@@ -1436,9 +1590,9 @@ Every business is different, so we start with a conversation, not a package. The
 - Strategic Introductions
 - Market Entry Guidance
 
-Other sectors
+Other industries
 
-Real EstateManufacturingHealthcare & Life SciencesFMCGView all industries
+TechnologyManufacturing & industryBusiness consultingConstruction & engineeringHealthcareRetail & commercialView all industries
 
 ## Talk to us about your sector
 
@@ -1449,17 +1603,17 @@ A short conversation is often enough to see what the next step should be.
 
 ---
 
-# PAGE: Industry: Retail & E-commerce
+# PAGE: Industry: Retail & commercial
 
-_Page title: Retail & E-commerce | Growth Blueprint_
+_Page title: Retail & commercial | Growth Blueprint_
 
 - Home
 - Industries
-- Retail & E-commerce
+- Retail & commercial
 
 Industries
 
-# Retail & E-commerce
+# Retail & commercial
 
 For retailers, online sellers and consumer brands who want to win Saudi shoppers, in store and online.
 
@@ -1470,6 +1624,18 @@ The sector
 ## Shoppers who know what they want
 
 Saudi shoppers are digital, mobile and brand-aware, and they expect fast delivery, easy returns and an experience in Arabic that feels written for them. That raises the bar, and rewards the sellers who clear it. We help you read the market, meet the right partners and understand what Saudi shoppers expect, so your first year tests demand before it spends heavily.
+
+Where to start
+
+## Stores, showrooms and online sellers
+
+Plan around your product categories, sales channels, premises, supply chain and workforce.
+
+What to bring to the discussion
+
+Product catalog, store or online sales model, ownership details and proposed operating footprint.
+
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
 
 The hard parts
 
@@ -1501,9 +1667,472 @@ Every business is different, so we start with a conversation, not a package. The
 - Cultural & Business Advisory
 - Market Entry Guidance
 
-Other sectors
+Other industries
 
-Real EstateManufacturingHealthcare & Life SciencesFMCGView all industries
+TechnologyManufacturing & industryBusiness consultingConstruction & engineeringHealthcareLogisticsView all industries
+
+## Talk to us about your sector
+
+A short conversation is often enough to see what the next step should be.
+
+**[ Make an enquiry ]**
+
+
+---
+
+# PAGE: Industry: Energy & sustainability
+
+_Page title: Energy & sustainability | Growth Blueprint_
+
+- Home
+- Industries
+- Energy & sustainability
+
+Industries
+
+# Energy & sustainability
+
+For energy-services firms, renewable-project developers and environmental operators.
+
+**[ Ask about this sector ]**
+
+The sector
+
+## A national priority, with technical detail
+
+Renewable energy and sustainability sit near the centre of Vision 2030, and that attracts serious interest from international firms. The work itself is technical: delivery models, partners, equipment and sites all need to be clear before a plan holds together. We help you read the market, understand who the main players are and meet the right partners.
+
+Where to start
+
+## Energy services, renewable projects and environmental operations
+
+Map your delivery model, technical partners and operating footprint.
+
+What to bring to the discussion
+
+Project concept; intended services; partner roles; equipment and site assumptions.
+
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
+
+The hard parts
+
+## What tends to trip developers up
+
+### Delivery model
+
+Developer, contractor, technology supplier or service provider: each role has different requirements.
+
+### Technical partners
+
+Local and international partners need to fit the project, not just the pitch.
+
+### Sites and operating footprint
+
+Land, access and grid or utility connections shape what is possible.
+
+### Long timelines
+
+Projects move over years. Plan the funding and the relationships for the long run.
+
+How we help
+
+## Where we usually come in
+
+Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
+
+- Market Intelligence
+- Strategic Introductions
+- Market Entry Guidance
+
+Other industries
+
+TechnologyManufacturing & industryBusiness consultingConstruction & engineeringHealthcareLogisticsView all industries
+
+## Talk to us about your sector
+
+A short conversation is often enough to see what the next step should be.
+
+**[ Make an enquiry ]**
+
+
+---
+
+# PAGE: Industry: Real estate & property
+
+_Page title: Real estate & property | Growth Blueprint_
+
+- Home
+- Industries
+- Real estate & property
+
+Industries
+
+# Real estate & property
+
+For developers, investors and operators who want to build, buy or run property in a market that is growing fast.
+
+**[ Ask about this sector ]**
+
+The sector
+
+## Big projects, local detail
+
+New districts, large programmes and growing demand for homes, offices and shops are changing the property map of the Kingdom. The opportunity is real, but so is the detail: who owns the land, which approvals come in which order, and who is actually able to build. We help you understand the market, the approvals landscape and the right local specialists, so you can judge a project before you commit.
+
+Where to start
+
+## Property services, asset operations and development support
+
+Define the activities, ownership model and team responsibilities.
+
+What to bring to the discussion
+
+Property or service concept; proposed activities; ownership model; operating locations.
+
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
+
+The hard parts
+
+## What tends to trip investors up
+
+### Choosing the right opportunity
+
+Which district, which type of asset, and which partners fit your investment case.
+
+### Understanding the rules
+
+Ownership, registration and development rules have been changing. What was true last year may not be now.
+
+### Delivery and the people who deliver
+
+Good contractors and consultants are in demand. Capacity is often the real constraint.
+
+### Making it perform after it is built
+
+Asset management and operations decide long-term value, and they are often an afterthought.
+
+How we help
+
+## Where we usually come in
+
+Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
+
+- Market Intelligence
+- Market Entry Guidance
+- Strategic Introductions
+
+Other industries
+
+TechnologyManufacturing & industryBusiness consultingConstruction & engineeringHealthcareLogisticsView all industries
+
+## Talk to us about your sector
+
+A short conversation is often enough to see what the next step should be.
+
+**[ Make an enquiry ]**
+
+
+---
+
+# PAGE: Industry: Hospitality & tourism
+
+_Page title: Hospitality & tourism | Growth Blueprint_
+
+- Home
+- Industries
+- Hospitality & tourism
+
+Industries
+
+# Hospitality & tourism
+
+Helping hotel, restaurant and experience operators open well and run well in a visitor economy that is being built right now.
+
+**[ Ask about this sector ]**
+
+The sector
+
+## A new visitor economy, built from the ground up
+
+Saudi Arabia is welcoming more visitors, building new destinations and rethinking what a stay can feel like. For operators, that is exciting, and demanding. You have to staff and license venues, plan for peaks and quiet months, and match the standards guests expect. We help you read the market, meet the right partners and understand what guests and regulators expect.
+
+Where to start
+
+## Accommodation, visitor experiences and hospitality services
+
+Plan around your guest offer, premises and operating team.
+
+What to bring to the discussion
+
+Guest offer; facility concept; service model; staffing and partner assumptions.
+
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
+
+The hard parts
+
+## What operators find hardest
+
+### Guests expect a lot
+
+They compare you with the best they have seen anywhere, and they share it when you miss.
+
+### Finding and keeping good people
+
+Skilled hospitality teams take time to build, and everyone is hiring.
+
+### Running several sites well
+
+Quality at scale needs systems, and a way of doing things that does not depend on one person.
+
+### Growing responsibly
+
+Balancing growth with heritage, environment and the community around you.
+
+How we help
+
+## Where we usually come in
+
+Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
+
+- Market Intelligence
+- Cultural & Business Advisory
+- Market Entry Guidance
+
+Other industries
+
+TechnologyManufacturing & industryBusiness consultingConstruction & engineeringHealthcareLogisticsView all industries
+
+## Talk to us about your sector
+
+A short conversation is often enough to see what the next step should be.
+
+**[ Make an enquiry ]**
+
+
+---
+
+# PAGE: Industry: Education & training
+
+_Page title: Education & training | Growth Blueprint_
+
+- Home
+- Industries
+- Education & training
+
+Industries
+
+# Education & training
+
+For training providers and learning businesses that want to serve students and employers in the Kingdom.
+
+**[ Ask about this sector ]**
+
+The sector
+
+## Skills are central to the national plan
+
+Building skills for a changing economy is a stated priority, which opens room for training and learning providers. The details matter: your programmes, how you deliver them, the credentials of your instructors and the facilities you need. We help you understand the landscape, check which requirements apply to your format, and meet possible partners.
+
+Where to start
+
+## Training providers and learning businesses
+
+Clarify your programs, delivery channels, instructors and facility needs.
+
+What to bring to the discussion
+
+Program outline; delivery format; instructor credentials; audience and facility plan.
+
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
+
+The hard parts
+
+## What tends to trip providers up
+
+### Programme design and audience
+
+Be clear who you serve: students, professionals or employers.
+
+### Delivery format
+
+In person, online or blended, each format raises different requirements.
+
+### Instructor credentials
+
+Who teaches, and what qualifications they hold, often needs confirming.
+
+### Facilities and partners
+
+Premises, accreditation partners and employer links all take time to line up.
+
+How we help
+
+## Where we usually come in
+
+Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
+
+- Market Intelligence
+- Strategic Introductions
+- Cultural & Business Advisory
+
+Other industries
+
+TechnologyManufacturing & industryBusiness consultingConstruction & engineeringHealthcareLogisticsView all industries
+
+## Talk to us about your sector
+
+A short conversation is often enough to see what the next step should be.
+
+**[ Make an enquiry ]**
+
+
+---
+
+# PAGE: Industry: Food & agriculture
+
+_Page title: Food & agriculture | Growth Blueprint_
+
+- Home
+- Industries
+- Food & agriculture
+
+Industries
+
+# Food & agriculture
+
+For food producers, agricultural businesses and distributors.
+
+**[ Ask about this sector ]**
+
+The sector
+
+## Food security meets a growing market
+
+Food security is a national priority and the market for quality food is growing. Success depends on practical things: which products, where they are made or stored, how they are handled and who distributes them. We help you read the market, understand the main requirements for your products and meet distribution and sourcing partners.
+
+Where to start
+
+## Food production, agricultural businesses and distribution
+
+Define the products, facilities, supply chain and handling needs.
+
+What to bring to the discussion
+
+Product categories; production model; facility concept; sourcing and distribution plan.
+
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
+
+The hard parts
+
+## What tends to trip food businesses up
+
+### Product categories and handling
+
+Different products bring different storage, labelling and handling needs.
+
+### Production and facilities
+
+Where you produce, process and store shapes your costs and approvals.
+
+### Sourcing and supply chain
+
+Reliable supply is the difference between a pilot and a business.
+
+### Reaching customers
+
+Distributors, retailers and food-service buyers each need a different approach.
+
+How we help
+
+## Where we usually come in
+
+Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
+
+- Market Intelligence
+- Strategic Introductions
+- Market Entry Guidance
+
+Other industries
+
+TechnologyManufacturing & industryBusiness consultingConstruction & engineeringHealthcareLogisticsView all industries
+
+## Talk to us about your sector
+
+A short conversation is often enough to see what the next step should be.
+
+**[ Make an enquiry ]**
+
+
+---
+
+# PAGE: Industry: FMCG & consumer brands
+
+_Page title: FMCG & consumer brands | Growth Blueprint_
+
+- Home
+- Industries
+- FMCG & consumer brands
+
+Industries
+
+# FMCG & consumer brands
+
+Helping consumer brands, retailers and distributors get onto Saudi shelves, stay there, and grow.
+
+**[ Ask about this sector ]**
+
+The sector
+
+## A market that rewards the brands who get it right
+
+Saudi shoppers are young, connected and used to choice. They notice quality, value and a good story, and they switch quickly when a brand lets them down. For brands, that means a real opportunity and a high bar. We help you read the market, meet distributors and retail partners, and understand how Saudi buyers decide.
+
+Where to start
+
+## Consumer-goods brands, importers and distributors
+
+Define your product categories, labelling and handling needs, distribution route and pricing approach.
+
+What to bring to the discussion
+
+Product range; target customers; distributor or retailer plans; ownership information.
+
+These are starting points for discussion, not official licensing checklists. A specific operating model must be assessed before requirements or timelines can be confirmed.
+
+The hard parts
+
+## Where consumer brands usually get stuck
+
+### Shoppers expect more
+
+Quality, value, health and a story they believe in. Getting just one of them wrong is enough to lose a repeat purchase.
+
+### Everyone is competing
+
+Global giants, regional brands and fast local challengers all want the same shelf.
+
+### Many channels to juggle
+
+Modern trade, neighbourhood shops and online all work differently, and they all want your attention.
+
+### Rules keep moving
+
+Labelling, registration and localisation requirements change, and an old answer can quickly become the wrong one.
+
+How we help
+
+## Where we usually come in
+
+Every business is different, so we start with a conversation, not a package. These are the services most likely to help in this sector.
+
+- Market Intelligence
+- Strategic Introductions
+- Cultural & Business Advisory
+- Market Entry Guidance
+
+Other industries
+
+TechnologyManufacturing & industryBusiness consultingConstruction & engineeringHealthcareLogisticsView all industries
 
 ## Talk to us about your sector
 
@@ -4925,16 +5554,19 @@ Your finances and governance are in good shape: a realistic budget, clear tax th
 - Check your localisation and succession plans before you scale the team.
 
 ## Sector notes
+- **professional-business-services**: In professional services, reputation and relationships are your product. Plan how you will build credibility before you scale the team.
+- **construction-engineering**: In construction, project pipelines, prequalification and partner capacity matter. Cash flow across long payment cycles is a classic pressure point.
+- **energy-sustainability**: In energy and sustainability, delivery model, technical partners and long timelines matter most. Be clear about your role in the project before you approach partners.
+- **education-training**: In education and training, programme design, instructor credentials and delivery format drive your plan. Check which requirements apply to your format early.
+- **food-agriculture**: In food and agriculture, product handling, facilities and a reliable supply chain decide whether a pilot becomes a business. Map them before you scale.
 - **fmcg**: In consumer goods, shelf access and distributor relationships usually decide the pace, so partner quality and first-year working capital deserve extra attention.
 - **real-estate**: In real estate, regulation, land and the choice of delivery partners shape everything. Check approvals and contractor capacity early.
 - **hospitality**: In hospitality, talent and operating standards are the hard part. Plan your hiring and training before you plan your opening date.
 - **manufacturing**: In manufacturing, site, incentives and supply chain come first. Localisation targets and skilled labour can set your timeline.
 - **technology-digital**: In technology, who the buyer is (enterprise or government) and how they procure will shape your sales cycle. Data and hosting questions often surface early.
-- **construction-engineering**: In construction, project pipelines, prequalification and partner capacity matter. Cash flow across long payment cycles is a classic pressure point.
 - **healthcare-life-sciences**: In healthcare, regulatory approvals and clinical or product standards come first. Allow for longer lead times than in most sectors.
 - **logistics-supply-chain**: In logistics, location, customs and network partners decide your economics. Test the routes, not just the plan.
 - **retail-ecommerce**: In retail and e-commerce, customer expectations on delivery, payment and Arabic experience are high. Get these right before you scale marketing.
-- **professional-business-services**: In professional services, reputation and relationships are your product. Plan how you will build credibility before you scale the team.
 - **tourism-leisure**: In tourism and leisure, seasonality, destination partners and licensing shape your plan. Pilot with a small group before you invest in scale.
 
 ## Report page labels
