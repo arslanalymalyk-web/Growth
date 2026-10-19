@@ -851,3 +851,8 @@ button.is-in, .btn.is-in { background: var(--navy-900); color: #fff; border-colo
 .toc-list li > span { color: var(--gold-700); }
 .legal-hero .eyebrow { color: var(--gold-400); }
 main p a:not([class]), main li a:not([class]), .faq__a a, .legal a { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+.credits { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 20px; margin-top: 22px; }
+.credit { background: #fff; border: 1px solid var(--ivory-300); display: flex; flex-direction: column; min-width: 0; } .credit img { width: 100%; height: 190px; object-fit: cover; display: block; }
+.credit__b { padding: 16px 18px 18px; display: grid; gap: 8px; } .credit__tag { font: 600 .68rem/1 var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--gold-700); margin: 0; } [dir='rtl'] .credit__tag { letter-spacing: 0; text-transform: none; font-size: .8rem; }
+.credit__line { font-size: .85rem; color: var(--ink-2); overflow-wrap: anywhere; margin: 0; text-align: start; } [dir='rtl'] .credit__line { text-align: right; } .credit__sm { font-size: .8rem; color: var(--ink-3); margin: 0; }

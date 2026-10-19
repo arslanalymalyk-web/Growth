@@ -146,7 +146,7 @@ ${ctaBand(ctx, { title: Lb.ctaTitle, body: Lb.ctaBody, img: 'band-man-desert' })
 export function industriesOverview(ctx) {
   const I = P.INDUSTRIES_PAGE;
   const card = (i) => `
-  <article class="pcard-i"><a class="pcard-i__img" href="${ctx.href(`industries/${i.slug}/`)}" tabindex="-1" aria-hidden="true"><img src="${ctx.img(i.card)}" alt="${esc(ctx.t(I.alt(i.title)))}" loading="lazy"></a>
+  <article class="pcard-i"><a class="pcard-i__img" href="${ctx.href(`industries/${i.slug}/`)}" tabindex="-1" aria-hidden="true"><img src="${ctx.img(i.card)}" alt="${esc(ctx.t(i.altText || I.alt(i.title)))}" loading="lazy"></a>
     <div class="pcard-i__b"><span class="pcard-i__ic">${icon(i.icon)}</span><h3 class="h4"><a href="${ctx.href(`industries/${i.slug}/`)}">${T(ctx, i.title)}</a></h3><p class="pcard-i__who">${T(ctx, i.plan.who)}</p>
       <p>${T(ctx, i.plan.plan)}</p><p class="pcard-i__bl"><b>${T(ctx, I.bring)}</b>${T(ctx, i.plan.bring)}</p>
       <a class="more more--gold" href="${ctx.href(`industries/${i.slug}/`)}"><span>${T(ctx, I.explore)}</span>${arrow}</a></div></article>`;
@@ -174,7 +174,7 @@ export function industryDetail(ctx, i) {
 ${hero(ctx, { crumbs: crumbs(ctx, { label: L('Industries', 'القطاعات'), href: ctx.href('industries/') }, { label: i.title }), eyebrow: Lb.eyebrow, title: i.title, lead: i.tagline, img: i.hero, ctas: [btn(ctx, Lb.enquire, 'enquiry/', 'gold')] })}
 <section class="sec sec--ivory"><div class="container container--wide split split--img-end">
   <div>${eyebrow(ctx, Lb.overview, 'eyebrow--rule')}<h2 class="h2">${T(ctx, i.overviewTitle)}</h2><p class="lead">${T(ctx, i.overview)}</p></div>
-  <figure class="figure"><img src="${ctx.img(i.over)}" alt="${esc(ctx.t(P.INDUSTRIES_PAGE.alt(i.title)))}" loading="lazy"></figure>
+  <figure class="figure"><img src="${ctx.img(i.over)}" alt="${esc(ctx.t(i.altText || P.INDUSTRIES_PAGE.alt(i.title)))}" loading="lazy"></figure>
 </div></section>
 <section class="sec sec--ivory sec--tight sec--line"><div class="container container--wide two-col"><div><p class="eyebrow eyebrow--rule">${T(ctx, Lb.plan)}</p><h2 class="h3 h3--lg">${T(ctx, i.plan.who)}</h2><p class="body-p">${T(ctx, i.plan.plan)}</p></div><div class="two-col__r"><p class="eyebrow eyebrow--rule">${T(ctx, P.INDUSTRIES_PAGE.bring)}</p><p class="body-p">${T(ctx, i.plan.bring)}</p><p class="draft-note"><span>${icon('shield')}</span><span>${T(ctx, P.INDUSTRIES_PAGE.plan.note)}</span></p></div></div></section>
 <section class="sec sec--deep"><div class="container container--wide">

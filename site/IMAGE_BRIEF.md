@@ -1,5 +1,28 @@
 # Imagery decision and brief
 
+## Status: real photographs are now in (Round 6)
+From the licensed source pack you supplied (all Creative Commons Attribution, checked against Wikimedia Commons), 7 of the 16 photos are live and credited on `/image-credits/` (English and Arabic, linked from every footer). Crops are listed in `scripts/photo-map.json`; re-run with `python3 scripts/import-photos.py --map scripts/photo-map.json`.
+
+| Photo | Used for | Saudi? |
+|---|---|---|
+| Riyadh skyline at night (Jack Soma, CC BY 3.0) | Home hero and Riyadh page heroes | Yes |
+| Jeddah waterfront at night (CC BY 2.0) | Jeddah scenes | Yes |
+| At-Turaif, Diriyah (Radosław Botev, CC BY 3.0 pl) | Partnership and heritage scenes | Yes |
+| AlUla viewpoint (Prof. Mortel, CC BY 2.0) | Hospitality & tourism card and heritage scenes | Yes |
+| Solar farm (UC Davis, CC BY 2.0) | Energy & sustainability | No: illustrative |
+| Production line (Shixart1985, CC BY 2.0) | Manufacturing & industry | No: illustrative |
+| Construction site (Flocci Nivis, CC BY 4.0) | Construction & engineering | No: illustrative |
+
+**Deliberately not used** (they would mislead or look weak to a sceptical reader; those industries keep their illustration):
+- Healthcare: shows a Philadelphia hospital with its name on the signage.
+- Technology: only 600 px wide and shows an identifiable person holding a server board.
+- Hospitality (Hawaii beach hotel), Education (a US school), Financial services (a Sydney university building), Real estate (a small German building): clearly foreign or off-topic.
+- FMCG (a village produce table), Agriculture (a meadow), Logistics (an unexplained copper roof): do not show the industry.
+
+Still wanted: a Saudi hospital, data centre or tech campus, port or logistics hub, retail mall, farm, school, bank tower and office building, plus a Riyadh blue-hour shot. The licence rules below still apply.
+
+Industry photographs from outside Saudi Arabia are labelled illustrative, in their alt text, on the Industries page and on the credits page. They are never presented as client sites.
+
 ## The decision
 **Use real photography of real Saudi places and people. Do not use AI-generated "realistic" photographs. Keep the illustrated artwork only as a clearly illustrative fallback and for diagrams and pattern tiles.**
 

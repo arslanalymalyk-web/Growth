@@ -7,7 +7,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const axeSrc = readFileSync(join(root, 'scripts', 'axe.min.js'), 'utf8');
 const pw = await import(process.env.PLAYWRIGHT_MODULE ? pathToFileURL(process.env.PLAYWRIGHT_MODULE).href : 'playwright').catch(() => import(pathToFileURL('/opt/node-tools/node_modules/playwright/index.mjs').href));
 const b = await (pw.chromium || pw.default.chromium).launch({ executablePath: process.env.CHROMIUM_PATH || '/opt/pw-browsers/chromium' });
-const pages = ['', 'services/', 'services/advisory-sessions/', 'services/market-intelligence/', 'industries/', 'industries/food-agriculture/', 'about/', 'team/', 'faq/', 'how-we-work/', 'work-with-us/', 'insights/', 'insights/zakat-tax-and-vat-basics/', 'readiness-scorecard/', 'readiness-scorecard/assessment/', 'readiness-checklist/', 'shop/', 'shop/fmcg-market-entry-brief/', 'shop/basket/', 'shop/checkout/', 'book-a-meeting/', 'book-a-session/', 'enquiry/', 'privacy/', 'terms/', 'cookies/'];
+const pages = ['', 'services/', 'services/advisory-sessions/', 'services/market-intelligence/', 'industries/', 'industries/food-agriculture/', 'about/', 'team/', 'faq/', 'how-we-work/', 'work-with-us/', 'insights/', 'insights/zakat-tax-and-vat-basics/', 'readiness-scorecard/', 'readiness-scorecard/assessment/', 'readiness-checklist/', 'shop/', 'shop/fmcg-market-entry-brief/', 'shop/basket/', 'shop/checkout/', 'book-a-meeting/', 'book-a-session/', 'enquiry/', 'privacy/', 'terms/', 'cookies/', 'image-credits/'];
 let bad = 0; const incomplete = new Map();
 for (const lang of ['en', 'ar']) for (const [tag, w] of [['d', 1280], ['m', 390]]) {
   const ctx = await b.newContext({ viewport: { width: w, height: 900 }, reducedMotion: 'reduce' }); const p = await ctx.newPage();
@@ -22,6 +22,6 @@ for (const lang of ['en', 'ar']) for (const [tag, w] of [['d', 1280], ['m', 390]
   await ctx.close();
 }
 await b.close();
-console.log(bad ? `\n${bad} violations` : '\nNo axe violations on 26 pages x EN/AR x desktop/phone');
+console.log(bad ? `\n${bad} violations` : '\nNo axe violations on 27 pages x EN/AR x desktop/phone');
 if (incomplete.size) console.log('Needs a manual check (axe "incomplete"):', [...incomplete].map(([k, n]) => `${k} (${n})`).join(', '));
 process.exit(bad ? 1 : 0);

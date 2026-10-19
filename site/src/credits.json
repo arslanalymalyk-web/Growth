@@ -1,0 +1,107 @@
+[
+ {
+  "id": "riyadh",
+  "thumb": "hero-home",
+  "saudi": true,
+  "role": {
+   "en": "Riyadh skyline at night (home hero and Riyadh scenes)",
+   "ar": "أفق الرياض ليلاً (الصفحة الرئيسية ومشاهد الرياض)"
+  },
+  "creator": "Jack Soma",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Night_view_of_City_Riyadh_from_Hauptstadt_Saudi_Arabiens_-_panoramio.jpg",
+  "res": "1920 x 1005",
+  "title": "Night view of City Riyadh from Hauptstadt Saudi Arabiens - panoramio"
+ },
+ {
+  "id": "jeddah",
+  "thumb": "hero-corniche",
+  "saudi": true,
+  "role": {
+   "en": "Jeddah waterfront at night",
+   "ar": "واجهة جدة البحرية ليلاً"
+  },
+  "creator": "قلت :سمي! قالت :ماعاد بدري؟ قلت :سيرعلينا قالت: أختلفنا!؟ قلت :أحبه حيل قالت الود طبعي from KSA, UAE",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Jeddah_-_Flickr_-_%D8%B9%D8%B0%D8%A8_%D8%A7%D9%84%D8%B5%D9%88%D8%AA_lovely_voice.jpg",
+  "res": "1572 x 1062",
+  "title": "Jeddah - Flickr - عذب الصوت lovely voice"
+ },
+ {
+  "id": "diriyah",
+  "thumb": "cta-fort-palm",
+  "saudi": true,
+  "role": {
+   "en": "At-Turaif District, Diriyah",
+   "ar": "حي الطريف، الدرعية"
+  },
+  "creator": "Radosław Botev",
+  "license": "CC BY 3.0 pl",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/pl/deed.en",
+  "source": "https://commons.wikimedia.org/wiki/File:At-Turaif_District_in_ad-Dir%27iyah_(5).jpg",
+  "res": "1920 x 1440",
+  "title": "At-Turaif District in ad-Dir'iyah (5)"
+ },
+ {
+  "id": "alula",
+  "thumb": "ind-hospitality",
+  "saudi": true,
+  "role": {
+   "en": "AlUla from a viewpoint (Hospitality & tourism, heritage scenes)",
+   "ar": "العلا من نقطة مشاهدة (الضيافة والسياحة ومشاهد التراث)"
+  },
+  "creator": "Prof. Mortel",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Al-Ula,_Saudi_Arabia,_seen_from_the_viewpoint_(8).jpg",
+  "res": "1920 x 1280",
+  "title": "Al-Ula, Saudi Arabia, seen from the viewpoint (8)"
+ },
+ {
+  "id": "energy",
+  "thumb": "ind-energy",
+  "saudi": false,
+  "role": {
+   "en": "Solar farm (Energy & sustainability)",
+   "ar": "مزرعة طاقة شمسية (الطاقة والاستدامة)"
+  },
+  "creator": "UC Davis College of Engineering",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:UC_Davis_Solar_Farm_(37690868766).jpg",
+  "res": "1920 x 1280",
+  "title": "UC Davis Solar Farm (37690868766)"
+ },
+ {
+  "id": "manufacturing",
+  "thumb": "ind-manufacturing",
+  "saudi": false,
+  "role": {
+   "en": "Production line (Manufacturing & industry)",
+   "ar": "خط إنتاج (التصنيع والصناعة)"
+  },
+  "creator": "Shixart1985",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Industrial_production_line_operating_in_a_large_modern_factory.jpg",
+  "res": "1920 x 1282",
+  "title": "Industrial production line operating in a large modern factory"
+ },
+ {
+  "id": "construction",
+  "thumb": "ind-construction",
+  "saudi": false,
+  "role": {
+   "en": "Construction site (Construction & engineering)",
+   "ar": "موقع إنشاءات (الإنشاءات والهندسة)"
+  },
+  "creator": "Flocci Nivis",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:20230107_Construction_Site_Nuremberg.jpg",
+  "res": "1920 x 1282",
+  "title": "20230107 Construction Site Nuremberg"
+ }
+]

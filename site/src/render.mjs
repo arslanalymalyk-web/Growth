@@ -133,7 +133,7 @@ export function footer(ctx) {
     ${skyline}
     <div class="ftr-bottom">
       <p>© ${SITE.year} ${esc(ctx.t(SITE.name))}. ${esc(ctx.t(UI.rights))}</p>
-      <ul><li><a href="${ctx.href('privacy/')}">${esc(ctx.t(UI.privacy))}</a></li><li><a href="${ctx.href('terms/')}">${esc(ctx.t(UI.terms))}</a></li><li><a href="${ctx.href('cookies/')}">${esc(ctx.t(UI.cookies))}</a></li></ul>
+      <ul><li><a href="${ctx.href('privacy/')}">${esc(ctx.t(UI.privacy))}</a></li><li><a href="${ctx.href('terms/')}">${esc(ctx.t(UI.terms))}</a></li><li><a href="${ctx.href('cookies/')}">${esc(ctx.t(UI.cookies))}</a></li><li><a href="${ctx.href('image-credits/')}">${esc(ctx.t(L('Image credits', 'اعتمادات الصور')))}</a></li></ul>
     </div>
     <p class="ftr-demo">${esc(ctx.t(UI.demoNote))}</p>
   </div>

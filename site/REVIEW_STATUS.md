@@ -112,3 +112,9 @@ Maps every item of `CRITICAL_REVIEW_V2.md` to its status.
 - **Testimonials:** sample cards removed; data in `src/testimonials.json`; advances every 3 seconds; kit in `TESTIMONIALS_KIT.md`. Only 3 real quotes exist.
 - **Imagery decision:** real photography, not AI photoreal. `IMAGE_BRIEF.md` and `scripts/import-photos.py`.
 - **Accessibility:** axe audit script added; 5 issues fixed; 0 violations.
+
+## Round 6: real photographs
+- 7 licensed photographs live (4 Saudi scenes, 3 illustrative industry photos), credited on `/image-credits/` in both languages and linked from the footer. Changes (crop and resize) are stated, as the CC BY licences require.
+- 9 pack photos deliberately not used (see `IMAGE_BRIEF.md`): wrong country or visible foreign signage, too small, an identifiable person, or not showing the industry. Those industries keep their illustration until better Saudi photos are found.
+- Only 4 Saudi photographs exist in the pack, so the same Riyadh, Jeddah, Diriyah and AlUla photos recur in different crops.
+- Source files and credits are kept in `photos-src/`.

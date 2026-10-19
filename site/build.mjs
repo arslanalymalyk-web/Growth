@@ -28,6 +28,7 @@ const routes = [
   ['team/', X.teamPage],
   ['faq/', X.faqPage],
   ['work-with-us/', X.workWithUs],
+  ['image-credits/', X.imageCredits],
   ['about/', V.about],
   ['entering-saudi-arabia/', (c) => V.journey(c, P.ENTERING, 'enter')],
   ['growing-in-saudi-arabia/', (c) => V.journey(c, P.GROWING, 'grow')],

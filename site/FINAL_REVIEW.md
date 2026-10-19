@@ -20,7 +20,7 @@ If I were a Fortune 500 CEO shortlisting an adviser for a Saudi entry, this site
 | Operations | Single Node process, JSONL files, in-memory limits | Fine to launch small; see 6 |
 
 ## 2. Imagery: the decision
-**Real photography of real Saudi places and people. Not AI "photoreal". Keep the illustrations as an honest fallback.** Reasoning, shot list, licence rules and the no-code swap tool are in `IMAGE_BRIEF.md`. The single highest-value image upgrade is real team photographs.
+**Real photography of real Saudi places and people. Not AI "photoreal". Keep the illustrations as an honest fallback.** Status: 7 licensed photographs are now live and credited (4 Saudi scenes, 3 illustrative industry photos); the rest of the site still uses illustration. See `IMAGE_BRIEF.md`. Reasoning, shot list, licence rules and the no-code swap tool are in `IMAGE_BRIEF.md`. The single highest-value image upgrade is real team photographs.
 
 ## 3. Paid advisory sessions: what is real and what is not
 Built and tested (17 server tests, browser journeys in English and Arabic): weekly slot grid (Sunday to Thursday, 24-hour lead, blackout dates), slot hold during payment, server-set price and VAT, bundle of three with credits and a 120-day window, free reschedule up to 24 hours before, calendar file, invoice with ZATCA phase-1 QR, consent logging (terms, privacy, marketing separate), CRM event, double-booking protection.

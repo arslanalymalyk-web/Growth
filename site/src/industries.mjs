@@ -205,3 +205,12 @@ for (const i of INDUSTRIES) { const p = PLAN[i.slug]; i.plan = p; i.title = p.la
 INDUSTRIES.sort((a, b) => PLAN[a.slug].n - PLAN[b.slug].n);
 
 export const industryBySlug = (s) => INDUSTRIES.find((x) => x.slug === s);
+
+/* Industries whose card shows a photograph rather than an illustration (see src/credits.json). */
+const PHOTO_ALT = {
+  hospitality: L('AlUla, Saudi Arabia, seen from a viewpoint (photograph)', 'العلا في المملكة العربية السعودية من نقطة مشاهدة (صورة فوتوغرافية)'),
+  'energy-sustainability': L('Solar farm (photograph, illustrative: outside Saudi Arabia)', 'مزرعة طاقة شمسية (صورة توضيحية من خارج السعودية)'),
+  manufacturing: L('Production line (photograph, illustrative: outside Saudi Arabia)', 'خط إنتاج (صورة توضيحية من خارج السعودية)'),
+  'construction-engineering': L('Construction site (photograph, illustrative: outside Saudi Arabia)', 'موقع إنشاءات (صورة توضيحية من خارج السعودية)')
+};
+for (const i of INDUSTRIES) if (PHOTO_ALT[i.slug]) i.altText = PHOTO_ALT[i.slug];

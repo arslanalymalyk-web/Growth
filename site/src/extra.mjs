@@ -2,7 +2,9 @@
 import { L, UI, SITE } from './ui.mjs';
 import { icon } from './icons.mjs';
 import { SITE_URL, esc, shell, hero, ctaBand, btn, eyebrow, sectionHead, faq } from './render.mjs';
+import { readFileSync } from 'node:fs';
 import { FIRM, vision } from './firm.mjs';
+const CREDITS = JSON.parse(readFileSync(new URL('./credits.json', import.meta.url), 'utf8'));
 
 const T = (ctx, v) => esc(ctx.t(v));
 const crumbs = (ctx, label) => [{ label: UI.breadcrumbHome, href: ctx.href('') }, { label }];
@@ -84,4 +86,20 @@ ${hero(ctx, { eyebrow: L('Partners & specialists', 'الشركاء والمتخ�
 <p class="body-p">${T(ctx, L('Send a short note about your firm and the investors you serve. We reply personally.', 'أرسل نبذة قصيرة عن شركتك والمستثمرين الذين تخدمهم. وسنرد عليك شخصيًا.'))}</p>
 <p><a class="btn btn--gold" href="${mail}"><span>${T(ctx, L('Email us', 'راسلنا'))}</span></a></p></div></section>`;
   return shell(ctx, { title: L('Work With Us | Growth Blueprint', 'اعمل معنا | غروث بلوبرينت'), description: L('Partners and specialists who serve international investors in Saudi Arabia.', 'شركاء ومتخصصون يخدمون المستثمرين الدوليين في السعودية.'), active: 'about', body });
+}
+
+/* ---------------- Image credits (Creative Commons attribution) ---------------- */
+export function imageCredits(ctx) {
+  const t = L('Image credits', 'اعتمادات الصور');
+  const card = (c) => `<article class="credit"><img src="${ctx.img(c.thumb)}" alt="" width="320" height="200" loading="lazy"><div class="credit__b"><p class="credit__tag">${T(ctx, c.saudi ? L('Saudi Arabia', 'السعودية') : L('Illustrative, outside Saudi Arabia', 'توضيحية، من خارج السعودية'))}</p><h3 class="h4">${T(ctx, L(c.role.en, c.role.ar))}</h3>
+    <p class="credit__line" dir="ltr">“${esc(c.title)}” — ${esc(c.creator)}, <a href="${c.licenseUrl}" target="_blank" rel="noopener license">${esc(c.license)}</a>, via <a href="${c.source}" target="_blank" rel="noopener">Wikimedia Commons</a></p>
+    <p class="credit__sm">${T(ctx, L('Cropped and resized for web layout. No colour changes.', 'قُصّت وغُيّر حجمها لتناسب تخطيط الموقع. دون تعديل الألوان.'))}</p></div></article>`;
+  const body = `
+${hero(ctx, { eyebrow: L('Credits', 'اعتمادات'), title: t, lead: L('The photographs on this site are used under Creative Commons Attribution licences. Credit where it is due.', 'الصور الفوتوغرافية في هذا الموقع مستخدمة بموجب رخص المشاع الإبداعي (نسب المصنف). ولكل صاحب فضل فضله.'), img: 'hero-corniche', crumbs: crumbs(ctx, t) })}
+<section class="sec sec--ivory"><div class="container container--wide">
+  <p class="draft-note"><span>${icon('shield')}</span><span>${T(ctx, L('Photographs marked “Illustrative, outside Saudi Arabia” show facilities of a similar kind elsewhere in the world. They are not Saudi client sites and are not evidence of our projects. Other images on this site are original illustrations.', 'الصور المعلَّمة «توضيحية، من خارج السعودية» تُظهر منشآت مشابهة في أنحاء أخرى من العالم، وليست مواقع لعملاء سعوديين ولا دليلًا على مشاريعنا. أما بقية الصور في الموقع فرسومات أصلية.'))}</span></p>
+  <div class="credits">${CREDITS.map(card).join('')}</div>
+  <p class="proof__note proof__note--c">${T(ctx, L('Attribution format: “Title” — creator, licence, via Wikimedia Commons. Each link goes to the original file page and licence text.', 'صيغة النسب: «العنوان» — المؤلف، الرخصة، عبر ويكيميديا كومنز. كل رابط يقود إلى صفحة الملف الأصلية ونص الرخصة.'))}</p>
+</div></section>`;
+  return shell(ctx, { title: L('Image Credits | Growth Blueprint', 'اعتمادات الصور | غروث بلوبرينت'), description: L('Credits and licences for the photographs used on this site.', 'اعتمادات ورخص الصور الفوتوغرافية المستخدمة في هذا الموقع.'), active: null, body });
 }
