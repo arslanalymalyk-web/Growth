@@ -86,7 +86,7 @@ See `.env.example`.
 | **Spam protection** | Honeypot, rate limits, Origin check; Turnstile optional. | Turn Turnstile on before launch. |
 | **Data lifecycle** | `scripts/retention.mjs` (dry run by default) removes old leads, unsubscribed records and logs, and erases one person on request. | Schedule it (cron) and agree retention periods with counsel. Orders and invoices are never touched. |
 | **CMS** | Content is in `src/*.mjs`. | Move to a CMS if non-developers will edit. |
-| **Photography** | Cropped from the design mock-ups (low resolution). Team cards show initials. | Replace images in `assets/img/` (same file names). For headshots, add `photo: 'name.webp'` to a person in `src/firm.mjs` and put the file in `assets/team/`. |
+| **Imagery** | Original vector artwork themed on Vision 2030 (Riyadh skyline, giga-projects, Diriyah, AlUla, Red Sea, renewables, industry, health, logistics), drawn in code (`scripts/art/`) and rendered at 2 to 3 times display size, so it stays sharp. It is illustration, not photography. Team cards show initials. | Swap in licensed photography by replacing files in `assets/img/` (same names). Re-render the artwork with `node scripts/make-art.mjs`. For headshots, add `photo: 'name.webp'` to a person in `src/firm.mjs` and put the file in `assets/team/`. |
 
 ## Tests
 
@@ -104,6 +104,7 @@ The end-to-end suite drives the scorecard (English and Arabic), basket to checko
 ```bash
 node scripts/make-briefs.mjs        # rebuilds private/briefs/*.pdf from src/briefs.mjs (needs Playwright + Chromium)
 node scripts/export-content.mjs     # rewrites CONTENT-EN.md / CONTENT-AR.md from the built pages
+node scripts/make-art.mjs          # re-renders assets/img/*.webp from the scene library in scripts/art/
 node scripts/make-single.mjs      # growth-blueprint-single.html: the whole bilingual site in ONE file (forms and shop run in demo mode)
 python3 scripts/make-logo.py FONTDIR   # rebuilds brand/*.svg (needs fontTools, uharfbuzz and the font files)
 python3 scripts/make-fonts.py FONTDIR  # rebuilds assets/fonts/*.woff2

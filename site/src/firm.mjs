@@ -38,6 +38,17 @@ export const FIRM = {
   ]
 };
 
+
+/** Layout slots for more testimonials. They are clearly labelled samples, never real quotes. Set TESTIMONIAL_SAMPLES=0 at build time to publish only the real ones. */
+const SAMPLE_SECTORS = [
+  [L('Retail group', 'مجموعة تجزئة'), L('Healthcare', 'الرعاية الصحية')], [L('Real-estate developer', 'مطوّر عقاري'), L('Real estate', 'العقار')], [L('Logistics operator', 'مشغّل لوجستي'), L('Logistics', 'الخدمات اللوجستية')],
+  [L('Technology company', 'شركة تقنية'), L('Technology', 'التقنية')], [L('Hospitality brand', 'علامة ضيافة'), L('Hospitality', 'الضيافة')], [L('Food & beverage brand', 'علامة أغذية ومشروبات'), L('FMCG', 'السلع الاستهلاكية')],
+  [L('Industrial manufacturer', 'مُصنِّع صناعي'), L('Manufacturing', 'التصنيع')], [L('Consulting partner', 'شريك استشاري'), L('Services', 'الخدمات')], [L('Investment firm', 'شركة استثمار'), L('Investment', 'الاستثمار')]
+];
+const SAMPLE_Q = L('Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.', 'خانة نموذجية: استبدلها باقتباس حقيقي من عميل، بموافقته الكتابية واسم الموقّع.');
+const SAMPLES = SAMPLE_SECTORS.map(([k, sec], i) => ({ i: String(i + 1).padStart(2, '0'), n: L('Client name', 'اسم العميل'), k, q: SAMPLE_Q, sample: true, sector: sec }));
+export const TESTIMONIALS = FIRM.clients.concat(process.env.TESTIMONIAL_SAMPLES === '0' ? [] : SAMPLES);
+
 const lab = {
   founded: L('Founded', 'تأسست'), years: L('Years of leadership experience', 'سنوات من الخبرة القيادية'), licensed: L('Licensed', 'مرخّصة'),
   licBody: L('Licensed by the Ministry of Human Resources & Social Development', 'مرخّصة من وزارة الموارد البشرية والتنمية الاجتماعية'),
@@ -59,7 +70,7 @@ export const proofStrip = (ctx) => `<section class="proof" aria-label="${esc(ctx
 export const vision = (ctx) => `<section class="sec sec--ivory" aria-labelledby="vm-t"><div class="container container--wide">
   ${sectionHead(ctx, { eyebrow: lab.vmE, title: FIRM.gateway, id: 'vm-t' })}
   <div class="vm"><article><h3 class="h4">${T(ctx, lab.vis)}</h3><p>${T(ctx, FIRM.vision)}</p></article><article><h3 class="h4">${T(ctx, lab.mis)}</h3><p>${T(ctx, FIRM.mission)}</p></article></div>
-  <ul class="why">${FIRM.why.map((w) => `<li><span>${icon(w.icon)}</span><h3 class="h4">${T(ctx, w.t)}</h3><p>${T(ctx, w.d)}</p></li>`).join('')}</ul>
+  <ul class="fwhy">${FIRM.why.map((w) => `<li><span>${icon(w.icon)}</span><h3 class="h4">${T(ctx, w.t)}</h3><p>${T(ctx, w.d)}</p></li>`).join('')}</ul>
 </div></section>`;
 
 export const team = (ctx, tone = 'sec--deep') => `<section class="sec ${tone}" aria-labelledby="tm-t"><div class="container container--wide">
@@ -70,8 +81,11 @@ export const team = (ctx, tone = 'sec--deep') => `<section class="sec ${tone}" a
 
 export const clients = (ctx) => `<section class="sec sec--ivory" aria-labelledby="cl-t"><div class="container container--wide">
   ${sectionHead(ctx, { eyebrow: lab.cliE, title: lab.cliT, id: 'cl-t' })}
-  <ul class="quotes">${FIRM.clients.map((c) => `<li><blockquote><p>${T(ctx, c.q)}</p></blockquote><footer><span class="member__av member__av--sm" aria-hidden="true">${c.i}</span><b>${esc(c.n)}</b><i>${T(ctx, c.k)}</i></footer></li>`).join('')}</ul>
-  <p class="proof__note proof__note--c">${T(ctx, lab.cliN)}</p>
+  <div class="qs" role="region" aria-roledescription="carousel" aria-label="${esc(ctx.t(lab.cliE))}" data-qs>
+    <ul class="quotes qs__track" tabindex="0" data-qs-track>${TESTIMONIALS.map((c, n) => `<li class="${c.sample ? 'is-sample' : ''}" aria-label="${n + 1} / ${TESTIMONIALS.length}">${c.sample ? `<span class="qs__tag">${T(ctx, L('Sample', 'نموذج'))}</span>` : ''}<blockquote><p>${T(ctx, c.q)}</p></blockquote><footer><span class="member__av member__av--sm" aria-hidden="true">${c.i}</span><b>${T(ctx, typeof c.n === 'string' ? L(c.n, c.n) : c.n)}</b><i>${T(ctx, c.k)}</i></footer></li>`).join('')}</ul>
+    <div class="qs__ctl"><button type="button" class="qs__btn" data-qs-prev aria-label="${esc(ctx.t(L('Previous testimonials', 'الشهادات السابقة')))}">${icon('arrowLeft')}</button><button type="button" class="qs__btn" data-qs-next aria-label="${esc(ctx.t(L('Next testimonials', 'الشهادات التالية')))}">${icon('arrowRight')}</button><button type="button" class="qs__btn qs__btn--pp" data-qs-pause aria-pressed="false" aria-label="${esc(ctx.t(L('Pause automatic sliding', 'إيقاف التمرير التلقائي')))}">${icon('pause')}</button><span class="qs__count" aria-live="polite" data-qs-count></span></div>
+  </div>
+  <p class="proof__note proof__note--c">${T(ctx, lab.cliN)}${process.env.TESTIMONIAL_SAMPLES === '0' ? '' : ' ' + ctx.t(L('Cards marked “Sample” are layout placeholders, not client quotes.', 'البطاقات المعلَّمة «نموذج» خانات تصميمية وليست اقتباسات عملاء.'))}</p>
 </div></section>`;
 
 export const hoursBlock = (ctx) => `<ul class="hours">${FIRM.hours.map((h) => `<li><span>${T(ctx, h.d)}</span><b>${T(ctx, h.t)}</b></li>`).join('')}<li class="hours__tz">${T(ctx, FIRM.tz)}</li></ul>`;

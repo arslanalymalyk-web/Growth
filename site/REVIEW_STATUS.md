@@ -87,7 +87,8 @@ Maps every item of `CRITICAL_REVIEW_V2.md` to its status.
 | Fonts from Google | **Fixed.** Self-hosted WOFF2 subsets (Latin and Arabic), preloaded; the CSP no longer allows Google. |
 | Link integrity and titles | **Fixed.** `scripts/check-links.mjs`: about 6,100 references, all pages have a title, description and h1. Found and fixed one broken anchor and two missing headings. |
 | Visual regression | **Fixed.** `scripts/visual.mjs` with 28 baselines (7 pages, EN and AR, desktop and phone). |
-| Real photography | **Needs you.** |
+| Image sharpness | **Fixed.** All 87 images were low-resolution crops from the mock-ups. They are now original vector artwork rendered at 2 to 3 times the display size (Riyadh skyline, The Line, Diriyah, AlUla, Red Sea, renewables, industry, health, logistics). It is illustration, not photography: stock sites are not reachable from the build environment, and I cannot create photographs. |
+| Real photography | **Needs you.** Replace any file in `assets/img/` (same name) with licensed photography whenever you have it. |
 | Screen-reader test in Arabic, low-end phone test | **Needs you** (a person with the devices). |
 | Hosting | **Needs you.** Node host with `server.mjs` (shop, forms, admin) or static hosting plus functions. |
 
@@ -95,3 +96,8 @@ Maps every item of `CRITICAL_REVIEW_V2.md` to its status.
 - Tests: 13 server tests, the browser journeys, link check and visual baselines all pass.
 - The footer note now says "Prototype build: payments are simulated and some sample content is illustrative", which should be removed once payments are live and content is signed off.
 - The article list labels every article "Editorial draft: pending firm review". Remove that label (`INSIGHTS_PAGE.sample`) when the firm has approved the text.
+
+## Round 3 changes
+- **Testimonials:** a slider with previous, next and pause controls, reading in the page direction (left to right in English, right to left in Arabic). It holds 12 slots: the 3 real quotes plus 9 cards clearly marked "Sample". I did not invent client quotes. Replace each sample card in `src/firm.mjs`, or build with `TESTIMONIAL_SAMPLES=0` to publish only real ones.
+- **Dead space:** section, hero, banner, footer and form padding reduced across the site.
+- **Images:** see above.

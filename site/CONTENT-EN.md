@@ -1,7 +1,7 @@
 # Growth Blueprint: website content (English)
 
 
-_Generated from the built site on 2026-10-18 by scripts/export-content.mjs. Edit the copy in src/*.mjs, not this file._
+_Generated from the built site on 2026-10-19 by scripts/export-content.mjs. Edit the copy in src/*.mjs, not this file._
 
 
 ---
@@ -246,7 +246,63 @@ As an Italian manufacturer entering the Saudi market, Growth Blueprint's strateg
 
 S2Sano2Italian manufacturer
 
-Quotes are shared by the clients named, as published by the firm.
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+01Client nameRetail group
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+02Client nameReal-estate developer
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+03Client nameLogistics operator
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+04Client nameTechnology company
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+05Client nameHospitality brand
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+06Client nameFood & beverage brand
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+07Client nameIndustrial manufacturer
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+08Client nameConsulting partner
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+09Client nameInvestment firm
+
+1–3 / 12
+
+Quotes are shared by the clients named, as published by the firm. Cards marked “Sample” are layout placeholders, not client quotes.
 
 Latest insights
 
@@ -1776,7 +1832,63 @@ As an Italian manufacturer entering the Saudi market, Growth Blueprint's strateg
 
 S2Sano2Italian manufacturer
 
-Quotes are shared by the clients named, as published by the firm.
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+01Client nameRetail group
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+02Client nameReal-estate developer
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+03Client nameLogistics operator
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+04Client nameTechnology company
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+05Client nameHospitality brand
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+06Client nameFood & beverage brand
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+07Client nameIndustrial manufacturer
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+08Client nameConsulting partner
+
+Sample
+
+Sample slot: replace this with a real client quote, with the client’s written permission and a named signatory.
+
+09Client nameInvestment firm
+
+1–3 / 12
+
+Quotes are shared by the clients named, as published by the firm. Cards marked “Sample” are layout placeholders, not client quotes.
 
 Let's talk
 

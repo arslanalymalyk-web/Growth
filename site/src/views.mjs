@@ -48,7 +48,7 @@ ${proofStrip(ctx)}
   <ol class="steps">${steps}</ol>
 </div></section>
 <section class="founder" aria-labelledby="fo-t">
-  <div class="founder__img"><img src="${ctx.img('p-founder')}" alt="${esc(ctx.t(L('A Saudi business leader looking over the city skyline', 'قائد أعمال سعودي يتأمل أفق المدينة')))}" loading="lazy"></div>
+  <div class="founder__img"><img src="${ctx.img('p-founder')}" alt="${esc(ctx.t(L('The Riyadh skyline at golden hour', 'أفق الرياض عند الغروب')))}" loading="lazy"></div>
   <div class="founder__copy"><p class="eyebrow">${T(ctx, H.founder.eyebrow)}</p><h2 class="h2" id="fo-t">${T(ctx, H.founder.title)}</h2><p>${T(ctx, H.founder.body)}</p>
     <a class="btn btn--outline-dark" href="${ctx.href('about/')}"><span>${T(ctx, H.founder.cta)}</span>${arrow}</a></div>
 </section>
@@ -210,7 +210,7 @@ export function about(ctx) {
 ${hero(ctx, { ...A.hero, ctas: [] })}
 ${proofStrip(ctx)}
 <section class="sec sec--ivory"><div class="container container--wide split split--img-start">
-  <figure class="figure figure--tall"><img src="${ctx.img(A.founder.img)}" alt="${esc(ctx.t(L('A Saudi business leader looking over the Riyadh skyline', 'قائد أعمال سعودي يتأمل أفق الرياض')))}" loading="lazy"></figure>
+  <figure class="figure figure--tall"><img src="${ctx.img(A.founder.img)}" alt="${esc(ctx.t(L('The Riyadh skyline at golden hour', 'أفق الرياض عند الغروب')))}" loading="lazy"></figure>
   <div><p class="eyebrow">${T(ctx, A.founder.eyebrow)}</p><h2 class="h2">${T(ctx, A.founder.title)}</h2>${A.founder.paras.map((p) => `<p class="body-p">${T(ctx, p)}</p>`).join('')}</div>
 </div></section>
 <section class="sec sec--deep sec--center"><div class="container container--wide"><p class="eyebrow">${T(ctx, A.principles.eyebrow)}</p><h2 class="h2">${T(ctx, A.principles.title)}</h2><p class="lead lead--center">${T(ctx, A.principles.body)}</p><ul class="principles">${pr}</ul></div></section>

@@ -55,6 +55,30 @@
     targets.forEach(function (t, i) { t.classList.add('rv'); t.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(t); });
   }
 
+  /* Testimonial slider: scrolls in the reading direction, loops, pauses on hover/focus/touch and for reduced motion */
+  $$('[data-qs]').forEach(function (qs) {
+    var tr = $('[data-qs-track]', qs), prev = $('[data-qs-prev]', qs), next = $('[data-qs-next]', qs), pp = $('[data-qs-pause]', qs), count = $('[data-qs-count]', qs);
+    var rtl = document.documentElement.dir === 'rtl', sign = rtl ? -1 : 1, items = $$('li', tr), timer = null, paused = reduce;
+    var ICON = function (d) { return '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + d + '"/></svg>'; };
+    var step = function () { var a = items[0], b = items[1]; return b ? Math.abs(b.offsetLeft - a.offsetLeft) : tr.clientWidth; };
+    var pos = function () { return Math.abs(tr.scrollLeft); };
+    var atEnd = function () { return pos() + tr.clientWidth >= tr.scrollWidth - 4; };
+    var perView = function () { return Math.max(1, Math.round(tr.clientWidth / step())); };
+    var update = function () { var i = Math.round(pos() / step()), v = perView(), n = items.length; if (count) count.textContent = (i + 1) + '–' + Math.min(n, i + v) + ' / ' + n; };
+    var go = function (dir) { if (dir > 0 && atEnd()) tr.scrollTo({ left: 0 }); else if (dir < 0 && pos() < 4) tr.scrollTo({ left: sign * (tr.scrollWidth - tr.clientWidth) }); else tr.scrollBy({ left: sign * dir * step() }); };
+    var stop = function () { if (timer) { clearInterval(timer); timer = null; } };
+    var start = function () { stop(); if (!paused) timer = setInterval(function () { if (!document.hidden) go(1); }, 4500); };
+    var setPaused = function (v) { paused = v; if (pp) { pp.setAttribute('aria-pressed', String(v)); pp.innerHTML = v ? ICON('M8 5l11 7-11 7z') : ICON('M9 5v14M15 5v14'); } if (v) stop(); else start(); };
+    if (prev) prev.addEventListener('click', function () { go(-1); });
+    if (next) next.addEventListener('click', function () { go(1); });
+    if (pp) pp.addEventListener('click', function () { setPaused(!paused); });
+    ['mouseenter', 'focusin', 'touchstart'].forEach(function (e) { qs.addEventListener(e, stop, { passive: true }); });
+    ['mouseleave', 'focusout'].forEach(function (e) { qs.addEventListener(e, function () { if (!paused) start(); }); });
+    tr.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
+    tr.addEventListener('keydown', function (e) { var k = e.key; if (k === 'ArrowRight') { e.preventDefault(); go(rtl ? -1 : 1); } else if (k === 'ArrowLeft') { e.preventDefault(); go(rtl ? 1 : -1); } });
+    onDoc(window, 'resize', update); setPaused(paused); update();
+  });
+
   /* Cookie notice (choice stored locally; nothing is loaded either way in this demo) */
   var cookie = $('#cookie');
   /* Analytics (Plausible, cookieless) loads only after the visitor accepts, and only when a domain was set at build time */
